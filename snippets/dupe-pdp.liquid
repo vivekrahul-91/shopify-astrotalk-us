@@ -803,13 +803,11 @@ You can learn more about this (and learn how to cleanly revert these changes) at
                          {% if template contains 'product' %}
                                <div id="x-payment-button-{{ section.id }}" class="uppercase payment-button{% if settings.buttons_animation != 'underline' and settings.buttons_animation != 'sliced' %} button-animation{% else %} button-default{% endif %}{% if can_show_preorder == true and block.settings.preorder_show_dynamic_button == false %} hidden{% endif %}" x-intersect.once.margin.200px="$store.xShopifyPaymentBtn.load($el)">
                                   <!-- {{ form | payment_button }} -->
-                                  {% render 'gokwik-buy-now' %}
                                 </div>
                             {% else %}
                               <template x-if="show">
                                 <div id="x-payment-button-{{ section.id }}" class="uppercase payment-button{% if settings.buttons_animation != 'underline' and settings.buttons_animation != 'sliced' %} button-animation{% else %} button-default{% endif %}{% if can_show_preorder == true and block.settings.preorder_show_dynamic_button == false %} hidden{% endif %}" x-intersect.once.margin.200px="$store.xShopifyPaymentBtn.load($el)">
                                   <!-- {{ form | payment_button }} -->
-                                  {% render 'gokwik-buy-now' %}
                                 </div>
                               </template>
                             {% endif %}
@@ -3427,7 +3425,6 @@ You can learn more about this (and learn how to cleanly revert these changes) at
                         <div class="relative">
                           <div id="x-payment-button-{{ section.id }}" class="uppercase payment-button{% if settings.buttons_animation != 'underline' and settings.buttons_animation != 'sliced' %} button-animation{% else %} button-default{% endif %}{% if can_show_preorder == true and block.settings.preorder_show_dynamic_button == false %} hidden{% endif %}" x-init="$store.xShopifyPaymentBtn.load($el)">                              
                             <!-- {{ form | payment_button }} -->
-                            {% render 'gokwik-buy-now' %}
                           </div>
                           {% if customize_picker_required %}
                             <div x-data="xCustomizePicker" @click="validateError($el)" class="payment-button--clone cursor-pointer absolute z-20 top-0 left-0 right-0 bottom-0"></div>

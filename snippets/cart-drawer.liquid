@@ -1816,7 +1816,7 @@
                     {{ 'sections.cart.view_cart' | t }}
                   </a>
                 {%- endunless -%}
-                <!-- <button
+                <button
                   id="checkout-submit"
                   class="button button-solid leading-normal{% if is_rtl %} mr-1{% else %} ml-1{% endif %} button{% if settings.hide_view_cart_button %} w-full {% else %} w-1/2{% endif %} justify-center pt-2.5 pb-2.5 md:pt-3 md:pb-3 cursor-pointer" 
                   type="submit"
@@ -1829,8 +1829,7 @@
                   <span class="flex items-center justify-center">
                     {% render 'button-label', button_label: button_label, show_button_style: 'primary' %}
                   </span>
-                </button> -->
-                {% render 'gokwik-checkout' %}
+                </button>
                 <span class="gift-msging pt-1 ">Free gift on all prepaid orders</span>
               </div>
               {%- if settings.show_cart_payment_methods -%}
@@ -2170,14 +2169,6 @@ div#CartDrawer-CartItems tbody tr {
   div#CartDrawer-CartItems tbody td:nth-child(2) {
     padding-left: 10px;
 }
-.gokwik-checkout button {
-    background: #000 !important;
-    color: #fff;
-    justify-content: space-between;
-    padding-left: 18px;
 }
-}
-.gokwik-checkout:before{
-display:none;}
 
  </style>

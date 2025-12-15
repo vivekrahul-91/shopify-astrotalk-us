@@ -120,14 +120,7 @@ const performLoginAction = (url_string) => {
 const createLoginFormAndSubmit = (userName, userPassword) => {
     document.getElementById('otp-original-email').value = userName;
     document.getElementById('otp-original-password').value = userPassword;
-    if (simplyOtp.settings.goKwik && this.checkout_url.includes("checkout")) {
-        document.getElementById('otp-return_to').value = location.origin + "/account/login#ref=gokwik";
-        let elements = document.getElementsByName("checkout_url");
-        elements.forEach((function (x) {
-            x.remove();
-        }));
-    }
-    else if (this.checkout_url != "") {
+    if (this.checkout_url != "") {
         let checkout_url = this.checkout_url;
         let elements = document.getElementsByName('return_url');
         elements.forEach((function (x) {

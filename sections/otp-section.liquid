@@ -4,36 +4,10 @@
         window.simplyOtp.customer = true
       </script>
 
-    {% if template contains 'login' or template contains 'register' %}
-    <style>
-      .otp-loader {
-        border: 8px solid #f3f3f3;
-        border-top: 8px solid #3498db;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: spin 1.5s linear infinite;
-        margin:20px auto;
-      }
-
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      </style>
-  <script>
-    if(location.hash == "#ref=gokwik"){
-      window.addEventListener("load", (event) => {
-        setTimeout(function(){
-          window.gokwikSdk.initCheckout(merchantInfo);
-        }, 4000);
-      });
-    } else {
-        location.href="/account";
-    }
-  </script>
-  <div class="otp-loader">&nbsp;</div>
-      {% endif %}
+    {% comment %}
+      Legacy GoKwik-specific login redirect/loader has been removed.
+      Logged-in customers can use the standard account pages directly.
+    {% endcomment %}
   {% else %}
     {% assign time_stamp = 'now' | date: '%s'  %}
     {%- assign secret_potion = shop.id | append:time_stamp | md5 -%}

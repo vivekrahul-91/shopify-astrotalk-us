@@ -2222,35 +2222,11 @@
       style="--d:block;--d-tablet:block;--d-mobile:none;--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--op:100%;--mb:var(undefined);--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--ta:left"
       data-keep-class="true"
       class="gw6jMbMEDT "
-    ><div><script>
-function onBuyNow(e) {
-const variantID = ShopifyAnalytics.meta.selectedVariantId;
-let qty = document.querySelector('input[name=quantity]')?.value || 1;
-
-// Push event to CleverTap before calling onBuyNowClick
-clevertap.event.push("Buy Now Clicked", {
-"Product ID": variantID || ShopifyAnalytics.meta.product.variants[0].id,
-"Quantity": parseInt(qty),
-"Product Name": ShopifyAnalytics.meta.product.product_name,
-});
-console.log("Buy Now Clicked");
-if (variantID) {
-console.log('Variant ID:', variantID);
-onBuyNowClick(e, false, [{'id': variantID, 'quantity': qty}]);
-} else {
-onBuyNowClick(e, false, [{'id': ShopifyAnalytics.meta.product.variants[0].id, 'quantity': qty}]);
-}
-}
-</script>
-
-{% if settings.goBuynowEnable %}
-<button type="button" class="button button-solid " onclick="onBuyNow(this)" id="gokwik-buy-now">
-{{ settings.buynow-titile }}
-<div style="display:none">
-<div class="cir-loader">Loading..</div>
-</div>
-</button>
-{% endif %}</div></div>
+    ><div>
+{%- comment -%}
+      Removed legacy GoKwik Buy Now button and JS integration.
+{%- endcomment -%}
+    </div></div>
   
       <style id="custom-css-gw6jMbMEDT">
         .gw6jMbMEDT{
@@ -2264,35 +2240,11 @@ onBuyNowClick(e, false, [{'id': ShopifyAnalytics.meta.product.variants[0].id, 'q
       style="--d:none;--d-tablet:none;--d-mobile:block;--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--op:100%;--mb:var(undefined);--pos-mobile:fixed;--top-mobile:Auto;--right-mobile:15px;--bottom-mobile:15px;--left-mobile:15px;--z-mobile:9999;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--ta:left"
       data-keep-class="true"
       class="gwUMe4Aa13 "
-    ><div><script>
-function onBuyNow(e) {
-const variantID = ShopifyAnalytics.meta.selectedVariantId;
-let qty = document.querySelector('input[name=quantity]')?.value || 1;
-
-// Push event to CleverTap before calling onBuyNowClick
-clevertap.event.push("Buy Now Clicked", {
-"Product ID": variantID || ShopifyAnalytics.meta.product.variants[0].id,
-"Quantity": parseInt(qty),
-"Product Name": ShopifyAnalytics.meta.product.product_name,
-});
-console.log("Buy Now Clicked");
-if (variantID) {
-console.log('Variant ID:', variantID);
-onBuyNowClick(e, false, [{'id': variantID, 'quantity': qty}]);
-} else {
-onBuyNowClick(e, false, [{'id': ShopifyAnalytics.meta.product.variants[0].id, 'quantity': qty}]);
-}
-}
-</script>
-
-{% if settings.goBuynowEnable %}
-<button type="button" class="button button-solid" onclick="onBuyNow(this)" id="gokwik-buy-now">
-{{ settings.buynow-titile }}
-<div style="display:none">
-<div class="cir-loader">Loading..</div>
-</div>
-</button>
-{% endif %}</div></div>
+    ><div>
+{%- comment -%}
+      Removed legacy GoKwik Buy Now button and JS integration.
+{%- endcomment -%}
+    </div></div>
   
        
       

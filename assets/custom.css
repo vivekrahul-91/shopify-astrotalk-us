@@ -517,10 +517,6 @@ body .change_btn#change:hover{
 .sticky_add_to_cart .add_to_cart_button .stickybar_price_wrapper{
   display: inline-block;
 }
-.gokwik-checkout .pay-opt-icon {
-  margin-left: 5px;
-  margin-bottom: 2px;
-}
 
 .fixed_nav {
   position: fixed;
@@ -1037,10 +1033,6 @@ button#x-atc-button-template--24324723999017__main, button#x-atc-button-template
     color: #fff;
 }
 
-    
-    #gokwik-buy-now{
-      padding:11.4px 10px;
-    }
     @media (max-width: 767px) {
     .button-product.forever_sticky_atc > div:last-child {
         padding: 9px;
@@ -1076,17 +1068,6 @@ button#x-atc-button-template--24324723999017__main, button#x-atc-button-template
 body.gradient.temp-defualt-product-old form[data-type="add-to-cart-form"] {
     display: block !important;
 }
-.gokwik-checkout{
-  position: relative;
-}
-.gokwik-checkout::before {
-    content: "Free gift on prepaid orders";
-    background: black;
-    color: #fff;
-    display: inline-block;
-    min-width: 139px;
-    padding: .2rem .5rem;
-    border-radius: 3px;
     font-size: 11px;
     font-weight: 400;
     text-align: center;

@@ -13,12 +13,6 @@
   <head>
     <!-- Start CustomFit.ai Intelligent Code --><!-- DONOT EDIT (including the outer comments) --><script type="text/javascript" id="customfitpreinit" data-cfasync="false" >!function(t,e,i,s){var n=e.getElementById("customfitpreinit");if(n){n.insertAdjacentHTML("beforebegin",'<style type="text/css">.customfit-invisible-preinit-block{visibility:hidden !important; opacity:0 !important}</style>');var c=document.querySelector("html");c.className=c.className+" customfit-invisible-preinit-block",setTimeout(function(){c.className=c.className.replace(/customfit-invisible-preinit-block/g,"")},5e3)}}(window,document);</script><link rel="preload" href="https://c839d4-19.myshopify.com/cdn/shop/files/cf-js-sdk-min.js?v=1763552496" as="script"><script async id="customfitinit" src="https://c839d4-19.myshopify.com/cdn/shop/files/cf-js-sdk-min.js?v=1763552496" onerror='!function(e,t,i,s){var c=t.getElementsByTagName("script")[0],o=t.createElement("script");o.id="customfitinit",o.setAttribute("crossorigin","*"),o.async=!0,o.src="https://sdk.customfit.ai/adc53ea0-c53c-11f0-9ef9-07d286cba3c7/cf-js-sdk-min.js",o.type="text/javascript",c.parentNode.insertBefore(o,c),o.onerror=function(){var e=t.getElementById("customfit-invisible-preinit-block");e&&e.parentNode.removeChild(e)}}(window,document);'></script><link rel="preconnect" href="https://api.customfit.ai" crossorigin /><!-- End CustomFit.ai Intelligent Code -->
 
-    <!-- Gokwik theme code start -->
-    <link rel="dns-prefetch" href="https://pdp.gokwik.co/">
-    <link rel="dns-prefetch" href="https://api.gokwik.co">
-    {% render 'gokwik' %}
-
-    <!-- Gokwik theme code End -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta
@@ -309,40 +303,12 @@
           max-width:100%;
         }
         
-        #gokwik-buy-now {
-        position: relative;   /* required so ::after is positioned inside */
-        overflow: hidden;     /* clip shine effect to button bounds */
-        padding: 12px 10px;
-        color:#fff;
-        background:#000;
-        font-size:14px !important;
-      }
-
-      #gokwik-buy-now::after {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -60%;
-        width: 50%;
-        height: 200%;
-        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
-        animation: gokwik-shine-effect 1.5s ease-in-out infinite alternate;
-        animation-delay: 3s; /* Wait 3 seconds before starting */
-      }
       .add_to_cart_button{
             background: #f0df20 !important;
             color: #131313 !important;
       }
       .add_to_cart_button span.x-atc-text {
     color: #282828 !important;
-        }
-        @keyframes gokwik-shine-effect {
-          0% {
-            left: -100%;
-          }
-          100% {
-            left: 100%;
-          }
         }
         .sticky-textbar::before{
           display:none;
@@ -409,11 +375,6 @@
     >
       {{ 'accessibility.skip_to_text' | t }}
     </a>
-    {% if template == 'cart' %}
-      <style>
-        .gokwik-checkout:before { display:none }
-      </style>
-    {% endif %}
     {% unless template == 'product.whiff-6-old' %}
       <style>
           .button-product.forever_sticky_atc .stickybar_price_wrapper{
@@ -535,7 +496,6 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    {% render 'kwikpass' %}
     <script>
          document.addEventListener("DOMContentLoaded", function() {
           let chatButton = document.querySelector("#chat-button"); // Replace with your chat icon ID or class
@@ -576,23 +536,7 @@
     {% endif %}
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-          document.addEventListener("ReelUpSlideDataLoaded", function(e) {
-            var Selector = e.detail.Selector;
-            let __wrapper = Selector.closest('.reelUp_popup_container');
-            let __mobileProductDetails = __wrapper?.querySelector(".reelUp_mini_details.mini_show");
-            if(__mobileProductDetails){
-              let __product = __mobileProductDetails?.querySelector(".reelUp_mini_bottom_details");
-              let __allSlides = __product?.querySelectorAll(".reelUp_mini_details_bottom");
-              if(__allSlides.length != 0 ){
-                __allSlides?.forEach(slide => {
-                    slide.addEventListener('click', function(e) {
-                      e.preventDefault();
-                      gokwikSdk.initCheckout(merchantInfo);
-                    });
-                });
-              }
-            }
-          });
+          // Legacy GoKwik ReelUp integration removed; no special checkout handling required.
       });
     </script>
     <script>
@@ -760,14 +704,7 @@
 
     // Shopify exposes product data in Liquid:
     var currentProductId = {{ product.id }};
-    
-    // Check if product matches the one you want
-    if (currentProductId === targetProductId) {
-      var btn = document.querySelector("#gokwik-buy-now");
-      if (btn) {
-        btn.textContent = "Book Now";
-      }
-    }
+    // Legacy GoKwik Buy Now label override removed; no special handling required.
   });
 </script>
 {% if template contains 'product' %}

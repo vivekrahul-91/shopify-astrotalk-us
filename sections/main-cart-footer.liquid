@@ -297,7 +297,7 @@
                 </div>
               {%- when 'buttons' -%}
                 <div {{ block.shopify_attributes }}>
-                  <!-- <button
+                  <button
                     id="checkout-submit"
                     class="button button-solid w-full justify-center pl-6 pr-6 pt-3.5 pb-3.5 md:mb-1.5 cursor-pointer leading-normal"
                     type="submit"
@@ -312,8 +312,7 @@
                     <span class="flex items-center justify-center">
                       {% render 'button-label', button_label: button_label, show_button_style: 'primary' %}
                     </span>
-                  </button> -->
-                  {% render 'gokwik-checkout' %}
+                  </button>
                   {%- if additional_checkout_buttons -%}
                     <div class="left{% if settings.enable_estimate_shipping %} button-full{% endif %}">
                       {{ content_for_additional_checkout_buttons }}
