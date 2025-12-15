@@ -1,7 +1,3 @@
-{%- comment -%}
-This file has been modified by the Yoast SEO for Shopify app.
-You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
-{%- endcomment -%}
 {{ 'page.css' | asset_url | stylesheet_tag: preload: true }}
 {% liquid
   assign size_breadcrumbs = settings.text_base_size | times: 0.007875
@@ -26,7 +22,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     }
   }
 {% endstyle %}
-<article class="page__container pt-[{{ section.settings.top_padding | times: 0.75 | round: 0 }}px] md:pt-[{{ section.settings.top_padding }}px] pb-[{{ section.settings.bottom_padding | times: 0.75 | round: 0 }}px] md:pb-[{{ section.settings.bottom_padding }}px]" {% if disabled_by_yoast_seo %}itemscope{% endif %} {% if disabled_by_yoast_seo %}itemtype="http://schema.org/BlogPosting"{% endif %}>
+<article class="page__container pt-[{{ section.settings.top_padding | times: 0.75 | round: 0 }}px] md:pt-[{{ section.settings.top_padding }}px] pb-[{{ section.settings.bottom_padding | times: 0.75 | round: 0 }}px] md:pb-[{{ section.settings.bottom_padding }}px]" itemscope itemtype="http://schema.org/BlogPosting">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {% when 'blog-tags' %}
@@ -58,7 +54,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
             }
           {% endstyle %}
           <div class="{% if block.settings.full_width %} md:pl-0 md:pr-0{% else %} page-width mx-auto{% endif %}{% if block.settings.full_width_mobile %} full-width-mobile{% else %} pr-5 pl-5{% endif %}" {{ block.shopify_attributes }}>
-            <div {% if disabled_by_yoast_seo %}itemprop="image"{% endif %} class="promotion w-full overflow-hidden relative{% if block.settings.mobile_height != 'auto' %} h-[{{ block.settings.mobile_height }}] md:h-auto{% else %} mobile-{{ block.id }}-natural{% endif %}{% if block.settings.desktop_height != 'auto' %} md:promotion:h-[{{ block.settings.desktop_height }}] md:promotion:pb-0{% else %} desktop-{{ block.id }}-natural{% endif %}{% if block.settings.full_width %} md:rounded-none{% else %}{% if settings.edges_type == 'rounded_corners' %} md:rounded-[10px]{% endif %}{% endif %}{% unless block.settings.full_width_mobile %}{% if settings.edges_type == 'rounded_corners' %} rounded-[10px]{% endif %}{% endunless %}">
+            <div itemprop="image" class="promotion w-full overflow-hidden relative{% if block.settings.mobile_height != 'auto' %} h-[{{ block.settings.mobile_height }}] md:h-auto{% else %} mobile-{{ block.id }}-natural{% endif %}{% if block.settings.desktop_height != 'auto' %} md:promotion:h-[{{ block.settings.desktop_height }}] md:promotion:pb-0{% else %} desktop-{{ block.id }}-natural{% endif %}{% if block.settings.full_width %} md:rounded-none{% else %}{% if settings.edges_type == 'rounded_corners' %} md:rounded-[10px]{% endif %}{% endif %}{% unless block.settings.full_width_mobile %}{% if settings.edges_type == 'rounded_corners' %} rounded-[10px]{% endif %}{% endunless %}">
               <img
                 srcset="{{ article.image | image_url: width: 450 }} 450w,
                 {{ article.image | image_url: width: 750 }} 750w,
@@ -81,7 +77,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       
         {%- when 'breadcrumbs'-%}
           {% if settings.advanced_show_breadcrumbs %}
-            <div class="size_breadcrumbs" {% if disabled_by_yoast_seo %}itemprop="articleBody"{% endif %} {{ block.shopify_attributes }}>
+            <div class="size_breadcrumbs" itemprop="articleBody" {{ block.shopify_attributes }}>
               {% render 'breadcrumbs',
                 background_color_light: block.settings.background_color_light,
                 text_color_light: block.settings.text_color_light,
@@ -113,7 +109,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
             }
           {%- endstyle -%}
           <header class="{{ block.settings.class }} page__title page-width ml-auto mr-auto mt-6 mb-4 md:mt-12 {{ block.settings.content_alignment }}" {{ block.shopify_attributes }}>
-            <{{ block.settings.heading_tag }} class="mb-3 h2 {{ block.settings.content_alignment }} title-{{ block.id }} ltr" {% if disabled_by_yoast_seo %}itemprop="headline"{% endif %}>{{ article.title | escape }}</{{ block.settings.heading_tag }}>
+            <{{ block.settings.heading_tag }} class="mb-3 h2 {{ block.settings.content_alignment }} title-{{ block.id }} ltr" itemprop="headline">{{ article.title | escape }}</{{ block.settings.heading_tag }}>
             <div class="{{ block.settings.content_alignment }}">
               {% if block.settings.blog_show_author %}
                 <span class="w-max capitalize mr-0.5"><span>{{ 'sections.featured_blog.by_author' | t }} </span><span>{{ article.author }} </span></span>
@@ -147,7 +143,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
               </div>
             </div>
           </aside>
-          <div class="page__body ml-auto mr-auto rte pt-4 mb-8 md:mb-10 p-break-words text-{{ block.id }}" {% if disabled_by_yoast_seo %}itemprop="articleBody"{% endif %} {{ block.shopify_attributes }}>
+          <div class="page__body ml-auto mr-auto rte pt-4 mb-8 md:mb-10 p-break-words text-{{ block.id }}" itemprop="articleBody" {{ block.shopify_attributes }}>
               {{ article.content }}
           </div>
           </div>
@@ -341,10 +337,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
   {%- endif -%}
 </article>
 {% if section.settings.enable_microdata %}
-  {%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
-{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
-{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.article -%}
-<script type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Article",
@@ -382,9 +375,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
         "name": {{ shop.name | json }}
       }
     }
-  {%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
-</script>
-{%- endif -%}
+  </script>
 {% endif %}
 
 {% schema %}

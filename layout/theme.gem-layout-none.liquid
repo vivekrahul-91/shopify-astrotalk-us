@@ -1,7 +1,3 @@
-{%- comment -%}
-This file has been modified by the Yoast SEO for Shopify app.
-You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
-{%- endcomment -%}
 {% comment %}
 	GEMPAGES BUILDER (https://apps.shopify.com/gempages)
 
@@ -50,17 +46,9 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     <meta name="theme-color" content="">
     
     {% if product.metafields.custom.canonical != blank %}
-        {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<link rel="canonical" href="{{ product.metafields.custom.canonical }}">
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+        <link rel="canonical" href="{{ product.metafields.custom.canonical }}">
     {% else %}
-        {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<link rel="canonical" href="{{ canonical_url }}">
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+        <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
 
     {%- if settings.favicon != blank -%}
@@ -71,16 +59,12 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<title>
+    <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
     {%- if settings.enable_organization_schema and template.name == 'index' -%}
       {% liquid
         if settings.business_address_1 != null
@@ -120,11 +104,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     {%- endif -%}
 
     {% if page_description %}
-      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<meta name="description" content="{{ page_description | escape }}">
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+      <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
     {% liquid
