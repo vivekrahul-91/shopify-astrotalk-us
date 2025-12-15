@@ -1,0 +1,612 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_TgW9xW": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_PAKhPg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sawan_banner_web.webp",
+            "image_mobile": "shopify://shop_images/sawan_banner_mobile.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PAKhPg"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_2_L7gHAG": {
+      "type": "simple-collection-grid-2",
+      "custom_css": [
+        "h2 {padding-top: 0px; margin-top: 16px; margin-bottom: 16px;}",
+        "button.product-card__add-to-cart {background-color: black; color: white;}",
+        "@media screen and (min-width: 1024px) {div.collection-grid-simple__grid {margin-bottom: 30px; }}",
+        "@media screen and (min-width: 1440px) {div.collection-grid-simple__grid {margin-bottom: 30px; }}"
+      ],
+      "name": "Simple Collection Grid 2",
+      "settings": {
+        "section_title": "Combos @999",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "shiv-rudraksh-combos",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0,
+        "enable_view_more": true,
+        "initial_products_count": 4,
+        "view_more_text": "View More",
+        "view_less_text": "View Less",
+        "view_more_bg_color": "#ffffff",
+        "view_more_text_color": "#131313"
+      }
+    },
+    "simple_collection_grid_cjYhYR": {
+      "type": "simple-collection-grid",
+      "disabled": true,
+      "custom_css": [
+        ".collection-grid-simple {padding-bottom: 15px;}",
+        "button.product-card__add-to-cart {color: white; background-color: black;}"
+      ],
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "sawan-siddh-range",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "image_with_text_m8MQAq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ckpw4g": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Siddh 7 Mukhi Rudraksha",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Representing Lord Shiva, it's powerfully <strong>Siddh with Rudraabhishek at Kashi's 1000 years old Kedareshwar Mahadev Mandir </strong>on <strong>first Sawan Somwar</strong>. </p>",
+            "number_of_lines_shown": "medium",
+            "read_more_label": "",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_hwKNmj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_link": "shopify://products/kashi-siddh-7-mukhi-rudraksha",
+            "open_new_window": false,
+            "show_button_style": "secondary",
+            "button_light": "#000000",
+            "button_text_light": "#000000",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "#000000",
+            "secondary_button_light": "#000000",
+            "secondary_button_text_light": "#ffffff",
+            "button_dark": "#131313",
+            "button_text_dark": "#131313",
+            "button_hover_dark": "#000000",
+            "button_text_hover_dark": "#000000",
+            "secondary_button_dark": "#131313",
+            "secondary_button_text_dark": "#131313"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ckpw4g",
+        "button_hwKNmj"
+      ],
+      "custom_css": [
+        ".button {background-color: black;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/creative_6af19768-955f-4ece-80e5-fdda966b87ef.jpg",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 10,
+        "content_layout": "overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 44,
+        "bottom_padding": 12,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 32,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "simple_collection_grid_2_KXAACE": {
+      "type": "simple-collection-grid-2",
+      "custom_css": [
+        "0.5rem.collection-grid-simple {padding-bottom: 15px;}",
+        "button.product-card__add-to-cart {color: white; background-color: black;}",
+        ".collection-grid-simple__view-more-btn {padding: 0.5rem; border-radius: 10px; font-size: 14px; font-weight: 600px; text-decoration: underline;}"
+      ],
+      "name": "Simple Collection Grid 2",
+      "settings": {
+        "section_title": "Siddh Rudraksha",
+        "subtitle": "<strong>Siddhi has been done on 14th July at Kedareshwar Mahadev Mandir, Kashi.</strong>",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "sawan-siddh-range",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 8,
+        "enable_view_more": true,
+        "initial_products_count": 8,
+        "view_more_text": "View More",
+        "view_less_text": "View Less",
+        "view_more_bg_color": "#131313",
+        "view_more_text_color": "#ffffff"
+      }
+    },
+    "video_with_text_VQMarm": {
+      "type": "video-with-text",
+      "disabled": true,
+      "custom_css": [
+        ".video {border-radius: 10px;}"
+      ],
+      "settings": {
+        "sub_heading_video": "",
+        "heading": "",
+        "heading_size_video": 100,
+        "heading_tag": "h2",
+        "text": "",
+        "text_size": 100,
+        "video": "shopify://files/videos/Sequence 20.mp4",
+        "show_sound_control": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_alt_text": "",
+        "overlay_opacity": 0,
+        "button_label": "",
+        "show_button_style": "primary",
+        "button_link": "",
+        "open_new_window": false,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "content_alignment": "center",
+        "color_button": "rgba(0,0,0,0)",
+        "color_button_hover": "rgba(0,0,0,0)",
+        "color_text_button": "rgba(0,0,0,0)",
+        "color_text_button_hover": "rgba(0,0,0,0)",
+        "color_button_secondary": "rgba(0,0,0,0)",
+        "secondary_button_text": "rgba(0,0,0,0)",
+        "colors_text_link": "rgba(0,0,0,0)",
+        "full_width": false,
+        "rounded_corners": false,
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "full_width_mobile": false,
+        "rounded_corners_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 20
+      }
+    },
+    "rich_text_7eW839": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8pMJmN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Navgraha Shanti Bracelet",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "button_3NzdHV": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "https://astrotalk.store/products/navgraha-shanti-bracelet",
+            "open_new_window_button": true,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "open_new_window_button_2": false,
+            "button_link_2": "",
+            "show_button_style_2": "secondary",
+            "color_button": "#131313",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button": "#ffffff",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8pMJmN",
+        "button_3NzdHV"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".button--button_3NzdHV {background-color: black; color: white; min-width: 50%;}",
+        "@media screen and (min-width: 1024px) {.button--button_3NzdHV {min-width: 20%; }}",
+        "@media screen and (min-width: 1440px) {.button--button_3NzdHV {min-width: 20%; }}"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_U8XXet": {
+      "type": "simple-collection-grid",
+      "disabled": true,
+      "custom_css": [
+        "h2 {padding-top: 0px; margin-top: 16px; margin-bottom: 16px;}",
+        "button.product-card__add-to-cart {background-color: black; color: white;}",
+        "@media screen and (min-width: 1024px) {div.collection-grid-simple__grid {margin-bottom: 30px; }}",
+        "@media screen and (min-width: 1440px) {div.collection-grid-simple__grid {margin-bottom: 30px; }}"
+      ],
+      "settings": {
+        "section_title": "Sawan Special Combos",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "shiv-rudraksh-combos",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "simple_collection_grid_2_mRPmmB": {
+      "type": "simple-collection-grid-2",
+      "name": "Simple Collection Grid 2",
+      "settings": {
+        "section_title": "Siddh Murtis",
+        "subtitle": "<strong>Siddhi has been done on 14th July at Kedareshwar Mahadev Mandir, Kashi.</strong>",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "siddh-murtis",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 8,
+        "enable_view_more": true,
+        "initial_products_count": 8,
+        "view_more_text": "View More",
+        "view_less_text": "View Less",
+        "view_more_bg_color": "#131313",
+        "view_more_text_color": "#ffffff"
+      }
+    },
+    "simple_collection_grid_2_Lhzgij": {
+      "type": "simple-collection-grid-2",
+      "name": "Simple Collection Grid 2",
+      "settings": {
+        "section_title": "Original Rudraksha",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "rudraksha-products",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0,
+        "enable_view_more": true,
+        "initial_products_count": 8,
+        "view_more_text": "View More",
+        "view_less_text": "View Less",
+        "view_more_bg_color": "#000000",
+        "view_more_text_color": "#ffffff"
+      }
+    },
+    "simple_collection_grid_2_9HAifX": {
+      "type": "simple-collection-grid-2",
+      "name": "Simple Collection Grid 2",
+      "settings": {
+        "section_title": "Our Bestsellers",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "6-best-sellers",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 8,
+        "enable_view_more": true,
+        "initial_products_count": 4,
+        "view_more_text": "View More",
+        "view_less_text": "View Less",
+        "view_more_bg_color": "#000000",
+        "view_more_text_color": "#ffffff"
+      }
+    },
+    "text_icon_image_wn7yyi": {
+      "type": "text-icon-image",
+      "blocks": {
+        "feature_b3f8Ty": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/10x_benefits_copy_2.webp",
+            "heading": "10x Benefits",
+            "text": ""
+          }
+        },
+        "feature_eHDETb": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/108_hour_mantra_copy_2.webp",
+            "heading": "Siddhi on 1st Somwar of Sawan",
+            "text": ""
+          }
+        },
+        "feature_CbmYfh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/himalayas_1.webp",
+            "heading": "Sourced from Himalayas",
+            "text": ""
+          }
+        },
+        "feature_h64yRg": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/trust_copy_1.webp",
+            "heading": "6+ Years of Trust",
+            "text": ""
+          }
+        },
+        "feature_6amRBK": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/authentic_copy_2.webp",
+            "heading": "100% Authentic Products",
+            "text": ""
+          }
+        },
+        "feature_XNpjBw": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/easy_return_2.webp",
+            "heading": "Easy 7 days Replacement",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_b3f8Ty",
+        "feature_eHDETb",
+        "feature_CbmYfh",
+        "feature_h64yRg",
+        "feature_6amRBK",
+        "feature_XNpjBw"
+      ],
+      "name": "Why Choose Us",
+      "settings": {
+        "class": "",
+        "title": "Why choose Astrotalk?",
+        "subtitle": "100% Original Rudraksha Certified by Trusted Lab",
+        "image_count": 3
+      }
+    },
+    "custom_liquid_AdAfWb": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/gemstone-block-border.png?v=1745844446\">\n<section class=\"akshaya-tritiya-special\">\n  <div class=\"container\">\n    <h2 class=\"title\">Sawan Siddh Special at Astrotalk</h2>\n    <p class=\"description\">\n     The holy month of Sawan is considered highly auspicious for Lord Shiva’s devotees. It’s a time of deep spiritual energy and blessings, especially on Mondays, also known as Sawan Somwars.\nThis year, Astrotalk is conducting a special Rudraksha Siddhi on the First Somwar of Sawan — 14th July at the sacred Kedareshwar Mahadev Mandir, Kashi.\nThis ancient temple, over 1000 years old, holds immense spiritual power. As per legends, darshan at Kedareshwar Mahadev is equivalent to visiting Kedarnath Jyotirling 7 times. Performing Rudraksha Siddhi here amplifies its spiritual potency up to 11 times.\n\n\n    </p>\n\n   \n\n    <div class=\"why-celebrate\">\n      <h3>Why Celebrate Sawan with Astrotalk?</h3>\n      <p>\n        Celebrate Sawan with Astrotalk as your Rudraksha is energised at Kashi’s sacred Kedareshwar Mahadev Temple, multiplying its power 11 times. Experience authentic Siddhi rituals and receive divine blessings for protection, prosperity, and spiritual growth.\n      </p>\n    </div>\n\n\n    <div class=\"cta\">\n      <p>So, don’t wait! Explore our <b>Sawan sale now </b> and bring home the blessings of lord shiva.</p>\n    </div>\n  </div>\n</section>\n<img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/gemstone-block-border.png?v=1745844446\">\n<!-- CSS Styling -->\n<style>\n.akshaya-tritiya-special {\n  padding: 30px 20px;\n  background: #ffead2;\n  font-family: 'Helvetica Neue', sans-serif;\n  color: #333;\n}\n.temp-navratri-landing .section-custom-liquid .full-width {\n    padding: 0;\n}\n.akshaya-tritiya-special .container {\n  max-width: 1000px;\n  margin: 0 auto;\n}\n.akshaya-tritiya-special .title {\n  font-size: 28px;\n  font-weight: bold;\n  text-align: center;\n  color: #c68600;\n  margin-bottom: 20px;\n}\n.akshaya-tritiya-special .description {\n  font-size: 14px;\n  margin-bottom: 20px;\n  line-height: 1.6;\n  text-align: left;\n}\n.akshaya-tritiya-special .why-celebrate {\n  background: #fff3cd;\n  padding: 20px;\n  border-radius: 10px;\n  margin: 40px 0;\n  text-align: center;\n}\n\n.akshaya-tritiya-special .why-celebrate h3 {\n  font-size: 18px;\n  color: #856404;\n  margin-bottom: 10px;\n}\n.akshaya-tritiya-special .products {\n  margin-top: 40px;\n}\n.akshaya-tritiya-special .products h3 {\n  font-size: 2rem;\n  color: #c68600;\n  margin-bottom: 30px;\n  text-align: center;\n}\n.akshaya-tritiya-special .product-list {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: 20px;\n}\n.akshaya-tritiya-special .product-item {\n  background: #fff;\n  padding: 20px;\n  border: 1px solid #f0c36d;\n  border-radius: 10px;\n  transition: box-shadow 0.3s ease;\n}\n.akshaya-tritiya-special .product-item:hover {\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);\n}\n.akshaya-tritiya-special .product-item h4 {\n  font-size: 14px;\n  text-decoration: underline;\n  margin-bottom: 10px;\n  color: #b37000;\n}\n.section-custom-liquid img {\n    width: 100%;\n}\n.akshaya-tritiya-special .product-item p {\n  font-size: 14px;\n  line-height: 1.5;\n}\n.akshaya-tritiya-special .cta {\n  margin-top: 30px;\n  text-align: center;\n}\n.akshaya-tritiya-special .cta p {\n  font-size: 14px;\n  color: #000000;\n  font-weight: bold;\n}\n@media (max-width: 768px) {\n  .akshaya-tritiya-special .title {\n    font-size: 20px;\n  }\n  .akshaya-tritiya-special .products h3 {\n    font-size: 18px;\n  }\n.section-custom-liquid img {\n    width: 100%;\n    height: 18px;\nobject-fit: cover;\n}\n}\n</style>",
+        "full_width": true,
+        "show_section_divider": false,
+        "padding_top": 32,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "testimonial_custom_46kGgd": {
+      "type": "testimonial-custom",
+      "blocks": {
+        "testimonial_block_RCRXfn": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I could instantly feel the powerful vibrations of the Rudraksha the moment I wore it. It felt calming, grounding, and spiritually uplifting. You can tell it’s been properly energised and handled with care.",
+            "testimonial_name": "Keshav Mittal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_xnXP8Y": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I was going through a difficult phase emotionally, and the Rudraksha I got from Astrotalk brought me peace. I felt stronger mentally, like I had divine support with me at all times.",
+            "testimonial_name": "Ramrudra Dutta",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_CrFKcG": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "After placing the energised Rudraksha in my puja room, I noticed a clear shift in my home’s energy. Fights reduced, finances improved, and my sleep became much better. Highly recommend for anyone seeking balance.",
+            "testimonial_name": "Priya Kapoor",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_XephJP": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I’ve bought Rudrakshas before but none felt as real and effective as this one. Knowing that Siddhi was done at a powerful temple gives it added value. Thank you, Astrotalk, for such a genuine product.",
+            "testimonial_name": "Prayush",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_UpjBWa": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "This Rudraksha brought unexpected financial stability into my life. I got a project I had been waiting on for months. I truly believe it's the energy of the 7 Mukhi and the powerful Siddhi done on it.",
+            "testimonial_name": "Harsh Goyal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_block_RCRXfn",
+        "testimonial_block_xnXP8Y",
+        "testimonial_block_CrFKcG",
+        "testimonial_block_XephJP",
+        "testimonial_block_UpjBWa"
+      ],
+      "settings": {
+        "section_title": "Customer Feedback",
+        "section_subtitle": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_TgW9xW",
+    "simple_collection_grid_2_L7gHAG",
+    "simple_collection_grid_cjYhYR",
+    "image_with_text_m8MQAq",
+    "simple_collection_grid_2_KXAACE",
+    "video_with_text_VQMarm",
+    "rich_text_7eW839",
+    "simple_collection_grid_U8XXet",
+    "simple_collection_grid_2_mRPmmB",
+    "simple_collection_grid_2_Lhzgij",
+    "simple_collection_grid_2_9HAifX",
+    "text_icon_image_wn7yyi",
+    "custom_liquid_AdAfWb",
+    "testimonial_custom_46kGgd"
+  ]
+}

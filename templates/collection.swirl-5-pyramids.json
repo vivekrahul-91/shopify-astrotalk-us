@@ -1,0 +1,136 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_MKYEkL": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_EFp3Dg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/website_a7188e21-c8c8-4a89-802c-e4ce9239225b.webp",
+            "image_mobile": "shopify://shop_images/mobile_1_b5ae1b64-0ee2-492e-9bf4-5646a77d8dae.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_EFp3Dg"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".label-btn-quickview {display: none;}"
+      ],
+      "settings": {
+        "enable_filtering": false,
+        "sticky_filtering": false,
+        "filter_type": "drawer",
+        "expand_filter": false,
+        "enable_collection_count": true,
+        "enable_sorting": true,
+        "products_per_page": "1500",
+        "products_per_row_on_desktop": 4,
+        "products_per_row_on_mobile": "2",
+        "paginate_type": "circle",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_quickview": true,
+        "show_description": true,
+        "enable_advanced_filter": false,
+        "key_value": "",
+        "hide_unavaiable_filter": false,
+        "show_quick_view_at_bottom": true,
+        "columns_desktop_1": 4,
+        "desktop_image_width_1": 150,
+        "columns_desktop_2": 4,
+        "desktop_image_width_2": 150,
+        "enable_desktop_slider": false,
+        "image_ratio_filter": "round",
+        "full_width": false,
+        "spacing_col": 30,
+        "spacing_row": 30,
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "spacing_col_mobile": 20,
+        "spacing_row_mobile": 20,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "custom_liquid_9m69QG": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"coll-content\" >{{ collection.metafields.custom.content | metafield_tag }}</div>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 52,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "slideshow_MKYEkL",
+    "product-grid",
+    "custom_liquid_9m69QG"
+  ]
+}

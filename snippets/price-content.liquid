@@ -1,0 +1,124 @@
+<style>
+  @media (min-width: 768px) {
+    .mobile_price_content {
+      display: none;
+    }
+  }
+</style>
+
+<span class="custom_price_wrapper mobile_price_content">
+  <span class="mobile_atc_btn">
+    <span class="mobile_atc_price" style="font-weight: bold; font-size: {% if product.id == 9770625892649 %}1.7em{% else %}1.5em{% endif %};">{{ product.selected_or_first_available_variant.price | money }}</span>
+
+    {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+      <span class="btn_mrp" style="text-decoration: line-through; color: {% if product.id == 9770625892649 %}#666{% else %}grey{% endif %};font-size:{% if product.id == 9770625892649 %}15px{% else %}16px{% endif %}; padding-right:6px;padding-left:6px;">
+        {{ product.selected_or_first_available_variant.compare_at_price | money }}
+      </span>
+
+      {% assign discount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price %}
+      {% assign discount_percent = discount | times: 100 | divided_by: product.selected_or_first_available_variant.compare_at_price %}
+      
+      <span class="saved_price" style="color: green;font-size:16px; font-weight: bold;padding-right:6px;">
+        {% if discount_percent < 25 %}
+          {{ discount_percent | round }}% OFF
+        {% else %}
+          {% assign base_discount = discount_percent | minus: 20 %}
+          {{ base_discount | round }}% 
+          <span class="extra_discount" style="color: #358326;">+ Extra 20% OFF</span>
+        {% endif %}
+      </span>
+    {% endif %}
+  </span>
+</span>
+<div style="min-height:4px;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function syncPrice(sourceElement) {
+    const price = sourceElement.dataset.price;
+    const comparePrice = sourceElement.dataset.compareprice;
+
+    if (!price) return;
+
+    const priceWrapper = document.querySelector('.custom_price_wrapper');
+    if (!priceWrapper) return;
+
+
+    const targetSalePriceElement = priceWrapper.querySelector('.mobile_atc_price');
+    const targetComparePriceElement = priceWrapper.querySelector('.btn_mrp');
+    const targetSavedPriceElement = priceWrapper.querySelector('.saved_price');
+
+    if (targetSalePriceElement) {
+        targetSalePriceElement.innerHTML = formatMoney(price);
+        targetSalePriceElement.style.fontSize = '1.5em';
+    }
+
+    if (comparePrice && parseInt(comparePrice, 10) > parseInt(price, 10)) {
+        if (targetComparePriceElement) {
+            targetComparePriceElement.innerHTML = formatMoney(comparePrice);
+            targetComparePriceElement.style.display = '';
+            targetComparePriceElement.style.color = 'grey';
+            targetComparePriceElement.style.fontSize = '16px';
+        }
+        if (targetSavedPriceElement) {
+            const discount = parseInt(comparePrice, 10) - parseInt(price, 10);
+            const discountPercent = (discount / parseInt(comparePrice, 10)) * 100;
+            
+            // Apply the same logic as in Liquid template for all products
+            if (discountPercent < 25) {
+                targetSavedPriceElement.innerHTML = `${Math.round(discountPercent)}% OFF`;
+            } else {
+                const baseDiscount = discountPercent - 20;
+                targetSavedPriceElement.innerHTML = `${Math.round(baseDiscount)}% <span class="extra_discount" style="color: #358326;">+ Extra 20% OFF</span>`;
+            }
+            targetSavedPriceElement.style.display = '';
+        }
+    } else {
+        if (targetComparePriceElement) targetComparePriceElement.style.display = 'none';
+        if (targetSavedPriceElement) targetSavedPriceElement.style.display = 'none';
+    }
+  }
+
+  let debounceTimer;
+
+  function setupPriceObserver() {
+    let stickyForm = document.querySelector('.sticky-atc form[data-type="add-to-cart-form"], .shopify-product-form--sticky form');
+    if (!stickyForm) {
+        stickyForm = document.querySelector('form[data-type="add-to-cart-form"]');
+    }
+    if (!stickyForm) return;
+
+    const observer = new MutationObserver(() => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            let priceSource = stickyForm.querySelector('button[type="submit"] .price[data-price]');
+            if (!priceSource) {
+                priceSource = stickyForm.querySelector('.price[data-price]');
+            }
+            if (priceSource) {
+                syncPrice(priceSource);
+            }
+        }, 50);
+    });
+
+    observer.observe(stickyForm, { childList: true, subtree: true });
+  }
+
+  setTimeout(setupPriceObserver, 500);
+  
+  function formatMoney(cents) {
+    if (typeof cents === 'string') {
+      cents = parseInt(cents.replace(/[^\d]/g, ''), 10);
+    }
+    
+    // Convert cents to rupees and format with commas
+    const rupees = cents / 100;
+    const formattedAmount = rupees % 1 === 0 ? 
+        rupees.toLocaleString('en-IN') : 
+        rupees.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    
+    return `₹${formattedAmount}`;
+  }
+  
+});
+</script>

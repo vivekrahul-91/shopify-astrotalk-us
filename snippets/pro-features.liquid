@@ -1,0 +1,52 @@
+
+{% assign features = product.metafields.pro.features %}
+{% if features.value.size > 0 %}
+  <div class="product-specifications page-width">
+    <h2>{{ section.settings.heading }}</h2>
+    <ul class="specification-list">
+      {% for feature in features.value %}
+        <li>
+          <span class="check-mark">✓</span> {{ feature }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+<style>
+  .product-specifications {
+      text-align: center;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.product-specifications h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+.specification-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 18px;
+  row-gap: 12px;
+  
+}
+
+.specification-list li {
+       display: flex;
+    align-items: baseline;
+    max-width: calc(50% - 20px);
+    font-size: 14px;
+    text-align: left;
+}
+
+.check-mark {
+  color: #8b0000; /* Dark red color for checkmarks */
+  margin-right: 8px;
+  font-weight: 600;
+}
+</style>

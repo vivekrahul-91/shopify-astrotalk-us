@@ -1,0 +1,221 @@
+<!-- sections/who-can-wear-pukhraj.liquid -->
+{%- comment -%}
+This section displays "Who Can Wear Pukhraj?" information using metafields and metaobjects.
+
+Required metaobject structure:
+- Type: "pukhraj_reason" 
+- Fields:
+  - icon (file): SVG or image file for the icon
+  - title (single_line_text): Title text (e.g., "People with Sagittarius")
+  - description (single_line_text): Description text (e.g., "If Jupiter is weak")
+
+Product metafield:
+- Namespace: "custom"
+- Key: "pukhraj_reason"
+- Type: List of metaobjects
+- References: pukhraj_reason metaobject
+{%- endcomment -%}
+{% comment %} {{ product.metafield.custom.who_wear }} {% endcomment %}
+{% comment %} {{ product.metafields.custom.who-wear.value }} {% endcomment %}
+{% comment %} {%- if product.metafields.custom.who-wear  != blank -%} {% endcomment %}
+  <div class="wear-reason-section">
+    <div class="wear-container">
+      <h2 class="section-title">{{ section.settings.title | default: 'Who Can Wear Pukhraj?' }}</h2>
+      
+      <div class="reason-grid">
+        {%- for reason in product.metafields.custom.who_wear.value -%}
+          <div class="reason-item">
+            {%- if reason.icon != blank -%}
+              <div class="reason-icon">
+                {%- if reason.icon.alt -%}
+                  <img src="{{ reason.icon | image_url: width: 80 }}" 
+                       alt="{{ reason.icon.alt }}" 
+                       width="60" 
+                       height="60">
+                {%- else -%}
+                  <img src="{{ reason.icon | image_url: width: 80 }}" 
+                       alt="{{ reason.title }}" 
+                       width="60" 
+                       height="60">
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            
+            {%- if reason.title != blank -%}
+              <h3 class="reason-title">{{ reason.title }}</h3>
+            {%- endif -%}
+            
+            {%- if reason.description != blank -%}
+              <p class="reason-description">{{ reason.description }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{% comment %} {%- endif -%} {% endcomment %}
+
+<style>
+  .wear-reason-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+    border-radius: 16px;
+    background-color: #fff;
+}
+  
+  .wear-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+.wear-reason-section .section-title {
+    color: var(--Primary, #292526);
+    font-family: var(--rudra-heading-family);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 37px;
+}
+  
+  .reason-grid {
+    max-width: 750px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    align-items: start;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+  .reason-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+    flex: 1;
+  }
+  .reason-icon {
+    width: max-content;
+    padding: 20px;
+    height: auto;
+    border: 1px solid #eaeaea;
+    border-radius: 50%;
+}
+
+  .reason-icon {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .reason-icon img {
+    max-width: 60px;
+    max-height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  
+ .reason-title {
+    margin-bottom: 12px;
+    color: var(--Primary, #292526);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    word-break: break-word;
+}
+  
+  .reason-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .wear-reason-section .section-title {
+        display: block;
+    }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .wear-reason-section {
+    padding: 24px 15px 0;
+    border-radius: 0;
+    }
+      .wear-reason-section .section-title {
+        display: block;
+    }
+  .wear-reason-section .section-title {
+      font-size: 2rem;
+      margin-bottom: 1px;
+    }
+    
+    
+    .reason-title {
+      font-size: 1rem;
+    }
+    
+    .reason-description {
+      font-size: 0.85rem;
+    }
+    .reason-grid {
+    gap: 0px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+  .reason-icon img {
+    width: 76px;
+    max-width: 76px;
+    max-height: 76px;
+  }
+    .reason-icon {
+    padding: 10px;
+        margin-bottom: 10px;
+    }
+    .wear-reason-section .section-title {
+      font-size: 20px !important;
+    }
+    .wear-container{
+    padding: 0;
+  }
+  }
+  @media (max-width: 768px) {
+  .reason-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* optional spacing */
+  }
+
+  .reason-item {
+    width: 48%; /* 2 columns */
+    flex: 0 0 48%; /* force exact 2 columns */
+    padding: 12px 5px; /* adjust padding */
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Who-Can-Wear",
+  "tag": "section",
+  "class": "section section-pukhraj-reason",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Who Can Wear Pukhraj?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wear Section"
+    }
+  ]
+}
+{% endschema %}

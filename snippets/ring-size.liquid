@@ -1,0 +1,69 @@
+<!-- Ring-specific options -->
+<div class="custom-ring-size-wrapper " style= "display: block;">
+  <label for="know_size" class="custom-label">Select Ring Size</label>
+  <select id="know_size" name="properties[Ring Size Preference]" class="custom-select" required>
+    <option value="" disabled selected>Select Ring Size</option>
+    <option value="FREE Size">FREE Size</option>
+    <option value="I know my ring size">I know my ring size</option>
+    <option value="I don't know, please call me">I don't know, please call me</option>
+  </select>
+
+  <div id="ring_size_input_wrapper" style="display: none; margin-top: 1rem;">
+    <label for="ring_size" class="custom-label">Enter your ring size</label>
+    <input type="text" id="ring_size" name="properties[Ring Size]" class="custom-input" placeholder="e.g. 14, 15.5">
+  </div>
+</div>
+<style>
+  .custom-ring-size-wrapper {
+  margin-top: 24px;
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 10px;
+  background: #fffefc;
+}
+
+.custom-label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.custom-select,
+.custom-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.custom-select:focus,
+.custom-input:focus {
+  border-color: #ffb600;
+  box-shadow: 0 0 0 2px rgba(255, 182, 0, 0.3);
+  outline: none;
+}
+
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const select = document.getElementById('know_size');
+    const inputWrapper = document.getElementById('ring_size_input_wrapper');
+    const inputField = document.getElementById('ring_size');
+
+    if (select) {
+      select.addEventListener('change', function () {
+        if (this.value === 'I know my ring size') {
+          inputWrapper.style.display = 'block';
+          inputField.required = true;
+        } else {
+          inputWrapper.style.display = 'none';
+          inputField.value = '';
+          inputField.required = false;
+        }
+      });
+    }
+  });
+</script>

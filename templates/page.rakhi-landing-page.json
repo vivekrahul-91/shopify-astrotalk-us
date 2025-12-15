@@ -1,0 +1,1066 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "customize_timer_nTp3WM": {
+      "type": "customize-timer",
+      "name": "Rakhi Countdown Timer",
+      "settings": {}
+    },
+    "flash_sale_xKipNa": {
+      "type": "flash-sale",
+      "blocks": {
+        "image_banner_e9rbxy": {
+          "type": "image_banner",
+          "settings": {
+            "heading": "Rakhi Countdown On! Order Now!",
+            "heading_size": 110,
+            "heading_tag": "h2",
+            "text": "",
+            "text_size": 100,
+            "coupon_code": "",
+            "coupon_color": "rgba(0,0,0,0)",
+            "coupon_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "countdown_timer_7UMFVH": {
+          "type": "countdown_timer",
+          "settings": {
+            "timezone": "-4",
+            "end_year": 2025,
+            "end_month": "8",
+            "end_day": "9",
+            "end_hour": "0",
+            "end_minute": "0",
+            "timer_style": "square",
+            "border_style": "none",
+            "overlay_opacity": 100,
+            "timer_color_countdown": "rgba(0,0,0,0)",
+            "text_color_countdown": "rgba(0,0,0,0)",
+            "bg_color_countdown": "rgba(0,0,0,0)",
+            "spacing_col": 16,
+            "spacing_col_mobile": 8
+          }
+        }
+      },
+      "block_order": [
+        "image_banner_e9rbxy",
+        "countdown_timer_7UMFVH"
+      ],
+      "disabled": true,
+      "name": "t:sections.flash-sale.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/gradient_mobile.png",
+        "image_mobile": "shopify://shop_images/gradient_mobile.png",
+        "image_overlay_opacity": 0,
+        "show_hero": false,
+        "border_section": "none",
+        "content_layout": "horizontal",
+        "content_alignment": "left",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "spacing_col": 0,
+        "spacing_row": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "spacing_row_mobile": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_73Dqbe": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_FrgUGG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/landing_page_copy_1.webp",
+            "image_mobile": "shopify://shop_images/landing_page_Mobile_copy_1.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_FrgUGG"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_CgKeNh": {
+      "type": "simple-collection-grid",
+      "name": "Simple Collection Grid",
+      "settings": {
+        "section_title": "Our Exclusive Siddh Collection",
+        "subtitle": "These Rakhis are more than just threads — they carry the <strong>divine</strong> <strong>blessings of Lord Krishna, </strong>with puja performed by <strong>11 pandits</strong> at the sacrad Radha-Damodar Mandir at Vrindavan.",
+        "button-text": "ADD TO CART",
+        "class": "custom-prod-grid",
+        "heading_font_size": 24,
+        "collection_handle": "rakhi-collection",
+        "products_per_row_desktop": 5,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "custom_liquid_jrBTfC": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div style=\"text-align: center; margin: 20px 0;\">\n  <a href=\"https://astrotalk.store/pages/build-your-rakhi-box?pb=0\">\n    <img \n    src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/build_you_rakhi_box_menu_page_banner_price_change.webp?v=1753852756\" \n      alt=\"Build Your Rakhi Box\" \n      style=\"max-width: 100%; height: auto; border-radius: 8px; cursor: pointer;\"\n    />\n  </a>\n</div>",
+        "full_width": true,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_adP6HJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kejfHT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Siddhi done at Radha-Damodar Mandir, Vrindavan.",
+            "heading_size": 150,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kejfHT"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffdf4",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "video_gU7RTn": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": 150,
+        "heading_tag": "h2",
+        "sub_heading_video": "",
+        "image": "shopify://shop_images/thumbnail.png",
+        "video": "shopify://files/videos/Vrindavan Sidhhi Main Teaser With Non Copyright Music.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_alt_text": "",
+        "full_width": true,
+        "rounded_corners": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corners_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "scrolling_banner_hCLCTb": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_WHQ88g": {
+          "type": "text",
+          "settings": {
+            "text": "|| हरे कृष्ण हरे कृष्ण, कृष्ण कृष्ण हरे हरे ||",
+            "text_size": 100,
+            "text_color": "primary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        },
+        "image_x4GkVW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/peacock.webp",
+            "height_image": 30,
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        },
+        "text_q9A6Np": {
+          "type": "text",
+          "settings": {
+            "text": "|| हरे कृष्ण हरे कृष्ण, कृष्ण कृष्ण हरे हरे ||",
+            "text_size": 100,
+            "text_color": "primary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        },
+        "image_XiRf8W": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/peacock.webp",
+            "height_image": 30,
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_WHQ88g",
+        "image_x4GkVW",
+        "text_q9A6Np",
+        "image_XiRf8W"
+      ],
+      "name": "t:sections.scrolling_promotion.presets.name",
+      "settings": {
+        "show_border": false,
+        "speed": 10,
+        "direction": "right",
+        "pause_hover": true,
+        "bg_light": "#df0a69",
+        "color_text_light": "#ffffff",
+        "color_text_light_2": "rgba(0,0,0,0)",
+        "bg_dark": "#df0a69",
+        "color_text_dark": "rgba(0,0,0,0)",
+        "color_text_dark_2": "rgba(0,0,0,0)",
+        "space_block": 20,
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "space_block_mobile": 30,
+        "padding_top_mobile": 4,
+        "padding_bottom_mobile": 4
+      }
+    },
+    "rich_text_EBEpnF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hjmCgE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Shop Only for your Bhaiya?",
+            "heading_size": 150,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hjmCgE"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffdf4",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "featured_product_nUKGda": {
+      "type": "featured-product",
+      "blocks": {
+        "text_dmxNMN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Made with 7 power crystals to bring peace, love, and harmony.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        },
+        "buy_buttons_6XtzBP": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "pickup_availability": true,
+            "hide_when_pre_order": false,
+            "preorder_button_label": "Pre-order",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "box_type": "square",
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "text_dmxNMN",
+        "buy_buttons_6XtzBP"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "class": "rakhi-prod",
+        "href": "shopify://products/7-chakra-lumba-rakhi-for-sister-bhabhi",
+        "product": "7-chakra-lumba-rakhi-for-sister-bhabhi",
+        "show_product_name": true,
+        "title_size": 100,
+        "heading_tag": "h2",
+        "show_vendor": false,
+        "make_content_center": true,
+        "desktop_layout": "left",
+        "image_ratio": "natural",
+        "show_arrow_button": false,
+        "show_thumbnails": false,
+        "thumbnail_position": "horizontal",
+        "enable_image_zoom": false,
+        "enable_video_autoplay": true,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": false,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "full_width": false,
+        "spacing_col": "small",
+        "show_section_divider": false,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "full_width_mobile": true,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "background_color_light": "#ffe3f0",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#ffe3f0",
+        "text_dark": "rgba(0,0,0,0)"
+      }
+    },
+    "lumba_rakhi_eCg73x": {
+      "type": "Lumba-rakhi",
+      "name": "Lumba rakhi",
+      "settings": {
+        "featured_product": "book-maha-mrityunjaya-jaap-online",
+        "custom_input_label": "Show love to Bhabhi too—this Rakhi comes with 7 powerful crystals that protect, empower, and connect."
+      }
+    },
+    "slideshow_pcRtgg": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_AfcnDr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/whst_insde_web_1.png",
+            "image_mobile": "shopify://shop_images/whats_inside.png",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_AfcnDr"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "image_with_text_TFAPkg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mwFeLa": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Siddh Raj Yog Rakhi",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>This Siddh Raj Yog Rakhi is crafted with Pyrite for success, Obsidian for strength, and an Evil Eye for protection—blessing your brother with love, courage, and divine support.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_ttEnUj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/siddh-raj-yog-rakhi",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#fed25e",
+            "button_text_light": "#131313",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mwFeLa",
+        "button_ttEnUj"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/lifestyle_1_f5638671-2ec6-4600-a01d-6d3a61494e31.jpg",
+        "class": "pink-rakhi-img",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ed1c79",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_KjRitD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_zYDzCN": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Siddh Dhan Yog Rakhi",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>This Rakhi features four powerful crystals (Citrine, Tiger Eye, Pyrite, Green Aventurine) blessed at the Vrindavan temple for your brother's success, health, wealth, and protection.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_6Y4GcN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/siddh-dhan-yog-rakhi",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#ed1c79",
+            "button_text_light": "#ffffff",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zYDzCN",
+        "button_6Y4GcN"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/lifestyle_6.jpg",
+        "class": "yellow-rakhi-img",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#fed25e",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_ywzpir": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_4g8ejY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Siddh Raksha Rakhi",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>This Rakhi is made with a 5 Mukhi Rudraksha for protection and Clear Quartz for healing and clarity, making it a powerful thread of peace, strength, and divine blessings.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_hi9Rqg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/siddh-raksha-rakhi",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#fed25e",
+            "button_text_light": "#131313",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4g8ejY",
+        "button_hi9Rqg"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/lifestyle_2_dbedd84c-e614-43db-ac07-6936d0114896.jpg",
+        "class": "pink-rakhi-img",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ed1c79",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_k43Rzg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cMYakY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Siddh Samriddhi Rakhi",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>The Samriddhi Rakhi is made with Citrine, Carnelian, and Rudraksha to bring your brother success, strength, and protection. Blessed in Vrindavan, it’s a powerful, thoughtful gift of love.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_icjFAf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/siddh-samriddhi-rakhi",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#ed1c79",
+            "button_text_light": "#ffffff",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cMYakY",
+        "button_icjFAf"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/lifestyle_4_92c5c3ba-f428-42ac-b46d-1e862c784ebb.jpg",
+        "class": "yellow-rakhi-img",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#fed25e",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_ff3QyK": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_gNYFfA": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Siddh Rudraksha Rakhi",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>This sacred Rudraksha Rakhi brings back tradition with a powerful touch. Made with 5 Mukhi Rudraksha and blessed in Vrindavan, it offers your brother strength, peace, and divine protection.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_mYAVCb": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/siddh-rudraksha-rakhi",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#fed25e",
+            "button_text_light": "#131313",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gNYFfA",
+        "button_mYAVCb"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/lifestyle_3_ee9a7834-19fe-46d7-89b7-585f3079c638.jpg",
+        "class": "pink-rakhi-img circle-strip",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ed1c79",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "text_icon_image_KKnpUJ": {
+      "type": "text-icon-image",
+      "blocks": {
+        "feature_mUjNJe": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/10x_1.webp",
+            "heading": "",
+            "text": "10x Powerful  Benefits"
+          }
+        },
+        "feature_Mar7wh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/authentic_1_f85df333-fe5d-47ab-abc4-f476ef362c87.webp",
+            "heading": "",
+            "text": "100% Authentic Beads"
+          }
+        },
+        "feature_4ArDgn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/spiritual_1.webp",
+            "heading": "",
+            "text": "Siddh, Spiritually  Charged"
+          }
+        },
+        "feature_khhWGq": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/8_yr_trust_1.webp",
+            "heading": "",
+            "text": "8+ Years of  Trust"
+          }
+        }
+      },
+      "block_order": [
+        "feature_mUjNJe",
+        "feature_Mar7wh",
+        "feature_4ArDgn",
+        "feature_khhWGq"
+      ],
+      "name": "Why Choose Us",
+      "settings": {
+        "class": "rakhi-icons",
+        "title": "Why choose Astrotalk?",
+        "subtitle": "",
+        "image_count": 1
+      }
+    },
+    "faq_UJzF8W": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_rBN6Nf": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "What makes Reet Rakhis different from regular rakhis?",
+            "row_content": "<p>Reet Rakhis are Siddh and are crafted with healing crystals, like Rudraksha, Citrine, Tiger eyes, and more.</p>"
+          }
+        },
+        "frequently_asked_question_nB87gM": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Are Reet Rakhis energised or blessed?",
+            "row_content": "<p>Yes, every Reet Rakhi is <em>energised and blessed by priests at Radha-Damodar Mandir, Vrindavan,</em> to activate its full potential.</p>"
+          }
+        },
+        "frequently_asked_question_N9eQML": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Can my brother wear the Rakhi daily?",
+            "row_content": "<p>Absolutely! Reet Rakhis are <em>adjustable, comfortable, and stylish</em>, made for daily wear and long-term protection.</p>"
+          }
+        },
+        "frequently_asked_question_kikKkF": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "What benefits do these Rakhis offer?",
+            "row_content": "<p>Each Rakhi offers <em>unique benefits like protection, success, peace, focus, and healing</em>, depending on the crystals and Rudraksha used.</p>"
+          }
+        },
+        "frequently_asked_question_k6p4Um": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Do Reet Rakhis come with Roli-Chawal?",
+            "row_content": "<p>Yes, every Reet Rakhi comes in a festive gift box with Roli-Chawal and a sweet treat, ready to gift your brother with love and blessings.</p>"
+          }
+        },
+        "frequently_asked_question_HeDMFX": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "What can my brother do with the Rakhi once he stops wearing it?",
+            "row_content": "<p>He can tie it in the mandir to bless the space with crystal energy and divine power.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_rBN6Nf",
+        "frequently_asked_question_nB87gM",
+        "frequently_asked_question_N9eQML",
+        "frequently_asked_question_kikKkF",
+        "frequently_asked_question_k6p4Um",
+        "frequently_asked_question_HeDMFX"
+      ],
+      "name": "t:sections.question_and_answer.presets.name",
+      "settings": {
+        "heading": "FAQs",
+        "class": "custom-faq",
+        "heading_size": 140,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "#fffdf4",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "customize_timer_nTp3WM",
+    "flash_sale_xKipNa",
+    "main",
+    "slideshow_73Dqbe",
+    "simple_collection_grid_CgKeNh",
+    "custom_liquid_jrBTfC",
+    "rich_text_adP6HJ",
+    "video_gU7RTn",
+    "scrolling_banner_hCLCTb",
+    "rich_text_EBEpnF",
+    "featured_product_nUKGda",
+    "lumba_rakhi_eCg73x",
+    "slideshow_pcRtgg",
+    "image_with_text_TFAPkg",
+    "image_with_text_KjRitD",
+    "image_with_text_ywzpir",
+    "image_with_text_k43Rzg",
+    "image_with_text_ff3QyK",
+    "text_icon_image_KKnpUJ",
+    "faq_UJzF8W"
+  ]
+}

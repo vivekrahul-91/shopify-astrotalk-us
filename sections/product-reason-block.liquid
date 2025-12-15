@@ -1,0 +1,215 @@
+{% comment %} 
+  Section: Product Reason Block
+  Displays an image, title, and list of bullet points from the product's metaobject reference.
+  Metaobject definition: product_reason_block
+  Metafield key: custom.product_reason_block
+{% endcomment %}
+ {% if product.metafields.custom.product_reason_block %}
+  {% assign block_data = product.metafields.custom.product_reason_block.value %}
+
+  <div class="product-reason-section ">
+    <div class="product-reason-container">
+        {% if block_data.title %}
+          <h2 class="mobile-img text-center font-bold">{{ block_data.title }}</h2>
+        {% endif %}
+      <!-- LEFT IMAGE (Desktop) -->
+      {% if block_data.image %}
+        <div class="reason-image desktop-img">
+          <img src="{{ block_data.image | image_url: width: 900 }}" alt="{{ block_data.title }}">
+        </div>
+      {% endif %}
+
+      <!-- LEFT IMAGE (Mobile) -->
+      {% if block_data.mobile_img %}
+        <div class="reason-image mobile-img">
+          <img src="{{ block_data.mobile_img | image_url: width: 600 }}" alt="{{ block_data.title }}">
+        </div>
+      {% endif %}
+
+      <!-- RIGHT CONTENT -->
+      <div class="reason-content">
+        {% if block_data.title %}
+          <h2 class="desktop-img">{{ block_data.title }}</h2>
+        {% endif %}
+
+        {% if block_data.list_item %}
+          {{ block_data.list_item | metafield_tag }}
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    .product-reason-section {
+      font-family: Inter !Important;
+      background: #FFF5E8;
+      border-radius: 10px;
+      padding: 0px;
+      margin: 0px auto;
+      max-width: 1200px;
+    }
+    .reason-image.desktop-img {
+          width: 100%;
+          max-width: 50%;
+      }
+      .product-reason-section h2{
+     font-family: var(--rudra-heading-family);
+      }
+    .product-reason-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .reason-image img {
+      width: 100%;
+      {% comment %} max-width: 450px; {% endcomment %}
+      height: auto;
+      border-radius: 12px;
+    }
+
+    /* MOBILE IMAGE HIDDEN ON DESKTOP */
+    .mobile-img { display: none; }
+
+    .reason-content h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #2B2B2B;
+      margin-bottom: 20px;
+    }
+    .reason-content {
+        padding: 30px 40px 30px 20px;
+    }
+    .reason-content .metafield-rich_text_field li {
+      {% comment %} align-items: center; {% endcomment %}
+      padding: 12px 0;
+      border-bottom: 1px solid #DBD8B7;
+      font-size: 16px !important;
+      line-height: 28px;
+      list-style: none;
+      display: flex;
+      gap: 12px;
+    }
+.pro-reason-div {
+    background: #f6f6f6;
+}
+    .reason-content .metafield-rich_text_field li::before {
+      content: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Star_1_1.png?v=1762165670);
+      display: inline-block;
+    }
+    .reason-content .metafield-rich_text_field li:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+    @media (min-width: 768px) {
+    .reason-content {
+    width: 100%;
+    max-width: 48%;
+    }
+  }
+    /* --------- RESPONSIVE --------- */
+    @media (max-width: 768px) {
+      .product-reason-container {
+        flex-direction: column;
+        text-align: left;
+        gap: 0px;
+      }
+          
+      .product-reason-section h2 {
+    padding: 40px 20px 0;
+}
+.product-reason-section{
+  border-radius:0;
+      margin: 0px auto;
+      border: solid #f6f6f6;
+    border-width: 8px 0;
+}
+      /* Show mobile image */
+      .desktop-img { display: none; }
+      .mobile-img { display: block; }
+
+      .reason-content h2 {
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 16px;
+      }
+
+      .reason-content .metafield-rich_text_field li {
+        font-size: 14px !important;
+        line-height: 20px;
+      }
+      .reason-content {
+    padding: 0px 20px 30px;
+}
+    }
+  </style>
+
+{% endif %}
+
+
+ {% comment %} {% if product.metafields.custom.product_reason_block %}
+  {% assign block_data = product.metafields.custom.product_reason_block.value %}
+
+  <div class="product-reason-section" style="display:none;background-color:#FFF5E8; border-radius:16px; padding:0px;">
+    <div class="product-reason-container" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; max-width:1200px; margin:0 auto;">
+      
+      <!-- Left: Image -->
+      {% if block_data.image %}
+        <div class="reason-image" style="flex:1 1 45%; text-align:center;">
+          <img 
+            src="{{ block_data.image | image_url: width: 800 }}" 
+            alt="{{ block_data.title | escape }}" 
+            style="width:100%; max-width:450px; border-radius:12px; height:auto;"
+          >
+        </div>
+      {% endif %}
+
+      <!-- Right: Content -->
+      <div class="reason-content" style="flex:1 1 45%; color:#2b2b2b;">
+        {% if block_data.title %}
+          <h2 style="font-size:28px; font-weight:700; margin-bottom:24px; color:#2b2b2b;">
+            {{ block_data.title }}
+          </h2>
+        {% endif %}
+        {% if block_data.list_item %} 
+            
+             {{ block_data.list_item | metafield_tag  }} 
+          
+        {% endif %}
+
+        
+      </div>
+    </div>
+  </div>
+<style>
+  .reason-content .metafield-rich_text_field li::before {
+    content: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Star_1_1.png?v=1762165670);
+}
+
+.reason-content .metafield-rich_text_field li {
+    padding: 10px 10px 10px 2px;
+    border-bottom: 1px solid #DBD8B7;
+    gap: 12px;
+    font-weight: 400;
+    font-size: 20px !important;
+    line-height: 40px;
+}
+</style>
+{% endif %}  {% endcomment %}
+
+{% schema %}
+{
+  "name": "Product Reason Block",
+  "class": "pro-reason-div",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Reason Block"
+    }
+  ]
+}
+{% endschema %}

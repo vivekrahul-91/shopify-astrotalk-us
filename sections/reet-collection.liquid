@@ -1,0 +1,142 @@
+{% schema %}
+{
+  "name": "Reet Collection",
+  "tag": "section",
+  "class": "coll-catg",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Collection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_widget",
+      "name": "Collection Widget",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Brass Murtis"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Bring home power with brass."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Reet Collection",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .coll-catg, .arched-widgets {
+    background: #FFF7E2;
+}
+.arched-widgets {
+    background: transparent;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.arched-heading {
+    margin-bottom: 2.5rem;
+    color: #000;
+    font-family: "Libre Baskerville";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  
+}
+
+.arched-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.arched-card {
+  text-align: center;
+  cursor: pointer;
+}
+.arched-img {
+  width: 100%;
+  /* aspect-ratio: 1/1.2;
+  background-color: #f2e3d2;
+  clip-path: path("M 0 100 C 0 0, 100 0, 100 100 Z"); /* fallback if unsupported */
+  /* border-radius: 0 0 30% 30%; */ */
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.arched-img:hover {
+  transform: scale(1.03);
+}
+.arched-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.arched-subtitle {
+  font-size: 0.875rem;
+  color: #666;
+}
+  @media screen and (max-width: 749px){
+   .arched-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.1rem;
+    }
+    .arched-widgets {
+    background: transparent;
+    padding: 1.3rem 1rem 5px;
+    text-align: center;
+}
+    .arched-title {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1;
+    margin-top: 3px;
+    font-family: var(--font-body-family);
+}
+    .arched-heading {
+    margin-bottom: 0.7rem;
+ }
+  }
+</style>
+
+<div class="arched-widgets page-width">
+  <div class="arched-heading">{{ section.settings.heading }}</div>
+  <div class="arched-grid">
+    {% for block in section.blocks %}
+      {% assign collection = block.settings.collection %}
+      {% if collection %}
+        <a href="{{ collection.url }}" class="arched-card">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | img_url: 'large' }}" alt="{{ block.settings.title }}" class="arched-img" />
+          {% endif %}
+          <div class="arched-title">{{ block.settings.title }}</div>
+          <div class="arched-subtitle">{{ block.settings.subtitle }}</div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

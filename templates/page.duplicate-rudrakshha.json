@@ -1,0 +1,790 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "video_with_text_tkpPQd": {
+      "type": "video-with-text",
+      "disabled": true,
+      "name": "t:sections.video_hero.presets.name",
+      "settings": {
+        "sub_heading_video": "",
+        "heading": "",
+        "heading_size_video": 100,
+        "heading_tag": "h2",
+        "text": "",
+        "text_size": 100,
+        "video": "shopify://files/videos/Banaras Siddhi Teaser For Webpage Converted.mp4 (1).mp4",
+        "show_sound_control": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_alt_text": "",
+        "overlay_opacity": 0,
+        "button_label": "",
+        "show_button_style": "primary",
+        "button_link": "",
+        "open_new_window": false,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "content_alignment": "center",
+        "color_button": "rgba(0,0,0,0)",
+        "color_button_hover": "rgba(0,0,0,0)",
+        "color_text_button": "rgba(0,0,0,0)",
+        "color_text_button_hover": "rgba(0,0,0,0)",
+        "color_button_secondary": "rgba(0,0,0,0)",
+        "secondary_button_text": "rgba(0,0,0,0)",
+        "colors_text_link": "rgba(0,0,0,0)",
+        "full_width": true,
+        "rounded_corners": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "full_width_mobile": true,
+        "rounded_corners_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "slideshow_jdfDbr": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8ELrGB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sidd_rudraksha_banner_web.webp",
+            "image_mobile": "shopify://shop_images/siddh_banner_mobile.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8ELrGB"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 6,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rudraksha_tabs_QLbLdH": {
+      "type": "rudraksha-tabs",
+      "blocks": {
+        "tab_AEdGng": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "About",
+            "content_title": "",
+            "content": "<p>Rudraksha is a special and sacred seed that comes from a tree called <em>Elaeocarpus ganitrus</em>. This tree grows naturally in the Himalayan region and parts of Southeast Asia, and we source the original one from Nepal. But Rudraksha is not just a seed—it holds deep spiritual meaning and strong energy.</p><p>According to ancient stories in Hindu tradition, Rudraksha was born from the tears of Lord Shiva. It is said that while meditating for the well-being of the world, Lord Shiva shed a tear. That tear fell on the Earth and grew into the Rudraksha tree. So, the word “Rudraksha” means “the eye of Rudra,” another name for Lord Shiva.</p><p>Because of this powerful origin, Rudraksha is believed to carry divine energy. People wear it not just for fashion, but to feel calm, think clearly, and grow spiritually. It helps in meditation, protects the wearer from negative energy, and brings peace to the mind.</p><h2><strong>The Science Behind Rudraksha</strong></h2><p>Each genuine Rudraksha seed has unique natural lines called \"mukhis\" that range from 1 to 21. These mukhis give each seed different spiritual properties and benefits. When you wear original Rudraksha regularly, it works with your body's energy to bring balance and peace.</p><h2><strong>How to Care for Your Rudraksha Original?</strong></h2><p>To keep your original Rudraksha powerful, treat it with respect. Clean it gently with water, oil it occasionally with natural oils, and store it safely when not wearing it. Moreover, proper care ensures your natural<a href=\"https://astrotalk.store/collections/rudraksha\"><span style=\"text-decoration:underline\"> Nepali origin Rudraksha</span></a> stays effective for years.</p><h2><strong>Who Can Wear Rudraksha?</strong></h2><p>Everyone can benefit from authentic Rudraksha - students, professionals, spiritual seekers, and anyone looking for peace and balance. Age, gender, religion, or background doesn't matter. These sacred seeds work for anyone with an open heart and genuine intention.</p>"
+          }
+        },
+        "tab_zEgj9p": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Benefits",
+            "content_title": "",
+            "content": "<h2><strong>Benefits of Wearing Siddh Natural Rudraksha<br/></strong><br/><br/>Rudrakshas energised at Kashi's 1000 years old Kedareshwar Mahadev Mandir<strong> </strong>hold immense spiritual power. Blessed by Lord Shiva, these sacred beads protect against negativity, bring mental peace, improve focus, and attract success. When worn during this holy time, it becomes more than just a Rudraksha—it becomes a divine channel of Shiv Ji's blessings in your life.</h2>"
+          }
+        },
+        "tab_kX4BNx": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Type",
+            "content_title": "",
+            "content": "<h2><strong>Types of Rudraksha Beads</strong></h2><p>Rudraksha beads come in different types, based on the number of lines (mukhis) they have. Each type has a special power. Rudraksha from Nepal is considered the most powerful and of the highest quality. Here are some well-known types:</p><ul><li><a href=\"https://astrotalk.store/products/ek-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Ek Mukhi Rudraksha</strong></span></a> helps in deep meditation and spiritual growth. It is rare and very powerful.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/2-mukhi-rudraksha-nepal-origin\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Do Mukhi Rudraksha</strong></span></a> brings peace in relationships and supports emotional balance.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-3-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Teen Mukhi Rudraksha</strong></span></a> burns past bad memories and boosts self-confidence.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-4-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Chaar Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a>improves memory, speaking skills, and creative thinking.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-5-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Paanch Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a>is the most common and helps with peace, health, and focus.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-6-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Chhah Mukhi Rudraksha</strong></span></a> increases willpower and keeps your mind balanced.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/7-mukhi-nepali-origin-rudraksha-silver-capped\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Saat Mukhi Rudraksha</strong></span></a> attracts wealth, luck, and good opportunities.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-8-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Aath Mukhi Rudraksha</strong></span></a> removes obstacles and helps you succeed.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-9-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Nau Mukhi Rudraksha</strong></span></a> gives strength, courage, and powerful energy.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-10-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Dus Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a>protects from negative energy and bad thoughts.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-11-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Gyarah Mukhi Rudraksha</strong></span></a> builds courage and leadership skills.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-12-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Baarah Mukhi Rudraksha</strong></span></a><strong>,</strong> linked to the Sun, brings confidence and power.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-13-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Terah Mukhi Rudraksha</strong></span></a> brings good luck and charm.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/nepal-origin-14-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Chaudah Mukhi Rudraksha</strong></span></a> helps improve intuition and protects from harm.</li></ul><p></p><ul><li><a href=\"https://astrotalk.store/products/gauri-shankar-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nepali Origin Gauri Shankar Rudraksha</strong></span></a> brings love and harmony in relationships, especially in married life.</li></ul><p>Each bead is unique. Pick the one that matches your goal and wear it with faith.<br/><br/><br/><br/></p>"
+          }
+        },
+        "tab_gy64zc": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Quality & price",
+            "content_title": "",
+            "content": "<h2><strong>Rudraksha Quality & Price</strong></h2><p>The quality and price of Rudraksha depend on a few important things. Here’s what affects it the most:</p><ul><li><strong>Mukhis (Lines on the bead):</strong> Rudraksha beads have lines called mukhis. More mukhis (like 10 or more) usually mean the bead is more powerful and costs more.<br/><br/></li><li><strong>Size:</strong> Bigger Rudraksha beads are harder to find and are believed to have more energy. That’s why they are more expensive.<br/><br/></li><li><strong>Shape and Symmetry:</strong> Beads that look round and even are more beautiful and valuable. A perfect shape adds to the energy, too.<br/><br/></li><li><strong>Origin:</strong> Beads from the Himalayan region are said to be the best and most powerful. These usually cost more. We sell Nepali origin rudraksha beads, it is also said they are pure and more powerful. </li></ul><p></p><ul><li><strong>Condition:</strong> Rudraksha without cracks or marks is considered high quality.<br/><br/></li><li><strong>Cleansing and Blessing:</strong> After buying, it’s important to keep the bead clean and blessed. This keeps its energy strong and makes it more valuable.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_AEdGng",
+        "tab_zEgj9p",
+        "tab_kX4BNx",
+        "tab_gy64zc"
+      ],
+      "name": "Product Information Tabs",
+      "settings": {
+        "show_header": false,
+        "subtitle": "RUDRAKSHA",
+        "title": "Protect Your Aura with Sacred Rudraksha",
+        "default_open_tab": "Benefits"
+      }
+    },
+    "product_tabs_nwQC6m": {
+      "type": "product-tabs",
+      "blocks": {
+        "tab_9rTTKr": {
+          "type": "tab",
+          "settings": {
+            "heading": "About",
+            "subheading": "",
+            "headingcontent": "",
+            "heading_base_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "text_alignment": "center",
+            "text_position": "center",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "desktop_height": "550px",
+            "mobile_height": "400px",
+            "image_alignment": "left",
+            "image_alignment_mobile": "left"
+          }
+        },
+        "tab_GW6CjQ": {
+          "type": "tab",
+          "settings": {
+            "heading": "Benefits",
+            "subheading": "Example subheading",
+            "headingcontent": "Image with text",
+            "heading_base_size": 100,
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window": false,
+            "text_alignment": "center",
+            "text_position": "center",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "desktop_height": "550px",
+            "mobile_height": "400px",
+            "image_alignment": "left",
+            "image_alignment_mobile": "left"
+          }
+        },
+        "tab_KX8LjL": {
+          "type": "tab",
+          "settings": {
+            "heading": "Quality & Price",
+            "subheading": "Example subheading",
+            "headingcontent": "Image with text",
+            "heading_base_size": 100,
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window": false,
+            "text_alignment": "center",
+            "text_position": "center",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "desktop_height": "550px",
+            "mobile_height": "400px",
+            "image_alignment": "left",
+            "image_alignment_mobile": "left"
+          }
+        }
+      },
+      "block_order": [
+        "tab_9rTTKr",
+        "tab_GW6CjQ",
+        "tab_KX8LjL"
+      ],
+      "disabled": true,
+      "name": "t:sections.tabs.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": 100,
+        "heading_alignment": "center",
+        "tabs_desktop_alignment": "center",
+        "tabs_mobile_layout": "dropdown",
+        "review_tab_title": "",
+        "show_reviews_count": false,
+        "full_width": false,
+        "padding_top": 20,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 28,
+        "background_color_light": "#fff5e7",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "button_light": "rgba(0,0,0,0)",
+        "button_text_light": "rgba(0,0,0,0)",
+        "button_hover_light": "rgba(0,0,0,0)",
+        "button_text_hover_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "button_dark": "rgba(0,0,0,0)",
+        "button_text_dark": "rgba(0,0,0,0)",
+        "button_hover_dark": "rgba(0,0,0,0)",
+        "button_text_hover_dark": "rgba(0,0,0,0)"
+      }
+    },
+    "collection_ved_list_NBqBd3": {
+      "type": "collection-ved-list",
+      "blocks": {
+        "collection_block_YNVRy7": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "rudraksha-beads",
+            "block_video_url": "https://cdn.shopify.com/videos/c/o/v/1f71bc6717384f0b8aae7a04c3701f37.webm"
+          }
+        },
+        "collection_block_4dB3jT": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "rudraksha-bracelets",
+            "block_video_url": "https://cdn.shopify.com/videos/c/o/v/c8dda568d925430e9059f06615d0fb03.webm"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_YNVRy7",
+        "collection_block_4dB3jT"
+      ],
+      "disabled": true,
+      "name": "Collection Blocks with Video",
+      "settings": {
+        "section_heading": "Product Categories",
+        "background_video_url": ""
+      }
+    },
+    "video_4pYpTk": {
+      "type": "video",
+      "disabled": true,
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "sub_heading_video": "",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_alt_text": "",
+        "full_width": false,
+        "rounded_corners": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "rounded_corners_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "collection_grid_carousel_ebAFCT": {
+      "type": "collection-grid-carousel",
+      "disabled": true,
+      "name": "Collection Carousel Grid",
+      "settings": {
+        "section_title": "Our Best Sellers",
+        "heading_font_size": 24,
+        "collection_handle": "rudraksha",
+        "max_products": 8,
+        "products_per_row_desktop": 4,
+        "show_vendor": false,
+        "show_carousel_indicators": true,
+        "border_radius": 8,
+        "image_border_radius": 10
+      }
+    },
+    "simple_collection_grid_2_NNXtky": {
+      "type": "simple-collection-grid-2",
+      "name": "Simple Collection Grid 2",
+      "settings": {
+        "section_title": "Siddh Nepali Rudraksha",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "siddh-rudraksha-beads",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0,
+        "enable_view_more": true,
+        "initial_products_count": 8,
+        "view_more_text": "View More",
+        "view_less_text": "View Less",
+        "view_more_bg_color": "#000000",
+        "view_more_text_color": "#ffffff"
+      }
+    },
+    "siddh_img_text_dVMNPk": {
+      "type": "siddh-img-text",
+      "name": "Temple Siddhi Section",
+      "settings": {
+        "temple_image": "shopify://shop_images/Rectangle_38_4.png",
+        "video": "shopify://files/videos/Banaras Siddhi Teaser For Webpage Converted.mp4 (1).mp4",
+        "video_url": "",
+        "video_alt_text": "",
+        "rounded_corners": false,
+        "rounded_corners_mobile": false,
+        "tag_text": "SIDDHI DONE AT",
+        "title": "Kedareshwar Mahadev Temple, Kashi",
+        "heading_size": 100,
+        "description": "According to religious beliefs, this temple is more than 1000 years old and having darshan here is equal to visiting Kedarnath Jyotirling 7 times. Performing Rudraksha Siddhi at this divine temple amplifies its spiritual power upto 11 times, making each Rudraksha more effective and stronger."
+      }
+    },
+    "simple_collection_grid_RxjjDd": {
+      "type": "simple-collection-grid",
+      "disabled": true,
+      "name": "Simple Collection Grid",
+      "settings": {
+        "section_title": "All Products",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "custom-prod-grid siddh-all-prod",
+        "heading_font_size": 24,
+        "collection_handle": "other-rudraksha-products",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0
+      }
+    },
+    "simple_collection_grid_2_gjqP3B": {
+      "type": "simple-collection-grid-2",
+      "name": "Simple Collection Grid 2",
+      "settings": {
+        "section_title": "Siddh Bracelets",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "custom-prod-grid siddh-all-prod",
+        "heading_font_size": 24,
+        "collection_handle": "siddh-rudraksha-bracelets",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0,
+        "enable_view_more": true,
+        "initial_products_count": 6,
+        "view_more_text": "View More",
+        "view_less_text": "View Less",
+        "view_more_bg_color": "#000000",
+        "view_more_text_color": "#ffffff"
+      }
+    },
+    "simple_collection_grid_2_RCrWdG": {
+      "type": "simple-collection-grid-2",
+      "name": "Simple Collection Grid 2",
+      "settings": {
+        "section_title": "Kashi Siddh Murtis",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "kashi-siddh-idols",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0,
+        "enable_view_more": true,
+        "initial_products_count": 6,
+        "view_more_text": "View More",
+        "view_less_text": "View Less",
+        "view_more_bg_color": "#000000",
+        "view_more_text_color": "#ffffff"
+      }
+    },
+    "text_icon_image_KKnpUJ": {
+      "type": "text-icon-image",
+      "blocks": {
+        "feature_mUjNJe": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/temple_08fe7b2f-cd9d-493a-b36d-998cf34a86c0.webp",
+            "heading": "",
+            "text": "Siddhi Performed at Kashi"
+          }
+        },
+        "feature_Mar7wh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/shiva.webp",
+            "heading": "",
+            "text": "Powerful Shiv Energy"
+          }
+        },
+        "feature_4ArDgn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/pray_98a123c6-804a-4219-87f2-6dda98e21e46.webp",
+            "heading": "",
+            "text": "Blessed by 11 Brahmins"
+          }
+        },
+        "feature_khhWGq": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/authentic_copy.png",
+            "heading": "",
+            "text": "100% Authentic Beads"
+          }
+        },
+        "feature_ze6V8c": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/himalayas_5d26b397-0aae-4da9-9652-3523a2e319e8.png",
+            "heading": "",
+            "text": "Sourced from Nepal"
+          }
+        },
+        "feature_cUrmXa": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/trust_c94038ba-347b-4fb2-8863-da5903eec1ec.webp",
+            "heading": "",
+            "text": "8+ Years Trust"
+          }
+        }
+      },
+      "block_order": [
+        "feature_mUjNJe",
+        "feature_Mar7wh",
+        "feature_4ArDgn",
+        "feature_khhWGq",
+        "feature_ze6V8c",
+        "feature_cUrmXa"
+      ],
+      "name": "Why Choose Us",
+      "settings": {
+        "class": "",
+        "title": "Why choose Astrotalk?",
+        "subtitle": "100% Original Rudraksha Certified by Trusted Lab",
+        "image_count": 1
+      }
+    },
+    "rudraksha_consultaion_3ybPzf": {
+      "type": "rudraksha-consultaion",
+      "name": "Consultation Section",
+      "settings": {
+        "heading": "Consultation",
+        "consultation_title": "Free Consultation from Rudraksha Expert",
+        "consultation_description": "Our expert will personally call you to help choose the right Rudraksha based on your needs and astrology, guiding you on how to wear, cleanse, and energize the beads for maximum benefits.",
+        "recommender_url": "shopify://pages/rudraksha-calculator",
+        "background_image": "shopify://shop_images/chunkyglitter.png"
+      }
+    },
+    "faq_rudraksha_pAPUNT": {
+      "type": "faq-rudraksha",
+      "blocks": {
+        "faq_bncGLc": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Rudraksha?",
+            "answer": "<p> Rudraksha is a holy seed from nature. People wear it for peace, protection, good health, and the blessings of Lord Shiva.</p>"
+          }
+        },
+        "faq_RkxE9B": {
+          "type": "faq",
+          "settings": {
+            "question": "Can girls wear Rudraksha?",
+            "answer": "<p>Yes, girls and women can wear Rudraksha. It brings calmness, good focus, and emotional strength, and protects them from negativity and stress in daily life.</p>"
+          }
+        },
+        "faq_Ta3bGw": {
+          "type": "faq",
+          "settings": {
+            "question": "Which Rudraksha is best for me based on my date of birth?",
+            "answer": "<p>Use our <a href=\"https://astrotalk.store/pages/rudraksha-calculator\" title=\"https://astrotalk.store/pages/rudraksha-calculator\"><span style=\"text-decoration:underline\"><strong>Rudraksha calculator</strong></span></a> to find the perfect Rudraksha based on your zodiac sign or birth date for best results.</p>"
+          }
+        },
+        "faq_6fbppq": {
+          "type": "faq",
+          "settings": {
+            "question": "How to wear Rudraksha for the first time?",
+            "answer": "<p>Wear it on Monday morning after a bath. Pray to Lord Shiva and keep your mind clean, calm, and positive.</p>"
+          }
+        },
+        "faq_cKUw4a": {
+          "type": "faq",
+          "settings": {
+            "question": "Can we eat non-veg after wearing Rudraksha?",
+            "answer": "<p>Yes, you can eat non-veg while wearing Rudraksha. It’s a personal choice, not a strict rule or requirement.</p>"
+          }
+        },
+        "faq_JGEB7n": {
+          "type": "faq",
+          "settings": {
+            "question": "How to identify a real Rudraksha?",
+            "answer": "<p>Real Rudraksha has clear lines (mukhis) and a natural texture that sinks in water. It feels raw, not plastic or shiny like fake ones.</p>"
+          }
+        },
+        "faq_BdBYP7": {
+          "type": "faq",
+          "settings": {
+            "question": "How to clean Rudraksha?",
+            "answer": "<p>Gently clean with water and a soft cloth. Sometimes, you can apply a little oil to keep it strong and protected.</p>"
+          }
+        },
+        "faq_w3QMcb": {
+          "type": "faq",
+          "settings": {
+            "question": "Where to buy the original Rudraksha?",
+            "answer": "<p>Buy original Rudraksha from <strong>Astrotalk Store</strong>. All pieces are real, certified, and come with full guidance for use.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_bncGLc",
+        "faq_RkxE9B",
+        "faq_Ta3bGw",
+        "faq_6fbppq",
+        "faq_cKUw4a",
+        "faq_JGEB7n",
+        "faq_BdBYP7",
+        "faq_w3QMcb"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "title": "FAQ",
+        "desktop_columns": "4",
+        "background_color": "#ffffff",
+        "panel_color": "#faf5f2"
+      }
+    },
+    "testimonials_k6gyHE": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_DbcEx7": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>“I’ve been wearing the 7 Mukhi Rudraksha bracelet for a month, and I feel a positive shift in my life. The energy around me is calmer, and I have more clarity in my decisions. It’s more than just jewelry—it's a source of strength. Highly recommend it for anyone seeking peace and balance.”<br/><br/></p>",
+            "author_image": "shopify://shop_images/image_2.webp",
+            "author": "Shrishti Sharma",
+            "author_note": "<p>Delhi</p>"
+          }
+        },
+        "testimonial_TkWY44": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Astrotalk’s Rudraksha came energized and ready to wear—no confusion, no rituals needed. I bought it during a tough time in my life and I truly believe it helped restore balance and positivity.\"<br/><br/><br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.37.08_PM_d8969d3f-185d-4b53-9519-9faf0fd68fc0.webp",
+            "author": "Pooja Sinha",
+            "author_note": "<p>Bengaluru</p>"
+          }
+        },
+        "testimonial_afyy4J": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"As a working professional, I needed something to help with mental focus and stress. The 5 Mukhi Rudraksha from Astrotalk has been a real support. Plus, it looks great with my formal wear!\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.57_PM_1_cb78c79f-8129-4130-8cd8-cd858ddb79a5.webp",
+            "author": "Ankita Mehra",
+            "author_note": "<p>Gurgaon</p>"
+          }
+        },
+        "testimonial_PwBdRX": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Running a business comes with stress and sleepless nights. Since wearing my Rudraksha from Astrotalk, I feel more mentally stable and less reactive. Even my wife noticed the difference in me.\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.57_PM_de205be8-ce17-4f67-b7dc-06c495eca854.webp",
+            "author": "Rajeev Chopra",
+            "author_note": "<p>Delhi</p>"
+          }
+        },
+        "testimonial_Rixq4H": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Thank you for this Original 7 Mukhi Rudraksha.... Started feeling very divine life and increased positivity rate along with purified pure soul by 7 Mukhi by blessings of lord Shiva and devi Lakshmi.\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.56_PM_7420402a-bb55-4268-9ce4-f72a01a6ccf9.webp",
+            "author": "Rohan Malviya",
+            "author_note": "<p>Bengaluru</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_DbcEx7",
+        "testimonial_TkWY44",
+        "testimonial_afyy4J",
+        "testimonial_PwBdRX",
+        "testimonial_Rixq4H"
+      ],
+      "name": "t:sections.testimonials.presets.name",
+      "settings": {
+        "heading": "Testimonials",
+        "class": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "multiple",
+        "show_arrow": true,
+        "show_pagination": true,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "show_author_image": true,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 300,
+        "background_color_light": "rgba(0,0,0,0)",
+        "item_background_color_light": "rgba(0,0,0,0)",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "rgba(0,0,0,0)",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 0,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "featured_blog_xD3Vfk": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "class": "",
+        "heading": "Everything Rudraksha",
+        "heading_size": 130,
+        "heading_tag": "h2",
+        "subheading": "",
+        "heading_alignment": "center",
+        "blog": "rudraksha",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "view_all_position": "bottom",
+        "title_size": 110,
+        "content_alignment": "center",
+        "show_image": true,
+        "image_ratio": "75",
+        "item_secondary_background": false,
+        "show_author": false,
+        "show_name": false,
+        "show_date": false,
+        "show_excerpt": false,
+        "show_metafield": true,
+        "show_tag": false,
+        "show_comment_counts": false,
+        "show_read_more": false,
+        "button_read_more_label": "READ NOW",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": false,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "full_width": false,
+        "spacing": 28,
+        "show_section_divider": false,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "columns_mobile": "1",
+        "spacing_mobile": 5,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "video_with_text_tkpPQd",
+    "slideshow_jdfDbr",
+    "rudraksha_tabs_QLbLdH",
+    "product_tabs_nwQC6m",
+    "collection_ved_list_NBqBd3",
+    "video_4pYpTk",
+    "collection_grid_carousel_ebAFCT",
+    "simple_collection_grid_2_NNXtky",
+    "siddh_img_text_dVMNPk",
+    "simple_collection_grid_RxjjDd",
+    "simple_collection_grid_2_gjqP3B",
+    "simple_collection_grid_2_RCrWdG",
+    "text_icon_image_KKnpUJ",
+    "rudraksha_consultaion_3ybPzf",
+    "faq_rudraksha_pAPUNT",
+    "testimonials_k6gyHE",
+    "featured_blog_xD3Vfk"
+  ]
+}

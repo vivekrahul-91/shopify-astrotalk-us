@@ -1,0 +1,321 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_TgW9xW": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_PAKhPg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Buddha_Purnima.webp",
+            "image_mobile": "shopify://shop_images/Buddha_Purnima_Mobile.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PAKhPg"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_8Jnqy7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_U7TVF8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Buddha Purnima Special",
+            "heading_size": 130,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_U7TVF8"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_cjYhYR": {
+      "type": "simple-collection-grid",
+      "custom_css": [
+        ".collection-grid-simple {padding-bottom: 15px;}",
+        "button.product-card__add-to-cart {color: white; background-color: black;}"
+      ],
+      "settings": {
+        "section_title": "",
+        "heading_font_size": 16,
+        "collection_handle": "buddha-purnima-sale",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "promotion_banner_6cRrVc": {
+      "type": "promotion-banner",
+      "name": "t:sections.promotion-banner.presets.name",
+      "settings": {
+        "heading": "Promotion Banner",
+        "image": "shopify://shop_images/Desktop_-_1.webp",
+        "image_mobile": "shopify://shop_images/common_1.webp",
+        "image_link": "",
+        "open_new_window": false,
+        "image_overlay_opacity": 0,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "position_content_mobile": "center",
+        "content_alignment": "center",
+        "show_hero": false,
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "400px",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "simple_collection_grid_U8XXet": {
+      "type": "simple-collection-grid",
+      "custom_css": [
+        "h2 {padding-top: 0px; margin-top: 16px; margin-bottom: 16px;}",
+        "button.product-card__add-to-cart {background-color: black; color: white;}",
+        "@media screen and (min-width: 1024px) {div.collection-grid-simple__grid {margin-bottom: 30px; }}",
+        "@media screen and (min-width: 1440px) {div.collection-grid-simple__grid {margin-bottom: 30px; }}"
+      ],
+      "settings": {
+        "section_title": "Best Sellers",
+        "heading_font_size": 16,
+        "collection_handle": "money-attracting",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "promotion_banner_ebihh3": {
+      "type": "promotion-banner",
+      "settings": {
+        "heading": "Promotion Banner",
+        "image": "shopify://shop_images/p_banner_mobile_d7647846-3f0a-4398-aba9-5b5af059dd10.jpg",
+        "image_mobile": "shopify://shop_images/p_banner_mobile_d7647846-3f0a-4398-aba9-5b5af059dd10.jpg",
+        "image_link": "",
+        "open_new_window": false,
+        "image_overlay_opacity": 0,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "position_content_mobile": "center",
+        "content_alignment": "center",
+        "show_hero": false,
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "custom_liquid_AdAfWb": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .buddha-purnima-special {\n    background-color: #02192B; /* deep blue background */\n    color: white; /* base text color */\n    padding: 40px 20px;\n    font-family: 'Helvetica Neue', sans-serif;\n  }\n\n  .buddha-purnima-special * {\n    color: white !important; /* force white on all nested elements */\n  }\n\n  .buddha-purnima-special .container {\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n\n  .buddha-purnima-special .title,\n  .buddha-purnima-special h2,\n  .buddha-purnima-special h3,\n  .buddha-purnima-special p,\n  .buddha-purnima-special b {\n    color: white !important; /* make sure headlines, bold, and paragraphs are white */\n  }\n\n  .buddha-purnima-special .title {\n    font-size: 2.2em;\n    font-weight: bold;\n    margin-bottom: 20px;\n  }\n\n  .buddha-purnima-special .description,\n  .buddha-purnima-special .why-celebrate p {\n    font-size: 1.1em;\n    line-height: 1.6;\n    margin-bottom: 20px;\n  }\n\n  .buddha-purnima-special .why-celebrate h3 {\n    font-size: 1.5em;\n    margin-top: 30px;\n    margin-bottom: 10px;\n  }\n</style>\n\n<img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/gemstone-block-border.png?v=1745844446\">\n<section class=\"buddha-purnima-special\">\n  <div class=\"container\">\n    <h2 class=\"title\">Buddha Purnima Special at Astrotalk</h2>\n    <p class=\"description\">\n      Buddha Purnima is one of the most sacred days to bring peace, enlightenment, and positive energy into your life. \n      It’s the perfect time for spiritual reflection, embracing new beginnings with clarity, and deepening your spiritual growth. \n      At Astrotalk, we are celebrating this enlightened day with a special offering of spiritual products designed to foster serenity, wisdom, and blessings.\n    </p>\n\n    <p class=\"description\">\n      Our products are carefully chosen and will be specially energized for Buddha Purnima, imbuing them with the specialized energy of the full moon. \n      This Buddha Purnima, consider items that not only enhance your surroundings but also support your journey towards inner peace and spiritual well-being.\n    </p>\n\n    <div class=\"why-celebrate\">\n      <h3>Why Celebrate Buddha Purnima with Astrotalk?</h3>\n      <p>\n        Astrotalk’s Buddha Purnima collection is curated to resonate with the tranquil spirit of the occasion. \n        Plus, all our featured products will undergo a special energization by our best astrologers, \n        ensuring you receive authentic divine vibrations to aid your spiritual path.\n      </p>\n    </div>\n  </div>\n</section>",
+        "full_width": true,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "testimonial_custom_46kGgd": {
+      "type": "testimonial-custom",
+      "blocks": {
+        "testimonial_block_RCRXfn": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I was a bit skeptical at first, but after using the Dhan Yog Bracelet, I noticed a positive shift in my financial situation. New opportunities started coming my way, and managing money became a lot easier. It has truly helped bring financial stability into my life!",
+            "testimonial_name": "Gourav Mittal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_xnXP8Y": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I’ve been wearing the Raw Pyrite Bracelet for a few months now, and I can genuinely feel a positive shift in my financial and mental well-being. Initially, I was skeptical, but I decided to give it a try, and I’m glad I did!",
+            "testimonial_name": "Yash",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_CrFKcG": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I purchased the Money Maker Bracelet with the hope of improving my financial situation, and I must say, it has exceeded my expectations!",
+            "testimonial_name": "Nikita",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_XephJP": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Navgrah Shanti Bracelet has brought a sense of balance and focus into my life. I’ve experienced fewer obstacles, improved financial stability, and a boost in my overall well-being. It’s a wonderful addition for anyone looking to invite positivity and prosperity into their life!",
+            "testimonial_name": "Prayush",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_UpjBWa": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The 7 chakra bracelet has given me a sense of safety and confidence. I feel more protected while traveling and notice less negativity around me. It’s a great choice for anyone looking for extra security and peace of mind!",
+            "testimonial_name": "Davinder Goyal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_block_RCRXfn",
+        "testimonial_block_xnXP8Y",
+        "testimonial_block_CrFKcG",
+        "testimonial_block_XephJP",
+        "testimonial_block_UpjBWa"
+      ],
+      "settings": {
+        "section_title": "Customer Feedback",
+        "section_subtitle": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_TgW9xW",
+    "rich_text_8Jnqy7",
+    "simple_collection_grid_cjYhYR",
+    "promotion_banner_6cRrVc",
+    "simple_collection_grid_U8XXet",
+    "promotion_banner_ebihh3",
+    "custom_liquid_AdAfWb",
+    "testimonial_custom_46kGgd"
+  ]
+}

@@ -1,0 +1,1088 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "video_4pYpTk": {
+      "type": "video",
+      "custom_css": [
+        ".video {height: auto !important;}"
+      ],
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "sub_heading_video": "",
+        "image": "shopify://shop_images/Screenshot_16_1.webp",
+        "video": "shopify://files/videos/Rudraksh Import From Nepal Video For Website1 Converted.mp4.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_alt_text": "",
+        "full_width": true,
+        "rounded_corners": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corners_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "slideshow_jdfDbr": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8ELrGB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Desktop_Banner_1.webp",
+            "image_mobile": "shopify://shop_images/Mobile_Banner_2_1.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8ELrGB"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 6,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rudraksha_tabs_QLbLdH": {
+      "type": "rudraksha-tabs",
+      "blocks": {
+        "tab_AEdGng": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "About",
+            "content_title": "",
+            "content": "<p>Rudraksha is a special and sacred seed that comes from a tree called <em>Elaeocarpus ganitrus</em>. This tree grows naturally in the Himalayan region and parts of Southeast Asia, and we source the original one from Nepal. But Rudraksha is not just a seed—it holds deep spiritual meaning and strong energy.</p><p>According to ancient stories in Hindu tradition, Rudraksha was born from the tears of Lord Shiva. It is said that while meditating for the well-being of the world, Lord Shiva shed a tear. That tear fell on the Earth and grew into the Rudraksha tree. So, the word “Rudraksha” means “the eye of Rudra,” another name for Lord Shiva.</p><p>Because of this powerful origin, Rudraksha is believed to carry divine energy. People wear it not just for fashion, but to feel calm, think clearly, and grow spiritually. It helps in meditation, protects the wearer from negative energy, and brings peace to the mind.</p><h2><strong>The Science Behind Rudraksha</strong></h2><p>Each genuine Rudraksha seed has unique natural lines called \"mukhis\" that range from 1 to 21. These mukhis give each seed different spiritual properties and benefits. When you wear original Rudraksha regularly, it works with your body's energy to bring balance and peace.</p><h2><strong>How to Care for Your Rudraksha Original?</strong></h2><p>To keep your original Rudraksha powerful, treat it with respect. Clean it gently with water, oil it occasionally with natural oils, and store it safely when not wearing it. Moreover, proper care ensures your natural<a href=\"https://astrotalk.store/collections/rudraksha\"><span style=\"text-decoration:underline\"> Nepali origin Rudraksha</span></a> stays effective for years.</p><h2><strong>Who Can Wear Rudraksha?</strong></h2><p>Everyone can benefit from authentic Rudraksha - students, professionals, spiritual seekers, and anyone looking for peace and balance. Age, gender, religion, or background doesn't matter. These sacred seeds work for anyone with an open heart and genuine intention.</p>"
+          }
+        },
+        "tab_zEgj9p": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Benefits",
+            "content_title": "",
+            "content": "<h2><strong>Benefits of Wearing Natural Rudraksha</strong></h2><p>There are many amazing benefits of wearing Rudraksha. These holy beads are full of positive energy and are blessed before you wear them. Here are some of the main benefits:</p><ul><li><strong>Full of positive energy:</strong> Each Rudraksha is filled with good energy before it is given to you. This makes it strong.</li><li><strong>Energy protection:</strong> Rudraksha works like a shield. It protects you from bad energy and keeps you safe</li><li><strong>Cleanses your aura:</strong> It helps remove negative vibes from your body and surroundings. Anyone can wear it.</li><li><strong>Helps in spiritual growth:</strong> Rudraksha supports your spiritual journey and makes you more open to blessings and peace.<br/><br/></li></ul><p></p>"
+          }
+        },
+        "tab_kX4BNx": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Type",
+            "content_title": "",
+            "content": "<h3><strong>What are Types of Rudraksha Bracelets We Offer?</strong><br/><br/></h3><p><a href=\"https://astrotalk.store/products/nirakar-rudraksha\"><span style=\"text-decoration:underline\"><strong>Nirakar Rudraksha (0 Mukhi)</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>The 0 mukhi rudraksha stands for the formless divine energy. It helps in deep meditation and inner awakening. This rare bead is useful for people on a spiritual path who want to connect with higher consciousness and enlightenment.</p><p><a href=\"https://astrotalk.store/products/ek-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>1 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>Ek Mukhi Rudraksha is the rarest and most powerful bead. It symbolizes Lord Shiva and supports deep spiritual growth. It helps in letting go of material attachments. To get full benefits, wearing it with proper guidance is important.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-3-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>3 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>Ruled by Lord Agni, this Rudraksha helps clear past life karma and feelings of guilt. It supports people with low confidence and boosts their self-worth. It also improves creativity and helps in growing artistic and imaginative skills.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-4-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>4 Mukhi Rudraksha</strong></span></a></p><p>This bead is linked to Lord Brahma and helps improve knowledge, wisdom, and how you speak. It supports better memory and learning. It also boosts thinking power and helps you grow mentally and spiritually in daily life.</p><p><a href=\"https://astrotalk.store/products/kashi-siddh-5-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>5 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>The 5 mukhi rudraksha bracelet helps in keeping the mind calm and the body healthy. Each original 5 mukhi rudraksha bracelet is quality-checked. Many people have shared great feedback about the Astrotalk 5 mukhi rudraksha bracelet.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-6-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>6 Mukhi Rudraksha</strong></span></a> </p><p>This Rudraksha is blessed by Lord Kartikeya. It boosts willpower, courage, and focus. It helps remove hurdles in life and supports success. It is also helpful for those who are into sports, challenges, or competitive careers.</p><p><a href=\"https://astrotalk.store/products/7-mukhi-nepali-origin-rudraksha-silver-capped\"><span style=\"text-decoration:underline\"><strong>7 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>The 7 Mukhi Rudraksha bracelet original is linked with Goddess Lakshmi. It brings wealth, success, and protection from money loss. This bead also helps improve leadership, clear thinking, and removes problems related to finances and business.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-8-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>8 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>This bead is blessed by Lord Ganesha and helps remove problems from your path. It brings success in new beginnings like jobs or businesses. It also boosts your thinking power and helps you make better decisions.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-9-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>9 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>This bead, blessed by Goddess Durga, gives strength and protection. It helps people who are going through tough times or need courage. It also supports in reducing fear and calming anxiety.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-10-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>10 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>Ruled by Lord Vishnu, this Rudraksha protects you from bad energies and negative forces. It is helpful for those facing tough situations and brings calmness and balance in family life, supporting peace and emotional well-being.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-11-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>11 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>Ruled by the eleven Rudras, this bead boosts spiritual energy and inner awareness. It supports those on a spiritual journey and helps deepen meditation. It also offers protection during spiritual practices and strengthens intuitive abilities.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-12-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>12 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>This Rudraksha is ruled by Lord Surya and helps boost confidence, leadership, and decision-making power. It is good for those in top roles or government jobs and brings name, fame, and respect.</p><p><a href=\"https://astrotalk.store/products/nepal-origin-13-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>13 Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>This unique bead, linked to Lord Indra, helps attract wealth, comfort, and high status. It supports those aiming for success in life and boosts charm, confidence, and strong personal appeal.</p><p><a href=\"https://astrotalk.store/products/garbh-gauri-rudraksha\"><span style=\"text-decoration:underline\"><strong>Garbh Gauri Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>This sacred Rudraksha bead symbolizes divine motherhood and is known to support couples who wish to have children. It also helps pregnant women by promoting a safe and healthy delivery.</p><p><a href=\"https://astrotalk.store/products/ganesh-mukhi-rudraksha\"><span style=\"text-decoration:underline\"><strong>Ganesh Mukhi Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>This bead, shaped like Lord Ganesha’s trunk, helps remove life’s obstacles and brings success. It’s a powerful support for anyone starting something new or stepping into an important phase of life.</p><p><a href=\"https://astrotalk.store/products/gauri-shankar-rudraksha\"><span style=\"text-decoration:underline\"><strong>Gauri Shankar Rudraksha</strong></span><span style=\"text-decoration:underline\"> </span></a></p><p>Gauri Shankar Rudraksha shows the strong bond of Shiva and Parvati. It helps couples build love, trust, and peace in their relationship, making it ideal for those who want harmony and deeper connection in their married life.</p>"
+          }
+        },
+        "tab_gy64zc": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Quality & price",
+            "content_title": "",
+            "content": "<h2><strong>Rudraksha Quality & Price</strong></h2><p>The quality and price of Rudraksha depend on a few important things. Here’s what affects it the most:</p><ul><li><strong>Mukhis (Lines on the bead):</strong> Rudraksha beads have lines called mukhis. More mukhis (like 10 or more) usually mean the bead is more powerful and costs more.<br/><br/></li><li><strong>Size:</strong> Bigger Rudraksha beads are harder to find and are believed to have more energy. That’s why they are more expensive.<br/><br/></li><li><strong>Shape and Symmetry:</strong> Beads that look round and even are more beautiful and valuable. A perfect shape adds to the energy, too.<br/><br/></li><li><strong>Origin:</strong> Beads from the Himalayan region are said to be the best and most powerful. These usually cost more. We sell Nepali origin rudraksha beads, it is also said they are pure and more powerful. </li></ul><p></p><ul><li><strong>Condition:</strong> Rudraksha without cracks or marks is considered high quality.<br/><br/></li><li><strong>Cleansing and Blessing:</strong> After buying, it’s important to keep the bead clean and blessed. This keeps its energy strong and makes it more valuable.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_AEdGng",
+        "tab_zEgj9p",
+        "tab_kX4BNx",
+        "tab_gy64zc"
+      ],
+      "name": "Product Information Tabs",
+      "settings": {
+        "show_header": false,
+        "subtitle": "RUDRAKSHA",
+        "title": "Protect Your Aura with Sacred Rudraksha",
+        "default_open_tab": "Benefits"
+      }
+    },
+    "product_tabs_nwQC6m": {
+      "type": "product-tabs",
+      "blocks": {
+        "tab_9rTTKr": {
+          "type": "tab",
+          "settings": {
+            "heading": "About",
+            "subheading": "",
+            "headingcontent": "",
+            "heading_base_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "text_alignment": "center",
+            "text_position": "center",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "desktop_height": "550px",
+            "mobile_height": "400px",
+            "image_alignment": "left",
+            "image_alignment_mobile": "left"
+          }
+        },
+        "tab_GW6CjQ": {
+          "type": "tab",
+          "settings": {
+            "heading": "Benefits",
+            "subheading": "Example subheading",
+            "headingcontent": "Image with text",
+            "heading_base_size": 100,
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window": false,
+            "text_alignment": "center",
+            "text_position": "center",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "desktop_height": "550px",
+            "mobile_height": "400px",
+            "image_alignment": "left",
+            "image_alignment_mobile": "left"
+          }
+        },
+        "tab_KX8LjL": {
+          "type": "tab",
+          "settings": {
+            "heading": "Quality & Price",
+            "subheading": "Example subheading",
+            "headingcontent": "Image with text",
+            "heading_base_size": 100,
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window": false,
+            "text_alignment": "center",
+            "text_position": "center",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "desktop_height": "550px",
+            "mobile_height": "400px",
+            "image_alignment": "left",
+            "image_alignment_mobile": "left"
+          }
+        }
+      },
+      "block_order": [
+        "tab_9rTTKr",
+        "tab_GW6CjQ",
+        "tab_KX8LjL"
+      ],
+      "disabled": true,
+      "name": "t:sections.tabs.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": 100,
+        "heading_alignment": "center",
+        "tabs_desktop_alignment": "center",
+        "tabs_mobile_layout": "dropdown",
+        "review_tab_title": "",
+        "show_reviews_count": false,
+        "full_width": false,
+        "padding_top": 20,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 28,
+        "background_color_light": "#fff5e7",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "button_light": "rgba(0,0,0,0)",
+        "button_text_light": "rgba(0,0,0,0)",
+        "button_hover_light": "rgba(0,0,0,0)",
+        "button_text_hover_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "button_dark": "rgba(0,0,0,0)",
+        "button_text_dark": "rgba(0,0,0,0)",
+        "button_hover_dark": "rgba(0,0,0,0)",
+        "button_text_hover_dark": "rgba(0,0,0,0)"
+      }
+    },
+    "collection_ved_list_NBqBd3": {
+      "type": "collection-ved-list",
+      "blocks": {
+        "collection_block_YNVRy7": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "rudraksha-beads",
+            "block_video_url": "https://cdn.shopify.com/videos/c/o/v/1f71bc6717384f0b8aae7a04c3701f37.webm"
+          }
+        },
+        "collection_block_4dB3jT": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "rudraksha-bracelets",
+            "block_video_url": "https://cdn.shopify.com/videos/c/o/v/c8dda568d925430e9059f06615d0fb03.webm"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_YNVRy7",
+        "collection_block_4dB3jT"
+      ],
+      "disabled": true,
+      "name": "Collection Blocks with Video",
+      "settings": {
+        "section_heading": "Product Categories",
+        "background_video_url": ""
+      }
+    },
+    "collection_grid_carousel_ebAFCT": {
+      "type": "collection-grid-carousel",
+      "disabled": true,
+      "name": "Collection Carousel Grid",
+      "settings": {
+        "section_title": "Our Best Sellers",
+        "heading_font_size": 24,
+        "collection_handle": "rudraksha",
+        "max_products": 8,
+        "products_per_row_desktop": 4,
+        "show_vendor": false,
+        "show_carousel_indicators": true,
+        "border_radius": 8,
+        "image_border_radius": 10
+      }
+    },
+    "rich_text_qUn9it": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BKeMcA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Buy Original Rudraksha & Rudraksha Bracelets – 0 to 21 Mukhi",
+            "heading_size": 100,
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BKeMcA"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "rud-h1",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_LjdfdN": {
+      "type": "simple-collection-grid",
+      "disabled": true,
+      "name": "Simple Collection Grid",
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "rudraksha",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0
+      }
+    },
+    "home_page_collection_BkVXJ8": {
+      "type": "Home-Page-Collection",
+      "name": "All Products Collection",
+      "settings": {
+        "collection_handle": "rudraksha",
+        "storefront_token": "=ITOwIGOwYDZ3kjZxATZzMDMjJmZxUWZ1kTZlRjM5QmM",
+        "products_per_row_desktop": 4,
+        "section_heading": "",
+        "section_description": "",
+        "show_reviews": true
+      }
+    },
+    "featured_collection_T3pFQM": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_HxWY6h": {
+          "type": "collection",
+          "settings": {
+            "collection": "rudraksha-mala",
+            "show_description": true,
+            "description": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "show_vendor": false,
+            "show_rating": false,
+            "show_quickview": true,
+            "show_promotion": false,
+            "promotion_position": "left",
+            "card_link": "",
+            "open_new_window": false,
+            "enable_text_overlay": false,
+            "overlay_opacity": 0,
+            "image_ratio": "100",
+            "show_sound_control": false,
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "product_card": "",
+            "heading": "Featured collection",
+            "heading_size": 70,
+            "content": "<p>10% OFF</p>",
+            "text_size": 100,
+            "content_alignment": "center",
+            "content_position": "bottom",
+            "button_label": "See more",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "background_color": "rgba(0,0,0,0)",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "collection_HxWY6h"
+      ],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Rudraksha Mala",
+        "heading_size": 130,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "subheading": "",
+        "text": "<p>🙏 Bring Peace, Focus & Positivity with Sacred and 100 % Authentic Rudraksha Malas</p>",
+        "show_view_all": false,
+        "view_all_position": "top",
+        "title_size": 130,
+        "title_style": "none",
+        "enable_desktop_slider": false,
+        "slider_style": "horizontal",
+        "swiper_on_mobile": false,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "columns_desktop": 2,
+        "rows_desktop": 1,
+        "spacing": 28,
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "eventname": "",
+        "columns_mobile": "1",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "text_icon_image_KKnpUJ": {
+      "type": "text-icon-image",
+      "blocks": {
+        "feature_mUjNJe": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/world_s_largest.webp",
+            "heading": "",
+            "text": "World’s Largest Astrology Brand"
+          }
+        },
+        "feature_khhWGq": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/2nd.webp",
+            "heading": "",
+            "text": "Rudraksha Verified by Top Astrologers"
+          }
+        },
+        "feature_Mar7wh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/certified_1.webp",
+            "heading": "",
+            "text": "Certified by India’s top Labs"
+          }
+        },
+        "feature_ze6V8c": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/himalayas_1.webp",
+            "heading": "",
+            "text": "Sourced from Nepal"
+          }
+        },
+        "feature_cUrmXa": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/trust_copy_1.webp",
+            "heading": "",
+            "text": "Trusted by 5 Crore+ Customers"
+          }
+        }
+      },
+      "block_order": [
+        "feature_mUjNJe",
+        "feature_khhWGq",
+        "feature_Mar7wh",
+        "feature_ze6V8c",
+        "feature_cUrmXa"
+      ],
+      "name": "Why Choose Us",
+      "settings": {
+        "class": "",
+        "title": "Why choose Astrotalk?",
+        "subtitle": "100% Original Rudraksha Certified by Trusted Lab",
+        "image_count": 3
+      }
+    },
+    "rudraksha_consultaion_3ybPzf": {
+      "type": "rudraksha-consultaion",
+      "name": "Consultation Section",
+      "settings": {
+        "heading": "Consultation",
+        "consultation_title": "Free Consultation from Rudraksha Expert",
+        "consultation_description": "Our expert will personally call you to help choose the right Rudraksha based on your needs and astrology, guiding you on how to wear, cleanse, and energize the beads for maximum benefits.",
+        "recommender_url": "shopify://pages/rudraksha-calculator",
+        "background_image": "shopify://shop_images/chunkyglitter.png"
+      }
+    },
+    "rich_text_k96XHQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dCx4R8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Buy 100% Original Rudraksha 0-21 Mukhi ",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_TKPaVd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Buy 100% Original Rudraksha 0 to 21 Mukhi from our trusted collection. Each rudraksha bead is checked properly to ensure it's pure and full of divine energy. These holy beads have been used for many years to bring peace, protection, and success in life. Our collection includes all types—from zero mukhi rudraksha to 21 mukhi, so you can choose the one that suits your spiritual and astrological needs.</p><p>Rudraksha beads are believed to bring positive changes when worn the right way. Whether it’s the popular 5 mukhi rudraksha or a powerful 7 mukhi rudraksha bracelet, each has its own unique benefit. We will help you understand which rudraksha matches your birth chart and life path. You’ll also learn how to spot real rudraksha and how to wear it properly to get the best results for your spiritual growth and inner peace.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dCx4R8",
+        "text_TKPaVd"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "background-text-div",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fff9f1",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_Rf69KT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_LMWaKh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Choose Original Rudraksha?",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_qgQxNK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Original Rudraksha beads carry natural energies that help calm the mind and improve focus. These effects have even been supported by scientific research. The <strong>Astrotalk Rudraksha bracelet</strong> collection is carefully tested to make sure every bead is 100% real. Today, many fake Rudraksha beads are available in the market, but only the <strong>genuine Rudraksha</strong> creates a special energy that matches your body’s aura.</p><p><strong>Rudraksha benefits</strong> include deeper meditation, protection from bad energies, and better health. These powerful beads grow naturally on the sacred Rudraksha tree. Every <strong>Rudraksha mala</strong> holds the blessings of <strong>Lord Shiva</strong>. With time and use, real beads become smoother and shinier, which does not happen with fake ones.</p><p><strong>5 Mukhi Rudraksha,</strong> or <strong>Panchmukhi Rudraksha,</strong> is known for bringing peace and reducing stress. <strong>Rudraksha Ratna combinations</strong> can further boost the spiritual power of each bead. To get the full benefit, always check that your Rudraksha is original. The <strong>best Rudraksha for success and career</strong> depends on your birth chart and planetary positions.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LMWaKh",
+        "text_qgQxNK"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "background-text-div",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_jEDX6Q": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zjJXTg": {
+          "type": "heading",
+          "settings": {
+            "heading": "How to Identify 100% Original Rudraksha?",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_PR6xBA": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>A <strong>7 mukhi nepali rudraksha bracelet</strong> can be checked easily to know if it's real.<br/></li><li>Real rudraksha beads have natural holes in the middle—not man-made ones.<br/></li><li>The surface feels a little rough and has natural lines called “mukhis.”<br/></li><li>The best way to check is the water test. Real beads sink in water.<br/></li><li>Fake ones float because they’re made from light, artificial stuff.<br/></li><li>Always do this test carefully so you don’t harm the sacred bead.<br/></li><li>A <strong>rudraksha bracelet for women and men</strong> should have beads that look a little different in size and color.<br/></li><li>If all beads look too perfect, it’s likely not real.<br/></li><li>Real ones also have a natural woody smell.<br/></li><li><a href=\"https://astrotalk.store/blogs/rudraksha/rudraksha-wearing-guidelines\"><span style=\"text-decoration:underline\">Rudraksha Wearing Guidelines</span></a> say to always get an authenticity certificate.<br/></li><li>Our <strong>rudraksha bracelet astrotalk</strong> range comes with expert-verified reports for trusted results.</li></ul>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zjJXTg",
+        "text_PR6xBA"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "background-text-div",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fff9f1",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_ebVM89": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_p8HTKh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who Should Wear Rudraksha?",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_p8HTKh"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "background-text-div",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_T6qen3": {
+      "type": "rich-text",
+      "blocks": {
+        "text_AGBGt7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Anyone can wear Rudraksha, no matter their age, gender, or religion. It brings peace, protection, and positive energy. You can also use a Rudraksha calculator to find the most suitable bead based on your date of birth and life goals. Students wear it to improve focus and memory, while working people use it to stay calm and perform better. Business owners wear it for success and luck.</p><p>People who meditate use Rudraksha to connect with their inner self, and those with health or relationship problems also benefit. The 21 Mukhi Rudraksha is very rare and powerful, meant only for advanced spiritual people under expert guidance.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "text_AGBGt7"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "background-text-div",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_VnmVTD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4XfUBp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Buy From Us?",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_DGwKe4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our <a href=\"https://astrotalk.store/\"><span style=\"text-decoration:underline\">Astrotalk store</span></a> Rudraksha collection is loved for its genuine quality and spiritual energy. The beads are carefully sourced from trusted places in Nepal and Indonesia. Each 5 Mukhi Rudraksha bracelet original goes through proper tests like X-ray and water checks to make sure it’s real. </p><p>Our spiritual experts give personal advice based on your birth chart. You also get a certificate of authenticity with every bracelet. We care about your satisfaction, which is why many happy customers trust us. We also offer full support and clear pricing, with no hidden charges or false promises. Your trust means everything to us.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4XfUBp",
+        "text_DGwKe4"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "background-text-div",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_LtgG73": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BxmPBx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Conclusion",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_ipGahB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Buy 100% Original Rudraksha 0 to 21 Mukhi from our trusted collection and feel real spiritual change in your life. These holy rudraksha beads are known to bring peace, success, and balance when worn correctly.</p><p><br/> From a 7 mukhi rudraksha bracelet for wealth to a 5 mukhi rudraksha bracelet for good health, our full range has options for every need. Each piece is verified and authentic.<br/></p><p> Don’t take chances with fake beads—they may look real but don’t work. Always choose genuine rudraksha ratna for the right energy and results.<br/></p><p>You can also talk to our expert astrologers to know which mukhi suits your birth chart and goals best. We’re here to guide you the right way.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BxmPBx",
+        "text_ipGahB"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "background-text-div",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fff9f1",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "faq_rudraksha_pAPUNT": {
+      "type": "faq-rudraksha",
+      "blocks": {
+        "faq_bncGLc": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Rudraksha?",
+            "answer": "<p> Rudraksha is a holy seed from nature. People wear it for peace, protection, good health, and the blessings of Lord Shiva.</p>"
+          }
+        },
+        "faq_RkxE9B": {
+          "type": "faq",
+          "settings": {
+            "question": "Can girls wear Rudraksha?",
+            "answer": "<p>Yes, girls and women can wear Rudraksha. It brings calmness, good focus, and emotional strength, and protects them from negativity and stress in daily life.</p>"
+          }
+        },
+        "faq_Ta3bGw": {
+          "type": "faq",
+          "settings": {
+            "question": "Which Rudraksha is best for me based on my date of birth?",
+            "answer": "<p>Use our <a href=\"https://astrotalk.store/pages/rudraksha-calculator\" title=\"https://astrotalk.store/pages/rudraksha-calculator\"><span style=\"text-decoration:underline\"><strong>Rudraksha calculator</strong></span></a> to find the perfect Rudraksha based on your zodiac sign or birth date for best results.</p>"
+          }
+        },
+        "faq_6fbppq": {
+          "type": "faq",
+          "settings": {
+            "question": "How to wear Rudraksha for the first time?",
+            "answer": "<p>Wear it on Monday morning after a bath. Pray to Lord Shiva and keep your mind clean, calm, and positive.</p>"
+          }
+        },
+        "faq_cKUw4a": {
+          "type": "faq",
+          "settings": {
+            "question": "Can we eat non-veg after wearing Rudraksha?",
+            "answer": "<p>Yes, you can eat non-veg while wearing Rudraksha. It’s a personal choice, not a strict rule or requirement.</p>"
+          }
+        },
+        "faq_JGEB7n": {
+          "type": "faq",
+          "settings": {
+            "question": "How to identify a real Rudraksha?",
+            "answer": "<p>Real Rudraksha has clear lines (mukhis) and a natural texture that sinks in water. It feels raw, not plastic or shiny like fake ones.</p>"
+          }
+        },
+        "faq_BdBYP7": {
+          "type": "faq",
+          "settings": {
+            "question": "How to clean Rudraksha?",
+            "answer": "<p>Gently clean with water and a soft cloth. Sometimes, you can apply a little oil to keep it strong and protected.</p>"
+          }
+        },
+        "faq_w3QMcb": {
+          "type": "faq",
+          "settings": {
+            "question": "Where to buy the original Rudraksha?",
+            "answer": "<p>Buy original Rudraksha from <strong>Astrotalk Store</strong>. All pieces are real, certified, and come with full guidance for use.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_bncGLc",
+        "faq_RkxE9B",
+        "faq_Ta3bGw",
+        "faq_6fbppq",
+        "faq_cKUw4a",
+        "faq_JGEB7n",
+        "faq_BdBYP7",
+        "faq_w3QMcb"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "title": "FAQ",
+        "desktop_columns": "4",
+        "background_color": "#ffffff",
+        "panel_color": "#faf5f2"
+      }
+    },
+    "testimonials_k6gyHE": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_DbcEx7": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>“I’ve been wearing the 7 Mukhi Rudraksha bracelet for a month, and I feel a positive shift in my life. The energy around me is calmer, and I have more clarity in my decisions. It’s more than just jewelry—it's a source of strength. Highly recommend it for anyone seeking peace and balance.”<br/><br/></p>",
+            "author_image": "shopify://shop_images/image_2.webp",
+            "author": "Shrishti Sharma",
+            "author_note": "<p>Delhi</p>"
+          }
+        },
+        "testimonial_TkWY44": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Astrotalk’s Rudraksha came energized and ready to wear—no confusion, no rituals needed. I bought it during a tough time in my life and I truly believe it helped restore balance and positivity.\"<br/><br/><br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.37.08_PM_d8969d3f-185d-4b53-9519-9faf0fd68fc0.webp",
+            "author": "Pooja Sinha",
+            "author_note": "<p>Bengaluru</p>"
+          }
+        },
+        "testimonial_afyy4J": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"As a working professional, I needed something to help with mental focus and stress. The 5 Mukhi Rudraksha from Astrotalk has been a real support. Plus, it looks great with my formal wear!\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.57_PM_1_cb78c79f-8129-4130-8cd8-cd858ddb79a5.webp",
+            "author": "Ankita Mehra",
+            "author_note": "<p>Gurgaon</p>"
+          }
+        },
+        "testimonial_PwBdRX": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Running a business comes with stress and sleepless nights. Since wearing my Rudraksha from Astrotalk, I feel more mentally stable and less reactive. Even my wife noticed the difference in me.\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.57_PM_de205be8-ce17-4f67-b7dc-06c495eca854.webp",
+            "author": "Rajeev Chopra",
+            "author_note": "<p>Delhi</p>"
+          }
+        },
+        "testimonial_Rixq4H": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Thank you for this Original 7 Mukhi Rudraksha.... Started feeling very divine life and increased positivity rate along with purified pure soul by 7 Mukhi by blessings of lord Shiva and devi Lakshmi.\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.56_PM_7420402a-bb55-4268-9ce4-f72a01a6ccf9.webp",
+            "author": "Rohan Malviya",
+            "author_note": "<p>Bengaluru</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_DbcEx7",
+        "testimonial_TkWY44",
+        "testimonial_afyy4J",
+        "testimonial_PwBdRX",
+        "testimonial_Rixq4H"
+      ],
+      "name": "t:sections.testimonials.presets.name",
+      "settings": {
+        "heading": "Testimonials",
+        "class": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "multiple",
+        "show_arrow": true,
+        "show_pagination": true,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "show_author_image": true,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 300,
+        "background_color_light": "rgba(0,0,0,0)",
+        "item_background_color_light": "rgba(0,0,0,0)",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "rgba(0,0,0,0)",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 0,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "featured_blog_xD3Vfk": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "class": "",
+        "heading": "Everything Rudraksha",
+        "heading_size": 130,
+        "heading_tag": "h2",
+        "subheading": "",
+        "heading_alignment": "center",
+        "blog": "rudraksha",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "view_all_position": "bottom",
+        "title_size": 110,
+        "content_alignment": "center",
+        "show_image": true,
+        "image_ratio": "auto",
+        "item_secondary_background": false,
+        "show_author": false,
+        "show_name": false,
+        "show_date": false,
+        "show_excerpt": false,
+        "show_metafield": true,
+        "show_tag": false,
+        "show_comment_counts": false,
+        "show_read_more": false,
+        "button_read_more_label": "READ NOW",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": false,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "full_width": false,
+        "spacing": 28,
+        "show_section_divider": false,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "columns_mobile": "1",
+        "spacing_mobile": 5,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "video_4pYpTk",
+    "slideshow_jdfDbr",
+    "rudraksha_tabs_QLbLdH",
+    "product_tabs_nwQC6m",
+    "collection_ved_list_NBqBd3",
+    "collection_grid_carousel_ebAFCT",
+    "rich_text_qUn9it",
+    "simple_collection_grid_LjdfdN",
+    "home_page_collection_BkVXJ8",
+    "featured_collection_T3pFQM",
+    "text_icon_image_KKnpUJ",
+    "rudraksha_consultaion_3ybPzf",
+    "rich_text_k96XHQ",
+    "rich_text_Rf69KT",
+    "rich_text_jEDX6Q",
+    "rich_text_ebVM89",
+    "rich_text_T6qen3",
+    "rich_text_VnmVTD",
+    "rich_text_LtgG73",
+    "faq_rudraksha_pAPUNT",
+    "testimonials_k6gyHE",
+    "featured_blog_xD3Vfk"
+  ]
+}

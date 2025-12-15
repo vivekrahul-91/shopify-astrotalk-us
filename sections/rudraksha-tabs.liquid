@@ -1,0 +1,443 @@
+<!-- sections/rudraksha-tabs.liquid -->
+
+<style>
+  .rudraksha-tabs-section {
+    padding: 0 0 40px;
+    background-color: #f8f4f0;
+  }
+  
+  .rudraksha-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0px 40px;
+  }
+  
+  .rudraksha-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .rudraksha-title {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .tab-content-body h2 , .tab-content-body h3 {
+    margin-bottom:10px;
+  }
+  
+  .rudraksha-subtitle {
+    color: #c9302c;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  .tab-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    flex-wrap: wrap;
+  }
+  
+  .tab-button {
+    background: none;
+    border: none;
+    padding: 15px 25px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    /* font-weight: 700; */
+    color: #000;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family : "Avenir Next", sans-serif;
+  }
+  
+  .tab-button:hover {
+    color: #c35e38;
+    border-bottom-color: #c35e38;
+  }
+  
+  .tab-button.active {
+    color: #c35e38;
+    border-bottom-color: #c35e38;
+  }
+  
+  .tab-content {
+    display: none;
+    background: #f4f4f4;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    line-height: 1.6;
+  }
+  
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .tab-content h3 {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .tab-content h4 {
+    color: #000;
+    font-size: 1.2rem;
+    margin: 25px 0 15px 0;
+    font-weight: 600;
+  }
+  
+  .tab-content p {
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 15px;
+  }
+  
+  .tab-content ul, .tab-content ol {
+    margin: 15px 0;
+    padding-left: 25px;
+  }
+  
+  .tab-content li {
+    margin-bottom: 8px;
+    color: #000;
+  }
+  
+  .tab-content strong {
+    color: #000;
+    font-weight: 600;
+  }
+.rudraksha-tabs-section .tab-content li {
+    font-size: 14px;
+}
+  /* Read More/Less Styles */
+  .read-more-container {
+    position: relative;
+  }
+  
+  .read-more-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    /* background: linear-gradient(to bottom, transparent, #f4f4f4); */
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .read-more-container.expanded .read-more-gradient {
+    opacity: 0;
+  }
+  
+  .read-more-btn {
+    background: linear-gradient(204deg, #D56A42 15.48%, #9F4723 123.44%);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .read-more-btn:hover {
+    background: #a02622;
+  }
+  
+  .content-collapsed {
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .content-expanded {
+    max-height: none;
+    overflow: visible;
+  }
+  
+  @media (max-width: 768px) {
+    .rudraksha-title {
+      font-size: 2rem;
+    }
+    
+       .tab-navigation {
+                flex-direction: row;
+        flex-wrap: nowrap;
+        /* gap: 15px; */
+        overflow: auto;
+        justify-content: space-around;
+       }
+    
+    .tab-button {
+      margin: 5px 0;
+      text-align: center;
+    }
+    
+    .tab-content {
+      padding: 20px;
+    }
+    .tab-button {
+    padding: 2px;
+    }
+     .tab-button:first-child {
+    padding: 2px;
+    }
+    .rudraksha-tabs-section {
+    padding: 2px 0;
+}
+    .tab-content {
+    margin: 0 20px;
+    padding: 12px;
+    }
+    
+    .content-collapsed {
+      max-height: 150px;
+    }
+  }
+</style>
+
+<div class="rudraksha-tabs-section">
+  <div class="rudraksha-container">
+    
+    {% if section.settings.show_header %}
+    <div class="rudraksha-header">
+      {% if section.settings.subtitle != blank %}
+        <div class="rudraksha-subtitle">{{ section.settings.subtitle }}</div>
+      {% endif %}
+      
+      {% if section.settings.title != blank %}
+        <h2 class="rudraksha-title">{{ section.settings.title }}</h2>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="tab-navigation">
+      {% for block in section.blocks %}
+        {% assign is_default = false %}
+        {% if section.settings.default_open_tab != blank and block.settings.tab_title == section.settings.default_open_tab %}
+          {% assign is_default = true %}
+        {% elsif section.settings.default_open_tab == blank and forloop.first %}
+          {% assign is_default = true %}
+        {% endif %}
+        
+        <button class="tab-button {% if is_default %}active{% endif %}" 
+                onclick="openTab(event, 'tab-{{ forloop.index }}')"
+                {{ block.shopify_attributes }}>
+          {{ block.settings.tab_title }}
+        </button>
+      {% endfor %}
+    </div>
+
+    {% for block in section.blocks %}
+      {% assign is_default = false %}
+      {% if section.settings.default_open_tab != blank and block.settings.tab_title == section.settings.default_open_tab %}
+        {% assign is_default = true %}
+      {% elsif section.settings.default_open_tab == blank and forloop.first %}
+        {% assign is_default = true %}
+      {% endif %}
+      
+      <div id="tab-{{ forloop.index }}" 
+           class="tab-content {% if is_default %}active{% endif %}"
+           {{ block.shopify_attributes }}>
+        
+        {% if block.settings.content_title != blank %}
+          <h3>{{ block.settings.content_title  }}</h3>
+        {% endif %}
+        
+        {% comment %} Count words in content {% endcomment %}
+        {% assign content_text = block.settings.content | strip_html | strip %}
+        {% assign word_count = content_text | split: ' ' | size %}
+        
+        {% if word_count > 50 %}
+          <div class="read-more-container" id="container-{{ forloop.index }}">
+            <div class="tab-content-body content-collapsed" id="content-{{ forloop.index }}">
+              {{ block.settings.content }}
+            </div>
+            <div class="read-more-gradient" id="gradient-{{ forloop.index }}"></div>
+            <button class="read-more-btn" onclick="toggleReadMore({{ forloop.index }})" id="btn-{{ forloop.index }}">
+              Read More
+            </button>
+          </div>
+        {% else %}
+          <div class="tab-content-body">
+            {{ block.settings.content }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<script>
+function openTab(evt, tabId) {
+  var i, tabcontent, tablinks;
+  
+  // Hide all tab content
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.remove("active");
+  }
+  
+  // Remove active class from all tab buttons
+  tablinks = document.getElementsByClassName("tab-button");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  
+  // Show the selected tab and mark button as active
+  document.getElementById(tabId).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+
+function toggleReadMore(index) {
+  const container = document.getElementById('container-' + index);
+  const content = document.getElementById('content-' + index);
+  const gradient = document.getElementById('gradient-' + index);
+  const btn = document.getElementById('btn-' + index);
+  
+  if (content.classList.contains('content-collapsed')) {
+    // Expand content
+    content.classList.remove('content-collapsed');
+    content.classList.add('content-expanded');
+    container.classList.add('expanded');
+    btn.textContent = 'Read Less';
+  } else {
+    // Collapse content
+    content.classList.remove('content-expanded');
+    content.classList.add('content-collapsed');
+    container.classList.remove('expanded');
+    btn.textContent = 'Read More';
+    
+    // Scroll to top of content for better UX
+    content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+</script>
+
+{% schema %}
+{
+  "name": "Rudraksha Tabs",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show Header Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "RUDRAKSHA"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Protect Your Aura with Sacred Rudraksha"
+    },
+    {
+      "type": "text",
+      "id": "default_open_tab",
+      "label": "Default Open Tab",
+      "info": "Enter the exact tab title to open by default. Leave empty to open first tab.",
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab Title",
+          "default": "About"
+        },
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title (Optional)"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Tab Content",
+          "info": "Content with more than 50 words will automatically show Read More/Less functionality",
+          "default": "<p>Add your content here...</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rudraksha Tabs",
+      "settings": {
+        "default_open_tab": "About"
+      },
+      "blocks": [
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "About",
+            "content_title": "Rudraksha Meaning",
+            "content": "<p>Wield the most potent energetic resources and get closer to the outcomes you desire in life with a certified Rudraksha. It is a sacred seed that comes from the Elaeocarpus ganitrus tree, which is majorly found in Southeast Asia and the Himalayas. This holy seed is worshiped in Hinduism, and the name 'Rudraksha' means 'the eye of Rudra,' referring to Lord Shiva.</p><p>These seeds improve attention and focus, which is why they are frequently used as malas for prayer and meditation. Rudraksha seeds have distinct facets called 'mukhis,' which typically range from 1 to 21 and are each linked to certain spiritual qualities and advantages.</p><p>Wearing original rudraksha can ease tension, encourage tranquility, and improve physical health. To provide the best possible energy flow, regular care involves cleaning and maintaining the bead in contact with the skin. Since fakes are so common, it's imperative to buy genuine Rudraksha.</p>"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Benefits",
+            "content_title": "Spiritual and Physical Benefits",
+            "content": "<p>Rudraksha beads offer numerous benefits for both spiritual and physical well-being:</p><ul><li><strong>Spiritual Growth:</strong> Enhances meditation and spiritual practices</li><li><strong>Mental Clarity:</strong> Improves focus, concentration, and mental stability</li><li><strong>Stress Relief:</strong> Reduces anxiety, tension, and negative emotions</li><li><strong>Physical Health:</strong> May help regulate blood pressure and improve overall health</li><li><strong>Emotional Balance:</strong> Brings peace, tranquility, and emotional stability</li><li><strong>Protection:</strong> Acts as a shield against negative energies</li></ul>"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "How to Wear",
+            "content_title": "How to Wear Rudraksha",
+            "content": "<ol><li><strong>Wear it at all times:</strong> The sacred genuine Rudraksha seed should be worn continuously.</li><li><strong>Avoid hot water and soap:</strong> Protect the bead from harsh chemicals.</li><li><strong>Safe for bathing:</strong> It can be worn while bathing with cold water and natural cleansers.</li><li><strong>Storage:</strong> When not in use, store the Rudraksha on white or undyed cotton, silk, or any natural fabric.</li></ol>"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Care Instructions",
+            "content_title": "How to Care Natural Rudraksha",
+            "content": "<p>Daily exposure to external elements can dry out the beads, leading to cracks. To maintain their benefits, condition the natural Rudraksha every six months by soaking it in ghee for 24 hours, followed by full-fat milk for another 24 hours, and then smearing it with vibhuti. This process helps you enjoy this original Himalayan treasure for years to come.</p>"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Who Should Wear",
+            "content_title": "Who should wear Natural Rudraksha",
+            "content": "<p>Rudraksha can be worn by anyone seeking spiritual growth, mental clarity, or emotional balance. It is highly beneficial for spiritual practitioners engaged in meditation, yoga, or other spiritual practices, enhancing focus and connection. Individuals looking to reduce stress or negativity may also find support in wearing natural Rudraksha. Importantly, it is inclusive and can be worn by people of all backgrounds, regardless of gender, culture, ethnicity, or religious beliefs.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

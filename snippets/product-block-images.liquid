@@ -1,0 +1,35 @@
+
+{% assign benefitsim = product.metafields.custom.bene_images.value %}
+      {% assign index = 0 %}  <!-- Initialize index -->
+
+        {% for image in benefitsim %}
+          <div class="feature">
+              {% if image != blank %}
+                  <div class="icon">
+                      <img src="{{ image | img_url: 'large' }}" alt="Benefit Image" />
+                  </div>
+              {% endif %}
+          </div>
+          
+          {% assign index = index | plus: 1 %}  <!-- Increment index -->
+          {% if index >= benefits.size %}
+              {% assign index = 0 %}  <!-- Reset index if it exceeds the size -->
+          {% endif %}
+{% endfor %}
+<style>
+.benefits-block img {
+    width: 100%;
+    border-radius: 14px !important;
+    display: block;
+}
+
+.benefits-block .icon {
+    padding: 10px;
+}
+.benefits-block-div  hr{margin: 0 10px;}
+.benefits-heading {
+    font-size: 14px;
+    font-family: "Avenir Next", sans-serif;
+    padding: 8px 15px;
+}
+</style>

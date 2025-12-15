@@ -1,0 +1,359 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<title>Rakhi Countdown</title>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- FlipDown CSS -->
+  <link rel="stylesheet" href="https://pbutcher.uk/flipdown/css/flipdown/flipdown.css">
+
+  <style>
+
+    .rakhi-countdown-wrapper {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .rakhi-text {
+        font-size: 24px;
+        font-family: var(--font-heading-family);
+        font-weight: 600;
+        color: #000;
+        padding: 0;
+        text-align: left;
+        flex: 1 1 100%;
+    }
+
+    .flipdown-wrapper {
+      flex: 1 1 100%;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .flipdown {
+      transform: scale(0.8);
+    }
+.flipdown {
+    overflow: visible;
+    width: auto;
+    height: auto;
+}
+    @media(min-width: 768px) {
+      .rakhi-countdown-wrapper {
+        flex-wrap: nowrap;
+      }
+
+      .rakhi-text {
+        flex: 0 0 40%;
+        font-size: 24px;
+        text-align: left;
+      }
+
+      .flipdown-wrapper {
+        flex: 0 0 60%;
+        justify-content: flex-end;
+      }
+
+      .flipdown {
+        transform: scale(1);
+      }
+    }
+
+    /* Optional: Tighten the FlipDown spacing */
+    .flipdown .rotor-group {
+      margin-right: 5px;
+    }
+
+    .flipdown .rotor-group:last-child {
+      margin-right: 0;
+    }
+
+
+.rotor-group-heading {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+    .flipdown .rotor-group-heading:before {
+    display: block;
+    height: 28px;
+    line-height: 30px;
+    text-align: center;
+}
+    .flipdown .rotor {
+    position: relative;
+    float: left;
+    width: 35px;
+    height: 56px;
+    margin: 0px 6px 0px 0px;
+    border-radius: 4px;
+    font-size: 2.8rem;
+    text-align: center;
+    perspective: 200px;
+}
+    .flipdown .rotor-leaf {
+    z-index: 1;
+    position: absolute;
+    width: 35px;
+    height: 56px;
+    transform-style: preserve-3d;
+    transition: transform 0s;
+}
+    .flipdown .rotor-top {
+    line-height: 56px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.flipdown .rotor-top, .flipdown .rotor-bottom {
+    overflow: hidden;
+    position: absolute;
+    width: 35px;
+    height: 28px;
+}
+    .flipdown .rotor-bottom {
+    bottom: 0;
+    line-height: 0px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+    .flipdown .rotor-leaf-front {
+    line-height: 56px;
+    border-radius: 4px 4px 0px 0px;
+}
+    .flipdown .rotor:after {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 35px;
+    height: 28px;
+    border-radius: 0px 0px 4px 4px;
+}
+    .flipdown .rotor-leaf-front, .flipdown .rotor-leaf-rear {
+    overflow: hidden;
+    position: absolute;
+    width: 35px;
+    height: 28px;
+    margin: 0;
+    /* transform: rotateX(0deg); */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+    .flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):before {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 84px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+    .flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+    content: '';
+    position: absolute;
+    bottom: 32px;
+    left: 84px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.flipdown .rotor-group {
+    position: relative;
+    float: left;
+    padding-right: 20px;
+}
+    .rakhi-wrap-div{
+      background: linear-gradient(188deg, #FFDF8B 1.69%, #FFD76E 35.75%, #FFD464 76.82%);
+    }
+.rotor-group:first-child::before, .rotor-group:first-child::after {
+    content: '';
+    font-size: 10px;
+    position: absolute;
+    padding: 2px;
+    left: 84px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #151515;
+}
+
+.rotor-group:first-child::after {bottom: 32px;}
+
+.rotor-group:first-child::before {
+    bottom: 16px;
+}
+
+    @media screen and (max-width:749px){
+      .rakhi-text {
+    font-size: 16px;
+                text-align: center;
+      }
+   
+    .flipdown-wrapper {
+        padding: 0;
+    }
+     .flipdown .rotor-leaf-front, .flipdown .rotor-leaf-rear {
+    width: 25px;
+    height: 20px;
+    margin: 0;
+}
+        .flipdown .rotor-leaf-front {
+    line-height: 40px;
+    border-radius: 4px 4px 0px 0px;
+}
+    .flipdown .rotor:after {
+    content: '';
+    bottom: 0px;
+    left: 0px;
+    width: 25px;
+    height: 20px;
+    border-radius: 0px 0px 4px 4px;
+}
+    .flipdown .rotor-group-heading:before {
+    height: 20px;
+    line-height: 22px;
+}
+    .flipdown .rotor {
+    width: 25px;
+    height: 40px;
+    margin: 0px 6px 0px 0px;
+    border-radius: 4px;
+    font-size: 1.8rem;
+}
+    .flipdown .rotor-leaf {
+    width: 25px;
+    height: 40px;
+}
+    .flipdown .rotor-top {
+    line-height: 40px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.flipdown .rotor-top, .flipdown .rotor-bottom {
+    width: 25px;
+    height: 20px;
+}
+      .rakhi-countdown-wrapper {
+    padding: 10px 10px 5px;
+      }
+     .flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):before {
+    content: '';
+    bottom: 10px;
+    left: 63px;
+    width: 6px;
+    height: 6px; 
+    }
+    .flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+    content: '';
+    position: absolute;
+    bottom: 25px;
+    left: 63px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+.flipdown .rotor-group-heading:before {
+        height: 20px;
+        line-height: 20px;
+    }
+      .rotor-group:first-child::before, .rotor-group:first-child::after {
+    content: '';
+    font-size: 10px;
+    position: absolute;
+    padding: 2px;
+    left: 63px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #151515;
+}
+
+.rotor-group:first-child::after {bottom: 25px;}
+
+.rotor-group:first-child::before {
+    bottom: 10px;
+}
+    }
+    @media (max-width: 550px) {
+    .flipdown .rotor-group {
+        padding-right: 15px;
+    }
+}
+  </style>
+</head>
+
+<body>
+<section class="rakhi-wrap-div">
+  <div class="rakhi-countdown-wrapper">
+    <div class="rakhi-text">
+      Rakhi Countdown On! Grab it Now!
+    </div>
+    <div class="flipdown-wrapper">
+      <div id="flipdown" class="flipdown"></div>
+    </div>
+  </div>
+</section>
+  <!-- FlipDown JS -->
+  <script src="https://pbutcher.uk/flipdown/js/flipdown/flipdown.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function getEndOfDay() {
+        const now = new Date();
+        const endOfDay = new Date(now);
+        endOfDay.setHours(23, 59, 59, 999); // Set to 11:59:59.999 PM
+        return endOfDay.getTime() / 1000;
+      }
+
+      function updateCountdown() {
+        const endDate = getEndOfDay();
+        
+        // Destroy existing FlipDown instance if it exists
+        if (window.currentFlipDown) {
+          window.currentFlipDown.destroy();
+        }
+
+        // Create new FlipDown instance
+        window.currentFlipDown = new FlipDown(endDate)
+          .start()
+          .ifEnded(() => {
+            document.getElementById("flipdown").innerHTML = "<h2>Offer Ended</h2>";
+            // Restart countdown for next day after 1 second
+            setTimeout(updateCountdown, 1000);
+          });
+      }
+
+      // Initial countdown setup
+      updateCountdown();
+
+      // Check if we need to reset the countdown (every minute)
+      setInterval(() => {
+        const now = new Date();
+        if (now.getHours() === 0 && now.getMinutes() === 0) {
+          // It's midnight, reset the countdown
+          updateCountdown();
+        }
+      }, 60000); // Check every minute
+    });
+  </script>
+
+</body>
+</html>

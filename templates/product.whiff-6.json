@@ -1,0 +1,810 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "text_CQqapF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.subtitle.value }}</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": ""
+          }
+        },
+        "judge_me_reviews_preview_badge_AVXcCM": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "trust_badge_pGhQia": {
+          "type": "trust_badge",
+          "settings": {
+            "show_meta_trust_badge": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 110
+          }
+        },
+        "trust_badge_XXTWcB": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "badge": "shopify://shop_images/Frame_7-4.webp",
+            "show_meta_trust_badge": false
+          }
+        },
+        "html_UhV7ad": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<span class=\"price-caption\">\n🔥Lowest price in last 30 days</span>\n<style>\n\n.price-caption {\n    color: #e80000;\n    font-family: sans-serif;\n    font-size: 14px;\n    font-weight: 600;\n}\n</style>"
+          }
+        },
+        "continuous_timer_q7NrTb": {
+          "type": "continuous_timer",
+          "settings": {
+            "title": "Offer ends in",
+            "bold-title": ""
+          }
+        },
+        "html_z6rk4p": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Daily Countdown Timer</title>\n    <style>\n        /* Style for the timer */\n        #timer {\n            font-size: 1.25em; /* Slightly smaller font size */\n            font-weight: 600;  /* Medium weight for text */\n            display: inline-block; /* Ensures padding around text */\n            color: #E80000; /* Maroon text color */\n     \n        }\n    </style>\n</head>\n<body>\n    <p id=\"timer\"></p>\n\n    <script>\n        // Function to calculate time remaining until midnight\n        function getTimeUntilMidnight() {\n            const now = new Date();\n            \n            // Set the target time to the next midnight\n            const targetTime = new Date();\n            targetTime.setHours(24, 0, 0, 0); // Set time to 12:00 AM (midnight) of the next day\n\n            // Calculate time remaining in seconds\n            const timeRemaining = Math.floor((targetTime - now) / 1000);\n            \n            return timeRemaining > 0 ? timeRemaining : 0; // Ensure non-negative time\n        }\n\n        // Function to start and update the timer\n        function startTimer(duration, display) {\n            let timer = duration;\n\n            const interval = setInterval(function () {\n                let hours = Math.floor(timer / 3600);\n                let minutes = Math.floor((timer % 3600) / 60);\n                let seconds = Math.floor(timer % 60);\n\n                // Format the time display\n                hours = hours < 10 ? \"0\" + hours : hours;\n                minutes = minutes < 10 ? \"0\" + minutes : minutes;\n                seconds = seconds < 10 ? \"0\" + seconds : seconds;\n\n                display.textContent = `This offer ends in ${hours}:${minutes}:${seconds}`;\n\n                if (--timer < 0) {\n                    clearInterval(interval); // Stop the timer at 0\n                    display.textContent = \"Sale has ended!\";\n                    // Restart the timer for the next day\n                    startTimer(getTimeUntilMidnight(), display);\n                }\n            }, 1000);\n        }\n\n        window.onload = function () {\n            const timeRemaining = getTimeUntilMidnight();\n            const display = document.getElementById('timer');\n\n            // Start the timer showing the remaining time until 12:00 AM\n            startTimer(timeRemaining, display);\n        };\n    </script>\n</body>\n</html>"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "html_6cFgWp": {
+          "type": "html",
+          "settings": {
+            "custom_html": "{% if product.id == 9462937551145 or product.id == 9643791581481 or product.id == 9500370403625 or product.id == 9601525645609 %}\n<style>\n    .reviews-slider-container {\n        max-width: 600px;\n        margin: 0px auto;\n        padding: 0px;\n        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n    }\n\n    .reviews-slider {\n        position: relative;\n        background: #f8f9fa;\n        border-radius: 16px;\n        overflow: hidden;\n        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);\n    }\n\n    .reviews-track {\n        display: flex;\n        transition: transform 0.5s ease-in-out;\n    }\n\n    .review-slide {\n    border: 2px solid;\n    border-radius: 17px;\n    min-width: 100%;\n    padding: 30px;\n    background: white;\n    box-sizing: border-box;\n}\n\n    .review-header {\n        display: flex;\n        align-items: center;\n        margin-bottom: 5px;\n    }\n\n    .review-stars {\n        display: flex;\n        margin-right: 5px;\n    }\n\n    .star {\n        width: 18px;\n        height: 18px;\n        margin-right: 2px;\n        fill: #ffd700;\n    }\n\n    .reviewer-name {\n        font-size: 14px;\n        font-weight: 600;\n        color: #333;\n        margin: 0;\n    }\n\n    .review-text {\n        font-size: 14px;\n        line-height: 1.6;\n        color: #555;\n        margin: 0;\n    }\n\n    .slider-nav {\n        display: none;\n    }\n\n    .dots-container {\n        display: flex;\n        justify-content: center;\n        margin-top: 20px;\n        gap: 8px;\n    }\n\n    .dot {\n        width: 8px;\n        height: 8px;\n        border-radius: 50%;\n        background: #ccc;\n        cursor: pointer;\n        transition: all 0.3s ease;\n    }\n\n    .dot.active {\n        background: #333;\n        transform: scale(1.2);\n    }\n\n    .verify-tag {\n        background: #000;\n        border-radius: 12px;\n        color: #fff;\n        padding: 2px 7px 2px 18px;\n        font-weight: 500;\n        margin: 0 5px;\n        position: relative;\n    }\n\n    .verify-tag::before {\n        content: \"\";\n        background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/tick.webp?v=1750153930);\n        position: absolute;\n        width: 12px;\n        height: 12px;\n        left: 4px;\n        top: 3.5px;\n        background-size: contain;\n    }\n.review-slide:nth-child(4) {\n    background: linear-gradient(69deg, #FFF 44.16%, #FF9773 164.1%);\n    border-color: #FFAF93;\n}\n.review-slide:nth-child(1) {\n    border-color: #C3EEFF;\n    background: var(--blue, linear-gradient(71deg, #FFF 53.13%, #E9FDFF 108.18%));\n}\n.review-slide:nth-child(2) {\n    border-color: #D7B0ED;\n    background: var(--purple, linear-gradient(75deg, #FFF 37.85%, #F9EEFF 108.49%));\n}\n.review-slide:nth-child(3) {\n    border-color: #B7D384;\n    background: var(--green, linear-gradient(67deg, #FFF 45.19%, #7BB60C 252.25%));\n}\n    @media (max-width: 768px) {\n        .reviews-slider-container {\n            margin: 8px auto;\n            padding: 5px;\n        }\n\n        .review-slide {\n            padding: 12px 18px;\n        }\n    }\n</style>\n\n<div class=\"reviews-slider-container\">\n    <div class=\"reviews-slider\" id=\"reviewsSlider\">\n        <div class=\"reviews-track\" id=\"reviewsTrack\">\n            {% if product.id == 9462937551145 or product.id == 9643791581481 %}\n                <!-- Existing Reviews -->\n                <div class=\"review-slide\"><div class=\"review-header\"><div class=\"review-stars\">{% for i in (1..5) %}<svg class=\"star\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>{% endfor %}</div><h3 class=\"reviewer-name\">Manoj Kumar</h3><div class=\"verify-tag\"><span>Verified</span></div></div><p class=\"review-text\">Ye bracelet ekdum zabardast hai! Pehne ke baad se financial growth clear dikh rahi hai. Business mein naye mauke mil rahe hain, aur confidence bhi badh gaya hai. Quality top-notch hai.</p></div>\n                <div class=\"review-slide\"><div class=\"review-header\"><div class=\"review-stars\">{% for i in (1..5) %}<svg class=\"star\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>{% endfor %}</div><h3 class=\"reviewer-name\">Sadhana Upadhyay</h3><div class=\"verify-tag\"><span>Verified</span></div></div><p class=\"review-text\">⁠Authentic stones hai. Pehne ke baad se financial decisions better ho gaye hain aur money flow improve hua hai. Design bhi bohot stylish hai. Great for daily wear and wealth manifestation.</p></div>\n                <div class=\"review-slide\"><div class=\"review-header\"><div class=\"review-stars\">{% for i in (1..5) %}<svg class=\"star\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>{% endfor %}</div><h3 class=\"reviewer-name\">Vasu</h3><div class=\"verify-tag\"><span>Verified</span></div></div><p class=\"review-text\">⁠Maine apne business ke liye order kiya tha. Results amazing hain! Financial growth notice ki hai aur new opportunities mil rahi hain. Stones ki quality excellent hai. Perfect for wealth attraction!</p></div>\n                <div class=\"review-slide\"><div class=\"review-header\"><div class=\"review-stars\">{% for i in (1..5) %}<svg class=\"star\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>{% endfor %}</div><h3 class=\"reviewer-name\">Shivam Singh</h3><div class=\"verify-tag\"><span>Verified</span></div></div><p class=\"review-text\">Best purchase ever! Bracelet pehne ke baad se financial growth notice ki hai. Business mein new opportunities mil rahi hain aur confidence bhi badh gaya hai. Highly recommended for wealth seekers!</p></div>\n            {% elsif product.id == 9500370403625 or product.id == 9601525645609 %}\n                <!-- New Reviews -->\n                <div class=\"review-slide\"><div class=\"review-header\"><div class=\"review-stars\">{% for i in (1..5) %}<svg class=\"star\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>{% endfor %}</div><h3 class=\"reviewer-name\">Ritika Sharma</h3><div class=\"verify-tag\"><span>Verified</span></div></div><p class=\"review-text\">Ye bracelet pehle din se kaam karne laga! Job promotion hua, salary hike mila. Pehle kabhi itna luck nahi dikha. Quality bhi first-class hai, 100% recommend.</p></div>\n                <div class=\"review-slide\"><div class=\"review-header\"><div class=\"review-stars\">{% for i in (1..5) %}<svg class=\"star\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>{% endfor %}</div><h3 class=\"reviewer-name\">Anil Mehta</h3><div class=\"verify-tag\"><span>Verified</span></div></div><p class=\"review-text\">⁠Mere dukaan ka sale double ho gaya iske baad! Pehle din se hi naye customers aa rhe hain. Koi negative energy nahi lagti ab. Bracelet bhi badhiya hai, log poochte hain kaha se liya!</p></div>\n                <div class=\"review-slide\"><div class=\"review-header\"><div class=\"review-stars\">{% for i in (1..5) %}<svg class=\"star\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>{% endfor %}</div><h3 class=\"reviewer-name\">Priya Chauhan</h3><div class=\"verify-tag\"><span>Verified</span></div></div><p class=\"review-text\">⁠3 mahine se pending loan approve hua iske pehne ke 1 hafte baad! Paise ki tension kam hui, unexpected sources se income aane laga. Finish bhi accha hai.</p></div>\n                <div class=\"review-slide\"><div class=\"review-header\"><div class=\"review-stars\">{% for i in (1..5) %}<svg class=\"star\" viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>{% endfor %}</div><h3 class=\"reviewer-name\">Rahul Verma</h3><div class=\"verify-tag\"><span>Verified</span></div></div><p class=\"review-text\">⁠Sach btau toh ye bracelet game-changer nikla! Money attract ho rha hai, opportunities khud aa rhi hain. Aur confidence bhi sky-high. Quality achi hai🥰</p></div>\n            {% endif %}\n        </div>\n    </div>\n\n    <div class=\"dots-container\" id=\"dotsContainer\">\n        <span class=\"dot active\" data-slide=\"0\"></span>\n        <span class=\"dot\" data-slide=\"1\"></span>\n        <span class=\"dot\" data-slide=\"2\"></span>\n        <span class=\"dot\" data-slide=\"3\"></span>\n    </div>\n</div>\n\n<script>\ndocument.addEventListener('DOMContentLoaded', function () {\n    const track = document.getElementById('reviewsTrack');\n    const dots = document.querySelectorAll('.dot');\n\n    let currentSlide = 0;\n    const totalSlides = 4;\n    let autoPlayInterval;\n\n    startAutoPlay();\n\n    function updateSlider() {\n        const translateX = -currentSlide * 100;\n        track.style.transform = `translateX(${translateX}%)`;\n        dots.forEach((dot, index) => {\n            dot.classList.toggle('active', index === currentSlide);\n        });\n    }\n\n    function nextSlide() {\n        currentSlide = (currentSlide + 1) % totalSlides;\n        updateSlider();\n    }\n\n    function goToSlide(slideIndex) {\n        currentSlide = slideIndex;\n        updateSlider();\n    }\n\n    function startAutoPlay() {\n        autoPlayInterval = setInterval(nextSlide, 6000);\n    }\n\n    function stopAutoPlay() {\n        clearInterval(autoPlayInterval);\n        autoPlayInterval = null;\n    }\n\n    dots.forEach((dot, index) => {\n        dot.addEventListener('click', function () {\n            stopAutoPlay();\n            goToSlide(index);\n        });\n    });\n});\n</script>\n{% endif %}"
+          }
+        },
+        "trust_badge_gQUebQ": {
+          "type": "trust_badge",
+          "settings": {
+            "show_meta_trust_badge": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false,
+            "pickup_availability": false,
+            "hide_when_pre_order": false,
+            "preorder_button_label": "Pre-order",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "box_type": "square",
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "#f0df20",
+            "button_text_light": "#131313",
+            "button_hover_light": "#f0df20",
+            "button_text_hover_light": "#131313",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "inventory_urgency_YGinnr": {
+          "type": "inventory_urgency",
+          "settings": {
+            "inventory_urgency_enabled": true,
+            "urgency_min_stock": 43,
+            "urgency_max_stock": 150,
+            "urgency_decrease_rate": 2
+          }
+        },
+        "delivery_check_kEjBUD": {
+          "type": "delivery_check",
+          "settings": {
+            "enable_delivery_check": true,
+            "location_icon": "shopify://shop_images/Group_45.png",
+            "return_icon": "shopify://shop_images/7_day_return.png",
+            "shipping_icon": "shopify://shop_images/shipping-fast-solid-svgrepo-com.svg"
+          }
+        },
+        "html_HXwzg4": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<div class=\"zipcode-feat\" id=\"zipcodeFeat\" style=\"display: none;\">\n  <ul>\n    <li>\n      <div>\n        <img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/7_day_return.png?v=1750929386\" alt=\"image\">\n      </div> \n      <div>\n        <h4>7 days</h4>\n        <p>easy return policy</p>\n      </div>\n    </li>\n    <li>\n      <div>\n        <img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/free_gift.png?v=1750929338\" alt=\"image\">\n      </div> \n      <div>\n        <h4>Free gift</h4>\n        <p>Only on Prepaid orders</p>\n      </div>\n    </li>\n  </ul>\n</div>\n\n<style>\n.zipcode-feat ul, .zipcode-feat ul div {\n  display: flex;\n}\n\n.zipcode-feat ul li {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  max-width: 50%;\n  gap: 8px;\n  align-items: center;\n}\n\n.zipcode-feat ul li div:last-child {\n  flex-direction: column;\n}\n\n.zipcode-feat ul li div:first-child {\n  width: 25px;\n}\n\n.zipcode-feat h4 {\n  font-family: 'Avenir Next';\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 16px;\n}\n\n.zipcode-feat p {\n  font-size: 12px !important;\n  line-height: 16px;\n}\n\n.zipcode-feat ul li div:first-child img {\n  width: 100%;\n  max-width: 100%;\n}\n\n.zipcode-feat {\n  background: #fffaf0;\n  padding: 0 10px 10px;\n  border-radius: 0 0 10px 10px;\n  display: none;\n}\n\n.zipcode-feat ul {\n  width: 100%;\n}\n\n@media only screen and (max-width: 749px) {\n  .zipcode-feat {\n    /* display will be set via JS */\n  }\n}\n</style>\n\n<script>\n  window.onload = function () {\n    var zipcodeFeat = document.getElementById(\"zipcodeFeat\");\n    // Optional: Only show on mobile\n    if (window.innerWidth <= 749) {\n      zipcodeFeat.style.display = \"flex\";\n    }\n  };\n</script>"
+          }
+        },
+        "judge_me_reviews_review_snippet_widget_wqnry9": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "trust_badge_DLHdky": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "badge": "shopify://shop_images/all.png",
+            "show_meta_trust_badge": false
+          }
+        },
+        "why_astrotalk_DHVUJw": {
+          "type": "why-astrotalk",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker_fL9RjK": {
+          "type": "variant_picker",
+          "settings": {
+            "color_option_content": "<p><strong>Variant: </strong></p>",
+            "picker_type": "button",
+            "show_variant_option": true,
+            "enable_color_swatches": false,
+            "swatch_size": "small",
+            "ringsize_list": "Free/Adjustable Ring,1,2,3,45,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30"
+          }
+        },
+        "description_gRwQjV": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "make_content_center": false,
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        },
+        "quinn_shoppable_videos_app_cards_block_aqpd4F": {
+          "type": "shopify://apps/quinn-shoppable-videos/blocks/app-cards-block/150d2781-732b-4020-a9fb-1368e974e6bb",
+          "settings": {
+            "layer_number": 1,
+            "card_margins_desktop": "0",
+            "card_margins_mobile": "0",
+            "custom_metaobject_handle": "null",
+            "heading": "<h2>Loved by 15 lakh+ customers</h2>",
+            "heading_alignment": "center",
+            "heading_font_size_desktop": "16px",
+            "heading_letter_spacing_desktop": "normal",
+            "heading_font_size_mobile": "16px",
+            "heading_letter_spacing_mobile": "normal",
+            "heading_line_height_desktop": "1.2",
+            "heading_line_height_mobile": "1.2",
+            "heading_font_weight_desktop": "400",
+            "heading_font_weight_mobile": "400",
+            "heading_font": "sans_serif_n4",
+            "heading_color": "#000000",
+            "heading_background_color": "#ffffff",
+            "heading_padding": "0px",
+            "heading_margin": "0px",
+            "subheading": "",
+            "subheading_alignment": "center",
+            "subheading_font": "sans_serif_n4",
+            "subheading_color": "#000000",
+            "subheading_background_color": "#ffffff",
+            "subheading_padding": "0px",
+            "subheading_margin": "0px"
+          }
+        },
+        "html_bEKAA9": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<div>\n  <a href=\"https://astrotalk.store/pages/ganesh-chaturthi-sale\" \n     style=\"display: block; width: 100%;\"\n     onclick='clevertap.event.push(\"PDP Banner Clicked\", {\n       \"Product Name\": \"{{ product.title }}\",\n       \"Sale Name\": \"Ganesh Chaturthi Sale\",\n       \"Page URL\": window.location.href,\n       \"Date\": new Date()\n     })'>\n    <img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/ganesh_chaturthi_menu_banner.webp?v=1755671511\" \n         alt=\"Ganesh Chaturthi Sale Banner\" \n         style=\"width: 100%; height: auto; display: block;\">\n  </a>\n</div>"
+          }
+        },
+        "collapsible_tab_f6c6VD": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Benefits",
+            "tab_content": "<p>{{ product.metafields.custom.benefits | metafield_tag }}</p>",
+            "open_by_default": true
+          }
+        },
+        "collapsible_tab_mHBjAk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How to wear?",
+            "tab_content": "<p>{{ product.metafields.custom.how_to_wear_ | metafield_tag }}</p>",
+            "open_by_default": true
+          }
+        },
+        "collapsible_tab_wCPCdk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Style tip",
+            "tab_content": "<p>{{ product.metafields.custom.style_tip | metafield_tag }}</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible_tab_yi3mjx": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "How to get maximum benefit?",
+            "tab_content": "<p>{{ product.metafields.custom.how_to_get_maximum_benefit_ | metafield_tag }}</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible_tab_XAKzrt": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Best day to wear",
+            "tab_content": "<p>{{ product.metafields.custom.best_day_to_wear | metafield_tag }}</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible_tab_ax6Wew": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Disclamer",
+            "tab_content": "The colour and texture may vary slightly as all the crystals are 100% natural.",
+            "open_by_default": false
+          }
+        },
+        "collapsible_tab_itynzq": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Packaging",
+            "tab_content": "<p>Presented in an sturdy black kappa box with foam, designed especially for safekeeping and gifting.</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Returns + Exchanges",
+            "tab_content": "<p> We offer a 7-day return policy, and returns will be processed after we gather relevant details and reasoning. Please ensure the product is in its original condition for a smooth return process. </p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible_tab_CCTDkf": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "FREE Astrotalk recharge",
+            "tab_content": "<p>Get a FREE Astrotalk recharge worth ₹100 with this product. The recharge code will be sent on whatsapp within 24 hours of delivery.</p>",
+            "open_by_default": false
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "trust_badge_UqhK98": {
+          "type": "trust_badge",
+          "settings": {
+            "badge": "shopify://shop_images/Figma_Frame_1.webp",
+            "show_meta_trust_badge": false
+          }
+        },
+        "html_dcqQ8b": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<div id=\"ewck-bogo-block\"></div>"
+          }
+        },
+        "html_PwPhjW": {
+          "type": "html",
+          "settings": {
+            "custom_html": "<div id=\"ewck-bogo-block\" style=\"padding-top : 10px; padding-bottom : 20px\"></div>"
+          }
+        },
+        "html_NNYqc9": {
+          "type": "html",
+          "settings": {
+            "custom_html": "<a class=\"Diwali-Banner\" href=\"https://astrotalk.store/pages/winter-sale\" style=\" padding-top : 20px; padding-bottom : 20px\"><img src=\"//cdn.shopify.com/s/files/1/0878/4907/4985/files/winter-sale-pdp-banner.webp?v=1764572012\" alt=\"Diwali sale\"> </a>"
+          }
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": false,
+            "button_light": "#f0df20",
+            "button_text_light": "#131313",
+            "button_hover_light": "#f0df20",
+            "button_text_hover_light": "#131313",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "badges",
+        "text_CQqapF",
+        "judge_me_reviews_preview_badge_AVXcCM",
+        "trust_badge_pGhQia",
+        "price",
+        "trust_badge_XXTWcB",
+        "html_UhV7ad",
+        "continuous_timer_q7NrTb",
+        "html_z6rk4p",
+        "quantity_selector",
+        "html_6cFgWp",
+        "trust_badge_gQUebQ",
+        "buy_buttons",
+        "inventory_urgency_YGinnr",
+        "delivery_check_kEjBUD",
+        "html_HXwzg4",
+        "judge_me_reviews_review_snippet_widget_wqnry9",
+        "trust_badge_DLHdky",
+        "why_astrotalk_DHVUJw",
+        "variant_picker_fL9RjK",
+        "description_gRwQjV",
+        "quinn_shoppable_videos_app_cards_block_aqpd4F",
+        "html_bEKAA9",
+        "collapsible_tab_f6c6VD",
+        "collapsible_tab_mHBjAk",
+        "collapsible_tab_wCPCdk",
+        "collapsible_tab_yi3mjx",
+        "collapsible_tab_XAKzrt",
+        "collapsible_tab_ax6Wew",
+        "collapsible_tab_itynzq",
+        "collapsible-row-0",
+        "collapsible_tab_CCTDkf",
+        "social-sharing",
+        "trust_badge_UqhK98",
+        "html_dcqQ8b",
+        "html_PwPhjW",
+        "html_NNYqc9",
+        "sticky-atc"
+      ],
+      "custom_css": [
+        ".product-variant-option_main {width: 100%;}"
+      ],
+      "settings": {
+        "enable_sticky_image": true,
+        "show_product_name": true,
+        "title_size": 120,
+        "heading_tag": "h1",
+        "show_vendor": false,
+        "link_vendor": false,
+        "make_content_center": false,
+        "desktop_layout": "left",
+        "desktop_media_layout": "thumbnail_slider",
+        "show_arrow_button": true,
+        "mobile_media_size": "75%",
+        "show_thumnail_mobile": true,
+        "image_ratio": "square",
+        "thumbnail_position": "horizontal",
+        "enable_image_zoom": false,
+        "enable_video_autoplay": true,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": false,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "enable_microdata": true,
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": false,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#ffffff",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "full_width": false,
+        "spacing_col": "small",
+        "padding_top": 60,
+        "padding_bottom": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "image_comparison_4nVHt9": {
+      "type": "image-comparison",
+      "disabled": true,
+      "settings": {
+        "heading": "Why our products?",
+        "heading_base_size": 120,
+        "heading_tag": "h2",
+        "layout_comparison": "horizontal",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "image_corner_radius": 12,
+        "image": "shopify://shop_images/money_magnet_slide_1_1920x1080_9ba9b396-9a53-4b76-ae31-8fe4faa69f0c.jpg",
+        "image_mobile": "shopify://shop_images/money_magnet_slide_1_1920x1080_9ba9b396-9a53-4b76-ae31-8fe4faa69f0c.jpg",
+        "heading_before_image": "",
+        "heading_base_size_before_image": 100,
+        "heading_before_image_position": "center",
+        "image_after": "shopify://shop_images/money_magnet_slide_2_1920x1080_1.jpg",
+        "image_mobile_after": "shopify://shop_images/money_magnet_slide_2_1920x1080_1.jpg",
+        "heading_after_image": "",
+        "heading_base_size_after_image": 100,
+        "heading_after_image_position": "center",
+        "default_scroll_position": 50,
+        "text_position": "center",
+        "text_alignment": "start",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "text_background_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "#000000",
+        "background_color_dark": "#ffffff",
+        "text_background_dark": "rgba(0,0,0,0)",
+        "image_alignment": "md:flex-row",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "top_padding": 20,
+        "bottom_padding": 20,
+        "image_alignment_mobile": "flex-col",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 32
+      }
+    },
+    "17234523003b158916": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_wmMxnV": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_wmMxnV"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "product_specifications_pwqMyD": {
+      "type": "product-specifications",
+      "blocks": {
+        "specs_BTKzA3": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Material",
+            "row_content": "<p>{{ product.metafields.custom.material.value }}</p>"
+          }
+        },
+        "specs_8bEamW": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Bead Size",
+            "row_content": "<p>7-8 mm</p>"
+          }
+        },
+        "specs_xTbkcN": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Tarnish resistance",
+            "row_content": "<p>Anti-tarnish</p>"
+          }
+        },
+        "specs_A4jAU8": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Colour",
+            "row_content": "<p>{{ product.metafields.custom.colour.value }}</p>"
+          }
+        },
+        "specs_VtkpgB": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Size",
+            "row_content": "<p>Free size</p>"
+          }
+        },
+        "specs_Ezyi7g": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Water Resistance",
+            "row_content": "<p>Anti-splash</p>"
+          }
+        }
+      },
+      "block_order": [
+        "specs_BTKzA3",
+        "specs_8bEamW",
+        "specs_xTbkcN",
+        "specs_A4jAU8",
+        "specs_VtkpgB",
+        "specs_Ezyi7g"
+      ],
+      "settings": {
+        "heading": "Specifications",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "",
+        "image_alignment": "left",
+        "hide_empty_rows": true,
+        "text_empty_fields": "-",
+        "row_shown_by_default": 6,
+        "view_more_button": "",
+        "view_less_button": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "table_color": "rgba(0,0,0,0)",
+        "table_text": "rgba(0,0,0,0)",
+        "line_border": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "table_color_dark": "rgba(0,0,0,0)",
+        "table_text_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "columns_desktop": "2",
+        "desktop_height": "400px",
+        "show_section_divider": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "faq_jkMBM6": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_J876L8": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_1.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans1 | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_yRVTdy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_2.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans2 | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_AhCcW9": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_3.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans3 | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_Fj4kW9": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_4.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans4 | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_VMMMFt": {
+          "type": "frequently_asked_question",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_5.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans5 | metafield_tag }}</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_J876L8",
+        "frequently_asked_question_yRVTdy",
+        "frequently_asked_question_AhCcW9",
+        "frequently_asked_question_Fj4kW9",
+        "frequently_asked_question_VMMMFt"
+      ],
+      "settings": {
+        "heading": "FAQs",
+        "class": "",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": true,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 4,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": false,
+        "show_quickview": false,
+        "enable_carousel_desktop": true,
+        "enable_swiper_mobile": true,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 4,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "columns_mobile": "2",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 20,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "featured_collection_4h68yk": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_z4VYb7": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals",
+            "show_description": true,
+            "description": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "show_vendor": false,
+            "show_rating": false,
+            "show_quickview": true,
+            "show_promotion": false,
+            "promotion_position": "left",
+            "card_link": "",
+            "open_new_window": false,
+            "enable_text_overlay": false,
+            "overlay_opacity": 0,
+            "image_ratio": "100",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "product_card": "",
+            "heading": "Featured collection",
+            "heading_size": 70,
+            "content": "<p>10% OFF</p>",
+            "text_size": 100,
+            "content_alignment": "center",
+            "content_position": "bottom",
+            "button_label": "See more",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "background_color": "rgba(0,0,0,0)",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "collection_z4VYb7"
+      ],
+      "custom_css": [
+        ".button {display: none;}"
+      ],
+      "settings": {
+        "title": "Combination Sets",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "subheading": "",
+        "text": "",
+        "show_view_all": true,
+        "view_all_position": "top",
+        "title_size": 120,
+        "title_style": "none",
+        "enable_desktop_slider": true,
+        "slider_style": "horizontal",
+        "swiper_on_mobile": true,
+        "auto_play": true,
+        "change_slides_speed": 3,
+        "columns_desktop": 4,
+        "rows_desktop": 1,
+        "spacing": 28,
+        "full_width": true,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "eventname": "Combination_set_click",
+        "columns_mobile": "2",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "specs_XFtBWa": {
+      "type": "specs",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "image_comparison_4nVHt9",
+    "17234523003b158916",
+    "product_specifications_pwqMyD",
+    "faq_jkMBM6",
+    "product-recommendations",
+    "featured_collection_4h68yk",
+    "specs_XFtBWa"
+  ]
+}

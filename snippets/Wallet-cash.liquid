@@ -1,0 +1,601 @@
+<style>
+    
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* MAIN CARD */
+    .wallet-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      padding: 30px;
+      color: white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+
+    .wallet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .wallet-title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .wallet-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .balance-section {
+      margin-bottom: 20px;
+    }
+
+    .balance-label {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .balance-amount {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .balance-type {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 20px 0;
+    }
+
+    .view-details-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .view-details-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    /* QUICK STATS */
+    .quick-stats {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* POPUP BACKDROP */
+    .popup-backdrop {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      z-index: 998;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .popup-backdrop.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* POPUP */
+    .popup {
+      position: fixed;
+      left: 0;
+      bottom: -100%;
+      width: 100%;
+      max-height: 85vh;
+      background: white;
+      border-radius: 24px 24px 0 0;
+      z-index: 999;
+      transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .popup.active {
+      bottom: 0;
+    }
+
+    .popup-header {
+      padding: 24px 20px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .popup-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f5f5f5;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .close-btn:hover {
+      background: #eee;
+      transform: rotate(90deg);
+    }
+
+    .popup-content {
+      padding: 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    /* BALANCE CARDS IN POPUP */
+    .balance-cards {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .balance-card {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 20px;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .balance-card.gold {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      color: white;
+    }
+
+    .balance-card.silver {
+      background: linear-gradient(135deg, #C0C0C0 0%, #808080 100%);
+      color: white;
+    }
+
+    .balance-card-label {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 8px;
+    }
+
+    .balance-card-amount {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .balance-card-type {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .expiry-link {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+      opacity: 0.9;
+    }
+
+    .expiry-link:hover {
+      opacity: 1;
+    }
+
+    /* TRANSACTIONS */
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .transaction-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      transition: all 0.2s;
+    }
+
+    .transaction-item:hover {
+      background: #f0f0f0;
+      transform: translateX(4px);
+    }
+
+    .transaction-info {
+      flex: 1;
+    }
+
+    .transaction-reason {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .transaction-date {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .transaction-amount {
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .transaction-amount.credit {
+      color: #10b981;
+    }
+
+    .transaction-amount.debit {
+      color: #ef4444;
+    }
+
+    /* EXPIRY ENTRIES */
+    .expiry-item {
+      background: #f9f9f9;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .expiry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .expiry-amount {
+      font-size: 20px;
+      font-weight: 700;
+      color: #667eea;
+    }
+
+    .expiry-date {
+      font-size: 14px;
+      color: #666;
+      font-weight: 600;
+    }
+
+    .expiry-label {
+      font-size: 12px;
+      color: #999;
+      background: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+    }
+
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+
+    /* LOADING */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: white;
+    }
+
+    .spinner {
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top: 3px solid white;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <div class="container">
+    <div id="loading-state" class="loading">
+      <div class="spinner"></div>
+      <div>Loading wallet data...</div>
+    </div>
+
+    <div id="wallet-content" style="display: none;">
+      <!-- MAIN WALLET CARD -->
+      <div class="wallet-card">
+        <div class="wallet-header">
+          <div class="wallet-title">Astro Cash</div>
+          <div class="wallet-icon">💰</div>
+        </div>
+
+        <div class="balance-section">
+          <div class="balance-label">
+            <span>Total Balance</span>
+          </div>
+          <div class="balance-amount" id="total-balance">₹0</div>
+          <div class="balance-type">Available to spend</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <button class="view-details-btn" id="view-details-btn">
+          View Full Details
+        </button>
+      </div>
+
+      <!-- QUICK STATS -->
+      <div class="quick-stats">
+        <div class="stat-item">
+          <div class="stat-value" id="gold-amount">₹0</div>
+          <div class="stat-label">Gold Cash</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="silver-amount">₹0</div>
+          <div class="stat-label">Silver Cash</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAILS POPUP -->
+  <div class="popup-backdrop" id="details-backdrop"></div>
+  <div class="popup" id="details-popup">
+    <div class="popup-header">
+      <div class="popup-title">Wallet Details</div>
+      <button class="close-btn" id="close-details">✕</button>
+    </div>
+    <div class="popup-content">
+      <div class="balance-cards">
+        <div class="balance-card gold">
+          <div class="balance-card-label">Gold Astro Cash</div>
+          <div class="balance-card-amount" id="popup-gold">₹0</div>
+          <div class="balance-card-type">Non-expirable</div>
+        </div>
+        <div class="balance-card silver">
+          <div class="balance-card-label">Silver Astro Cash</div>
+          <div class="balance-card-amount" id="popup-silver">₹0</div>
+          <div class="balance-card-type">Expirable</div>
+          <div class="expiry-link" id="view-expiry">View expiry details →</div>
+        </div>
+      </div>
+
+      <div class="section-title">Recent Transactions</div>
+      <div id="transactions-list"></div>
+    </div>
+  </div>
+
+  <!-- EXPIRY POPUP -->
+  <div class="popup-backdrop" id="expiry-backdrop"></div>
+  <div class="popup" id="expiry-popup">
+    <div class="popup-header">
+      <div class="popup-title">Silver Cash Expiry</div>
+      <button class="close-btn" id="close-expiry">✕</button>
+    </div>
+    <div class="popup-content">
+      <div id="expiry-list"></div>
+    </div>
+  </div>
+
+  <script>
+    (async function() {
+      // Mock email for demo - replace with actual Shopify variable
+      const email = "{{ customer.email }}"; // Replace with 
+      
+      if (!email) {
+        document.getElementById('loading-state').innerHTML = 
+          '<div class="empty-state"><div class="empty-state-icon">🔒</div><div>Please log in to view your wallet</div></div>';
+        return;
+      }
+
+      try {
+        const res = await fetch("https://admin.astrotalk.store/api/shopify/wallet", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Shop-Api-Key": "Oakt6FAsaPLp_g-rPSleiJbFyhmdCTEMxktJHMgYntw"
+          },
+          body: JSON.stringify({
+            customer_email: email,
+            transactions_limit: 20,
+            entries_limit: 20
+          })
+        });
+
+        const wallet = await res.json();
+        console.log("Wallet data:", wallet);
+
+        const gold = wallet.balances.unlocked.gold || 0;
+        const silver = wallet.balances.unlocked.silver || 0;
+        const total = gold + silver;
+
+        // Update main card
+        document.getElementById('total-balance').textContent = `₹${total}`;
+        document.getElementById('gold-amount').textContent = `₹${gold}`;
+        document.getElementById('silver-amount').textContent = `₹${silver}`;
+
+        // Update popup
+        document.getElementById('popup-gold').textContent = `₹${gold}`;
+        document.getElementById('popup-silver').textContent = `₹${silver}`;
+
+        // Render transactions
+        const transactionsList = document.getElementById('transactions-list');
+        if (wallet.transactions && wallet.transactions.length > 0) {
+          transactionsList.innerHTML = wallet.transactions.map(t => {
+            const isCredit = t.type === 'credit';
+            const date = new Date(t.createdAt).toLocaleDateString('en-IN', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric'
+            });
+            
+            return `
+              <div class="transaction-item">
+                <div class="transaction-info">
+                  <div class="transaction-reason">${t.reason}</div>
+                  <div class="transaction-date">${date}</div>
+                </div>
+                <div class="transaction-amount ${isCredit ? 'credit' : 'debit'}">
+                  ${isCredit ? '+' : '-'}₹${t.amount}
+                </div>
+              </div>
+            `;
+          }).join('');
+        } else {
+          transactionsList.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><div>No transactions yet</div></div>';
+        }
+
+        // Render expiry entries
+        const expiryList = document.getElementById('expiry-list');
+        const silverEntries = wallet.entries.silver || [];
+        if (silverEntries.length > 0) {
+          expiryList.innerHTML = silverEntries.map(e => {
+            const date = new Date(e.expiresAt).toLocaleDateString('en-IN', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric'
+            });
+            
+            return `
+              <div class="expiry-item">
+                <div class="expiry-header">
+                  <div class="expiry-amount">₹${e.remainingAmount}</div>
+                  <div class="expiry-date">Expires: ${date}</div>
+                </div>
+                <div class="expiry-label">FREE Astro Cash</div>
+              </div>
+            `;
+          }).join('');
+        } else {
+          expiryList.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✨</div><div>No expiring cash</div></div>';
+        }
+
+        // Show content
+        document.getElementById('loading-state').style.display = 'none';
+        document.getElementById('wallet-content').style.display = 'block';
+
+      } catch (error) {
+        console.error('Error fetching wallet data:', error);
+        document.getElementById('loading-state').innerHTML = 
+          '<div class="empty-state"><div class="empty-state-icon">⚠️</div><div>Failed to load wallet data</div></div>';
+      }
+
+      // Popup controls
+      const detailsBackdrop = document.getElementById('details-backdrop');
+      const detailsPopup = document.getElementById('details-popup');
+      const expiryBackdrop = document.getElementById('expiry-backdrop');
+      const expiryPopup = document.getElementById('expiry-popup');
+
+      document.getElementById('view-details-btn').onclick = () => {
+        detailsBackdrop.classList.add('active');
+        setTimeout(() => detailsPopup.classList.add('active'), 10);
+      };
+
+      document.getElementById('close-details').onclick = () => {
+        detailsPopup.classList.remove('active');
+        setTimeout(() => detailsBackdrop.classList.remove('active'), 400);
+      };
+
+      detailsBackdrop.onclick = () => {
+        document.getElementById('close-details').click();
+      };
+
+      document.getElementById('view-expiry').onclick = () => {
+        expiryBackdrop.classList.add('active');
+        setTimeout(() => expiryPopup.classList.add('active'), 10);
+      };
+
+      document.getElementById('close-expiry').onclick = () => {
+        expiryPopup.classList.remove('active');
+        setTimeout(() => expiryBackdrop.classList.remove('active'), 400);
+      };
+
+      expiryBackdrop.onclick = () => {
+        document.getElementById('close-expiry').click();
+      };
+    })();
+  </script>

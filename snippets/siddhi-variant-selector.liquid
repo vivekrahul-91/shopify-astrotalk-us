@@ -1,0 +1,171 @@
+{% comment %}
+  Siddhi Variant Selector
+  - Renders card-style variant choices using variant metafields
+  - Expected metafields on Variant:
+    - custom.siddhi_image (File > Image)
+    - Optional: custom.siddhi_badge (text), custom.siddhi_subtitle (text), custom.siddhi_description (multi-line)
+  - Expects a product option named "Siddhi Variation" (change name below if different)
+{% endcomment %}
+{% liquid
+  assign siddhi_option_name = 'Siddhi Variation'
+  assign siddhi_option_index = -1
+  for opt in product.options_with_values
+    if opt.name == siddhi_option_name
+      assign siddhi_option_index = forloop.index0
+    endif
+  endfor
+%}
+{% if siddhi_option_index != -1 %}
+  <div class="siddhi-variant-grid" data-section-id="{{ section.id }}" data-current-vid="{{ product.selected_or_first_available_variant.id }}">
+    {% for v in product.variants %}
+      {% assign siddhi_label = v.options[siddhi_option_index] %}
+      {% if siddhi_label and siddhi_label != blank and siddhi_label != 'Default' %}
+        {% assign siddhi_img = v.metafields.custom.siddhi_image | default: v.featured_image %}
+        {% assign badge_text = v.metafields.custom.siddhi_badge | default: '10X Stronger' %}
+        {% assign subtitle = v.metafields.custom.siddhi_subtitle %}
+        {% assign desc = v.metafields.custom.siddhi_description %}
+        <div class="siddhi-card" data-vid="{{ v.id }}"
+          data-o1="{{ v.option1 | escape }}"
+          data-o2="{{ v.option2 | escape }}"
+          data-o3="{{ v.option3 | escape }}">
+          <div class="siddhi-card__img">
+            {% if siddhi_img %}
+              <img src="{{ siddhi_img | image_url: width: 280 }}" alt="{{ siddhi_label | escape }}" loading="lazy" style=object-fit:contain;">
+            {% endif %}
+            <div class="siddhi-badge">
+              <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Group_48_2.png?v=1756118128" alt="10X" loading="lazy" />
+            </div>
+          </div>
+          <div class="siddhi-card__content">
+            <h3 class="siddhi-title">{{ siddhi_label }}</h3>
+            {% if subtitle %}<div class="siddhi-subtitle">{{ subtitle }}</div>{% endif %}
+            {% if desc %}<div class="siddhi-desc">{{ desc }}</div>{% endif %}
+            <button type="button" class="siddhi-cta" data-vid="{{ v.id }}">
+              Add {{ v.price | money_without_trailing_zeros }} For Siddhi
+            </button>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <script>
+    (function() {
+      var grid = document.currentScript.previousElementSibling;
+      if (!grid || !grid.classList.contains('siddhi-variant-grid')) return;
+
+      function setOption(optionName, value) {
+        var radios = document.querySelectorAll('[name="options[' + optionName + ']"]');
+        if (radios.length) {
+          radios.forEach(function(r){ if (r.value === value) { r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true })); }});
+          return true;
+        }
+        var select = document.querySelector('select[name="options[' + optionName + ']"]');
+        if (select) { select.value = value; select.dispatchEvent(new Event('change', { bubbles: true })); return true; }
+        return false;
+      }
+
+      function selectVariantByOptions(o1, o2, o3) {
+        var optionNames = {{ product.options | json }};
+        if (optionNames[0] && o1) setOption(optionNames[0], o1);
+        if (optionNames[1] && o2) setOption(optionNames[1], o2);
+        if (optionNames[2] && o3) setOption(optionNames[2], o3);
+      }
+
+      function updateSelectedCard(variantId) {
+        var cards = grid.querySelectorAll('.siddhi-card');
+        cards.forEach(function(card){
+          var btn = card.querySelector('.siddhi-cta');
+          if (String(card.getAttribute('data-vid')) === String(variantId)) {
+            card.classList.add('is-selected');
+            if (btn) { btn.setAttribute('data-added', '1'); btn.textContent = 'ADDED'; }
+          } else {
+            card.classList.remove('is-selected');
+            if (btn) { btn.removeAttribute('data-added'); btn.textContent = btn.getAttribute('data-default') || btn.textContent; }
+          }
+        });
+      }
+
+      // Cache default button texts
+      grid.querySelectorAll('.siddhi-cta').forEach(function(btn){ btn.setAttribute('data-default', btn.textContent); });
+
+      grid.addEventListener('click', function(e) {
+        var btn = e.target.closest('.siddhi-cta');
+        if (!btn) return;
+        var card = btn.closest('.siddhi-card');
+        if (!card) return;
+        var o1 = card.getAttribute('data-o1') || null;
+        var o2 = card.getAttribute('data-o2') || null;
+        var o3 = card.getAttribute('data-o3') || null;
+        selectVariantByOptions(o1, o2, o3);
+      });
+
+      // Listen to variant change events from theme and highlight the selected card
+      var sectionId = grid.getAttribute('data-section-id');
+      document.addEventListener('eurus:product-page-variant-select:updated:' + sectionId, function(ev){
+        try {
+          var html = ev.detail && ev.detail.html;
+          var currentInput = document.getElementById('update-variant-' + sectionId);
+          var vid = currentInput ? currentInput.value : null;
+          if (!vid && html) {
+            var hidden = html.getElementById && html.getElementById('update-variant-' + sectionId);
+            vid = hidden ? hidden.value : null;
+          }
+          if (vid) updateSelectedCard(vid);
+        } catch(e) {}
+      });
+
+      // Initial selected state
+      updateSelectedCard(grid.getAttribute('data-current-vid'));
+    })();
+  </script>
+
+  <style>
+    .siddhi-variant-grid {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 6px;
+      margin: 12px 0 16px;
+    }
+    .siddhi-card {
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      cursor: pointer;
+      transition: box-shadow .2s ease;
+      max-width: 280px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+    }
+    .siddhi-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+    .siddhi-card__img { position: relative; }
+    .siddhi-card__img img {
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .siddhi-badge { position: absolute; top: 12px; left: 12px; }
+    .siddhi-badge img { height: 32px; width: auto; display: block; }
+    .siddhi-card__content { padding: 14px; }
+    .siddhi-title { font-size: 18px; line-height: 1.2; margin: 0 0 6px; }
+    .siddhi-subtitle { color: #111; font-weight: 600; margin-bottom: 6px; }
+    .siddhi-desc { color: #666; margin: 0 0 12px; }
+    .siddhi-cta {
+      width: 100%;
+      background: #000;
+      color: #fff;
+      border: 0;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    /* Selected state */
+    .siddhi-card.is-selected { background: #FFFBEF; border: 1px solid #000; box-shadow: 0 6px 14px rgba(255, 251, 239, 0.9); }
+    .siddhi-card.is-selected .siddhi-cta { background: #7E7E7E; color: #fff; border: 1px solid #000; }
+  </style>
+{% endif %}

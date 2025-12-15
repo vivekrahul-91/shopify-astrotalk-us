@@ -1,0 +1,308 @@
+{% comment %}
+  Quantity Combo Selector Snippet
+  Usage: {% render 'quantity-combo-selector', product: product, variant: variant %}
+{% endcomment %}
+
+{% assign first_variant = product.selected_or_first_available_variant %}
+{% assign base_price = first_variant.price %}
+{% assign base_compare_price = first_variant.compare_at_price | default: base_price %}
+
+<div class="quantity-combo-selector" 
+     data-product-id="{{ product.id }}"
+     id="quantity-combo-selector-{{ product.id }}">
+  <h3 class="combo-title">{{ section.settings.combo_selector_title | default: 'Choose Combo Offer' }}</h3>
+  
+  <div 
+    x-data="{ 
+      selectedQuantity: 1, 
+      basePrice: 0, 
+      baseMrp: 0, 
+      pack2Price: 0, 
+      pack4Price: 0,
+      currentVariantId: {{ first_variant.id }},
+      
+      updatePrices(variantPrice, variantComparePrice) {
+        this.basePrice = variantPrice;
+        this.baseMrp = variantComparePrice || variantPrice;
+        this.pack2Price = Math.round((this.basePrice * 2) * 0.9332888592);
+        this.pack4Price = Math.round((this.basePrice * 3) * 0.9110518123);
+      }
+    }"
+    x-init="
+      basePrice = {{ base_price }};
+      baseMrp = {{ base_compare_price }};
+      pack2Price = Math.round((basePrice * 2) * 0.9332888592);
+      pack4Price = Math.round((basePrice * 3) * 0.9110518123);
+      
+      // Listen for variant changes
+      const variantChangeHandler = (event) => {
+        if (event.detail && event.detail.variant) {
+          const variant = event.detail.variant;
+          currentVariantId = variant.id;
+          updatePrices(variant.price, variant.compare_at_price || variant.price);
+        }
+      };
+      
+      // Listen for standard Shopify variant change events
+      document.addEventListener('variant:change', variantChangeHandler);
+      
+      // Also listen for custom variant change events (common in Shopify themes)
+      document.addEventListener('variantChange', variantChangeHandler);
+      
+      // Cleanup listener on component destroy
+      $cleanup = () => {
+        document.removeEventListener('variant:change', variantChangeHandler);
+        document.removeEventListener('variantChange', variantChangeHandler);
+      };
+    "
+  >
+
+    <!-- Single Item -->
+    <div class="combo-option" 
+         :class="{ 'selected': selectedQuantity === 1 }"
+         @click="selectedQuantity = 1">
+      <div class="combo-info">
+        <span class="quantity-label">{{ section.settings.single_item_label | default: 'Pack Of 1' }}</span>
+        <div class="pricing">
+          <div class="price-container">
+            <span class="mrp">MRP ₹<span x-text="(baseMrp / 100).toLocaleString('en-IN', {minimumFractionDigits:0, maximumFractionDigits:0})"></span></span>
+            <span class="price">₹<span x-text="(basePrice / 100).toLocaleString('en-IN', {minimumFractionDigits:0, maximumFractionDigits:0})"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pack of 2 - Most Popular -->
+    <div class="combo-option popular" 
+         :class="{ 'selected': selectedQuantity === 2 }"
+         @click="selectedQuantity = 2">
+      <div class="badge">{{ section.settings.pack_2_badge | default: 'Get Each for ₹1399' }}</div>
+      <div class="combo-info">
+        <span class="quantity-label">{{ section.settings.pack_2_label | default: 'Pack Of 2' }}</span>
+        <div class="pricing">
+           <div class="price-container">
+            <span class="mrp">MRP ₹<span x-text="(baseMrp * 2 / 100).toLocaleString('en-IN', {minimumFractionDigits:0, maximumFractionDigits:0})"></span></span>
+            <span class="price">₹<span x-text="(pack2Price / 100).toLocaleString('en-IN', {minimumFractionDigits:0, maximumFractionDigits:0})"></span></span>
+          </div>
+          <span class="savings">Save ₹<span x-text="((baseMrp * 2 - pack2Price) / 100).toLocaleString('en-IN', {minimumFractionDigits:0, maximumFractionDigits:0})"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timer inserted below Pack of 2 -->
+    <div id="combo-timer" class="campaign-timer"></div>
+
+    <!-- Pack of 3 - Best Value -->
+    <div class="combo-option best-value" 
+         :class="{ 'selected': selectedQuantity === 3 }"
+         @click="selectedQuantity = 3">
+      <div class="badge">{{ section.settings.pack_4_badge | default: 'Get Each for ₹1299' }}</div>
+      <div class="combo-info">
+        <span class="quantity-label">{{ section.settings.pack_4_label | default: 'Pack Of 3' }}</span>
+        <div class="pricing">
+           <div class="price-container">
+            <span class="mrp">MRP ₹<span x-text="(baseMrp * 3 / 100).toLocaleString('en-IN', {minimumFractionDigits:0, maximumFractionDigits:0})"></span></span>
+            <span class="price">₹<span x-text="(pack4Price / 100).toLocaleString('en-IN', {minimumFractionDigits:0, maximumFractionDigits:0})"></span></span>
+          </div>
+          <span class="savings">Save ₹<span x-text="((baseMrp * 3 - pack4Price) / 100).toLocaleString('en-IN', {minimumFractionDigits:0, maximumFractionDigits:0})"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add to Cart -->
+    <div class="product-card__footer" x-data="xProductCart()">
+      {% if first_variant %}
+        {% if product.available %}
+          <form
+            method="post"
+            action="/cart/add"
+            accept-charset="UTF-8"
+            class="form"
+            enctype="multipart/form-data"
+            novalidate
+            data-type="add-to-cart-form"
+            x-ref="product_form"
+          >
+            <input type="hidden" name="form_type" value="product">
+            <input type="hidden" name="utf8" value="✓">
+            <input type="hidden" name="id" value="{{ first_variant.id }}">
+            <input type="hidden" name="quantity" x-ref="quantity_input" :value="selectedQuantity">
+
+            <button
+              type="button"
+              class="product-card__add-to-cart"
+              aria-label="Add to cart"
+              @click="
+                $refs.quantity_input.value = selectedQuantity;
+                console.log('[ATC submit]', { variant_id: '{{ first_variant.id }}', quantity: selectedQuantity, product_id: '{{ product.id }}' });
+                $nextTick(() => addToCart($event, false))
+              "
+            >
+              {{ section.settings.button_text | default: 'Add to cart' }}
+            </button>
+          </form>
+        {% else %}
+          <span class="product-card__sold-out">Sold Out</span>
+        {% endif %}
+      {% else %}
+        <span class="product-card__sold-out">Sold Out</span>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<style>
+.campaign-timer {
+  background: rgb(255 236 150);
+  padding: 4px 20px;
+  text-align: center;
+  font-family: Segoe UI, sans-serif;
+  font-weight: bold;
+  color: #000;
+  border-radius: 0 0 8px 8px;
+  margin-top: -6px;
+  border: 1px solid #f4d03f;
+  border-top: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 12px;
+  font-weight:600;
+}
+</style>
+
+<script>
+(function() {
+  function pad(num) { return String(num).padStart(2, '0'); }
+  function formatTimer(totalSeconds) {
+    var minutes = Math.floor((totalSeconds % 3600) / 60);
+    var seconds = Math.floor(totalSeconds % 60);
+    return pad(minutes) + 'm ' + pad(seconds) + 's';
+  }
+
+  var timerEl = document.getElementById('combo-timer');
+  if (timerEl) {
+    var timeLeft = 15 * 60; // 15 minutes
+
+    function updateTimer() {
+      if (timeLeft <= 0) {
+        timerEl.innerHTML = `<span>⚠️ Limited Time Offer Expired</span>`;
+        clearInterval(intervalId);
+        return;
+      }
+      timerEl.innerHTML = `
+        <span>Limited Time Offer</span>
+        <span style="margin: 0 8px; font-weight: 600;">
+          ${formatTimer(timeLeft)}
+        </span>
+      `;
+      timeLeft--;
+    }
+
+    updateTimer();
+    var intervalId = setInterval(updateTimer, 1000);
+  }
+})();
+</script>
+
+<style>
+.quantity-combo-selector {
+  margin: 16px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.combo-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.combo-option {
+  background: white;
+  border: 2px solid #eaeaea;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px auto; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.combo-option:hover { border-color: #ccc; }
+.combo-option.selected {
+    border: 1.5px solid #ffd100;
+    background: linear-gradient(185.23deg, #FFF5C9 -153.37%, #FFF9DF 52.38%, #FFFBEB 165.83%);
+}
+
+.combo-option.popular .badge {
+    background: #000;
+    color: #fff;
+}
+.combo-option.best-value .badge { background: #000; }
+
+.badge {
+  position: absolute; top: -8px; left: 16px;
+  padding: 4px 8px; border-radius: 4px;
+  font-size: 12px; font-weight: 600; color: #fff; background:#333;
+}
+
+.combo-info { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.quantity-label { font-weight: 500; color: #333; font-size: 16px; flex: 1; }
+.pricing { text-align: right; flex-shrink: 0; min-width: 120px; }
+.mrp {
+    display: block;
+    text-decoration: line-through;
+    color: #888;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+.quantity-combo-selector .price, .quantity-combo-selector .price span {
+    color: #333;
+    font-weight: 500;
+    text-align: start;
+    font-size: 20px !important;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+.savings { display: block; color: #16803a; font-size: 12px; font-weight: 500; }
+
+.price-container {display: flex;align-items: center;gap: 8px;}
+
+.pricing {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.quantity-combo-selector .product-card__add-to-cart {
+    background: #ffd100;
+    color: #000;
+    font-weight: 600;
+    padding: 14px;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 10px;
+}
+.campaign-timer {
+    background: rgb(255, 236, 150);
+    padding: 7px 20px 4px;
+    text-align: center;
+    font-family: Segoe UI, sans-serif;
+    font-weight: 600;
+    color: #000;
+    border-radius: 0 0 8px 8px;
+    margin-top: -21px;
+    border: none;
+    border-top: none;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-evenly;
+}
+@media (max-width: 768px) {
+  .combo-info { flex-direction: row; align-items: center; justify-content: space-between; }
+  .quantity-label { font-size: 16px; }
+  .pricing { text-align: right; min-width: 100px; }
+ 
+}
+</style>

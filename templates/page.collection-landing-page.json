@@ -1,0 +1,929 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_TgW9xW": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_PAKhPg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/siddh_banner_20_off_web.webp",
+            "image_mobile": "shopify://shop_images/siddh_banner_mobile_20_off.webp",
+            "image_link": "shopify://pages/rudraksha",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_w8dUta": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/mm_26.webp",
+            "image_mobile": "shopify://shop_images/mmm_19.webp",
+            "image_link": "shopify://pages/energized-on-purnima",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PAKhPg",
+        "slide_w8dUta"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_THDGhd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HWg4LJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sawan Siddh Rudraksha",
+            "heading_size": 130,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HWg4LJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_rby48G": {
+      "type": "simple-collection-grid",
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "sawan-siddh-range",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "image_with_text_ephzzR": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mgGh3r": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Energization done on",
+            "heading": "Purnima Night",
+            "heading_base_size": 120,
+            "heading_tag": "h2",
+            "text": "<p>In our Vedas, the night of Purnima is considered the most divine and powerful night of the month. The full moon on Purnima radiates strong positive vibrations. Energising crystals under this moonlight helps them absorb these strong positive and divine energies, making them more powerful and effective. The process purifies the crystals, activates their vibrations, and charges them with positive intentions. This makes your crystals work faster and stronger for your desired goals - whether it is money, love, peace, or protection.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mgGh3r"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/common_new_copy.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_width": "large",
+        "image_layout": "normal",
+        "image_corner_radius": 8,
+        "content_layout": "overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_LwpKUw": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hNeHL4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Energised on Purnima",
+            "heading_size": 130,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hNeHL4"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_gAiVKW": {
+      "type": "simple-collection-grid",
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "energised-on-purnima",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "rich_text_pW9W3p": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CUtT7f": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shani Jayanti Special",
+            "heading_size": 130,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CUtT7f"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_UfmY3V": {
+      "type": "simple-collection-grid",
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "shani-jayanti",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "image_with_text_CzTeaB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_bHyKLW": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Siddhi done at",
+            "heading": "Nar Singh Hanuman Mandir",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Narsingh Hanuman Mandir is a sacred temple dedicated to Lord Hanuman and Lord Narsingh. Known for its powerful energy, it's a popular spot for devotees seeking strength and protection. Tuesdays and Saturdays see the highest footfall, with prayers believed to remove fear and negativity.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bHyKLW"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/hanumanjicopy.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_width": "large",
+        "image_layout": "normal",
+        "image_corner_radius": 13,
+        "content_layout": "overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "slideshow_37Pa8r": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_Lw7QMm": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/webp_0cb63842-daaa-4712-88d2-268a187a03e3.webp",
+            "image_mobile": "shopify://shop_images/Hanuman_ji_Banner_1.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_Lw7QMm"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_HM7WHR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_P3DywA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hanuman Jayanti Special",
+            "heading_size": 130,
+            "heading_tag": "h2"
+          }
+        },
+        "text_DxMkNC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Siddhi was done on 30th April at at Pracheen Lakshmi Narayan Mandir</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_P3DywA",
+        "text_DxMkNC"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_bUYhMg": {
+      "type": "simple-collection-grid",
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "limited-edition",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "slideshow_DqEwee": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_R7j9QD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/mm_20.webp",
+            "image_mobile": "shopify://shop_images/mmm_14.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_R7j9QD"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "image_with_text_mb4fnV": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_wXcE4B": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Siddhi done at",
+            "heading": "Lakshmi Narayan Mandir",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Lakshmi Narayan Mandir is a divine shrine dedicated to Goddess Lakshmi and Lord Vishnu. It symbolizes prosperity, harmony, and divine blessings. Devotees visit to seek wealth, peace, and success in life. The temple is especially vibrant during festivals like Diwali and Vaikuntha Ekadashi.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wXcE4B"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/2.1.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_width": "large",
+        "image_layout": "normal",
+        "image_corner_radius": 13,
+        "content_layout": "overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_aXCwrE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ATJrDc": {
+          "type": "heading",
+          "settings": {
+            "heading": "AKSHAY TRITIYA SPECIAL",
+            "heading_size": 130,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ATJrDc"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_cjYhYR": {
+      "type": "simple-collection-grid",
+      "custom_css": [
+        ".collection-grid-simple {padding-bottom: 15px;}",
+        "button.product-card__add-to-cart {color: white; background-color: black;}"
+      ],
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "akshay-tritiya-special",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "slideshow_kRXChf": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_MAEx9d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Buddha_Purnima.webp",
+            "image_mobile": "shopify://shop_images/Buddha_Purnima_Mobile.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_MAEx9d"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_8Jnqy7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_U7TVF8": {
+          "type": "heading",
+          "settings": {
+            "heading": "BUDH PURNIMA SPECIAL",
+            "heading_size": 130,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_U7TVF8"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_ECY9t4": {
+      "type": "simple-collection-grid",
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "buddha-purnima-sale",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "custom_liquid_AdAfWb": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/gemstone-block-border.png?v=1745844446\">\n<section class=\"akshaya-tritiya-special\">\n  <div class=\"container\">\n    <h2 class=\"title\">Akshaya Tritiya Special at Astrotalk</h2>\n    <p class=\"description\">\n      Akshaya Tritiya is one of the best days to bring prosperity, success, and positive energy into your life. \n      It’s the perfect time to start something new, make investments, and grow spiritually. \n      At Astrotalk, we are celebrating this special day with a big sale on spiritual products that help bring wealth, good luck, and blessings.\n    </p>\n\n    <p class=\"description\">\n      Our products are carefully chosen and energised with powerful mantras to give you the best results. \n      This Akshaya Tritiya, invest in products that not only make your home beautiful but also help you improve your finances and spiritual well-being.\n    </p>\n\n    <div class=\"why-celebrate\">\n      <h3>Why Celebrate Akshaya Tritiya with Astrotalk?</h3>\n      <p>\n        Astrotalk’s Akshaya Tritiya collection has something for everyone. \n        Plus, all our products will be charged with a <b> special Siddhi Pooja</b> on <b>30th April</b> at <b>Pracheen Lakshmi Narayan Mandir</b>, \n        so you can be sure that you are getting divine blessings.\n      </p>\n    </div>\n\n    <div class=\"products\">\n      <h3>Featured Akshaya Tritiya Products</h3>\n      <div class=\"product-list\">\n        <div class=\"product-item\">\n          <h4><a href=\"https://astrotalk.store/collections/akshay-tritiya-special/products/siddh-raw-pyrite-bracelet\" >Siddh Raw Pyrite Bracelet</a></h4>\n          <p><strong>Benefits:</strong> This bracelet is known to bring abundance and help protect your wealth. It also helps improve financial stability and success.</p>\n        </div>\n        <div class=\"product-item\">\n          <h4> <a href=\"https://astrotalk.store/collections/akshay-tritiya-special/products/siddh-dhan-yog-bracelet\" ></a>Siddh Dhan Yog Bracelet</a></h4>\n          <p><strong>Benefits:</strong> This bracelet helps to align energies for wealth and success. It opens new doors for financial growth and helps you find new opportunities.</p>\n        </div>\n        <div class=\"product-item\">\n          <h4> <a href=\"https://astrotalk.store/collections/akshay-tritiya-special/products/siddh-lakshmi-yantra-pyramid\" ></a>Siddh Lakshmi Yantra Pyramid</a></h4>\n          <p><strong>Benefits:</strong> The Lakshmi Yantra Pyramid symbolises Goddess Lakshmi, the goddess of wealth. It brings blessings for financial prosperity and success.</p>\n        </div>\n        <div class=\"product-item\">\n          <h4> <a href=\"https://astrotalk.store/collections/akshay-tritiya-special/products/siddh-maha-lakshmi-murti\" ></a>Siddh Mahalakshmi Murti</a></h4>\n          <p><strong>Benefits:</strong> This beautiful idol of Goddess Mahalakshmi brings wealth, health, and happiness. Place it in your home or office to invite positive energy and prosperity.</p>\n        </div>\n        <div class=\"product-item\">\n          <h4> <a href=\"https://astrotalk.store/collections/akshay-tritiya-special/products/siddh-maha-lakshmi-murti\" ></a>Siddh Dhan Lakshmi Murti</a></h4>\n          <p><strong>Benefits:</strong> This Murti helps bring both <b> Dhan (wealth)</b> and <b>Sampatti (prosperity)</b>. It ensures that you have a constant flow of wealth and success in your life.</p>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"cta\">\n      <p>So, don’t wait! Explore our <b>Akshaya Tritiya sale now </b> and bring home the blessings of prosperity and wealth.</p>\n    </div>\n  </div>\n</section>\n<img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/gemstone-block-border.png?v=1745844446\">\n<!-- CSS Styling -->\n<style>\n.akshaya-tritiya-special {\n  padding: 30px 20px;\n  background: #ffead2;\n  font-family: 'Helvetica Neue', sans-serif;\n  color: #333;\n}\n.temp-navratri-landing .section-custom-liquid .full-width {\n    padding: 0;\n}\n.akshaya-tritiya-special .container {\n  max-width: 1000px;\n  margin: 0 auto;\n}\n.akshaya-tritiya-special .title {\n  font-size: 28px;\n  font-weight: bold;\n  text-align: center;\n  color: #c68600;\n  margin-bottom: 20px;\n}\n.akshaya-tritiya-special .description {\n  font-size: 14px;\n  margin-bottom: 20px;\n  line-height: 1.6;\n  text-align: left;\n}\n.akshaya-tritiya-special .why-celebrate {\n  background: #fff3cd;\n  padding: 20px;\n  border-radius: 10px;\n  margin: 40px 0;\n  text-align: center;\n}\n\n.akshaya-tritiya-special .why-celebrate h3 {\n  font-size: 18px;\n  color: #856404;\n  margin-bottom: 10px;\n}\n.akshaya-tritiya-special .products {\n  margin-top: 40px;\n}\n.akshaya-tritiya-special .products h3 {\n  font-size: 2rem;\n  color: #c68600;\n  margin-bottom: 30px;\n  text-align: center;\n}\n.akshaya-tritiya-special .product-list {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: 20px;\n}\n.akshaya-tritiya-special .product-item {\n  background: #fff;\n  padding: 20px;\n  border: 1px solid #f0c36d;\n  border-radius: 10px;\n  transition: box-shadow 0.3s ease;\n}\n.akshaya-tritiya-special .product-item:hover {\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);\n}\n.akshaya-tritiya-special .product-item h4 {\n  font-size: 14px;\n  text-decoration: underline;\n  margin-bottom: 10px;\n  color: #b37000;\n}\n.section-custom-liquid img {\n    width: 100%;\n}\n.akshaya-tritiya-special .product-item p {\n  font-size: 14px;\n  line-height: 1.5;\n}\n.akshaya-tritiya-special .cta {\n  margin-top: 30px;\n  text-align: center;\n}\n.akshaya-tritiya-special .cta p {\n  font-size: 14px;\n  color: #000000;\n  font-weight: bold;\n}\n@media (max-width: 768px) {\n  .akshaya-tritiya-special .title {\n    font-size: 20px;\n  }\n  .akshaya-tritiya-special .products h3 {\n    font-size: 18px;\n  }\n.section-custom-liquid img {\n    width: 100%;\n    height: 18px;\nobject-fit: cover;\n}\n}\n</style>",
+        "full_width": true,
+        "show_section_divider": false,
+        "padding_top": 32,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "testimonial_custom_46kGgd": {
+      "type": "testimonial-custom",
+      "blocks": {
+        "testimonial_block_RCRXfn": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I was a bit skeptical at first, but after using the Dhan Yog Bracelet, I noticed a positive shift in my financial situation. New opportunities started coming my way, and managing money became a lot easier. It has truly helped bring financial stability into my life!",
+            "testimonial_name": "Gourav Mittal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_xnXP8Y": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I’ve been wearing the Karz Mukti Bracelet for a few months now, and I can genuinely feel a positive shift in my financial and mental well-being. Initially, I was skeptical, but I decided to give it a try, and I’m glad I did!",
+            "testimonial_name": "Yash",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_CrFKcG": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I purchased the Money Maker Bracelet with the hope of improving my financial situation, and I must say, it has exceeded my expectations!",
+            "testimonial_name": "Nikita",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_XephJP": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Dhan Lakshmi Murti has brought a sense of balance and focus into my life. I’ve experienced fewer obstacles, improved financial stability, and a boost in my overall well-being. It’s a wonderful addition for anyone looking to invite positivity and prosperity into their life!",
+            "testimonial_name": "Prayush",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_UpjBWa": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Raksha-Kavach Yantra Combo has given me a sense of safety and confidence. I feel more protected while traveling and notice less negativity around me. It’s a great choice for anyone looking for extra security and peace of mind!",
+            "testimonial_name": "Davinder Goyal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_6gXEAh": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Hanuman Chalisa Kawach has brought me immense strength and protection. I feel more confident, and challenges that once seemed overwhelming now feel easier to overcome. It’s a powerful tool for anyone seeking divine guidance and spiritual support!",
+            "testimonial_name": "Vaibhav",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_fPmTWe": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": false,
+            "testimonial_text": "Slumberly supplements have been a game-changer. After trying the first bottle, I switched to the subscription because I never want to go back to restless nights!",
+            "testimonial_name": "Laura P.",
+            "secondary_label": "Slumberly Member",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_block_RCRXfn",
+        "testimonial_block_xnXP8Y",
+        "testimonial_block_CrFKcG",
+        "testimonial_block_XephJP",
+        "testimonial_block_UpjBWa",
+        "testimonial_block_6gXEAh",
+        "testimonial_block_fPmTWe"
+      ],
+      "settings": {
+        "section_title": "Customer Feedback",
+        "section_subtitle": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_TgW9xW",
+    "rich_text_THDGhd",
+    "simple_collection_grid_rby48G",
+    "image_with_text_ephzzR",
+    "rich_text_LwpKUw",
+    "simple_collection_grid_gAiVKW",
+    "rich_text_pW9W3p",
+    "simple_collection_grid_UfmY3V",
+    "image_with_text_CzTeaB",
+    "slideshow_37Pa8r",
+    "rich_text_HM7WHR",
+    "simple_collection_grid_bUYhMg",
+    "slideshow_DqEwee",
+    "image_with_text_mb4fnV",
+    "rich_text_aXCwrE",
+    "simple_collection_grid_cjYhYR",
+    "slideshow_kRXChf",
+    "rich_text_8Jnqy7",
+    "simple_collection_grid_ECY9t4",
+    "custom_liquid_AdAfWb",
+    "testimonial_custom_46kGgd"
+  ]
+}

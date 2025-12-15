@@ -1,0 +1,32 @@
+{% stylesheet %}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.benefits-grid img {
+  max-width: 80px;
+  height: auto;
+}
+{% endstylesheet %}
+
+<div class="benefits-grid">
+    {% assign benefits_obj = product.metafields.benefits.blocks.value %}
+  {% if benefits_obj != blank %}
+    
+    {% for file in benefits_obj.images.value %}
+      {% if file.preview_image %}
+        <div class="benefit-item">
+          <img 
+            src="{{ file.preview_image | img_url: '200x' }}" 
+            alt="{{ product.title }} benefit"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>

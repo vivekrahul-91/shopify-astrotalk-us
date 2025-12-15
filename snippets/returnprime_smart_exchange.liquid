@@ -1,0 +1,205 @@
+{% if request.path contains 'return_prime' %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        // Function to initialize everything once the element is available
+        function initIfBackBtnExists() {
+            const backBtn = document.querySelector('.back__btn__icon');
+            if (backBtn) {
+                console.log("back__btn__icon element found, initializing...");
+                initialize();
+                return true;
+            }
+            return false;
+        }
+
+        // Main initialization logic
+        function initialize() {
+            // Inject initial CSS
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .returnprime__app .incentive__amount-info svg {
+                    height: 40px;
+                    width: 40px;
+                }
+                .returnprime__app .promotion__amount-return-insurance {
+                    align-items: center !important;
+                }
+                .returnprime__app .back__btn__icon {
+                    min-width: unset !important;
+                }
+                .returnprime__app .back__btn__icon:after {
+                    content: unset !important;
+                }
+                .returnprime-storecredit-offer .promotion__amount-return-insurance {
+                    max-width: 60% !important;
+                }
+            `;
+            document.head.appendChild(style);
+            console.log("CSS for back__btn__icon added");
+
+            // Setup event listeners and logic
+            const isReturnPage = window.location.pathname.includes("return_prime");
+            const isExchangePage = window.location.pathname.includes("exchange") && !isReturnPage;
+
+            document.addEventListener("returnprime_return_page", handleReturnPage);
+            document.addEventListener("returnprime_exchange_page", handleExchangePage);
+
+            if (isReturnPage) {
+                handleReturnPage();
+                initializeListeners();
+            }
+
+            if (isExchangePage) {
+                handleExchangePage();
+            }
+        }
+
+        function handleReturnPage() {
+            removeExchangePageCSS();
+            addReturnPageCSS();
+            console.log("Return page event handled");
+        }
+
+        function handleExchangePage() {
+            removeReturnPageCSS();
+            addExchangePageCSS();
+            console.log("Exchange page event handled");
+        }
+
+        function initializeListeners() {
+            console.log("Return page listeners initialized");
+        }
+
+        function removeReturnPageCSS() {
+            const existing = document.getElementById('return-page-styles');
+            if (existing) {
+                existing.remove();
+                console.log("Return page CSS removed");
+            }
+        }
+
+        function removeExchangePageCSS() {
+            const existing = document.getElementById('exchange-page-styles');
+            if (existing) {
+                existing.remove();
+                console.log("Exchange page CSS removed");
+            }
+        }
+
+        function addReturnPageCSS() {
+            removeReturnPageCSS();
+            const css = `
+                <style id="return-page-styles">
+                    .returnprime__app svg {
+                        min-height: 20px !important;
+                    }
+                    .returnprime .return__order .exchange__now .exchange__now-wrapper .exchange__now-text .exchange__now-desc .discount_amount {
+                        font-size: 23px;
+                        font-weight: 600;
+                    }
+                    @media only screen and (max-width: 680px) {
+                        .returnprime__app svg {
+                            min-height: 20px !important;
+                        }
+                        .halo-sticky-toolbar-mobile {
+                            display: none !important;
+                        }
+                        .returnprime__app .exchange__now {
+                            position: fixed !important;
+                            z-index: 2147483645 !important;
+                            background: #fff !important;
+                            bottom: 47px !important;
+                            left: 0 !important;
+                            margin-top: 60px !important;
+                            padding: 0 !important;
+                            right: 0 !important;
+                            text-align: center !important;
+                        }
+                        .returnprime__app .exchange__now-wrapper {
+                            flex-wrap: wrap !important;
+                            padding-bottom: 10px !important;
+                        }
+                        .returnprime__app .exchange__now-action {
+                            width: 100% !important;
+                            margin: 10px 0 0 0 !important;
+                        }
+                        .returnprime__app .exchange__now .exchange__now-wrapper .exchange__now-action .exchange__now-btn {
+                            width: 100% !important;
+                            display: block !important;
+                            max-width: unset !important;
+                            padding: 8px 13px !important;
+                            font-size: 18px !important;
+                        }
+                        .returnprime__app .return__btns .btn-secondary {
+                            {% comment %} border: none !important;
+                            background:#e2e1e1 !important; {% endcomment %}
+                        }
+                        .returnprime__app .return__btns .fixed__btn {
+                            padding: 0 !important;
+                            border: none !important;
+                            box-shadow: none !important;
+                        }
+                        .returnprime .return__order .exchange__now .exchange__now-wrapper .exchange__now-text .exchange__now-desc {
+                            text-align: left !important;
+                        }
+                        .returnprime .return__order .exchange__now .exchange__now-wrapper .exchange__now-text .exchange__now-desc .discount_amount {
+                            font-size: 23px;
+                            font-weight: 600;
+                        }
+                        .promotion__amount-return-insurance svg {
+                            fill: #fff !important;
+                            stroke: unset !important;
+                            min-height: unset !important;
+                        }
+                    }
+                </style>
+            `;
+            document.head.insertAdjacentHTML('beforeend', css);
+            console.log("Return page CSS added");
+        }
+
+        function addExchangePageCSS() {
+            removeExchangePageCSS();
+            const css = `
+                <style id="exchange-page-styles">
+                    @media only screen and (max-width: 680px) {
+                        .halo-sticky-toolbar-mobile {
+                            display: none !important;
+                        }
+                        .returnprime__app .fixed__btn {
+                            border-top: 1px solid #e9e9e9 !important;
+                            box-shadow: 0 31px 41px 0 #202a3533, 0 2px 16px 0 #202a3614 !important;
+                            box-shadow: var(--p-modal-shadow, 0 31px 41px 0 #202a3533, 0 2px 16px 0 #202a3614) !important;
+                            position: fixed !important;
+                            z-index: 2147483645 !important;
+                        }
+                    }
+                </style>
+            `;
+            document.head.insertAdjacentHTML('beforeend', css);
+            console.log("Exchange page CSS added");
+        }
+
+        // Set up MutationObserver to watch for back__btn__icon element
+        const observer = new MutationObserver((mutations, obs) => {
+            if (initIfBackBtnExists()) {
+                obs.disconnect();
+            }
+        });
+
+        // Start observing the whole body
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Also attempt to initialize immediately in case the element is already present
+        if (initIfBackBtnExists()) {
+            observer.disconnect();
+        }
+    });
+</script>
+
+{% endif %}

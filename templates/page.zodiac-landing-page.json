@@ -1,0 +1,263 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "video_with_text_RWzRnw": {
+      "type": "video-with-text",
+      "name": "t:sections.video_hero.presets.name",
+      "settings": {
+        "sub_heading_video": "",
+        "heading": "",
+        "heading_size_video": 100,
+        "heading_tag": "h2",
+        "text": "",
+        "text_size": 100,
+        "video": "shopify://files/videos/Zodiac Box Landscape Video.webmhd.webm",
+        "show_sound_control": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_alt_text": "",
+        "overlay_opacity": 0,
+        "button_label": "",
+        "show_button_style": "primary",
+        "button_link": "",
+        "open_new_window": false,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "content_alignment": "center",
+        "color_button": "rgba(0,0,0,0)",
+        "color_button_hover": "rgba(0,0,0,0)",
+        "color_text_button": "rgba(0,0,0,0)",
+        "color_text_button_hover": "rgba(0,0,0,0)",
+        "color_button_secondary": "rgba(0,0,0,0)",
+        "secondary_button_text": "rgba(0,0,0,0)",
+        "colors_text_link": "rgba(0,0,0,0)",
+        "full_width": true,
+        "rounded_corners": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "full_width_mobile": true,
+        "rounded_corners_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "slideshow_TgW9xW": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_PAKhPg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/zodiac_copy_1_2aef2cfd-b10a-43d5-9dfe-bf5c8be98ffe.webp",
+            "image_mobile": "shopify://shop_images/zodiac_copy_1_2aef2cfd-b10a-43d5-9dfe-bf5c8be98ffe.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PAKhPg"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "zodiac_collection_qHhnk3": {
+      "type": "zodiac-collection",
+      "custom_css": [
+        "#product-section {padding-top: 15px;}",
+        "#product-section h2.section-title {margin-bottom: 0px !important;}"
+      ],
+      "name": "Zodiac Collection",
+      "settings": {
+        "section_title": "",
+        "collection": "rashi",
+        "cards_per_row_mobile": 2,
+        "cards_per_row_desktop": 4,
+        "show_tags": false,
+        "show_trust_badges": false
+      }
+    },
+    "custom_liquid_AdAfWb": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .shani-jayanti-special {\n    background-color: #02192B; /* deep blue background */\n    color: white; /* base text color */\n    padding: 40px 20px;\n    font-family: 'Helvetica Neue', sans-serif;\n  }\n  .shani-jayanti-special * {\n    color: white !important; /* force white on all nested elements */\n  }\n  .shani-jayanti-special .container {\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n  .shani-jayanti-special .title,\n  .shani-jayanti-special h2,\n  .shani-jayanti-special h3,\n  .shani-jayanti-special p,\n  .shani-jayanti-special b {\n    color: white !important;\n  }\n  .shani-jayanti-special .title {\n    font-size: 2.2em;\n    font-weight: bold;\n    margin-bottom: 20px;\n  }\n  .shani-jayanti-special .description,\n  .shani-jayanti-special .why-celebrate p,\n  .shani-jayanti-special .pyrite-siddh p {\n    font-size: 1.1em;\n    line-height: 1.6;\n    margin-bottom: 20px;\n  }\n  .shani-jayanti-special .why-celebrate h3,\n  .shani-jayanti-special .pyrite-siddh h3 {\n    font-size: 1.5em;\n    margin-top: 30px;\n    margin-bottom: 10px;\n  }\n</style>\n<img src=\"https://cdn.shopify.com/s/files/1/0878/4907/4985/files/gemstone-block-border.png?v=1745844446\">\n<section class=\"shani-jayanti-special\">\n  <div class=\"container\">\n    <h2 class=\"title\">Shani Jayanti Special at Astrotalk</h2>\n    <p class=\"description\">\n      Shani Jayanti marks the birth of Lord Shani, the powerful deity who governs justice, discipline, and karma in Vedic astrology. \n      It's a significant occasion to seek protection from negative influences, remove karmic blockages, and invite balance into your life. \n      At Astrotalk, we honor this powerful day with spiritually charged offerings to appease Lord Shani and align your energies.\n    </p>\n    <p class=\"description\">\n      All our spiritual items are specially energized on Shani Jayanti by expert astrologers to amplify their protective and karmic-balancing properties. \n      Whether you seek relief from Shani's influence in your chart or wish to strengthen your Saturn energy, our collection is designed to support your journey with divine blessings.\n    </p>\n    <div class=\"pyrite-siddh\">\n      <h3>Why Pyrite Siddh on Shani Jayanti is 10X stronger?</h3>\n      <p>\n        Shani Jayanti marks Lord Shani's birth, an important day for attracting money, success, balance, and powerful protection. Raw Pyrite is Lord Shani's favourite and most blessed crystal. Performing Siddhi of Raw Pyrite during Shani Jayanti is especially powerful because this siddhi process infuses the stone with Lord Shani's direct blessings and is believed to make it 10 times stronger! \n      </p>\n      <p>\n        This Siddhi supercharges Raw Pyrite's ability to attract money and success by helping clear financial blockages with Lord Shani's grace. As Lord Shani removes obstacles, the energized Raw Pyrite then powerfully attracts wealth and success.\n      </p>\n    </div>\n    <div class=\"why-celebrate\">\n      <h3>Why Celebrate Shani Jayanti with Astrotalk?</h3>\n      <p>\n        Shani Jayanti is a powerful time to reduce life obstacles, gain clarity in career and finances, and protect yourself from misfortunes caused by planetary doshas. \n        Astrotalk's energized products and astrological rituals help you connect with Lord Shani's strength and seek his grace in overcoming life's challenges.\n      </p>\n    </div>\n  </div>\n</section>",
+        "full_width": true,
+        "show_section_divider": false,
+        "padding_top": 32,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "testimonial_custom_46kGgd": {
+      "type": "testimonial-custom",
+      "blocks": {
+        "testimonial_block_RCRXfn": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Leo Zodiac Box looks so elegant. The golden details give it a royal touch. Everything inside was packed beautifully, and it really feels like a premium gift.",
+            "testimonial_name": "Gourav Mittal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_xnXP8Y": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I bought the Cancer Zodiac Box as a gift for my sister. The soft pastel colors match the nurturing Cancer energy perfectly. The items inside feel calming and are actually useful in daily life. She said it made her feel peaceful and cared for",
+            "testimonial_name": "Yash",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_CrFKcG": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Virgo Zodiac Box is neat, minimal, and very effective. Everything is arranged in an organized way which gives a sense of balance. The earthy tones are pleasing to the eye, and the products inside promote calmness and focus",
+            "testimonial_name": "Nikita",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_XephJP": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Taurus Zodiac Box gives a natural, earthy feel. The green tones are very relaxing, and the contents give a sense of grounding and stability. It is effective for creating a calm space, and it looks premium too.",
+            "testimonial_name": "Prayush",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_UpjBWa": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Sagittarius Zodiac Box is vibrant and inspiring. The bold designs reflect adventure and optimism. Beyond looks, the items really uplift the mood and bring excitement. A great pick if you want something that adds energy to your day.",
+            "testimonial_name": "Davinder Goyal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_6gXEAh": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Aquarius Zodiac Box looks modern and stylish. The blue tones are refreshing, and the overall curation feels unique. What I liked is that it actually inspires creativity and fresh thinking. A great blend of design and usefulness.",
+            "testimonial_name": "Vaibhav",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_block_RCRXfn",
+        "testimonial_block_xnXP8Y",
+        "testimonial_block_CrFKcG",
+        "testimonial_block_XephJP",
+        "testimonial_block_UpjBWa",
+        "testimonial_block_6gXEAh"
+      ],
+      "settings": {
+        "section_title": "Customer Feedback",
+        "section_subtitle": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "video_with_text_RWzRnw",
+    "slideshow_TgW9xW",
+    "zodiac_collection_qHhnk3",
+    "custom_liquid_AdAfWb",
+    "testimonial_custom_46kGgd"
+  ]
+}

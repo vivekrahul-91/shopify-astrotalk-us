@@ -1,0 +1,310 @@
+<!-- temple-siddhi-section.liquid -->
+{% liquid 
+  assign heading_base_size =  settings.heading_base_size | times: 0.0225
+  assign heading_size =  section.settings.heading_size | times: 0.01 | times: heading_base_size
+  assign video_alt = section.settings.video_alt_text
+  assign check_video = false
+  if section.settings.video_url.type == 'youtube'
+    assign video_type = 'youtube'
+    assign check_video = true
+    assign video_id = section.settings.video_url.id
+  endif
+  if section.settings.video_url.type == 'vimeo'
+    assign video_type = 'vimeo'
+    assign check_video = true
+    assign video_id = section.settings.video_url.id
+  endif
+ 
+  if section.settings.video != null 
+    assign video_type = 'video_select'
+    assign check_video = true
+  endif 
+
+  assign image_cover = section.settings.temple_image
+  if video_type == 'video_select' and section.settings.temple_image == blank
+    assign image_cover = section.settings.video.preview_image
+  endif
+%} 
+
+{%- style -%}
+  .heading--{{ section.id }} {
+    font-size: {{ heading_size | times: 0.6 }}rem;
+  }
+  @media (min-width: 767px) {
+    .heading--{{ section.id }} {
+      font-size: {{ heading_size }}rem;
+    }
+  }
+{%- endstyle -%}
+
+{% capture button_play %}
+  <button 
+    class="group button-play absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-24 md:h-24 rounded-full p-5 bg-[rgba(var(--image-treatment-text),0.3)] bg-opacity-30 disabled:cursor-not-allowed"
+    {% if video_type == 'video_select' %}@click.prevent="$store.xVideo.mp4Thumbnail($el)"{% endif %}
+    {% if video_type == 'youtube' or video_type == 'vimeo' %}@click.prevent="$store.xVideo.externalLoad($el, '{{ video_type }}', '{{ video_id }}', false, '{{ video_alt }}')"{% endif %}
+    aria-label="image-video"
+  >
+    <span class="pointer-events-none duration-200 group-hover:scale-125 bg-button-play absolute w-6 h-6 md:w-10 md:h-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-[rgba(var(--image-treatment-text))]">
+      {% render 'icon-media', icon: 'icon-play', class: 'w-full h-full' %}
+    </span>
+  </button>
+{% endcapture %}
+
+<div class="temple-siddhi-wrapper">
+  <!-- Video/Image Section -->
+  <div class="temple-video-container">
+    {% if check_video %}
+      <div
+        class="w-full relative h-0 overflow-hidden external-video{% if image_cover == blank %} pb-[56.25%]{% endif %}{% if section.settings.rounded_corners %} md:rounded-[10px]{% else %} md:rounded-none{% endif %}{% if section.settings.rounded_corners_mobile %} rounded-[10px]{% endif %}"
+        x-intersect:leave="$store.xVideo.pause($el)"
+        {% if image_cover != blank %}
+          style="padding-bottom: {{ 1 | divided_by: image_cover.aspect_ratio | times: 100 }}%;"
+        {% elsif section.settings.video != blank %}
+          style="padding-bottom: {{ 1 | divided_by: section.settings.video.aspect_ratio | times: 100 }}%;"
+        {% endif %}
+      >
+        {% if image_cover != blank %}
+          <img
+            srcset="{{ image_cover | image_url: width: 375 }} 375w,
+            {{ image_cover | image_url: width: 450 }} 450w,
+            {{ image_cover | image_url: width: 750 }} 750w,
+            {{ image_cover | image_url: width: 900 }} 900w,
+            {{ image_cover | image_url: width: 1100 }} 1100w,
+            {{ image_cover | image_url: width: 1500 }} 1500w,
+            {{ image_cover | image_url: width: 1780 }} 1780w,
+            {{ image_cover | image_url: width: 2000 }} 2000w,
+            {{ image_cover | image_url: width: 3000 }} 3000w,
+            {{ image_cover | image_url: width: 3840 }} 3840w"
+            sizes="100vw"
+            src="{{ image_cover | image_url: width: 3840 }}"
+            alt="{{ image_cover.alt | escape }}"
+            class="object-cover z-10 absolute top-0 left-0 h-full w-full img-thumbnail"
+            loading="lazy"
+            width="{{ image_cover.width }}"
+            height="{{ image_cover.height }}"
+            style="object-position:{{ image_cover.presentation.focal_point }};"
+          >
+          {{ button_play }}
+          {% if video_type == 'video_select' %}
+            {{ section.settings.video
+              | video_tag:
+                image_size: "1100x",
+                loop: false,
+                controls: true,
+                muted: false,
+                class: "w-full h-full absolute top-0 left-0 video object-cover",
+                alt: section.settings.video.alt
+            }}
+          {% endif %}
+        {% else %}
+          {% unless check_video %}
+            <div class="w-full h-full flex justify-center items-center absolute bg-[#c9c9c9]">
+              <span class="w-20 md:w-40 h-20 md:h-40 flex items-center">
+                {% render 'icon-media', icon: 'icon-video', class: 'text-[#acacac] w-full h-full' %}
+              </span>
+            </div>
+          {% endunless %}
+          {% if video_type == 'youtube' %}
+            {% comment %}theme-check-disable RemoteAsset{% endcomment %}
+            <div class="absolute h-full w-full video">
+              <picture>
+                <source type="image/webp" srcset="{{ video_id | prepend: 'https://i.ytimg.com/vi_webp/' | append: '/maxresdefault.webp' }}">
+                <source type="image/jpeg" srcset="{{ video_id | prepend: 'https://i.ytimg.com/vi/' | append: '/maxresdefault.jpg' }}">
+                <img src="{{ video_id | prepend: 'https://i.ytimg.com/vi_webp/' | append: '/maxresdefault.webp' }}" loading="lazy" class="w-full h-full object-cover" alt="{{ video_alt }}" width="1280" height="890"/>
+              </picture>
+            </div>
+            {% comment %}theme-check-enable RemoteAsset{% endcomment %}
+            {{ button_play }}
+          {% elsif video_type == 'vimeo' %}
+            {%- capture options -%}
+              {
+                'alt': '{{ video_alt }}',
+                'width': 1280
+              }
+            {%- endcapture -%}
+            <div class="external-video w-full">
+              <div x-init="$store.xVideo.renderVimeoFacade($el, '{{ video_id }}', {{ options }})"></div>
+              {{ button_play }}
+            </div>
+          {% elsif video_type == 'video_select' %}
+            {{ section.settings.video
+              | video_tag:
+                image_size: "1100x",
+                loop: false,
+                controls: true,
+                muted: false,
+                class: "w-full h-full absolute video",
+                alt: section.settings.video.alt
+            }}
+            {{ button_play }}
+          {% endif %}
+        {% endif %}
+      </div>
+    {% else %}
+      <!-- Fallback to image if no video is set -->
+      <div class="temple-image">
+        {% if section.settings.temple_image != blank %}
+          <img 
+            src="{{ section.settings.temple_image | image_url: width: 1500 }}" 
+            alt="Temple Image" 
+            style="width: 100%; height: auto; display: block;"
+          >
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Curved Info Section -->
+  <div class="temple-info">
+    
+    <!-- Tag -->
+    {% if section.settings.tag_text != blank %}
+      <div>
+        {{ section.settings.tag_text }}
+      </div>
+    {% endif %}
+
+    <!-- Title -->
+    {% if section.settings.title != blank %}
+      <h2 class="heading--{{ section.id }}">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    <!-- Description -->
+    {% if section.settings.description != blank %}
+      <p style="max-width: 700px; margin: 0 auto; font-size: 16px; line-height: 20px; color: #333;">
+        {{ section.settings.description }}
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+<script src="{{ 'video.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Temple Siddhi Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "temple_image",
+      "label": "Temple Image/Video Thumbnail"
+    },
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Hosted Video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "label": "Video URL (YouTube/Vimeo)",
+      "info": "Enter YouTube or Vimeo URL"
+    },
+    {
+      "type": "text",
+      "id": "video_alt_text",
+      "label": "Video Alt Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "rounded_corners",
+      "default": false,
+      "label": "Enable Rounded Corners (Desktop)"
+    },
+    {
+      "type": "checkbox",
+      "id": "rounded_corners_mobile",
+      "default": false,
+      "label": "Enable Rounded Corners (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "tag_text",
+      "label": "Highlight Tag",
+      "default": "SIDDHI DONE AT"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Kedareshwar Mahadev Temple, Kashi"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "%",
+      "label": "Heading Size",
+      "default": 100
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "According to religious beliefs, this temple is more than 1000 years old and having darshan here is equal to visiting Kedarnath Jyotirling 7 times. Performing Rudraksha Siddhi at this divine temple on the First Somwar of Sawan amplifies its spiritual power upto 11 times, making each Rudraksha more effective and stronger."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Temple Siddhi Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  .temple-info{
+  background: linear-gradient(180deg, #FFB812 -43.44%, #FFF 87.15%);
+    padding: 27px 20px 400px;
+    text-align: center;
+    position: relative;
+    margin-top: -52px;
+    border-top-left-radius: 100% 120px;
+    border-top-right-radius: 100% 120px;
+  }
+    .temple-info div{
+      background: #FCCC38;
+    color: #1a1a1a;
+    font-size: 14px;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+       .temple-info h2 {
+          font-size: 24px;
+    margin: 10px 0 20px;
+}
+    @media screen and (max-width: 749px){
+      .temple-siddhi-wrapper {
+    padding-top: 30px;
+}
+          .temple-info h2 {
+          font-size: 20px;
+    margin: 10px 0 20px;
+}
+      .temple-info {
+    padding: 27px 20px 360px;
+    margin-top: -22px;
+    border-top-left-radius: 100% 50px;
+    border-top-right-radius: 100% 50px;
+}
+      
+    }
+{% endstyle %}

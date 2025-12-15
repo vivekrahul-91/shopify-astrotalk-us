@@ -1,0 +1,153 @@
+<div class="sticky-textbar">
+  <div></div>
+
+      
+</div>
+
+<style>
+  .sticky-textbar,  .offer-ad .sticky-textbar{
+    display:none;
+    }
+@media (max-width: 767px) {
+  .offer-ad .sticky-textbar, .offer-ad .sticky-textbar::before{
+    display:none !important;
+  }
+ 
+ .sticky-textbar {
+    font-size: 14px;
+    padding: 4px;
+    background: #2F9567 !important;
+    color: #fff;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+}
+  .sticky-textbar {
+  background-color: #2F9567;
+  color: #fff;
+  /* padding: 10px 20px; */
+  /* border-radius: 5px; */
+  position: relative;
+  overflow: hidden;
+}
+
+.sticky-textbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: shine 1.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+ .button-product.forever_sticky_atc > div:last-child {
+    padding: 8px 12px 12px 12px;
+    border: 1px solid #e3e3e3;
+    border-radius: 0 0 12px 12px;
+}
+  .button-product.forever_sticky_atc {
+    max-width: 97%;
+    margin: auto;
+}
+     .forever_sticky_atc {
+    padding: 0 !important;
+}
+     .forever_sticky_atc > .sticky-textbar {
+        display: block;
+        font-weight: 600;
+       font-size: 13px;
+    }
+   .offer-ad  .button-product.forever_sticky_atc > div:last-child{
+          padding: 12px;
+        border: none;
+        border-radius: 0;
+    }
+   .offer-ad  .button-product.forever_sticky_atc {
+    max-width: 100%;
+    margin: auto;
+}
+    }
+   
+</style>
+<script>
+  function updateGiftText() {
+  const body = document.body;
+  const stickyTextbar = document.querySelector('.sticky-textbar div'); // Select the inner div
+
+  if (body.classList.contains('khazani')) {
+    stickyTextbar.textContent = "Free gift worth ₹499 on all prepaid orders 🎁🥳";
+  } 
+   else if (body.classList.contains('Gem_123')) {
+     stickyTextbar.textContent = "FREE 5 Mukhi Rudraksha of ₹499 on prepaid orders🥳";
+   }
+  else if (body.classList.contains('money-tag')) {
+    stickyTextbar.textContent = "Use Code : MONEY100 & get flat ₹100 OFF 🎉";
+  }
+      else if (body.classList.contains('dome-tree')) {
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+  }
+      else if (body.classList.contains('Frame')) {
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+  }
+   else if (body.classList.contains('pro-9836395233577')) {
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+  }
+  else if (body.classList.contains('7HORSES')) {
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+  }
+        
+  else if (body.classList.contains('pro-9715601735977')) {
+    stickyTextbar.textContent = " Get FLAT ₹500 OFF with Gpay coupon code🎁🥳";
+  }
+  
+     else if (body.classList.contains('beads')) {
+    stickyTextbar.textContent = "FREE 5 Mukhi Rudraksha of ₹499 on prepaid orders🥳";
+  }
+else if (body.classList.contains('rudra-5')) {
+    stickyTextbar.textContent = "FREE 5 Mukhi Rudraksha of ₹499 on prepaid orders🥳";
+  }
+   
+  
+  else if (body.classList.contains('anklet')) {
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+  }
+  else if (body.classList.contains('VYAPAR200')) {
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+  }
+  else if (body.classList.contains('dhan-yog-discount')) {
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+  }
+    else if (body.classList.contains('rakhi-sale')) {
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+  }
+    else if (body.classList.contains('pro-9770626580777')) {
+    stickyTextbar.textContent = "2 FREE Gifts on prepaid orders above ₹999 🥳";
+  }
+  else {
+    
+    stickyTextbar.textContent = "Winter Sale : Extra 20% OFF Sitewide🥳";
+    
+  }
+}
+  
+
+// Call the function initially to set the correct text
+updateGiftText();
+  
+
+</script>
+ {% comment %} else if (body.classList.contains('pro-9914233389353')) {
+    stickyTextbar.textContent = "FREE 5 Mukhi Rudraksha of ₹499 on prepaid orders 🥳";
+  } {% endcomment %}

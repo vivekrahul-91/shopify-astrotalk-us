@@ -1,0 +1,424 @@
+<!-- sections/gemstone-care.liquid -->
+<div class="gemstone-care-section">
+  <div class="container">
+    <h2>{{ section.settings.section_title | default: 'Gemstone Care Instruction' }}</h2>
+    <div class="gemstone-care-wrapper">
+
+      <!-- Product Image -->
+      <div class="gemstone-image-container">
+        {% if section.settings.gemstone_image != blank %}
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Gemstone-Care-Instruction-Web_2b9db990-eb1d-4a9b-8b6b-00128d171160.png?v=1758008799" 
+            alt="{{ section.settings.gemstone_image.alt | default: 'Gemstone' }}"
+            class="gemstone-image gem-img-desk"
+            loading="lazy"
+          >
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Gemstone-Care-Instruction-Mobile-img.png?v=1758009750" 
+            alt="{{ section.settings.gemstone_image2.alt | default: 'Gemstone' }}"
+            class="gemstone-image gem-img-mob"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+
+      <!-- Care Instructions Content -->
+      <div class="care-instructions-content">
+        <h2 class="section-title">{{ section.settings.section_title | default: 'Gemstone Care Instruction' }}</h2>
+        
+        <div class="care-grid">
+          
+          {% if product.id == 9592127717673 or product.id == 9816483103017 or product.id == 9592431935785 or product.id == 9816700256553 %}
+            <!-- Content for product IDs 12, 23, 34, 43 -->
+            <div class="care-item">
+              <h3 class="care-title">Cleaning</h3>
+              <p class="care-description">
+                Apply coconut or baby oil regularly to maintain shine and strength. 
+                You can also gently clean with a soft cloth.
+              </p>
+            </div>
+            <div class="care-item">
+              <h3 class="care-title">Avoid</h3>
+              <p class="care-description">
+                Keep away from harsh chemicals, perfumes, ultrasonic or steam cleaners, and extreme heat.
+              </p>
+            </div>
+            <div class="care-item">
+              <h3 class="care-title">While Wearing</h3>
+              <p class="care-description">
+                Avoid wearing during heavy work, gym, or while using harsh detergents.
+              </p>
+            </div>
+            <div class="care-item">
+              <h3 class="care-title">Storage</h3>
+              <p class="care-description">
+                If not wearing, always store the gemstone dipped in coconut or baby oil inside a soft container.
+              </p>
+            </div>
+            <div class="care-item">
+              <h3 class="care-title">Re-energized</h3>
+              <p class="care-description">
+                Get it re-energized periodically for continued astrological benefits.
+              </p>
+            </div>
+          <style>
+            .care-item:nth-child(3), .care-item:nth-child(4){
+                    border-bottom: 1px solid #EDE1D2;
+                    padding: 20px 0;
+                }
+          </style>
+          {% else %}
+            <!-- Default Content for all other products -->
+            <div class="care-item">
+              <h3 class="care-title">Cleaning</h3>
+              <p class="care-description">
+                Use lukewarm water, mild soap, and a soft brush to clean gently.
+              </p>
+            </div>
+            <div class="care-item">
+              <h3 class="care-title">Avoid</h3>
+              <p class="care-description">
+                Keep away from harsh chemicals, ultrasonic or steam cleaners.
+              </p>
+            </div>
+            <div class="care-item">
+              <h3 class="care-title">While Wearing</h3>
+              <p class="care-description">
+                Avoid wearing during heavy work, gym, or while using harsh detergents.
+              </p>
+            </div>
+            <div class="care-item">
+              <h3 class="care-title">Re-energised</h3>
+              <p class="care-description">
+                Get it re-energized periodically for continued astrological benefits.
+              </p>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.gemstone-care-section {
+  padding: 60px 0;
+  {% comment %} background-color: #f8f8f8; {% endcomment %}
+}
+
+.gemstone-care-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  {% comment %} padding: 0 20px; {% endcomment %}
+}
+
+.gemstone-care-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+    background: #FFF5E8;
+    border-radius: 12px;
+}
+.care-instructions-content {
+    max-width: 100%;
+    padding: 25px 40px 20px 0px;
+}
+.gemstone-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.gemstone-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.gemstone-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  {% comment %} width: 200px;
+  height: 200px; {% endcomment %}
+  background: linear-gradient(45deg, #f0a500, #ff8c00);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(240, 165, 0, 0.3);
+}
+
+.section-title {
+    margin: 10px;
+    text-align: left;
+    color: var(--Primary, #292526);
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.care-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.care-item:nth-child(1), .care-item:nth-child(2) {
+    border-bottom: 1px solid #EDE1D2;
+    padding: 20px 0;
+}
+
+.care-item {
+    padding: 10px 0;
+    margin: 10px 10px;
+}
+
+.care-title {
+    font-family: 'Figtree';
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.care-description {
+    margin-top: 4px;
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+  .gemstone-care-section >div >h2 {
+  display:none;
+  }
+  .gem-img-mob{
+    display: none;
+}
+.gem-img-desk{
+ display: flex;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gemstone-care-section {
+    padding: 40px 0;
+  }
+    .gem-img-mob{
+    display: flex;
+}
+.gem-img-desk{
+ display: none;
+}
+  h2.section-title {
+    display: none;
+}
+  .container {
+    padding: 0 15px;
+  }
+  
+  .gemstone-care-wrapper {
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    padding: 30px 20px;
+  }
+  .gemstone-care-section >div >h2 {
+    display: block;
+    color: var(--Primary, #292526);
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px !important;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+  .section-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .care-grid {
+    grid-template-columns: 1fr ;
+  }
+  
+  .care-item {
+    padding: 20px;
+  }
+  
+  .care-title {
+    font-size: 1rem;
+  }
+  
+  .care-description {
+    font-size: 0.9rem;
+  }
+  
+.care-item:not(:last-child) {
+    border-bottom: 1px solid #EDE1D2;
+}
+    .care-item {
+        padding: 10px 0px;
+            margin: 0 12px 2px 0;
+    }
+}
+
+@media (max-width: 768px){
+.gemstone-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+}
+.gemstone-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+}
+.gemstone-care-wrapper{
+padding: 0;
+}
+}
+
+@media (max-width: 480px) {
+    .gemstone-care-wrapper {
+        padding: 20px 5px 0px 0px;
+    }
+  .gemstone-image-container, .gem-img-mob {
+    height: 100%;
+}
+.care-item p.care-description {
+    font-size: 12px !important;
+    line-height: 16px;
+}
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .care-title {
+    font-size: 14px !important;
+    margin-bottom: 3px;
+  }
+  
+  .care-description {
+    font-size: 0.85rem;
+  }
+  care-description {
+    margin-top: 0px;
+  }
+  
+}
+@media (max-width: 768px){
+  .care-instructions-content{
+    padding: 0;
+}
+.care-item:nth-child(1), .care-item:nth-child(2) {
+    padding: 10px 0;
+}
+}
+</style>
+
+{% schema %}
+{
+  "name": "Care Instructions",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "gemstone_image",
+      "label": "Gemstone Image",
+      "info": "Upload an image of the gemstone or jewelry piece"
+    },
+     {
+      "type": "image_picker",
+      "id": "gemstone_image2",
+      "label": "mobile Image",
+      "info": "Upload an image of the gemstone or jewelry piece"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Gemstone Care Instruction"
+    },
+    {
+      "type": "header",
+      "content": "Cleaning Instructions"
+    },
+    {
+      "type": "text",
+      "id": "cleaning_title",
+      "label": "Cleaning Title",
+      "default": "Cleaning"
+    },
+    {
+      "type": "textarea",
+      "id": "cleaning_description",
+      "label": "Cleaning Description",
+      "default": "Use lukewarm water, mild soap, and a soft brush to clean gently."
+    },
+    {
+      "type": "header",
+      "content": "Avoid Instructions"
+    },
+    {
+      "type": "text",
+      "id": "avoid_title",
+      "label": "Avoid Title",
+      "default": "Avoid"
+    },
+    {
+      "type": "textarea",
+      "id": "avoid_description",
+      "label": "Avoid Description",
+      "default": "Keep away from harsh chemicals, ultrasonic or steam cleaners."
+    },
+    {
+      "type": "header",
+      "content": "While Wearing Instructions"
+    },
+    {
+      "type": "text",
+      "id": "wearing_title",
+      "label": "While Wearing Title",
+      "default": "While Wearing"
+    },
+    {
+      "type": "textarea",
+      "id": "wearing_description",
+      "label": "While Wearing Description",
+      "default": "Avoid wearing during heavy work, gym, or while using harsh detergents."
+    },
+    {
+      "type": "header",
+      "content": "Re-Energized Instructions"
+    },
+    {
+      "type": "text",
+      "id": "energized_title",
+      "label": "Re-Energized Title",
+      "default": "Re-Energised"
+    },
+    {
+      "type": "textarea",
+      "id": "energized_description",
+      "label": "Re-Energized Description",
+      "default": "Get it re-energized periodically for continued astrological benefits."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gemstone Care Instructions"
+    }
+  ]
+}
+{% endschema %}

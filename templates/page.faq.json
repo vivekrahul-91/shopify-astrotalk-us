@@ -1,0 +1,330 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "promotion-banner": {
+      "type": "promotion-banner",
+      "blocks": {
+        "text": {
+          "type": "image_banner",
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "subheading": "",
+            "text": "Answers to Your Questions",
+            "text_size": 130,
+            "content_box_type": "square",
+            "add_frame": false,
+            "color_content_box_light": "rgba(0,0,0,0)",
+            "color_content_box_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Promotion Banner",
+        "image_link": "",
+        "open_new_window": false,
+        "image_overlay_opacity": 20,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "position_content_mobile": "center",
+        "content_alignment": "center",
+        "show_hero": false,
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "450px",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "250px",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "heading_size": 100,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_ytwDdf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GyFx98": {
+          "type": "heading",
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "heading_size": 100,
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GyFx98"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "block-1": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "1. Are your bracelets and necklaces real and powerful?",
+            "row_content": "<p>Yes! All our jewellery is made with 100% original stones, lab-tested and energized with mantras by expert pandits.<br/><br/></p>"
+          }
+        },
+        "block-2": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "2. Do Evil Eye bracelets work?",
+            "row_content": "<p>Yes, <a href=\"https://astrotalk.store/products/evil-eye-protection-bracelet\"><span style=\"text-decoration:underline\">Evil Eye Bracelets</span></a> protect you from bad energy, jealousy, and negative vibes.<br/><br/></p>"
+          }
+        },
+        "block-3": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "3. Does a Money Magnet Bracelet work?",
+            "row_content": "<p> Many users feel <a href=\"https://astrotalk.store/products/money-magnet-bracelet\"><span style=\"text-decoration:underline\">Money Magnet Bracelet</span></a> helps attract financial growth, confidence, and new income opportunities.<br/><br/></p>"
+          }
+        },
+        "block-4": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "4. Is it true that Pyrite attracts money?",
+            "row_content": "<p> Yes, <a href=\"https://astrotalk.store/products/raw-pyrite-bracelet?srsltid=AfmBOoqcDpXfJe-pL0pFv2G9-gb6hDsXE8QKp-tuALufXQiuGC0Es5-c\"><span style=\"text-decoration:underline\">Raw Pyrite Bracelet</span></a> is believed to attract wealth, success, and boost money energy.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_W8kPLG": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "5. Which product should I buy for love, money, or protection?",
+            "row_content": "<p>Try <a href=\"https://astrotalk.store/products/love-attraction-bracelet\"><span style=\"text-decoration:underline\">Rose Quartz</span></a> for love,<a href=\"https://astrotalk.store/products/raw-pyrite-bracelet?srsltid=AfmBOoqcDpXfJe-pL0pFv2G9-gb6hDsXE8QKp-tuALufXQiuGC0Es5-c\"><span style=\"text-decoration:underline\"> Pyrite</span></a> for money, and <a href=\"https://astrotalk.store/collections/evil-eye\"><span style=\"text-decoration:underline\">Evil Eye</span></a> or<a href=\"https://astrotalk.store/collections/rudraksha\"><span style=\"text-decoration:underline\"> Rudraksha</span></a> for protection.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_yhRzdJ": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "6. Is there something for anxiety or stress?",
+            "row_content": "<p> Yes! <a href=\"https://astrotalk.store/products/amethystnecklace\"><span style=\"text-decoration:underline\">Amethyst Necklace</span></a> / Bracelet and <a href=\"https://astrotalk.store/products/tiger-eye-bracelet\"><span style=\"text-decoration:underline\">Tiger Eye Bracelet </span></a>help with anxiety, stress, and emotional healing.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_FtKceP": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "7. Can only bracelets help in money or love?",
+            "row_content": "<p>Bracelets help a lot, but you can also try necklaces, Rudraksha, and crystals for stronger results.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_iHMrUy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "8. Are Rudraksha beads energized?",
+            "row_content": "<p> Yes, every Rudraksha bead is lab-tested and mantra-energized to give you full spiritual benefits.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_nXxDQe": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "9. Do we need to charge these bracelets?",
+            "row_content": "<p>Yes, you can recharge them once a month. Just place them on a <a href=\"https://astrotalk.store/products/selenite-plate?srsltid=AfmBOopw2vFnnXMXv0q8ojdeFBXhfwRnuk0THkqb7Z_p7SoRD4Se04G6\"><span style=\"text-decoration:underline\">Selenite Plate </span></a>for a few hours to clean and energize them.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_UPi4kJ": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "10. How do I wear or use these products?",
+            "row_content": "<p>Just follow the simple steps shared with the product or check our \"<a href=\"https://astrotalk.store/pages/how-to-wear\"><span style=\"text-decoration:underline\">How to Wear</span></a>\" guide.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "frequently_asked_question_W8kPLG",
+        "frequently_asked_question_yhRzdJ",
+        "frequently_asked_question_FtKceP",
+        "frequently_asked_question_iHMrUy",
+        "frequently_asked_question_nXxDQe",
+        "frequently_asked_question_UPi4kJ"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 64
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Frequently asked questions",
+            "heading_base_size": 90,
+            "heading_tag": "h2",
+            "text": "<p>Can’t find what you are looking for?Our people are here to help you?</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact us",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#f6f6f6",
+        "background_color_dark": "#2a2a2a",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 28,
+        "bottom_padding": 52,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "promotion-banner",
+    "main",
+    "rich_text_ytwDdf",
+    "faq",
+    "image-with-text"
+  ]
+}

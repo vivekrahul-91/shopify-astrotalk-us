@@ -1,0 +1,754 @@
+
+<link rel="stylesheet" href="{{ 'order-history.css' | asset_url }}" /> 
+
+<div class="order-history-container">
+    {% if customer %}
+  {% comment %} <div class="hidden"> {% render 'Wallet-cash' %}</div> {% endcomment %}
+  <div class="hidden"> {% render 'astro-wallet' %}</div>
+
+      {%  render 'oh-banner' %}
+
+
+
+  {% assign upsell_product_handle = 'raw-moroccan-selenite-plate-copy' %} <!-- Replace with your product's handle -->
+{% assign upsell_product = all_products[upsell_product_handle] %}
+{% if customer.orders.size > 0 %}
+{% if upsell_product %}
+  <div class="upsell-container ">
+    <h3>✨ Keep your crystals recharged ✨</h3>
+    <div class="upsell-product">
+    <a href="https://astrotalk.store/products/raw-selenite-plate">
+      <img src="{{ upsell_product.featured_image | img_url: 'medium' }}" alt="{{ upsell_product.title }}">
+      </a>
+      <div class="upsell-info">
+        <a href="https://astrotalk.store/products/raw-selenite-plate">
+        <h4>{{ upsell_product.title }}</h4>
+        <p class="py-1"><strong>₹499</strong> <s>{{ upsell_product.price | money }}</s> 
+        {% comment %} <s>{{ upsell_product.compare_at_price | money }}</s>  {% endcomment %}
+        <b class="">Extra ₹229 Off</b></p>
+        </a>
+        <form
+              method="post"disc-tag
+              action="/cart/add"
+              accept-charset="UTF-8"
+              class="form"
+              enctype="multipart/form-data"
+              novalidate
+              data-type="add-to-cart-form"
+              x-data="xProductCart()"
+              x-ref="product_form"
+            >
+              <input type="hidden" name="form_type" value="product">
+              <input type="hidden" name="utf8" value="✓">
+              <input type="hidden" name="id" value="{{ upsell_product.variants.first.id }}">
+
+               <button
+                type="button"
+                class="product-card__add-to-cart view-button"
+                aria-label="Add to cart"
+                @click="addToCart($event, true)"
+                onclick="clevertap.event.push('Order_History_upsell', {'Product name': '{{ upsell_product.title }}'})"
+                x-intersect.once.margin.200px="Alpine.store('xCartHelper').validateCart();"
+              >
+                ADD TO CART
+              </button> 
+              {% comment %} {% render 'gokwik-buy-now' %} {% endcomment %}
+            </form>
+      </div>
+    </div>
+  </div>
+  <style>
+        .upsell-product {
+          display: flex;
+          gap: 10px;
+          padding: 10px;
+          border: 1px solid #ececec;
+          border-radius: 8px;
+          position: relative;
+          z-index: 1;
+          background: #ffff;
+        }
+        .upsell-info b {
+              border: 1px solid #2f9567;
+            border-radius: 8px;
+            padding: 0px 5px 0;
+            color: #2f9567;
+            font-family: sans-serif;
+            font-size: 13px;
+        }
+        .upsell-container {
+            margin-bottom: 14px;
+        }
+        .upsell-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2px 0px;
+        }
+        .storecred-div + div > div:not(:last-child) {
+            display: none !important;
+        }
+        .upsell-container h3 {
+            position: relative;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'Inter', sans-serif;
+            background: #2F9567;
+            padding: 6px 8px 12px;
+            margin-bottom: -7px;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .upsell-container s{
+            font-size: 12px;
+            font-weight: bolder;
+            color: #9e9e9e;
+            font-family: "Noto Sans";
+        }
+        .upsell-product > a {
+            width: 28%;
+            height: fit-content;
+        }
+        .upsell-product > a img{
+            border-radius: 8px;
+        }
+        .upsell-product button {
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+            padding: 6px 8px;
+            font-size: 13px;
+        }
+        .upsell-info #gokwik-buy-now::after {
+            display: none;
+        }
+        .upsell-info h4, .upsell-info p strong{
+            font-size: 14px;
+        }
+        .upsell-info p.py-1{
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .upsell-container h3::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            animation: shine 1.5s 
+        ease-in-out infinite;
+        }
+        .customer.account .page-width {
+            padding: 0 12px;
+        }
+        @media screen and (min-width: 768px){
+        .upsell-container {
+            width: 50%;
+            {% comment %} margin: auto; {% endcomment %}
+            margin-bottom: 14px;
+        }
+        }
+        @keyframes shine{
+            0% {
+            left: -100%;
+        }
+        50% {
+            left: 100%;
+        }
+        100% {
+            left: -100%;
+        }
+
+      }
+  </style>
+
+{% endif %}
+{% endif %}
+
+
+
+      <!-- <div>{{customer.store_credit_account.balance}}</div> -->
+   {% comment %} {% if customer.metafields.creditsyard.store_credit_balance > 0 %} {% endcomment %}
+    {% render 'store-credits' %}
+   {% comment %} {% endif %} {% endcomment %}
+
+
+  
+    <h2 class="order-title">Your Orders</h2>
+
+        {% paginate customer.orders by 5 %}
+            {% if customer.orders.size > 0 %}
+                {% for order in customer.orders %}
+                <div class="order-card" data-order-id="{{ order.name }}">
+                  {% assign now_unix = 'now' | date: '%s' | plus: 0 %}
+                  {% assign order_unix = order.created_at | date: '%s' | plus: 0 %}
+                  {% assign order_created_minutes_ago = now_unix | minus: order_unix | divided_by: 60 %}
+                  {% assign is_created_status = false %}
+                  {% assign is_cancelled_status = false %}
+                  {%- comment -%} Created = if order made within 15 minutes and not cancelled {%- endcomment -%}
+                   
+                  {% if order_created_minutes_ago <= 15 and order.cancelled == false %}
+                    {% assign is_created_status = true %}
+                  {% endif %}
+                 
+                  {%- comment -%} Cancelled = if order.cancelled or marked refunded/voided/cancelled {%- endcomment -%}
+                  {% if order.cancelled == true %}
+                    {% assign is_cancelled_status = true %}
+                  {% endif %}
+
+
+                    <!-- Order Header -->
+                    <div class="order-header">
+                        <div class="order-status">
+                          
+                          {% if is_created_status %}
+                            <span class="stat-div created">Created</span>
+                          {% elsif is_cancelled_status %}
+                            <span class="stat-div cancelled">Cancelled</span>
+                          {% else %}
+                            <span class="status-label {{ order.fulfillment_status | downcase }}"></span>
+                          {% endif %}
+                        </div>
+                        <div class="order-details">
+                            <p><strong>Order Number:</strong><br> {{ order.name }}</p>
+                            <p><strong>Order Date:</strong><br> {{ order.created_at | time_tag: format: 'date' }}</p>
+                            <p><strong>Payment Method:</strong><br> {{ order.financial_status }} </p>
+                            <p><strong>Shipping Address:</strong><br> {{ order.shipping_address.city }}, {{ order.shipping_address.province }}, {{ order.shipping_address.country }}</p>
+                        </div>
+                        <div class="order-total desk-total">
+                            <p><strong>Total Amount:</strong> {{ order.total_price | money }}</p>
+                            <div class="order-buttons">
+                                <div class="primary-buttons">
+                                  {% unless is_created_status or is_cancelled_status %}
+                                    <a href="https://astrotalk.store/pages/track-your-order" class="b_track button button-solid o-btn px-5 py-3" target="_blank" data-order-id="{{ order.name }}">Track</a>
+                                {% endunless %}
+                                <div class="edit-add-div">
+                                    {% assign forbidden_statuses = 'fulfilled,delivered,cancelled' | split: ',' %}
+                                    {% unless forbidden_statuses contains order.fulfillment_status %}
+                                      {% if order.cancelled == false %}
+                                    <button type="button" class="edit-address-btn button button-solid o-btn px-5 py-3" data-order-id="{{ order.id }}" data-order-name="{{ order.name }}" data-address-line1="{{ order.shipping_address.address1 }}" data-city="{{ order.shipping_address.city }}" data-state="{{ order.shipping_address.province }}" data-country="{{ order.shipping_address.country }}" data-pincode="{{ order.shipping_address.zip }}" data-phone="{{ order.shipping_address.phone }}" data-customer-name="{{ order.shipping_address.name }}" data-order-created-at="{{ order.created_at | date: '%s' }}">Edit Address</button>
+                                      {% endif %}  
+                                  {% endunless %}
+                                  </div>
+                                </div>
+                                <div>
+                                    <!-- {% unless settings.hide_cart %}
+                                        {% if settings.enable_reorder %}
+                                            {%- render 're-order', itemOrder: order -%}
+                                        {% endif %}
+                                    {% endunless %} -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Items -->
+                    <div class="order-items" id="order-items">
+                        {% for line_item in order.line_items %}
+                        <div class="order-item ltype--{{ line_item.product.type }}"
+                            data-order-id="{{ order.name }}"
+                            data-customer-no="{{ order.customer.phone | remove: '+91' }}"
+                            data-product-id="{{ line_item.product_id }}"
+                            data-variant-id="{{ line_item.variant_id }}"
+                            data-product-name="{{ line_item.title }}">
+                            <img src="{{ line_item.product.featured_image | img_url: 'medium' }}" alt="{{ line_item.title }}">
+                            <div class="item-info" data-product-sku="{{ line_item.sku }}">
+                                <div class="info">
+                                    <p class="item-title">{{ line_item.title }}</p>
+                                    <p><strong>Qty:</strong> {{ line_item.quantity }}</p>
+                                    <div class="mob item-price">
+                                        <p>{{ line_item.line_price | money }}</p>
+                                    </div>
+                                    <a href="{{ line_item.product.url }}" class="buy-again">{% render 'eye-icon' %} View product</a>
+                                </div>
+                                <div class="item-price desk">
+                                    <p>{{ line_item.line_price | money }}</p>
+                                </div>
+                                <!-- Tracking Info Container -->
+                                <div class="tracking-info" style="margin-top: 10px; color: #555;">
+                                    <p><strong>Tracking Number:</strong> <span class="tracking-number">Loading...</span></p>
+                                    <p><strong>Status:</strong> <span class="shipment-status">Loading...</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Mobile Total -->
+                    <div class="order-total mob-total">
+                        <p><strong>Total Amount:</strong> {{ order.total_price | money }}</p>
+                        {% if order.cancelled == false and is_created_status %}
+                        <div class="tracking-note">Your order has been received and will be packed shortly.
+                          Tracking link will be available within few hours.</div>
+                          <style>
+                            .tracking-note{
+                             background: #fafafa;
+                            padding: 8px 15px;
+                            border-radius: 8px;
+                            margin: 5px auto 10px ;
+                            }
+                          </style>
+                          {% endif %}
+                        <div class="order-buttons">
+                            <div class="primary-buttons">
+                              {% unless is_created_status or is_cancelled_status %}
+                                <a href="https://astrotalk.store/pages/track-your-order" class="b_track button button-solid o-btn px-5 py-3" target="_blank" data-order-id="{{ order.name }}">Track</a>
+                              {% endunless %}
+                                {% unless forbidden_statuses contains order.fulfillment_status %}
+                                  {% if order.cancelled == false %}
+                                <button type="button" class="edit-address-btn button button-solid o-btn px-5 py-3" data-order-id="{{ order.id }}" data-order-name="{{ order.name }}" data-address-line1="{{ order.shipping_address.address1 }}" data-city="{{ order.shipping_address.city }}" data-state="{{ order.shipping_address.province }}" data-country="{{ order.shipping_address.country }}" data-pincode="{{ order.shipping_address.zip }}" data-phone="{{ order.shipping_address.phone }}" data-customer-name="{{ order.shipping_address.name }}" data-order-created-at="{{ order.created_at | date: '%s' }}">Edit Address</button>
+                                  {%endif%}
+                                {% endunless %}
+                            </div>
+                            <div>
+                              {% assign now_unix_cancel = 'now' | date: '%s' | plus: 0 %}
+                              {% assign order_unix_cancel = order.created_at | date: '%s' | plus: 0 %}
+                              {% assign cancel_order_created_hours_ago = now_unix_cancel | minus: order_unix_cancel | divided_by: 3600 %}
+
+                              {% assign has_return_prime_tag = false %}
+                              {% if order.tags contains 'Return_Prime' %}
+                                {% assign has_return_prime_tag = true %}
+                              {% endif %}
+                              {% if order.cancelled == false 
+                                and order.fulfillment_status == 'unfulfilled' 
+                                and cancel_order_created_hours_ago < 48
+                                and has_return_prime_tag == false
+                               %}
+                                <button class="b_cancel button button-solid o-btn px-5 py-3 coc-button coc-cancel-button" data-order-id="{{ order.id }}">Cancel order</button>
+                              {% endif %}
+                                {% comment %} <button class="b_cancel button button-solid o-btn px-5 py-3 coc-button coc-cancel-button" data-order-id="{{ order.id }}" disabled> Cancel order</button> {% endcomment %}
+                                {% comment %} <script>
+                                  document.addEventListener('DOMContentLoaded', function () {
+                                    const fulfillmentStatus = "{{ order.fulfillment_status }}"; // Shopify Liquid variable
+                                    const orderCreatedAt = "{{ order.created_at | date: '%s' }}"; // UNIX timestamp
+                                
+                                    const now = Date.now(); // current timestamp in ms
+                                    const orderCreatedTime = parseInt(orderCreatedAt) * 1000; // convert seconds to ms
+                                
+                                    const hoursElapsed = (now - orderCreatedTime) / (1000 * 60 * 60); // in hours
+                                
+                                    if (fulfillmentStatus === 'unfulfilled' && hoursElapsed < 48) {
+                                      document.querySelector('.b_cancel').style.display = 'inline-block';
+                                    }
+                                      else{
+                                      document.querySelector('.b_cancel').style.display = 'none';
+                                      }
+                                  });
+                                </script> {% endcomment %}
+                    
+                                <!-- {% unless settings.hide_cart %}
+                                    {% if settings.enable_reorder %}
+                                        {%- render 're-order', itemOrder: order -%}
+                                    {% endif %}
+                                {% endunless %} -->
+                                 <script>
+                                  document.querySelectorAll('.order-card').forEach(orderCard => {
+                                      const hasGemstone = orderCard.querySelector('.order-item.ltype--Gemstone');
+                                      if (hasGemstone) {
+                                        orderCard.querySelectorAll('.order-buttons .coc-button').forEach(btn => {
+                                          btn.style.display = 'none';
+                                        });
+                                      }
+                                    });
+                                 </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    {{ paginate | default_pagination }}
+                </div>
+            {% else %}
+                <p>You have no orders yet.</p>
+            {% endif %}
+        {% endpaginate %}
+    {% else %}
+        <p>Please <a href="{{ routes.account_login_url }}">log in</a> to view your order history.</p>
+    {% endif %}
+</div>
+<div id="tracking-popup" style="display:none; position:fixed;align-items: center;
+    padding: 20px; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background:#fff; margin:10% auto; padding:20px; border-radius:8px; position:relative;">
+    <span id="close-tracking-popup" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:18px;">✖</span>
+    <h3>Track Order </h3><p style = "text-align: center;">Your order has been dispatched in multiple shipments. Track links are below</p>
+    <div id="tracking-list" style="margin: 15px 0px;display:flex;padding-bottom: 10px;flex-direction: column;justify-content: space-between;align-items: flex-start;border-bottom: 1px solid #f4f4f4;" ></div>
+  </div>
+</div>
+
+<!-- Edit Address Modal (moved here, outside the loop) -->
+<div id="edit-address-modal" class="edit-address-modal" style="display:none;">
+  <div class="edit-address-modal-content">
+    <span class="edit-address-close">&times;</span>
+    <h3 class="edit-address-heading">Edit Shipping Address</h3>
+    <form id="edit-address-form">
+      <input type="hidden" name="order_id" id="edit-order-id">
+      <input type="hidden" name="name" id="edit-customer-name">
+      <label>Address Line 1:<input type="text" name="addressLine1" id="edit-address-line1" required></label>
+      <label>Address Line 2:<input type="text" name="addressLine2" id="edit-address-line2"></label>
+      <label>City:<input type="text" name="city" id="edit-city" required></label>
+      <label>State:<input type="text" name="state" id="edit-state" required></label>
+      <div class="country-pincode-row">
+        <label class="country-label">Country:<input type="text" name="country" id="edit-country" required></label>
+        <label class="pincode-label">Pincode:<input type="text" name="pincode" id="edit-pincode" required></label>
+      </div>
+      <label>Phone:<input type="text" name="phone" id="edit-phone" required></label>
+      <button type="submit" class="button button-solid o-btn px-5 py-3 edit-address-submit">UPDATE ADDRESS</button>
+      <div id="edit-address-message" style="margin-top:10px;"></div>
+    </form>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
+    const orderItems = document.querySelectorAll(".order-item");
+    const requestQueue = new Map();
+    const POOJA_PRODUCT_ID = "9686086385961";
+
+    // Function to check orders for the pooja product and add video buttons
+    function addVideoButtonsToOrders() {
+        document.querySelectorAll('.order-card').forEach(orderCard => {
+            // Get all product IDs in this order
+            const productIds = Array.from(orderCard.querySelectorAll('.order-item'))
+                .map(item => item.dataset.productId)
+                .filter(id => id); // Remove undefined/empty values
+                
+            // Check if this order has our target product
+            if (productIds.includes(POOJA_PRODUCT_ID)) {
+                // Add buttons to desktop view
+                const deskButtonsContainer = orderCard.querySelector('.desk-total .primary-buttons');
+                if (deskButtonsContainer) {
+                    // Create and add Pooja button
+                    const poojaBtn = document.createElement('a');
+                    poojaBtn.href = 'https://drive.google.com/file/d/10tDTeg04lVNxZVCXC7ciYwAg3UuFXc3n/view?usp=sharing';
+                    poojaBtn.className = 'view-pooja-btn button button-solid o-btn px-5 py-3';
+                    poojaBtn.target = '_blank';
+                    poojaBtn.textContent = 'Pooja Video';
+                    deskButtonsContainer.appendChild(poojaBtn);
+                    
+                    // Create and add Sankalp button
+                    const sankalpBtn = document.createElement('a');
+                    sankalpBtn.href = 'https://drive.google.com/file/d/1AcapfhJeCDd8R7PEzvcPKSqsRyivf3CV/view?usp=sharing';
+                    sankalpBtn.className = 'view-sankalp-btn button button-solid o-btn px-5 py-3';
+                    sankalpBtn.target = '_blank';
+                    sankalpBtn.textContent = 'Sankalp Video';
+                    deskButtonsContainer.appendChild(sankalpBtn);
+                }
+                
+                // Add buttons to mobile view
+                const mobButtonsContainer = orderCard.querySelector('.mob-total .primary-buttons');
+                if (mobButtonsContainer) {
+                    // Create and add Pooja button
+                    const poojaBtnMob = document.createElement('a');
+                    poojaBtnMob.href = 'https://drive.google.com/file/d/10tDTeg04lVNxZVCXC7ciYwAg3UuFXc3n/view?usp=sharing';
+                    poojaBtnMob.className = 'view-pooja-btn button button-solid o-btn px-5 py-3';
+                    poojaBtnMob.target = '_blank';
+                    poojaBtnMob.textContent = 'Pooja Video';
+                    mobButtonsContainer.appendChild(poojaBtnMob);
+                    
+                    // Create and add Sankalp button
+                    const sankalpBtnMob = document.createElement('a');
+                    sankalpBtnMob.href = 'https://drive.google.com/file/d/1AcapfhJeCDd8R7PEzvcPKSqsRyivf3CV/view?usp=sharing';
+                    sankalpBtnMob.className = 'view-sankalp-btn button button-solid o-btn px-5 py-3';
+                    sankalpBtnMob.target = '_blank';
+                    sankalpBtnMob.textContent = 'Sankalp Video';
+                    mobButtonsContainer.appendChild(sankalpBtnMob);
+                }
+            }
+        });
+    }
+    async function fetchTrackingData(orderId, customerNo) {
+        const cacheKey = `${orderId}-${customerNo}`;
+        if (requestQueue.has(cacheKey)) return requestQueue.get(cacheKey);
+
+        const fetchPromise = new Promise(async (resolve) => {
+            try {
+                const response = await fetch(`https://api.astromall.astrotalk.com/AstroMall/shipment/track-order-data?entityId=${orderId}&mobile=${customerNo}`);
+                const data = await response.json();
+                resolve(data);
+            } catch (error) {
+                console.error("Error fetching tracking details:", error);
+                resolve(null);
+            }
+        });
+
+        requestQueue.set(cacheKey, fetchPromise);
+        return fetchPromise;
+    }
+
+    // ====== NEW TRACK BUTTON LOGIC ======
+    const popup = document.getElementById("tracking-popup");
+    const trackingList = document.getElementById("tracking-list");
+    document.getElementById("close-tracking-popup").onclick = () => { popup.style.display = "none"; };
+
+    document.addEventListener("click", async function(e) {
+      if (e.target.classList.contains("b_track")) {
+        e.preventDefault();
+        const orderId = e.target.getAttribute("data-order-id");
+        const orderCard = e.target.closest(".order-card");
+        const firstItem = orderCard?.querySelector(".order-item");
+        const customerNo = firstItem?.dataset.customerNo;
+
+        if (!orderId || !customerNo) return;
+
+        const data = await fetchTrackingData(encodeURIComponent(orderId), encodeURIComponent(customerNo));
+        if (!data || data.status !== "OK") {
+          alert("Tracking info not available yet.");
+          return;
+        }
+
+        const products = data.trackOrderPage?.productDetailList || [];
+        const withAwb = products.filter(p => p.awbNumber);
+
+        if (!withAwb.length) {
+          alert("Tracking info not available yet.");
+          return;
+        }
+
+        const uniqueAwbs = [...new Set(withAwb.map(p => p.awbNumber))];
+
+        if (uniqueAwbs.length === 1) {
+          // Case 1: Single AWB → open tracking link
+          window.open(withAwb[0].trackingUrl, "_blank");
+        } else {
+          // Case 2: Multiple AWBs → show popup
+          trackingList.innerHTML = "";
+          withAwb.forEach(p => {
+            const div = document.createElement("div");
+            div.style.margin = "10px 0";
+            div.innerHTML = `
+            <div style=" margin: 0 0 12px;">
+              <p ><strong style="font-size: 14px; line-height: 1;">${p.productName}</strong></p>
+              <p>AWB: ${p.awbNumber}</p>
+              </div>
+              <a href="${p.trackingUrl}" target="_blank" style="padding: 7px 20px; background: #000;color: #fff;width: 100px !important;border-radius: 8px;text-align: center;font-weight: 600;font-size: 13px;">Track</a>
+            `;
+            trackingList.appendChild(div);
+          });
+          popup.style.display = "flex";
+        }
+      }
+    });
+    // ====== END NEW TRACK BUTTON LOGIC ======
+
+    // ====== EXISTING TRACKING DATA POPULATION ======
+    const groupedByOrder = {};
+    orderItems.forEach(item => {
+        const orderId = item.dataset.orderId;
+        if (!groupedByOrder[orderId]) groupedByOrder[orderId] = [];
+        groupedByOrder[orderId].push(item);
+    });
+
+    for (const [orderId, items] of Object.entries(groupedByOrder)) {
+        const encodedOrderId = encodeURIComponent(orderId);
+        const customerNo = encodeURIComponent(items[0].dataset.customerNo);
+        const orderCard = items[0].closest(".order-card");
+        const orderHeader = orderCard?.querySelector(".order-header");
+        const statusLabels = orderCard?.querySelectorAll(".status-label");
+        const trackBtns = orderCard.querySelectorAll(".b_track"); 
+        const data = await fetchTrackingData(encodedOrderId, customerNo);
+
+        if (!data || data.status !== "OK" || !data.trackOrderPage?.productDetailList?.length) {
+          trackBtns.forEach(btn => btn.style.display = "none");  
+          orderHeader?.classList.remove("has-status");
+            continue;
+        }
+
+        const trackingListData = data.trackOrderPage.productDetailList;
+        const withAwb = trackingListData.filter(d => d.awbNumber);
+
+            if (withAwb.length === 0) {
+                // Case: no AWB anywhere → hide buttons
+                trackBtns.forEach(btn => btn.style.display = "none");
+                continue;
+            }
+        const trackingNumbers = trackingListData.map(d => d.awbNumber);
+        const allSameTracking = new Set(trackingNumbers).size === 1;
+
+        if (allSameTracking) {
+            const sharedTracking = trackingListData[0];
+            const number = sharedTracking.awbNumber || "N/A";
+            const status = sharedTracking.shipmentStatus;
+
+            items.forEach(item => {
+                const trackingNumberElem = item.querySelector(".tracking-number");
+                const shipmentStatusElem = item.querySelector(".shipment-status");
+                if (trackingNumberElem) trackingNumberElem.innerText = number;
+                if (shipmentStatusElem) shipmentStatusElem.innerText = status || "Pending";
+            });
+
+            if (status) {
+                statusLabels?.forEach(label => {
+                    label.innerText = status;
+                    label.style.display = "inline-block";
+                });
+                orderHeader?.classList.add("has-status");
+            }
+        } else {
+            items.forEach((item, i) => {
+                const tracking = trackingListData[i];
+                if (!tracking) return;
+                const number = tracking.awbNumber || "N/A";
+                const status = tracking.shipmentStatus;
+                const trackingNumberElem = item.querySelector(".tracking-number");
+                const shipmentStatusElem = item.querySelector(".shipment-status");
+                if (trackingNumberElem) trackingNumberElem.innerText = number;
+                if (shipmentStatusElem) shipmentStatusElem.innerText = status || "Pending";
+            });
+            statusLabels?.forEach(label => {
+                label.innerText = "Multiple Statuses";
+                label.style.display = "inline-block";
+            });
+            orderHeader?.classList.add("has-status");
+        }
+    }
+
+    // Add video buttons to orders with pooja product
+    addVideoButtonsToOrders();
+});
+
+// Edit Address Modal Logic
+(function() {
+  const modal = document.getElementById('edit-address-modal');
+  const closeBtn = modal.querySelector('.edit-address-close');
+  const form = document.getElementById('edit-address-form');
+  const messageDiv = document.getElementById('edit-address-message');
+
+  function openModal(orderData) {
+    document.getElementById('edit-order-id').value = orderData.orderId;
+    document.getElementById('edit-customer-name').value = orderData.customerName;
+    // Split address1 into two lines if it contains a comma, else leave line2 empty
+    var addressParts = (orderData.addressLine1 || '').split(/,\s*/);
+    document.getElementById('edit-address-line1').value = addressParts[0] || '';
+    document.getElementById('edit-address-line2').value = addressParts.slice(1).join(', ') || '';
+    document.getElementById('edit-city').value = orderData.city;
+    document.getElementById('edit-state').value = orderData.state;
+    document.getElementById('edit-country').value = orderData.country;
+    document.getElementById('edit-pincode').value = orderData.pincode;
+    document.getElementById('edit-phone').value = orderData.phone;
+    messageDiv.textContent = '';
+    modal.style.display = 'block';
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('edit-address-btn')) {
+      openModal({
+        orderId: e.target.getAttribute('data-order-id'),
+        customerName: e.target.getAttribute('data-customer-name'),
+        addressLine1: e.target.getAttribute('data-address-line1'),
+        city: e.target.getAttribute('data-city'),
+        state: e.target.getAttribute('data-state'),
+        country: e.target.getAttribute('data-country'),
+        pincode: e.target.getAttribute('data-pincode'),
+        phone: e.target.getAttribute('data-phone')
+      });
+    }
+  });
+
+  closeBtn.onclick = closeModal;
+  window.onclick = function(event) {
+    if (event.target == modal) closeModal();
+  };
+
+  form.onsubmit = async function(e) {
+    e.preventDefault();
+    messageDiv.textContent = 'Updating...';
+    messageDiv.className = '';
+    const addressLine1 = form.addressLine1.value.trim();
+    const addressLine2 = form.addressLine2.value.trim();
+    const fullAddressLine1 = addressLine2 ? `${addressLine1}, ${addressLine2}` : addressLine1;
+    const payload = {
+      order_id: form.order_id.value,
+      name: form.name.value,
+      addressLine1: fullAddressLine1,
+      city: form.city.value,
+      state: form.state.value,
+      country: form.country.value,
+      pincode: form.pincode.value,
+      phone: form.phone.value
+    };
+    try {
+      const res = await fetch('https://ozehp0ddk5.execute-api.eu-north-1.amazonaws.com/update-address', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (res.ok && data.status === 'success') {
+        messageDiv.className = 'success';
+        messageDiv.textContent = 'Shipping address changed';
+        form.querySelector('.edit-address-submit').style.display = 'none';
+        setTimeout(() => {
+          closeModal();
+          form.querySelector('.edit-address-submit').style.display = '';
+          messageDiv.textContent = '';
+          messageDiv.className = '';
+        }, 1500);
+      } else {
+        messageDiv.className = 'error';
+        messageDiv.textContent = data.message || 'Failed to update address.';
+      }
+    } catch (err) {
+      messageDiv.className = 'error';
+      messageDiv.textContent = 'Error updating address.';
+    }
+  };
+})();
+
+// Show countdown under Edit Address buttons and hide after 30 minutes
+(function() {
+  function pad(num) { return String(num).padStart(2, '0'); }
+  function formatHHMMSS(totalSeconds) {
+    var hours = Math.floor(totalSeconds / 3600);
+    var minutes = Math.floor((totalSeconds % 3600) / 60);
+    var seconds = Math.floor(totalSeconds % 60);
+    return pad(minutes) + 'min' + ':' + pad(seconds)+ 'sec';
+  }
+
+  function attachTimer(btn) {
+    var createdAt = parseInt(btn.getAttribute('data-order-created-at'), 10);
+    if (isNaN(createdAt)) return;
+    var expiry = createdAt + (30 * 60); // 30 minutes window
+
+    var timerEl = btn.nextElementSibling;
+    if (!timerEl || !timerEl.classList.contains('edit-address-timer')) {
+      timerEl = document.createElement('div');
+      timerEl.className = 'edit-address-timer';
+      btn.insertAdjacentElement('afterend', timerEl);
+    }
+
+    function tick() {
+      var nowSec = Math.floor(Date.now() / 1000);
+      var remaining = expiry - nowSec;
+      if (remaining <= 0) {
+        btn.style.display = 'none';
+        timerEl.style.display = 'none';
+        clearInterval(intervalId);
+        return;
+      }
+      timerEl.style.display = '';
+      timerEl.textContent = 'Address can be edited within the next ' + formatHHMMSS(remaining);
+    }
+
+    tick();
+    var intervalId = setInterval(tick, 1000);
+  }
+
+  document.querySelectorAll('.edit-address-btn').forEach(function(btn) {
+    attachTimer(btn);
+  });
+})();
+</script>
+
+

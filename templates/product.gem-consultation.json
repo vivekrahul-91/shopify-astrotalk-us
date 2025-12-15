@@ -1,0 +1,634 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "text_CQqapF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.subtitle.value }}</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": ""
+          }
+        },
+        "judge_me_reviews_preview_badge_AVXcCM": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "trust_badge_pGhQia": {
+          "type": "trust_badge",
+          "settings": {
+            "show_meta_trust_badge": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 110
+          }
+        },
+        "continuous_timer_q7NrTb": {
+          "type": "continuous_timer",
+          "disabled": true,
+          "settings": {
+            "title": "Offer ends in",
+            "bold-title": ""
+          }
+        },
+        "variant_picker_fL9RjK": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "color_option_content": "<p><strong>Variant: </strong></p>",
+            "picker_type": "button",
+            "show_variant_option": true,
+            "enable_color_swatches": false,
+            "swatch_size": "small",
+            "ringsize_list": "Free/Adjustable Ring,1,2,3,45,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "inventory_urgency_U7xF3J": {
+          "type": "inventory_urgency",
+          "disabled": true,
+          "settings": {
+            "inventory_urgency_enabled": true,
+            "urgency_min_stock": 23,
+            "urgency_max_stock": 70,
+            "urgency_decrease_rate": 2
+          }
+        },
+        "delivery_check_WCcMcE": {
+          "type": "delivery_check",
+          "disabled": true,
+          "settings": {
+            "enable_delivery_check": true
+          }
+        },
+        "trust_badge_gQUebQ": {
+          "type": "trust_badge",
+          "settings": {
+            "show_meta_trust_badge": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false,
+            "pickup_availability": false,
+            "hide_when_pre_order": false,
+            "preorder_button_label": "Pre-order",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "box_type": "square",
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "#f0df20",
+            "button_text_light": "#131313",
+            "button_hover_light": "#f0df20",
+            "button_text_hover_light": "#131313",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "description_gRwQjV": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "make_content_center": false,
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        },
+        "quinn_shoppable_videos_app_cards_block_zAJyqY": {
+          "type": "shopify://apps/quinn-shoppable-videos/blocks/app-cards-block/150d2781-732b-4020-a9fb-1368e974e6bb",
+          "settings": {
+            "layer_number": 1,
+            "card_margins_desktop": "0",
+            "card_margins_mobile": "0",
+            "custom_metaobject_handle": "null",
+            "heading": "<h2>Loved by 15 lakh+ customers</h2>",
+            "heading_alignment": "center",
+            "heading_font_size_desktop": "16px",
+            "heading_letter_spacing_desktop": "normal",
+            "heading_font_size_mobile": "16px",
+            "heading_letter_spacing_mobile": "normal",
+            "heading_line_height_desktop": "1.2",
+            "heading_line_height_mobile": "1.2",
+            "heading_font_weight_desktop": "400",
+            "heading_font_weight_mobile": "400",
+            "heading_font": "sans_serif_n4",
+            "heading_color": "#000000",
+            "heading_background_color": "#ffffff",
+            "heading_padding": "0px",
+            "heading_margin": "0px",
+            "subheading": "",
+            "subheading_alignment": "center",
+            "subheading_font": "sans_serif_n4",
+            "subheading_color": "#000000",
+            "subheading_background_color": "#ffffff",
+            "subheading_padding": "0px",
+            "subheading_margin": "0px"
+          }
+        },
+        "collapsible_tab_f6c6VD": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Here’s what you’ll get in your Gemstone Consultation",
+            "tab_content": "<ul>\n<li style=\"font-weight: 400;\"><strong>Personal Chat with a Gemstone Expert</strong><span style=\"font-weight: 400;\"> &ndash; An expert will personally check your birth chart and guide you step by step.</span></li>\n<li style=\"font-weight: 400;\"><strong>Your Lucky Gemstone Name</strong><span style=\"font-weight: 400;\"> &ndash; You&rsquo;ll know exactly which gemstone suits your planets and energy.</span></li>\n<li style=\"font-weight: 400;\"><strong>Simple Wearing Guide</strong><span style=\"font-weight: 400;\"> &ndash; Clear instructions on </span><em><span style=\"font-weight: 400;\">when</span></em><span style=\"font-weight: 400;\"> and </span><em><span style=\"font-weight: 400;\">how</span></em><span style=\"font-weight: 400;\"> to wear your stone for best results.</span></li>\n<li style=\"font-weight: 400;\"><strong>Easy Energizing &amp; Mantra Steps</strong><span style=\"font-weight: 400;\"> &ndash; Learn how to purify and charge your gemstone before wearing it.</span></li>\n<li style=\"font-weight: 400;\"><strong>Direct WhatsApp Guidance</strong><span style=\"font-weight: 400;\"> &ndash; Get your full gemstone consultation and personal support directly on WhatsApp.</span></li>\n</ul>",
+            "open_by_default": true
+          }
+        },
+        "benefits_block_U7XhAB": {
+          "type": "benefits-block",
+          "disabled": true,
+          "settings": {}
+        },
+        "collapsible_tab_mHBjAk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Easy Steps to Get Your Gemstone Consultation",
+            "tab_content": "<ol>\n<li style=\"font-weight: 400;\"><strong>Book Your Consultation</strong><strong><br /></strong><span style=\"font-weight: 400;\"> Click on &ldquo;Book Now&rdquo; and complete your payment to confirm your gemstone consultation.</span><span style=\"font-weight: 400;\"><br /><br /></span></li>\n<li style=\"font-weight: 400;\"><strong>Instant WhatsApp Message</strong><strong><br /></strong><span style=\"font-weight: 400;\"> After booking, you will receive a WhatsApp message from our gemstone expert.</span><span style=\"font-weight: 400;\"><br /></span><span style=\"font-weight: 400;\"> Share your </span><strong>date, time, and place of birth</strong><span style=\"font-weight: 400;\"> so the expert can analyze your chart properly.</span><span style=\"font-weight: 400;\"><br /><br /></span></li>\n<li style=\"font-weight: 400;\"><strong>Birth Chart Analysis</strong><strong><br /></strong><span style=\"font-weight: 400;\">The expert will check which planets are strong or weak and suggest a gemstone that can balance them.</span><span style=\"font-weight: 400;\"><br /><br /></span></li>\n<li style=\"font-weight: 400;\"><strong>Personal Guidance on WhatsApp</strong><strong><br /></strong><span style=\"font-weight: 400;\"> The gemstone expert will personally guide you in the same WhatsApp chat &mdash; explaining why a particular gemstone is best for you and how it will benefit your life.</span><span style=\"font-weight: 400;\"><br /><br /></span></li>\n<li style=\"font-weight: 400;\"><strong>Gemstone Photos and Videos</strong><strong><br /></strong><span style=\"font-weight: 400;\"> The expert will also share </span><strong>photos and videos</strong><span style=\"font-weight: 400;\"> of your recommended gemstone, so you can clearly see how it looks before making any decision.</span></li>\n</ol>",
+            "open_by_default": true
+          }
+        },
+        "collapsible_tab_wCPCdk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Why Choose Astrotalk Gemstone Consultation?",
+            "tab_content": "<ul>\n<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">Personalized analysis by experienced Gemstone Expert</span></li>\n<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">Accurate &amp; honest guidance by experienced Gemstone Expert</span></li>\n<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">Immediate consultation with our expert</span></li>\n<li style=\"font-weight: 400;\">Authentic gemstones<span style=\"font-weight: 400;\"> available for purchase after consultation.</span></li>\n<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">Trusted by millions of Astrotalk users worldwide</span></li>\n</ul>",
+            "open_by_default": true
+          }
+        },
+        "collapsible_tab_XAKzrt": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Best day to wear",
+            "tab_content": "<p>{{ product.metafields.custom.best_day_to_wear | metafield_tag }}</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible_tab_itynzq": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Packaging",
+            "tab_content": "<p>Presented in an sturdy black kappa box with foam, designed especially for safekeeping and gifting.</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Returns + Exchanges",
+            "tab_content": "<p> We have a 7-day return policy. We’ll process returns once we have the needed details and reasons. Make sure the product is in its original condition to ensure an easy return. </p>",
+            "open_by_default": false
+          }
+        },
+        "trust_badge_tQ9m8i": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "badge": "shopify://shop_images/Figma_Frame_1.webp",
+            "show_meta_trust_badge": false
+          }
+        },
+        "why_astrotalk_DHVUJw": {
+          "type": "why-astrotalk",
+          "disabled": true,
+          "settings": {}
+        },
+        "html_jgPR4H": {
+          "type": "html",
+          "settings": {
+            "custom_html": "<a class=\"Diwali Banner\" href=\"https://astrotalk.store/pages/winter-sale\" style=\" padding-top:20px; padding-bottom : 20px\"><img src=\"//cdn.shopify.com/s/files/1/0878/4907/4985/files/winter-sale-pdp-banner.webp?v=1764572012\" alt=\"Diwali sale\"> </a>"
+          }
+        },
+        "html_dcqQ8b": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<div id=\"ewck-bogo-block\" style=\"padding-top : 20px\"></div>"
+          }
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "disabled": true,
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": false,
+            "button_light": "#f0df20",
+            "button_text_light": "#131313",
+            "button_hover_light": "#f0df20",
+            "button_text_hover_light": "#131313",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "badges",
+        "text_CQqapF",
+        "judge_me_reviews_preview_badge_AVXcCM",
+        "trust_badge_pGhQia",
+        "price",
+        "continuous_timer_q7NrTb",
+        "variant_picker_fL9RjK",
+        "quantity_selector",
+        "inventory_urgency_U7xF3J",
+        "delivery_check_WCcMcE",
+        "trust_badge_gQUebQ",
+        "buy_buttons",
+        "description_gRwQjV",
+        "quinn_shoppable_videos_app_cards_block_zAJyqY",
+        "collapsible_tab_f6c6VD",
+        "benefits_block_U7XhAB",
+        "collapsible_tab_mHBjAk",
+        "collapsible_tab_wCPCdk",
+        "collapsible_tab_XAKzrt",
+        "collapsible_tab_itynzq",
+        "collapsible-row-0",
+        "trust_badge_tQ9m8i",
+        "why_astrotalk_DHVUJw",
+        "html_jgPR4H",
+        "html_dcqQ8b",
+        "sticky-atc"
+      ],
+      "custom_css": [
+        ".product-variant-option_main {width: 100%;}"
+      ],
+      "settings": {
+        "enable_sticky_image": true,
+        "show_product_name": true,
+        "title_size": 120,
+        "heading_tag": "h1",
+        "show_vendor": false,
+        "link_vendor": false,
+        "make_content_center": false,
+        "desktop_layout": "left",
+        "desktop_media_layout": "thumbnail_slider",
+        "show_arrow_button": true,
+        "mobile_media_size": "75%",
+        "show_thumnail_mobile": true,
+        "image_ratio": "square",
+        "thumbnail_position": "horizontal",
+        "enable_image_zoom": false,
+        "enable_video_autoplay": true,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": false,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "enable_microdata": false,
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": false,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#ffffff",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "full_width": false,
+        "spacing_col": "small",
+        "padding_top": 60,
+        "padding_bottom": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "175220539625a30c84": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_comparison_4nVHt9": {
+      "type": "image-comparison",
+      "disabled": true,
+      "settings": {
+        "heading": "Why our products?",
+        "heading_base_size": 120,
+        "heading_tag": "h2",
+        "layout_comparison": "horizontal",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "image_corner_radius": 12,
+        "image": "shopify://shop_images/money_magnet_slide_1_1920x1080_9ba9b396-9a53-4b76-ae31-8fe4faa69f0c.jpg",
+        "image_mobile": "shopify://shop_images/money_magnet_slide_1_1920x1080_9ba9b396-9a53-4b76-ae31-8fe4faa69f0c.jpg",
+        "heading_before_image": "",
+        "heading_base_size_before_image": 100,
+        "heading_before_image_position": "center",
+        "image_after": "shopify://shop_images/money_magnet_slide_2_1920x1080_1.jpg",
+        "image_mobile_after": "shopify://shop_images/money_magnet_slide_2_1920x1080_1.jpg",
+        "heading_after_image": "",
+        "heading_base_size_after_image": 100,
+        "heading_after_image_position": "center",
+        "default_scroll_position": 50,
+        "text_position": "center",
+        "text_alignment": "start",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "text_background_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "#000000",
+        "background_color_dark": "#ffffff",
+        "text_background_dark": "rgba(0,0,0,0)",
+        "image_alignment": "md:flex-row",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "top_padding": 20,
+        "bottom_padding": 20,
+        "image_alignment_mobile": "flex-col",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 32
+      }
+    },
+    "17234523003b158916": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_wmMxnV": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_wmMxnV"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "product_specifications_pwqMyD": {
+      "type": "product-specifications",
+      "blocks": {
+        "specs_BTKzA3": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Material",
+            "row_content": "<p>{{ product.metafields.custom.material.value }}</p>"
+          }
+        },
+        "specs_8bEamW": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Bead Size",
+            "row_content": "<p>7-8 mm</p>"
+          }
+        },
+        "specs_xTbkcN": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Tarnish resistance",
+            "row_content": "<p>Anti-tarnish</p>"
+          }
+        },
+        "specs_A4jAU8": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Colour",
+            "row_content": "<p>{{ product.metafields.custom.colour.value }}</p>"
+          }
+        },
+        "specs_VtkpgB": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Size",
+            "row_content": "<p>Free size</p>"
+          }
+        },
+        "specs_Ezyi7g": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Water Resistance",
+            "row_content": "<p>Anti-splash</p>"
+          }
+        }
+      },
+      "block_order": [
+        "specs_BTKzA3",
+        "specs_8bEamW",
+        "specs_xTbkcN",
+        "specs_A4jAU8",
+        "specs_VtkpgB",
+        "specs_Ezyi7g"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Specifications",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "",
+        "image_alignment": "left",
+        "hide_empty_rows": true,
+        "text_empty_fields": "-",
+        "row_shown_by_default": 6,
+        "view_more_button": "",
+        "view_less_button": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "table_color": "rgba(0,0,0,0)",
+        "table_text": "rgba(0,0,0,0)",
+        "line_border": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "table_color_dark": "rgba(0,0,0,0)",
+        "table_text_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "columns_desktop": "2",
+        "desktop_height": "400px",
+        "show_section_divider": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "faq_jkMBM6": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_J876L8": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "1. What is a Gemstone Consultation?",
+            "row_content": "<p>A gemstone consultation helps you find the gemstone that suits your birth chart and brings positive changes in your life.</p>"
+          }
+        },
+        "frequently_asked_question_yRVTdy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "2. What details do I need to share?",
+            "row_content": "<p>You only need to share your date, time, and place of birth so that the gemstone expert can study your horoscope.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_AhCcW9": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "3. How will I get the consultation?",
+            "row_content": "<p><br/>You’ll receive a WhatsApp message instantly after booking. The expert will personally guide you in the chat.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_Fj4kW9": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "4. Who will give the gemstone consultation?",
+            "row_content": "<p>Your consultation will be given by a certified gemstone expert from Astrotalk, who has years of experience in analyzing birth charts and suggesting the right gemstones.</p>"
+          }
+        },
+        "frequently_asked_question_9DgzCG": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "5. Will I get photos or videos of the gemstone?",
+            "row_content": "<p>Yes, the expert will also share photos and videos of your recommended gemstone during the consultation.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_J876L8",
+        "frequently_asked_question_yRVTdy",
+        "frequently_asked_question_AhCcW9",
+        "frequently_asked_question_Fj4kW9",
+        "frequently_asked_question_9DgzCG"
+      ],
+      "settings": {
+        "heading": "FAQs",
+        "class": "",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 4,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": false,
+        "show_quickview": false,
+        "enable_carousel_desktop": true,
+        "enable_swiper_mobile": true,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 4,
+        "padding_top": 0,
+        "padding_bottom": 56,
+        "columns_mobile": "2",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 20,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "175220539625a30c84",
+    "image_comparison_4nVHt9",
+    "17234523003b158916",
+    "product_specifications_pwqMyD",
+    "faq_jkMBM6",
+    "product-recommendations"
+  ]
+}

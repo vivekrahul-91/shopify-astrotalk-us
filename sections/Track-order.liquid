@@ -1,0 +1,611 @@
+<link rel="stylesheet" href="{{ 'Track-order.css' | asset_url }}" />
+
+<div class="track-order-container">
+
+  <h2>Track Your Order</h2>
+  <form id="trackOrderForm">
+    <div class="form-group">
+      <label for="awbNumber">AWB Number / Order Number:</label>
+      <span>Please enter your Order ID with '#' at the beginning </span>
+      <input type="text" id="awbNumber" name="awbNumber" placeholder="Enter Order Number or AWB" required>
+    </div>
+    <div class="form-group">
+      <label for="mobileNumber">Mobile Number:</label>
+      <input type="text" id="mobileNumber" name="mobileNumber" placeholder="Enter Mobile Number" required>
+    </div>
+    <button type="button" id="trackButton">Track Order</button>
+  </form>
+  <div id="orderDetails" style="display: none;"></div> 
+</div>
+
+<!-- Custom Error Modal -->
+<div id="errorModal" class="custom-error-modal">
+  <div class="custom-error-content">
+    <button id="errorCloseBtn" class="custom-error-close" aria-label="Close">&times;</button>
+    <h3 class="custom-error-title">Important notice</h3>
+    <ul>
+    <li class="custom-error-text">
+      Kindly verify that the entered <strong>Order ID / AWB number</strong> and <strong>phone number</strong> are correct.
+    </li>
+    <li class="custom-error-text">
+      If the details are accurate, please be assured that your order is currently being processed.
+      The tracking status will be updated shortly.
+    </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .custom-error-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+ .custom-error-content {
+    background: #fff;
+    max-width: 90%;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+  .custom-error-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+  }
+ .custom-error-icon {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+  .custom-error-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+        margin-top: 2px;
+}
+  .custom-error-text {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #444;
+    text-align: left;
+  }
+  .custom-error-content ul {
+    list-style-type: disc;
+    padding: 0 20px;
+}
+  .step.completed .step-circle::after, .step.active .step-circle::after {
+    content: "";
+    padding: 4px;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    margin: 4px;
+}
+
+.step.completed .step-circle {
+    position: relative;
+}
+.step-circle {
+    width: 18px;
+    height: 18px;
+}
+</style>
+
+<script>
+
+// ✅ Detect if user came via shared link
+
+  {% comment %} const urlParams = new URLSearchParams(window.location.search);
+  const cameFromSharedLink = urlParams.get("order") && urlParams.get("mobile"); {% endcomment %}
+
+
+  function generateStepper(status) {
+    const allSteps = {
+      processing: { name: "Processed", statuses: ["CREATED"] },
+      packed: { name: "Packed", statuses: ["PICKING", "PICKED", "PACKED"] },
+      shipped: { name: "Shipped", statuses: ["READY_TO_SHIP", "MANIFESTED"] },
+      inTransit: { name: "In Transit", statuses: ["DISPATCHED", "SHIPPED"] },
+      delivered: { name: "Delivered", statuses: ["DELIVERED"] },
+      returned: { name: "Returned", statuses: ["RETURN_EXPECTED", "RETURNED"] },
+      cancelled: { name: "Cancelled", statuses: ["CANCELLED"] }
+    };
+
+    let stepsToShow = [];
+
+    if (allSteps.cancelled.statuses.includes(status)) {
+      stepsToShow = [allSteps.processing, allSteps.packed, allSteps.cancelled];
+    } else if (allSteps.returned.statuses.includes(status)) {
+      stepsToShow = [allSteps.processing, allSteps.packed, allSteps.shipped, allSteps.inTransit, allSteps.returned];
+    } else {
+      stepsToShow = [allSteps.processing, allSteps.packed, allSteps.shipped, allSteps.inTransit, allSteps.delivered];
+    }
+
+    let currentStep = -1;
+    stepsToShow.forEach((step, index) => {
+      if (step.statuses.includes(status)) {
+        currentStep = index;
+      }
+    });
+
+    return `
+      <div class="stepper">
+        <h3>Shipment details</h3>
+        <div class="step-div">
+          <div class="verticle"></div>
+          <div class="stepper-cont">
+             <div class="step booked completed">
+                <div class="step-circle"></div>
+                <div class="step-label">Booked</div>
+              </div>
+            ${stepsToShow.map((step, i) => {
+              let stepClass = 'step';
+              if (i < currentStep) stepClass = 'step completed';
+              else if (i === currentStep) stepClass = 'step active';
+              return `
+                <div class="${stepClass}">
+                  <div class="step-circle"></div>
+                  <div class="step-label">${step.name}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function formatOrderDate(timestamp) {
+    if (!timestamp) return "N/A";
+    const date = new Date(Number(timestamp));
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+function getParamsNormalized() {
+  const params = new URLSearchParams(window.location.search);
+  let order = params.get("order") || "";
+  let mobile = params.get("mobile") || "";
+
+  // If order incorrectly contains '#' or broken into hash → recover
+  if ((!order || order === "#" || order.startsWith("#")) && window.location.hash) {
+    const rawHash = window.location.hash.replace(/^#/, ""); // remove leading #
+    const hashParams = new URLSearchParams(rawHash);
+    order = order || hashParams.get("order") || rawHash.split("&")[0] || "";
+    mobile = mobile || hashParams.get("mobile") || "";
+  }
+
+  // Normalize values
+  order = order.replace(/^#/, "");           // Remove leading #
+  mobile = mobile.replace(/^(\+91|91)/, ""); // Strip +91 / 91
+  return { order, mobile };
+}
+
+// ✅ Determine if user came from shared link
+function isSharedLink() {
+  const { order, mobile } = getParamsNormalized();
+  return Boolean(order && mobile);
+}
+
+
+// ✅ Replace Default Error Popup Logic
+function showErrorPopup(messageHTML = null) {
+  const errorModal = document.getElementById('errorModal');
+  const errorContent = document.querySelector('.custom-error-content');
+
+  // 🟢 If shared link → always show Warehouse Confirmation Message
+  if (isSharedLink()) {
+    messageHTML = `
+      <button id="errorCloseBtn" class="custom-error-close" aria-label="Close">&times;</button>
+      <h3 class="custom-error-title">Your order is confirmed!!</h3>
+      <p class="custom-error-text">
+        It has been received by our warehouse team and will be packed soon.<br>
+        You will be notified once it is shipped.
+      </p>
+    `;
+  } else {
+    // 🟡 Default verification error
+    messageHTML = messageHTML || `
+      <button id="errorCloseBtn" class="custom-error-close" aria-label="Close">&times;</button>
+      <h3 class="custom-error-title">Important notice</h3>
+      <ul>
+        <li class="custom-error-text">
+          Kindly verify that the entered <strong>Order ID / AWB number</strong> and <strong>phone number</strong> are correct.
+        </li>
+        <li class="custom-error-text">
+          If the details are accurate, your order is currently being processed. The tracking status will update shortly.
+        </li>
+      </ul>
+    `;
+  }
+
+  errorContent.innerHTML = messageHTML;
+  errorModal.style.display = 'flex';
+
+  document.getElementById('errorCloseBtn').addEventListener('click', function () {
+    errorModal.style.display = 'none';
+  });
+}
+
+
+// ✅ Auto-Fill + Auto Track (Preserved)
+document.addEventListener("DOMContentLoaded", function () {
+  const formContainer = document.querySelector(".track-order-container form");
+  const orderDetailsDiv = document.getElementById("orderDetails");
+
+  const { order, mobile } = getParamsNormalized();
+
+  if (order && mobile) {
+    formContainer.style.display = "none";
+
+    document.getElementById("awbNumber").value = "#" + order;
+    document.getElementById("mobileNumber").value = mobile;
+
+    // Clean URL for aesthetics
+    history.replaceState(null, "", `?order=${order}&mobile=${mobile}`);
+
+    // Auto trigger track event
+    setTimeout(() => document.getElementById("trackButton").click(), 400);
+  }
+});
+
+
+{% comment %} function showErrorPopup(messageHTML = null) {
+  const errorModal = document.getElementById('errorModal');
+  const errorContent = document.querySelector('.custom-error-content');
+
+  // ✅ If user came via shared link → always show warehouse confirmation message
+  if (cameFromSharedLink) {
+    messageHTML = `
+      <button id="errorCloseBtn" class="custom-error-close" aria-label="Close">&times;</button>
+      <h3 class="custom-error-title">Your order is confirmed!!</h3>
+      <p class="text-left">
+        It has been received by our warehouse team and will be packed soon.<br>
+        We will inform you once your order is shipped.
+      </p>
+    `;
+  } else {
+    // ✅ Default Error Message
+    messageHTML = messageHTML || `
+      <button id="errorCloseBtn" class="custom-error-close" aria-label="Close">&times;</button>
+      <h3 class="custom-error-title">Important notice</h3>
+      <ul>
+        <li class="custom-error-text">
+          Kindly verify that the entered <strong>Order ID / AWB number</strong> and <strong>phone number</strong> are correct.
+        </li>
+        <li class="custom-error-text">
+          If the details are accurate, please be assured that your order is currently being processed.
+          The tracking status will be updated shortly.
+        </li>
+      </ul>
+    `;
+  }
+
+  errorContent.innerHTML = messageHTML;
+  errorModal.style.display = 'flex';
+
+  document.getElementById('errorCloseBtn').addEventListener('click', function () {
+    errorModal.style.display = 'none';
+  });
+} {% endcomment %}
+
+
+  document.getElementById('trackButton').addEventListener('click', async function () {
+    const rawInput = document.getElementById('awbNumber').value.trim();
+    const mobileNumber = document.getElementById('mobileNumber').value.trim();
+    const orderDetailsDiv = document.getElementById('orderDetails');
+
+    orderDetailsDiv.style.display = 'none';
+
+    if (!rawInput || !mobileNumber) {
+      showErrorPopup(`
+        <h3 class="custom-error-title">Missing Details</h3>
+        <p class="custom-error-text">Please enter both <strong>Order ID / AWB</strong> and <strong>Mobile Number</strong>.</p>
+      `);
+      return;
+    }
+
+    let correctedInput = rawInput;
+    if (rawInput.startsWith("9204353") && !rawInput.startsWith("#")) {
+      correctedInput = "#" + rawInput;
+    }
+
+    const encodedInput = encodeURIComponent(correctedInput);
+    const apiUrl = `https://api.astromall.astrotalk.com/AstroMall/shipment/track-order-data?entityId=${encodedInput}&mobile=${mobileNumber}`;
+
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+
+      if (data.status === "OK") {
+        const trackOrderPage = data.trackOrderPage;
+        const customer = trackOrderPage.customerDetails;
+        let productList = trackOrderPage.productDetailList;
+
+        // Refine product list
+        const skuMap = {}, refinedProductList = [];
+        productList.forEach(item => {
+          skuMap[item.skuCode] = skuMap[item.skuCode] || [];
+          skuMap[item.skuCode].push(item);
+        });
+
+        for (let sku in skuMap) {
+          const items = skuMap[sku];
+          const nonCreated = items.filter(i => i.shipmentStatus !== "CREATED");
+          refinedProductList.push(...(nonCreated.length ? nonCreated : items));
+        }
+
+        // Group by AWB
+        const grouped = refinedProductList.reduce((acc, item) => {
+          const key = item.awbNumber || 'no_awb';
+          acc[key] = acc[key] || { status: item.shipmentStatus, items: [] };
+          acc[key].items.push(item);
+          return acc;
+        }, {});
+
+        const formattedDate = formatOrderDate(productList[0]?.orderDate);
+        let output = `
+          <div class="cust-details">
+            <p>Order ID:<br><strong>${trackOrderPage.orderId}</strong></p>
+            <p>Order Date:<br><strong>${formattedDate}</strong></p>
+            <p>Name:<br><strong>${customer.name}</strong></p>
+            <p>Contact No:<br><strong>${customer.mobile}</strong></p>
+            <p>Address:<br><strong>${customer.address}</strong></p>
+          </div><hr>`;
+
+        Object.keys(grouped).forEach(awb => {
+          const group = grouped[awb];
+          const status = group.status;
+          
+          const statusLabel = {
+            CREATED: 'Processed',
+            PICKING: 'Packed',
+            PICKED: 'Packed',
+            PACKED: 'Packed',
+            READY_TO_SHIP: 'Shipped',   // ✅ FIX HERE
+            MANIFESTED: 'Shipped',      // ✅ Also Shipped
+            DISPATCHED: 'In Transit',
+            SHIPPED: 'In Transit',
+            DELIVERED: 'Delivered',
+            CANCELLED: 'Cancelled',
+            RETURN_EXPECTED: 'Returned',
+            RETURNED: 'Returned'
+          }[status] || status;
+
+          output += `
+            <div class="awb-section">
+              <div class="o_det">
+                <p class="status status-${statusLabel.replace(/\s+/g, '')}"><span>${statusLabel}</span></p>
+                ${awb !== "no_awb" ? `<p class="o_awb">AWB Number:<br><strong>${awb}</strong></p>` : ""}
+              </div>
+              ${group.items.map((item, i) => `
+                <div class="product-item">
+                  <div><div class="product-item-name"><span>${i + 1}. </span>${item.productName}</div></div>
+                  <div class="product-item-price">₹${item.price}</div>
+                </div>`).join("")}
+              ${generateStepper(status)}
+            </div>`;
+        });
+
+        orderDetailsDiv.innerHTML = output;
+        orderDetailsDiv.style.display = 'block';
+      } else {
+        showErrorPopup(); // Default message
+      }
+    } catch (error) {
+      console.error(error);
+      showErrorPopup(`
+        <div class="custom-error-icon">❌</div>
+        <h3 class="custom-error-title">Oops! Something went wrong</h3>
+        <p class="custom-error-text">We couldn't fetch your order right now. Please try again later or contact support.</p>
+      `);
+    }
+  });
+
+
+// ✅ Auto-fill and auto-track when parameters exist in URL
+// Robust auto-fill: works even if # breaks the query string
+// ✅ Enhanced auto-fill & toggle functionality
+{% comment %} document.addEventListener("DOMContentLoaded", function () {
+  const formContainer = document.querySelector(".track-order-container form");
+  const orderDetailsDiv = document.getElementById("orderDetails");
+
+  function extractParams() {
+    const params = new URLSearchParams(window.location.search);
+    let order = params.get("order") || "";
+    let mobile = params.get("mobile") || "";
+
+    // If order is empty or was just "#", try to recover from hash fragment
+    if ((!order || order === "#") && window.location.hash) {
+      const rawHash = window.location.hash.slice(1); // drop '#'
+      if (/^\d/.test(rawHash)) {
+        const [maybeOrder] = rawHash.split("&");
+        order = maybeOrder || order;
+        const m = rawHash.match(/[?&]mobile=([+]?91)?(\d{10,12})/);
+        if (!mobile && m) mobile = m[2] || "";
+      } else {
+        const hashParams = new URLSearchParams(rawHash);
+        order = order || hashParams.get("order") || "";
+        mobile = mobile || hashParams.get("mobile") || "";
+      }
+    }
+
+    // Normalize: remove "#" and remove +91/91 from mobile
+    order = order.replace(/^#/, "");
+    mobile = mobile.replace(/^(\+91|91)/, "");
+
+    return { order, mobile };
+  }
+
+  const { order, mobile } = extractParams();
+
+  if (order && mobile) {
+    // Hide the form
+    formContainer.style.display = "none";
+
+    // Add the "Track Again" button below the results section
+    const trackAgainBtn = document.createElement("button");
+    trackAgainBtn.textContent = "Track Again";
+    trackAgainBtn.id = "trackAgainBtn";
+    trackAgainBtn.style.cssText = `
+      display:block;
+      margin: 20px auto;
+      padding: 10px 25px;
+      background:#000;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:15px;
+    `;
+    document.querySelector(".track-order-container").appendChild(trackAgainBtn);
+
+    // Fill the inputs and trigger the existing logic
+    document.getElementById("awbNumber").value = "#" + order;
+    document.getElementById("mobileNumber").value = mobile;
+
+    // Clean URL (remove hash / +91)
+    try {
+      const clean = `?order=${encodeURIComponent(order)}&mobile=${encodeURIComponent(mobile)}`;
+      window.history.replaceState(null, "", clean);
+    } catch (e) {}
+
+    // Auto-trigger tracking
+    setTimeout(() => document.getElementById("trackButton").click(), 400);
+
+    // Show the form again when "Track Again" is clicked
+    trackAgainBtn.addEventListener("click", function () {
+      formContainer.style.display = "block";
+      orderDetailsDiv.style.display = "none";
+      trackAgainBtn.remove();
+      document.getElementById("awbNumber").value = "";
+      document.getElementById("mobileNumber").value = "";
+    });
+  }
+});  {% endcomment %}
+
+// ✅ Auto-fill and auto-track when parameters exist in URL
+document.addEventListener("DOMContentLoaded", function () {
+  const formContainer = document.querySelector(".track-order-container form");
+  const orderDetailsDiv = document.getElementById("orderDetails");
+  const heading = document.querySelector(".track-order-container h2");
+
+  // 🟢 Wrap heading and button inside a flex container (like your design)
+  if (heading) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "track-header";
+    heading.parentNode.insertBefore(wrapper, heading);
+    wrapper.appendChild(heading);
+
+    const trackAgainBtn = document.createElement("button");
+    trackAgainBtn.textContent = "Track Again";
+    trackAgainBtn.id = "trackAgainBtn";
+    trackAgainBtn.style.cssText = `
+      display:none;
+      background:#000;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      padding:10px 25px;
+      font-size:15px;
+      cursor:pointer;
+      font-weight: 600;
+    `;
+    wrapper.appendChild(trackAgainBtn);
+  }
+
+  // ✅ Add styles for flex alignment (heading + button)
+  const style = document.createElement("style");
+  style.textContent = `
+    .track-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .track-header h2 {
+      color: #000;
+      text-align: initial;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      width: 49%;
+    }
+    
+    #trackAgainBtn:hover {
+      background: #333;
+    }
+  `;
+  document.head.appendChild(style);
+
+  function extractParams() {
+    const params = new URLSearchParams(window.location.search);
+    let order = params.get("order") || "";
+    let mobile = params.get("mobile") || "";
+
+    // Handle hash issue (like #9204353)
+    if ((!order || order === "#") && window.location.hash) {
+      const rawHash = window.location.hash.slice(1);
+      if (/^\d/.test(rawHash)) {
+        const [maybeOrder] = rawHash.split("&");
+        order = maybeOrder || order;
+        const m = rawHash.match(/[?&]mobile=([+]?91)?(\d{10,12})/);
+        if (!mobile && m) mobile = m[2] || "";
+      } else {
+        const hashParams = new URLSearchParams(rawHash);
+        order = order || hashParams.get("order") || "";
+        mobile = mobile || hashParams.get("mobile") || "";
+      }
+    }
+
+    // Clean up order and mobile
+    order = order.replace(/^#/, "");
+    mobile = mobile.replace(/^(\+91|91)/, "");
+    return { order, mobile };
+  }
+
+  const { order, mobile } = extractParams();
+  const trackAgainBtn = document.getElementById("trackAgainBtn");
+
+  if (order && mobile) {
+    // Hide form
+    formContainer.style.display = "none";
+
+    // Show button beside heading
+    trackAgainBtn.style.display = "inline-block";
+
+    // Fill values
+    document.getElementById("awbNumber").value = "#" + order;
+    document.getElementById("mobileNumber").value = mobile;
+
+    // Clean URL
+    try {
+      const clean = `?order=${encodeURIComponent(order)}&mobile=${encodeURIComponent(mobile)}`;
+      window.history.replaceState(null, "", clean);
+    } catch (e) {}
+
+    // Auto trigger tracking
+    setTimeout(() => document.getElementById("trackButton").click(), 400);
+
+    // “Track Again” button click restores form
+    trackAgainBtn.addEventListener("click", function () {
+      formContainer.style.display = "block";
+      orderDetailsDiv.style.display = "none";
+      trackAgainBtn.style.display = "none";
+      document.getElementById("awbNumber").value = "";
+      document.getElementById("mobileNumber").value = "";
+    });
+  }
+});
+
+</script>
+

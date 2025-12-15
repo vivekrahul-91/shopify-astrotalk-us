@@ -1,0 +1,125 @@
+{%- style -%}
+.certification-gallery {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #faf9f8;
+}
+
+.certification-title {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certification-item img {
+max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.certification-item:hover img {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 767px) {
+  .certification-title {
+    font-size: 2rem;
+    padding: 0 20px;
+  }
+  
+  .certification-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+}
+{%- endstyle -%}
+
+<div class="certification-gallery page-width">
+  <h2 class="certification-title">{{ section.settings.title }}</h2>
+  
+  <div class="certification-grid">
+    {% for block in section.blocks %}
+      <div class="certification-item" {{ block.shopify_attributes }}>
+        {% if block.settings.image != blank %}
+          {%- assign img_url = block.settings.image | image_url: width: 400 -%}
+          <img src="{{ img_url }}"
+               loading="lazy"
+               alt="{{ block.settings.image.alt | escape }}"
+               class="certification-logo">
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Certification Logos",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "A promise of purity & authenticity"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Certification Logo",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Certification Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Certification Logos",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} 

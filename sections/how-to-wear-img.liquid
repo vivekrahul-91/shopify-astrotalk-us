@@ -1,0 +1,92 @@
+{% comment %}
+  Section: A+ Content (Desktop/Mobile Images)
+  Metafield: product.metafields.custom.htw_img
+  Metaobject: a_content (with fields desktop & mobile)
+{% endcomment %}
+
+<div class="gem-width htw_img-content">
+  {% assign htw_img = product.metafields.custom.how_to_wear_img.value %}
+  
+  {% if htw_img != blank %}
+    <!-- Desktop Images -->
+    <div class="htw_img-images htw_img-desktop">
+        <img 
+          src="{{ htw_img.desktop | img_url: 'master' }}" 
+          alt="Desktop Content Image {{ forloop.index }}" 
+          loading="lazy">
+    </div>
+
+    <!-- Mobile Images -->
+    <div class="htw_img-images htw_img-mobile">
+        <img 
+          src="{{ htw_img.mobile | image_url: width: 3000 }}"
+          alt="Mobile Content Image {{ forloop.index }}" 
+          loading="lazy">
+    </div>
+  {% else %}
+    <p> </p>
+  {% endif %}
+</div>
+
+<style>
+    .htw-container {
+    background: #f6f6f6;
+}
+
+.gem-width {
+    width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+  }
+  .htw_img-desktop { display: flex; }
+  .htw_img-mobile { display: none; }
+  .htw_img-content{
+    padding-bottom : 30px;
+}
+@media (max-width:1220px){
+.gem-width{
+    width: 100%;}
+ }
+  @media (max-width: 767px) {
+    .gem-width{
+        width:100%;
+        padding:0;
+        padding-bottom:0;
+    }
+     .htw_img-content{
+    padding-bottom : 0px;
+}
+    .htw_img-desktop { display: none; }
+    .htw_img-mobile { display: flex; }
+  }
+ 
+  .htw_img-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  {% comment %} .htw_img-desktop img {
+    max-width: 50%;
+    padding: 8px;
+  }
+  .htw_img-mobile img {
+    max-width: 88%;
+    padding: 8px;
+  } {% endcomment %}
+  
+</style>
+
+{% schema %}
+{
+  "name": "How to wear img",
+  "class": "htw-container",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "How to wear img"
+    }
+  ]
+}
+{% endschema %}

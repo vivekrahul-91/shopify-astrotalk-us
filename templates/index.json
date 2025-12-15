@@ -1,0 +1,1788 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection_list_strip_DPqNyA": {
+      "type": "collection-list-strip",
+      "blocks": {
+        "item_Px3kEB": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Diwali_Icon_7d4be2b5-f5cc-4f39-992c-8f599d53f7b8.png",
+            "text": "Diwali Sale!",
+            "link": "shopify://pages/diwali-sale"
+          }
+        },
+        "item_xbwNrd": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/zzx.jpg",
+            "text": "Men Store",
+            "link": "shopify://collections/for-him"
+          }
+        },
+        "item_qVHNk3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/money_collection.png",
+            "text": "Money Store",
+            "link": "shopify://collections/money-collection"
+          }
+        },
+        "item_YxLxwb": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/kumbh_11.png",
+            "text": "Rudraksha",
+            "link": "shopify://pages/rudraksha"
+          }
+        },
+        "item_y6dcx4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/v4zxvxedmqrjhc4g1ba4.webp",
+            "text": "Gemstones",
+            "link": "https://astrotalk.store/pages/gemstones"
+          }
+        },
+        "item_PAh8UC": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Astrotalk_Gift_Box.webp",
+            "text": "Gifting",
+            "link": "shopify://collections/gift"
+          }
+        },
+        "item_WE6jJM": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/frames_1.webp",
+            "text": "Frames",
+            "link": "shopify://collections/divine-frame"
+          }
+        },
+        "item_znFXT4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Siddhi_3.png",
+            "text": "Siddh range",
+            "link": "shopify://pages/siddhi-collection"
+          }
+        },
+        "item_AcgGMR": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/pyramid.png",
+            "text": "Pyramids",
+            "link": "shopify://collections/pyramids"
+          }
+        },
+        "item_pKyEzm": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/cscs.jpg",
+            "text": "Bracelets",
+            "link": "shopify://collections/bracelets"
+          }
+        },
+        "item_hjz6B8": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/murti.jpg",
+            "text": "Murtis",
+            "link": "shopify://pages/reet"
+          }
+        },
+        "item_rRETt4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/new_1_f8afb98d-bbbc-46b1-b5e5-d88967c8025f.jpg",
+            "text": "New Launch",
+            "link": "shopify://collections/new-launches"
+          }
+        },
+        "item_pAienA": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/icon.webp",
+            "text": "Zodiac",
+            "link": "shopify://pages/zodiac-collection"
+          }
+        },
+        "item_rWprbx": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/csac.jpg",
+            "text": "Pendants",
+            "link": "shopify://collections/pendants"
+          }
+        },
+        "item_wTeXVP": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-5_5eac524c-12f4-4e53-a236-acd25aa3ba1e.jpg",
+            "text": "Yantras",
+            "link": "shopify://collections/yantras"
+          }
+        },
+        "item_bft4Bn": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/spiritual_category_b.png",
+            "text": "Divine Wear",
+            "link": "shopify://collections/spiritual-jewellery"
+          }
+        },
+        "item_UC94hn": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/LOVE.png",
+            "text": "Love store",
+            "link": "shopify://collections/love"
+          }
+        }
+      },
+      "block_order": [
+        "item_Px3kEB",
+        "item_xbwNrd",
+        "item_qVHNk3",
+        "item_YxLxwb",
+        "item_y6dcx4",
+        "item_PAh8UC",
+        "item_WE6jJM",
+        "item_znFXT4",
+        "item_AcgGMR",
+        "item_pKyEzm",
+        "item_hjz6B8",
+        "item_rRETt4",
+        "item_pAienA",
+        "item_rWprbx",
+        "item_wTeXVP",
+        "item_bft4Bn",
+        "item_UC94hn"
+      ],
+      "custom_css": [
+        ".collection-list-stripe-img {border-radius: 8px;}"
+      ],
+      "settings": {
+        "hide_in_desk": true
+      }
+    },
+    "fe5dccd3-17fd-4fd3-ada9-a0e11305981c": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_nUjCyB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/file_2025-11-30_05.24.53.webp",
+            "image_mobile": "shopify://shop_images/file_2025-11-30_06.24.11.webp",
+            "image_link": "shopify://pages/winter-sale",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_iePeqd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Desktop_Gifting_Banner.webp",
+            "image_mobile": "shopify://shop_images/Mobile_Gifting_Banner.webp",
+            "image_link": "https://astrotalk.store/collections/gift",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_KkV4YJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Gemsstone_banner_web_199.webp",
+            "image_mobile": "shopify://shop_images/Banner_mobile_199.webp",
+            "image_link": "shopify://products/gemstone-consultation",
+            "open_new_window_image": true,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_a4jGC6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rudraksha_banner_banner_199_web.webp",
+            "image_mobile": "shopify://shop_images/Banner_mobile_199_mobile.webp",
+            "image_link": "shopify://products/rudraksha-consultation",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_CL8Khx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Desktop_1.webp",
+            "image_mobile": "shopify://shop_images/Mobile_1_39fa3a19-1962-487e-856d-ab183acb1b17.webp",
+            "image_link": "https://astrotalk.store/collections/anklet",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_66Ymen": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/pyramid_banner_web.webp",
+            "image_mobile": "shopify://shop_images/pyramid_banner_1x1_cb732125-3e6d-439f-bcd6-634f2e2b7a5e.webp",
+            "image_link": "shopify://collections/pyramids",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_eEdLxf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/mm_26.webp",
+            "image_mobile": "shopify://shop_images/mmm_19.webp",
+            "image_link": "shopify://pages/energized-on-purnima",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_Nc7V9F": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sidd_rudraksha_banner_web_401d43cb-40a3-4713-a1a3-42b3c48b403a.webp",
+            "image_mobile": "shopify://shop_images/siddh_banner_mobile_00581e6e-2073-49fb-b4da-35db84e7cbc1.webp",
+            "image_link": "shopify://pages/siddh-rudraksha",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_tnAcJB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Shankh_banner_New_launch_WEB_1.webp",
+            "image_mobile": "shopify://shop_images/Shankh_banner_New_launch_Mobile_Size_1.webp",
+            "image_link": "shopify://products/silver-plated-ganesh-shankh-conch",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_ehcUnP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website_c3e31df0-f3b2-475d-804b-7e37bb391081.webp",
+            "image_mobile": "shopify://shop_images/Mobile_6ac565d1-649e-4911-ab36-5e24ebfb7dc2.webp",
+            "image_link": "shopify://pages/reet",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_nUjCyB",
+        "slide_iePeqd",
+        "slide_KkV4YJ",
+        "slide_a4jGC6",
+        "slide_CL8Khx",
+        "slide_66Ymen",
+        "slide_eEdLxf",
+        "slide_Nc7V9F",
+        "slide_tnAcJB",
+        "slide_ehcUnP"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": false,
+        "slider_visual": "bars",
+        "transition_style": "default",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "d557b959-57cb-476f-adb6-18808587f120": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "template--21829637407021__d557b959-57cb-476f-adb6-18808587f120-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "100% Natural & Authentic",
+            "text_size": 100,
+            "text_color": "secondary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        },
+        "text_jmqfHH": {
+          "type": "text",
+          "settings": {
+            "text": "Energised by Top Astrologers",
+            "text_size": 100,
+            "text_color": "primary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "template--21829637407021__d557b959-57cb-476f-adb6-18808587f120-text-1",
+        "text_jmqfHH"
+      ],
+      "settings": {
+        "show_border": false,
+        "speed": 38,
+        "direction": "left",
+        "pause_hover": false,
+        "bg_light": "#131313",
+        "color_text_light": "#ffffff",
+        "color_text_light_2": "#e6be8f",
+        "bg_dark": "#999999",
+        "color_text_dark": "#ffffff",
+        "color_text_dark_2": "rgba(0,0,0,0)",
+        "space_block": 40,
+        "padding_top": 20,
+        "padding_bottom": 16,
+        "space_block_mobile": 40,
+        "padding_top_mobile": 8,
+        "padding_bottom_mobile": 8
+      }
+    },
+    "collection_grid_carousel_3wTy7A": {
+      "type": "collection-grid-carousel",
+      "settings": {
+        "section_title": "Best Sellers",
+        "heading_font_size": 21,
+        "collection_handle": "best-sellers",
+        "max_products": 6,
+        "products_per_row_desktop": 4,
+        "show_vendor": false,
+        "show_carousel_indicators": false,
+        "border_radius": 8,
+        "image_border_radius": 5
+      }
+    },
+    "collection_list_nnF6qt": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_fAkXgw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "money-collection"
+          }
+        },
+        "featured_collection_iwwiN8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "love"
+          }
+        },
+        "featured_collection_cRh3gx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "career"
+          }
+        },
+        "featured_collection_iBXjA3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "evil-eye"
+          }
+        },
+        "featured_collection_HaHPie": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "health"
+          }
+        },
+        "featured_collection_9zWQPV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gifting"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_fAkXgw",
+        "featured_collection_iwwiN8",
+        "featured_collection_cRh3gx",
+        "featured_collection_iBXjA3",
+        "featured_collection_HaHPie",
+        "featured_collection_9zWQPV"
+      ],
+      "settings": {
+        "heading": "Shop by Purpose",
+        "heading_size": 150,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "show_view_all": false,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "image_ratio": "square",
+        "title_size": 140,
+        "show_text_overlay": false,
+        "content_alignment": "center",
+        "content_position": "bottom",
+        "image_overlay_opacity": 5,
+        "title_color": "#ffffff",
+        "text_light": "rgba(0,0,0,0)",
+        "title_color_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "show_item_count": false,
+        "columns_desktop": 6,
+        "columns_mobile": "2",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": true,
+        "spacing": 14,
+        "show_section_divider": false,
+        "full_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "spacing_mobile": 12,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_c8C7e7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GKJmBm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Product Of The Day",
+            "heading_size": 150,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GKJmBm"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "image_with_text_wwwbFc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nNDz4R": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Only Limited Stock!",
+            "heading": "1-14 Mukhi Siddh Rudraksha Mala with Collector Beads",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Experience the full power of 1–14 Mukhi Siddh Rudraksha Mala made with premium Collector Beads.<br/><br/>It boosts spiritual strength, removes negativity, and supports overall success.</p>",
+            "number_of_lines_shown": "large",
+            "read_more_label": "Read more",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_MGVxET": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_link": "https://astrotalk.store/products/1-14-mukhi-siddh-rudraksha-mala",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nNDz4R",
+        "button_MGVxET"
+      ],
+      "custom_css": [
+        ".button {background-color: black;}",
+        ".button-text {color: white;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/1_2_2_e97809eb-a85b-4ff2-b76f-de2e01a0c5d8.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_width": "large",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 24
+      }
+    },
+    "collection_grid_carousel_6RiNMR": {
+      "type": "collection-grid-carousel",
+      "settings": {
+        "section_title": "Combo Deals",
+        "heading_font_size": 21,
+        "collection_handle": "combos-999",
+        "max_products": 5,
+        "products_per_row_desktop": 4,
+        "show_vendor": false,
+        "show_carousel_indicators": false,
+        "border_radius": 8,
+        "image_border_radius": 10
+      }
+    },
+    "image_with_text_HKbC4c": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_GJ93cK": {
+          "type": "heading",
+          "settings": {
+            "subheading": "NEWLY LAUNCHED",
+            "heading": "9 kg Raw pyrite stone",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Invite prosperity and success into your space with this 9Kg Original Raw Pyrite Stone. Known for its powerful ability to attract wealth and positive energy, this naturally formed crystal serves as a money magnet.</p>",
+            "number_of_lines_shown": "large",
+            "read_more_label": "Read more",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_jKVCC7": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_link": "shopify://products/7-kg-raw-pyrite-stone",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#131313",
+            "button_text_light": "#ffffff",
+            "button_hover_light": "#131313",
+            "button_text_hover_light": "#ffffff",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GJ93cK",
+        "button_jKVCC7"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/raw_pyrite_stone_7_kg.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_width": "large",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 24
+      }
+    },
+    "collection_grid_carousel_rf79Bg": {
+      "type": "collection-grid-carousel",
+      "name": "Collection Carousel Grid",
+      "settings": {
+        "section_title": "Our Top Selling Rudraksha",
+        "heading_font_size": 24,
+        "collection_handle": "rudraksha-beads",
+        "max_products": 8,
+        "products_per_row_desktop": 4,
+        "show_vendor": false,
+        "show_carousel_indicators": true,
+        "border_radius": 8,
+        "image_border_radius": 10
+      }
+    },
+    "collection_grid_carousel_AqCG3B": {
+      "type": "collection-grid-carousel",
+      "name": "Collection Carousel Grid",
+      "settings": {
+        "section_title": "Bracelets For Women",
+        "heading_font_size": 24,
+        "collection_handle": "bracelets-for-women",
+        "max_products": 8,
+        "products_per_row_desktop": 3,
+        "show_vendor": false,
+        "show_carousel_indicators": true,
+        "border_radius": 8,
+        "image_border_radius": 10
+      }
+    },
+    "collection_grid_carousel_TBYVfU": {
+      "type": "collection-grid-carousel",
+      "name": "Collection Carousel Grid",
+      "settings": {
+        "section_title": "Top-Selling Pyramids",
+        "heading_font_size": 24,
+        "collection_handle": "pyramids",
+        "max_products": 10,
+        "products_per_row_desktop": 3,
+        "show_vendor": false,
+        "show_carousel_indicators": true,
+        "border_radius": 8,
+        "image_border_radius": 15
+      }
+    },
+    "featured_collection_ckjzY9": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_YTwQxw": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-launches",
+            "show_description": true,
+            "description": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "show_vendor": false,
+            "show_rating": false,
+            "show_quickview": true,
+            "show_promotion": false,
+            "promotion_position": "left",
+            "card_link": "",
+            "open_new_window": false,
+            "enable_text_overlay": false,
+            "overlay_opacity": 0,
+            "image_ratio": "100",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "product_card": "",
+            "heading": "",
+            "heading_size": 70,
+            "content": "",
+            "text_size": 100,
+            "content_alignment": "center",
+            "content_position": "bottom",
+            "button_label": "See more",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "background_color": "rgba(0,0,0,0)",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "collection_YTwQxw"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "New Launches",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "subheading": "",
+        "text": "",
+        "show_view_all": false,
+        "view_all_position": "top",
+        "title_size": 120,
+        "title_style": "none",
+        "enable_desktop_slider": false,
+        "slider_style": "horizontal",
+        "swiper_on_mobile": false,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "columns_desktop": 4,
+        "rows_desktop": 1,
+        "spacing": 28,
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "eventname": "",
+        "columns_mobile": "1",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "aa5a321b-0569-4811-b5c6-83c275dfc484": {
+      "type": "flow",
+      "blocks": {
+        "media_XiY7cn": {
+          "type": "media",
+          "settings": {
+            "video": "shopify://files/videos/2 steps to energize-4.mp4",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": true,
+            "heading": "Charged for you by Top Astros",
+            "description": "<p>At Astrotalk, we ensure that all our healing stones are sourced and energised by trusted experts and astrologers to guarantee their authenticity. Before delivery, all our healing stones are energised with pure intentions and energy by our esteemed astrologers,<br/>making them highly effective for our customers.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_HbXB9G": {
+          "type": "media",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2024-06-14 at 3.43.03 PM.mp4",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": true,
+            "heading": "100% Natural & Authentic",
+            "description": "<p>All our stones are 100% authentic and original, sourced from top international mines across the globe.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_BhXbpr": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/662b0f5b-9896-4b3d-92f0-34fa414d2978.png",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "heading": "Certified by Govt Labs",
+            "description": "<p>Certified by trusted experts at the gemology lab. Passed multiple screenings for originality and quality.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "0ddcf36d-da52-4624-b5d2-c52b3640166d": {
+          "type": "media",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2024-07-12 at 12.30.02 PM.mp4",
+            "show_sound_control": true,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": true,
+            "heading": "Hand Crafted by Artisans",
+            "description": "<p>Meticulously crafted by experienced artisans with special attention to detail. </p><p>Original crystals, delicately polished to enhance the brilliance and look. Unparalleled craftsmanship to bring out the magnificent detail in each product.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "media_XiY7cn",
+        "media_HbXB9G",
+        "media_BhXbpr",
+        "0ddcf36d-da52-4624-b5d2-c52b3640166d"
+      ],
+      "settings": {
+        "heading": "Why Astrotalk?",
+        "heading_size": 150,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "content_position": "middle",
+        "content_alignment": "left",
+        "open_first_tab": false,
+        "image_corner_radius": 0,
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "#000000",
+        "background_color": "#faf7e8",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "#ffffff",
+        "background_color_dark": "#3a3a3a",
+        "image_position": "second",
+        "full_width": true,
+        "padding_full_width": true,
+        "show_section_divider": false,
+        "desktop_height": "650px",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "image_position_mobile": "second",
+        "full_width_mobile": true,
+        "show_section_divider_mobile": false,
+        "mobile_height": "400px",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "174350571503a0e86b": {
+      "type": "apps",
+      "blocks": {
+        "quinn_shoppable_videos_app_cards_block_xP7MGD": {
+          "type": "shopify://apps/quinn-shoppable-videos/blocks/app-cards-block/150d2781-732b-4020-a9fb-1368e974e6bb",
+          "settings": {
+            "layer_number": 1,
+            "card_margins_desktop": "0",
+            "card_margins_mobile": "0",
+            "custom_metaobject_handle": "null",
+            "heading": "<p>What our customers say</p>",
+            "heading_alignment": "center",
+            "heading_font_size_desktop": "16px",
+            "heading_letter_spacing_desktop": "normal",
+            "heading_font_size_mobile": "16px",
+            "heading_letter_spacing_mobile": "normal",
+            "heading_line_height_desktop": "1.2",
+            "heading_line_height_mobile": "1.2",
+            "heading_font_weight_desktop": "400",
+            "heading_font_weight_mobile": "400",
+            "heading_font": "sans_serif_n4",
+            "heading_color": "#000000",
+            "heading_background_color": "#ffffff",
+            "heading_padding": "0px",
+            "heading_margin": "0px",
+            "subheading": "",
+            "subheading_alignment": "center",
+            "subheading_font": "sans_serif_n4",
+            "subheading_color": "#000000",
+            "subheading_background_color": "#ffffff",
+            "subheading_padding": "0px",
+            "subheading_margin": "0px"
+          }
+        }
+      },
+      "block_order": [
+        "quinn_shoppable_videos_app_cards_block_xP7MGD"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "54f7b6ce-e4ba-42b3-9550-cde9eb5ab2b4": {
+      "type": "testimonials",
+      "blocks": {
+        "template--21828924539181__54f7b6ce-e4ba-42b3-9550-cde9eb5ab2b4-testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>This is my second purchase from your store in the last two months itself! I bought the rose quartz pendant and got so many compliments from my colleagues. Even the colleague I find cute 😂, don’t know if it’s the rose quartz working its magic but it sure is a start! Ordered the bracelet as well now! Excited to try the combo together.</p>",
+            "author_image": "shopify://shop_images/Rose_quartz_moon_pendant.jpg",
+            "author": "Nikita",
+            "author_note": ""
+          }
+        },
+        "testimonial_9eCR7q": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>I got the rose quartz pendant and bracelet set from a friend as a gift and started to wear it not really expecting anything. Wore them solely because they look pretty and go with every outfit, but I actually started to feel more positive and calm after a few days of wearing them.<br/><br/>Have ordered another pair for my mother and sister after noticing the changes in myself.<br/><br/>Great product!</p>",
+            "author_image": "shopify://shop_images/IMG_8750.heic",
+            "author": "Archita",
+            "author_note": ""
+          }
+        },
+        "testimonial_df4iEK": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>Go for this without any hesitation!! I started following crystal healing after instagram recommended a few reels to me. <br/>I wasn’t a big believer lol, I am still learning infact...but I was going through a really weird phase and saw this girl’s reel who said wearing amethyst helps with sleep. Searched around and bought their purple amethyst bracelet. It has worked for me like a charm. <br/>Will try out the crystals too.</p>",
+            "author_image": "shopify://shop_images/IMG_0256.heic",
+            "author": "Arshita",
+            "author_note": ""
+          }
+        },
+        "testimonial_JnmG7a": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>Got the evil eye bracelet for my mother, she loves it! Her health has also been better since she started to wear this regularly.</p>",
+            "author_image": "shopify://shop_images/IMG_7072_ad253b9c-359f-4840-9b4a-9e50dfe1424a.heic",
+            "author": "Aarti",
+            "author_note": ""
+          }
+        },
+        "testimonial_j9dBTq": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>Ordered the wrong bracelet accidentally, the team was nice and supportive and helped replace the order with the new one within 7 days! Such a smooth experience, really happy with my tiger eye bracelet.</p>",
+            "author_image": "shopify://shop_images/IMG_0263.heic",
+            "author": "Maanya",
+            "author_note": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21828924539181__54f7b6ce-e4ba-42b3-9550-cde9eb5ab2b4-testimonial-1",
+        "testimonial_9eCR7q",
+        "testimonial_df4iEK",
+        "testimonial_JnmG7a",
+        "testimonial_j9dBTq"
+      ],
+      "settings": {
+        "heading": "Testimonials",
+        "class": "",
+        "heading_size": 150,
+        "heading_tag": "h2",
+        "text_alignment": "start",
+        "testimonial_items_view": "single",
+        "show_arrow": true,
+        "show_pagination": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_author_image": true,
+        "author_image": "top",
+        "image_ratio": "100",
+        "desktop_height": 500,
+        "background_color_light": "rgba(0,0,0,0)",
+        "item_background_color_light": "#f5f4f4",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "#202020",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 0,
+        "bottom_padding": 4,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 20
+      }
+    },
+    "ec753deb-9b85-432b-ad75-2c2fd240c350": {
+      "type": "media-gallery",
+      "blocks": {
+        "template--21828924539181__ec753deb-9b85-432b-ad75-2c2fd240c350-media-3": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/7_1.jpg",
+            "image_link": "shopify://products/money-magnet-bracelet",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "bottom",
+            "overlay_opacity": 0,
+            "number_of_columns": 2,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 90,
+            "text": "",
+            "text_size": 100,
+            "text_align": "right",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "text_color": "#ffffff",
+            "color_button": "rgba(0,0,0,0)",
+            "background_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "template--21828924539181__ec753deb-9b85-432b-ad75-2c2fd240c350-media-2": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_bc63d2a3-109b-41b7-a54c-98b8e51e0dcc.png",
+            "image_link": "shopify://products/red-jasper-bracelet",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "center",
+            "overlay_opacity": 0,
+            "number_of_columns": 1,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 80,
+            "text": "",
+            "text_size": 130,
+            "text_align": "right",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "#ffffff",
+            "text_color": "#ffffff",
+            "color_button": "#242424",
+            "background_button": "#ffffff",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "e201a23e-7152-431b-bd6e-681a502ff504": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Firefly_20240716222847.png",
+            "image_link": "shopify://products/silversouthseapearlbracelet",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "center",
+            "overlay_opacity": 0,
+            "number_of_columns": 1,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 80,
+            "text": "",
+            "text_size": 130,
+            "text_align": "center",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "background_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "5599b296-b06c-4496-8800-62a2bdab8c49": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/6748_f8bdf509-7569-4fc3-b3c3-c773e2c589f5.jpg",
+            "image_link": "shopify://products/evil-eye-butterfly-pendant",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "center",
+            "overlay_opacity": 0,
+            "number_of_columns": 1,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 80,
+            "text": "",
+            "text_size": 130,
+            "text_align": "center",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "background_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "18e177f8-e77d-48ba-b580-1d5bff64df63": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_400fddb0-ad5d-482c-bdb5-e9fc925e4c13.png",
+            "image_link": "shopify://products/love-attraction-bracelet",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "center",
+            "overlay_opacity": 0,
+            "number_of_columns": 1,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 80,
+            "text": "",
+            "text_size": 130,
+            "text_align": "center",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "background_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "media_Xgx9Bb": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/7509_b6829037-72c8-4e9a-bded-91dda7971752.jpg",
+            "image_link": "shopify://products/rose-quartz-heart-pendant",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "center",
+            "overlay_opacity": 0,
+            "number_of_columns": 1,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 80,
+            "text": "",
+            "text_size": 130,
+            "text_align": "center",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "background_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "media_h6zbW4": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/IMG_3473_1721152589967.jpg",
+            "image_link": "shopify://products/silversouthseapearl-necklace",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "center",
+            "overlay_opacity": 0,
+            "number_of_columns": 1,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 80,
+            "text": "",
+            "text_size": 130,
+            "text_align": "center",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "background_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "media_DUzBGP": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/8_2.jpg",
+            "image_link": "shopify://products/gold-plated-om-pendant-1",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "center",
+            "overlay_opacity": 0,
+            "number_of_columns": 1,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 80,
+            "text": "",
+            "text_size": 130,
+            "text_align": "center",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "background_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "media_3YEQxp": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/7004_f17dd3b2-4e34-4b20-8cfa-158c4e92fee2.jpg",
+            "image_link": "shopify://products/7-chakra-balancing-bracelet",
+            "open_new_window": false,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "enable_content_overlay": true,
+            "content_position": "center",
+            "overlay_opacity": 0,
+            "number_of_columns": 1,
+            "number_of_row": 1,
+            "icon": "none",
+            "custom_icon": "",
+            "icon_size": 45,
+            "sub_title": "",
+            "title": "",
+            "title_size": 80,
+            "text": "",
+            "text_size": 130,
+            "text_align": "center",
+            "media_position": "top",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "color_overlay": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "background_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "background_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "template--21828924539181__ec753deb-9b85-432b-ad75-2c2fd240c350-media-3",
+        "template--21828924539181__ec753deb-9b85-432b-ad75-2c2fd240c350-media-2",
+        "e201a23e-7152-431b-bd6e-681a502ff504",
+        "5599b296-b06c-4496-8800-62a2bdab8c49",
+        "18e177f8-e77d-48ba-b580-1d5bff64df63",
+        "media_Xgx9Bb",
+        "media_h6zbW4",
+        "media_DUzBGP",
+        "media_3YEQxp"
+      ],
+      "settings": {
+        "heading": "Image Gallery",
+        "heading_size": 150,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "subheading": "",
+        "text": "",
+        "max_columns": 5,
+        "spacing": 30,
+        "height_desktop": 300,
+        "show_section_divider": false,
+        "full_width": true,
+        "padding_full_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "min_columns_mobile": "2",
+        "spacing_mobile": 8,
+        "height_mobile": 190,
+        "show_section_divider_mobile": false,
+        "full_width_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "172318291193176c67": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1748522586dde29499": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_38157cc_xbYBXA": {
+          "type": "ai_gen_block_38157cc",
+          "settings": {
+            "heading": "Featured Categories",
+            "subheading": "Browse our popular collections",
+            "heading_alignment": "center",
+            "heading_size": 32,
+            "heading_weight": "600",
+            "subheading_size": 16,
+            "heading_color": "#000000",
+            "subheading_color": "#6b7280",
+            "columns_desktop": 3,
+            "columns_mobile": "2",
+            "gap": 20,
+            "gap_mobile": 10,
+            "image_ratio": 100,
+            "border_radius": 8,
+            "image_1": "shopify://shop_images/a-square-image-featuring-a-detailed-rudraksh-bead-in-the-center-with-spiritual-symbols-in-the-background-using-warm-earthy-tones-with-gold-accents-designed-for-a-rudraksh-recommender.png",
+            "title_1": "",
+            "link_1": "",
+            "image_2": "shopify://shop_images/a-square-image-featuring-an-elegant-wrist-wearing-a-bracelet-made-of-various-astrological-stones-including-raw-pyrite-rose-quartz-amethyst-and-clear-quartz-against-a-cosmic-background.png",
+            "title_2": "",
+            "link_2": "",
+            "image_3": "shopify://shop_images/a-square-image-featuring-a-circular-arrangement-of-colorful-gemstones-including-amethyst-emerald-ruby-sapphire-and-citrine-on-a-dark-elegant-background-with-subtle-astrological-symbol.png",
+            "title_3": "",
+            "link_3": "",
+            "title_4": "",
+            "link_4": "",
+            "title_5": "",
+            "link_5": "",
+            "title_6": "",
+            "link_6": "",
+            "text_alignment": "center",
+            "title_size": 16,
+            "title_weight": "500",
+            "title_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_opacity_hover": 10
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_38157cc_xbYBXA"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "home_page_collection_KjXh9P": {
+      "type": "Home-Page-Collection",
+      "settings": {
+        "collection_handle": "home-page",
+        "storefront_token": "=ITOwIGOwYDZ3kjZxATZzMDMjJmZxUWZ1kTZlRjM5QmM",
+        "products_per_row_desktop": 4,
+        "section_heading": "Our Products",
+        "section_description": "Browse our collection of products",
+        "show_reviews": false
+      }
+    }
+  },
+  "order": [
+    "collection_list_strip_DPqNyA",
+    "fe5dccd3-17fd-4fd3-ada9-a0e11305981c",
+    "d557b959-57cb-476f-adb6-18808587f120",
+    "collection_grid_carousel_3wTy7A",
+    "collection_list_nnF6qt",
+    "rich_text_c8C7e7",
+    "image_with_text_wwwbFc",
+    "collection_grid_carousel_6RiNMR",
+    "image_with_text_HKbC4c",
+    "collection_grid_carousel_rf79Bg",
+    "collection_grid_carousel_AqCG3B",
+    "collection_grid_carousel_TBYVfU",
+    "featured_collection_ckjzY9",
+    "aa5a321b-0569-4811-b5c6-83c275dfc484",
+    "174350571503a0e86b",
+    "54f7b6ce-e4ba-42b3-9550-cde9eb5ab2b4",
+    "ec753deb-9b85-432b-ad75-2c2fd240c350",
+    "172318291193176c67",
+    "1748522586dde29499",
+    "home_page_collection_KjXh9P"
+  ]
+}

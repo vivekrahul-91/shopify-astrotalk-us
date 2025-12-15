@@ -1,0 +1,275 @@
+{% comment %}
+  Product Review Slider Snippet
+  Usage: {% render 'review-slider', product: product %}
+  Expects product metafield 'custom.reviews' to be an array of review objects.
+{% endcomment %}
+
+{%- assign reviews = product.metafields.custom.reviews.value -%}
+
+{%- if reviews != blank -%}
+  <div class="reviews-slider-container page-width">
+    <div class="reviews-slider" id="reviewsSlider-{{ product.id }}">
+      <button class="arrow prev" id="prevSlide-{{ product.id }}">&#10094;</button>
+      <button class="arrow next" id="nextSlide-{{ product.id }}">&#10095;</button>
+      <div class="reviews-track" id="reviewsTrack-{{ product.id }}">
+        {%- for review in reviews -%}
+          <div class="review-slide">
+            <div class="review-header">
+              {%- if review.reviewer_image != blank -%}
+                <img src="{{ review.reviewer_image | image_url: width: 100 }}"
+                     alt="Reviewer image for {{ review.reviewer_name }}"
+                     class="reviewer-image"
+                     width="40"
+                     height="40">
+              {%- endif -%}
+              <div class="reviewer-details">
+                <span class="reviewer-name">{{ review.reviewer_name }}
+                  <span class="verified-tag">
+                    <svg class="verified-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="8" fill="#fff"/><path d="M11.2 6.2L7.5 9.9L5.8 8.2" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="verified-text">Verified</span>
+                  </span>
+                </span>
+                <div class="review-stars">
+                  {%- for i in (1..5) -%}
+                    <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  {%- endfor -%}
+                </div>
+              </div>
+            </div>
+            <p class="review-text">{{ review.review_text }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="dots-container" id="dotsContainer-{{ product.id }}">
+      {%- for review in reviews -%}
+        <span class="dot{% if forloop.first %} active{% endif %}" data-slide="{{ forloop.index0 }}"></span>
+      {%- endfor -%}
+    </div>
+  </div>
+  <style>
+    .reviews-slider-container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .reviews-slider {
+        position: relative;
+        background: #f8f9fa;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .reviews-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        will-change: transform;
+        cursor: grab;
+    }
+    .review-slide {
+        border: 2px solid;
+        border-radius: 8px;
+        min-width: 100%;
+        padding: 30px;
+        background: white;
+        box-sizing: border-box;
+    }
+    .review-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .reviewer-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px;
+        flex-shrink: 0;
+    }
+    .reviewer-details {
+        display: flex;
+        flex-direction: column;
+    }
+    .reviewer-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 4px 0;
+    }
+    .reviews-slider-container .reviewer-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 4px 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        text-transform: none;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .reviews-slider-container .verified-tag {
+        background: #000;
+        border-radius: 12px;
+        color: #fff;
+        padding: 2px 8px 3px 18px;
+        font-weight: 500;
+        margin: 0 5px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        font-size: 12px;
+    }
+    .reviews-slider-container .verified-icon {
+        position: absolute;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        margin: 0;
+        display: inline-block;
+        pointer-events: none;
+    }
+    .reviews-slider-container .verified-text {
+        margin-left: 4px;
+    }
+    .review-stars {
+        display: flex;
+    }
+    .star {
+        width: 18px;
+        height: 18px;
+        margin-right: 2px;
+        fill: #ffd700;
+    }
+    .review-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #555;
+        margin: 0;
+        padding-bottom:10px;
+    }
+    .review-slide:nth-child(4n + 1) {
+        border-color: #C3EEFF;
+        background: linear-gradient(71deg, #FFF 53.13%, #E9FDFF 108.18%);
+    }
+    .review-slide:nth-child(4n + 2) {
+        border-color: #D7B0ED;
+        background: linear-gradient(75deg, #FFF 37.85%, #F9EEFF 108.49%);
+    }
+    .review-slide:nth-child(4n + 3) {
+        border-color: #B7D384;
+        background: linear-gradient(67deg, #FFF 45.19%, #7BB60C 252.25%);
+    }
+    .review-slide:nth-child(4n + 4) {
+        background: linear-gradient(69deg, #FFF 44.16%, #FF9773 164.1%);
+        border-color: #FFAF93;
+    }
+    .dots-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 8px;
+    }
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .dot.active {
+        background: #333;
+        transform: scale(1.2);
+    }
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        color: black;
+        border: none;
+        padding: 1px 6px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.3s ease;
+    }
+    .arrow:hover { background: #fff; border: 1px solid black; }
+    .prev { left: 4px; }
+    .next { right: 4px; }
+    @media (max-width: 768px) {
+        .reviews-slider-container { margin: 8px auto; padding:0px; }
+        .review-slide { padding: 12px 20px; }
+    }
+  </style>
+  <script>
+    (function() {
+      var sectionId = {{ product.id | json }};
+      var sliderElement = document.getElementById('reviewsSlider-' + sectionId);
+      if (!sliderElement) return;
+      var track = document.getElementById('reviewsTrack-' + sectionId);
+      var dotsContainer = document.getElementById('dotsContainer-' + sectionId);
+      var prevBtn = document.getElementById('prevSlide-' + sectionId);
+      var nextBtn = document.getElementById('nextSlide-' + sectionId);
+      if (!track || !dotsContainer || !prevBtn || !nextBtn) return;
+      var dots = dotsContainer.querySelectorAll('.dot');
+      var slides = track.querySelectorAll('.review-slide');
+      if (slides.length <= 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        dotsContainer.style.display = 'none';
+        return;
+      }
+      var currentSlide = 0;
+      var totalSlides = slides.length;
+      var autoPlayInterval;
+      function updateSlider() {
+        var translateX = -currentSlide * 100;
+        track.style.transform = 'translateX(' + translateX + '%)';
+        dots.forEach(function(dot, index) {
+          dot.classList.toggle('active', index === currentSlide);
+        });
+      }
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      }
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      }
+      function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+      }
+      function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, 6000);
+      }
+      function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+      }
+      nextBtn.addEventListener('click', function() { stopAutoPlay(); nextSlide(); });
+      prevBtn.addEventListener('click', function() { stopAutoPlay(); prevSlide(); });
+      dots.forEach(function(dot, index) {
+        dot.addEventListener('click', function() { stopAutoPlay(); goToSlide(index); });
+      });
+      var startX = 0;
+      var isDragging = false;
+      track.addEventListener('mousedown', function(e) { isDragging = true; startX = e.pageX; stopAutoPlay(); track.style.cursor = 'grabbing'; });
+      track.addEventListener('mousemove', function(e) { if (!isDragging) return; var diff = e.pageX - startX; if (diff > 50) { isDragging = false; prevSlide(); } else if (diff < -50) { isDragging = false; nextSlide(); } });
+      track.addEventListener('mouseup', function() { isDragging = false; startAutoPlay(); track.style.cursor = 'grab'; });
+      track.addEventListener('mouseleave', function() { isDragging = false; track.style.cursor = 'grab'; });
+      track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; stopAutoPlay(); });
+      track.addEventListener('touchmove', function(e) { var diff = e.touches[0].clientX - startX; if (diff > 50) { prevSlide(); startX = e.touches[0].clientX; } else if (diff < -50) { nextSlide(); startX = e.touches[0].clientX; } });
+      track.addEventListener('touchend', startAutoPlay);
+      updateSlider();
+      startAutoPlay();
+    })();
+  </script>
+{%- endif -%}

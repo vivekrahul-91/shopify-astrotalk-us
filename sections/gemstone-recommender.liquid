@@ -1,0 +1,1587 @@
+{% comment %}
+  SECTION: Gemstone Recommendation
+  Author: Responsive Update 
+  Drop in /sections and add through the Customizer
+{% endcomment %}
+<section id="gemstone-recommendation"
+         class="gs-wrapper"
+         x-data="gemstoneWidget()"
+         x-init="init()">
+<div class=" gemstone-cover">
+  
+  <div class="calculator-form">
+    <div class="recommendation-heading">
+      <h2>Calculate your Gemstone here</h2>
+      <!-- <p>Enter your details below to receive a personalized Gemstone recommendation meant just for you. A magical match for your cosmic path.</p> -->
+    </div>
+    
+    <form @submit.prevent="submit">
+      <div class="name-phone-row">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" x-model="name" placeholder="Enter Your Name" required>
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" x-model="phone" placeholder="Enter Your Number" required pattern="[0-9]{10,15}">
+        </div>
+      </div>
+
+      <div>
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" x-model="dob" :max="getCurrentDate()" required>
+      </div>
+
+      <div>
+        <label for="tob" x-show="!noTob">Time of Birth</label>
+        <div id="time-dropdowns" x-show="!noTob">
+          <select name="hours" x-model="hours">
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <select name="minutes" x-model="minutes">
+            <option value="00">00</option>
+            <option value="05">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+          </select>
+          <select name="ampm" x-model="ampm">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+        <label class="no-tob">
+          <input type="checkbox" x-model="noTob" class="no-tob-checkbox">
+          <span class="no-tob-text">I don't have my time of birth</span>
+        </label>
+      </div>
+
+      <div>
+        <label for="city">Place of Birth</label>
+        <div class="place-input-container">
+          <input type="text" id="city" x-model="city" placeholder="Enter Birth Place Here" required autocomplete="off">
+          <div id="place-suggestions-portal" class="place-suggestions-portal"></div>
+        </div>
+      </div>
+
+      <div>
+        <label for="weight">Body Weight ( in kg ) :</label>
+        <input type="number" id="weight" x-model="weight" placeholder="Enter Your Weight" required min="1" max="200" step="0.1">
+      </div>
+
+      <button type="submit" :disabled="calculating">
+        Know your Gemstone <span class="loader" x-show="calculating"></span>
+      </button>
+      <p class="privacy-note">* We do not save any of your personal data. </p>
+      <!-- Google Invisible reCAPTCHA widget -->
+      <div class="g-recaptcha"
+           data-sitekey="6LeQc4YrAAAAAIUjys66p5IlZO6MWYjXbINW44TK"
+           data-size="invisible"
+           data-callback="onRecaptchaSuccess">
+      </div>
+    </form>
+  </div>
+</div>
+
+  <!-- Result -->
+  <div x-show="resultHtml" x-cloak class="results-section" id="results-section">
+    <div x-html="resultHtml"></div>
+  </div>
+</section>
+
+<style>
+/* Base Responsive Styles */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Color Variables */
+:root {
+  --primary: #8B0000;  /* Dark Red/Maroon */
+  --primary-dark: #6B0000;
+  --primary-light: #FFE4E4;
+  --bg-light: #FFFFFF;
+  --bg-lighter: #FEF9E8;
+  --text-dark: #1F2937;
+  --text-light: #4B5563;
+  --border-color: #E5E7EB;
+}
+.gemstone-cover {
+    background: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/web_4b5d83c0-bb44-41e7-9c0b-7fc573ce8bf4.webp?v=1749817091);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 40px;
+}
+.section-title {
+font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+text-align: center;
+}
+
+.no-tob {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-light);
+  min-height: auto;
+  height: auto;
+  padding: 8px 0;
+}
+
+.no-tob-checkbox {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.no-tob-checkbox:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  padding: 4px;
+  background-clip: content-box;
+}
+
+.no-tob-checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.no-tob-text {
+  line-height: 1.2;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.gs-wrapper {
+  background: var(--bg-lighter);
+  padding: 12px;
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    justify-self: right;
+    width: 100%;
+    max-width: 520px;
+    padding: 12px;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+.recommendation-heading {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.recommendation-heading h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.1;
+  
+}
+
+.recommendation-heading h2 {
+    font-size: 30px;
+    color: #fff;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+}
+
+.recommendation-heading p {
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.calculator-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calculator-form form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name-phone-row {
+  display: flex;
+  gap: 10px;
+  flex-direction: row !important;
+}
+
+.name-phone-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calculator-form label {
+    color: #fff;
+    font: 500 14px / 16px var(--font-button);
+    display: block;
+    margin-bottom: 0;
+}
+  .privacy-note {
+    display: none;
+  }
+.calculator-form input.no-tob-checkbox {
+    padding: 0;
+}
+  label.no-tob {
+    margin: 0;
+    display: flex;
+    padding: 0px 0 2px !important;
+}
+  input.no-tob-checkbox {
+    padding: 0;
+}
+.calculator-form input,
+.calculator-form select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: #fff;
+    font: 500 14px / 1.2 'Inter', sans-serif;
+    color: rgba(0, 0, 0, 0.70);
+    transition: all 0.2s ease;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 48px;
+}
+  .calculator-form select {    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--white);
+    font: 500 14px / 1.2 sans-serif;
+    color: rgba(0, 0, 0, 0.70);
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E);
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 10px;
+  }
+
+.calculator-form input[type="date"] {
+    padding: 10px;
+    -webkit-appearance: none;
+}
+
+.calculator-form input:focus,
+.calculator-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+  -webkit-box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.calculator-form input::placeholder {
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+/* Phone input container */
+.phone-input-container {
+  display: none;
+}
+
+/* Time dropdowns */
+#time-dropdowns {
+  display: flex;
+  display: -webkit-flex;
+  gap: 8px;
+  
+}
+
+#time-dropdowns select {
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-appearance: menulist; /* Restore normal appearance for dropdowns */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #fff;
+}
+
+.calculator-form button[type="submit"] {
+    width: 100%;
+    max-width: 47%;
+    padding: 10px;
+    background: #82000C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    margin-top: 8px;
+    margin: auto;
+    -webkit-appearance: none;
+}
+
+.calculator-form button[type="submit"]:hover {
+  background: #82000C;
+}
+
+.calculator-form button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+  margin-left: 8px;
+}
+#gemstone-recommendation .link-btn a {
+    display: flex;
+    padding: 6px 24px;
+    background: transparent;
+    color: rgba(130, 0, 12, 1);
+    border: 1px solid rgba(130, 0, 12, 1);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -webkit-appearance: none;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 640px) {
+      .calculator-form {
+        width: 100%;
+        max-width: 100%;
+        padding: 150px 0 0;
+        margin: 0;
+    }
+  .calculator-form input, .calculator-form select {
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+ }
+  label.no-tob {
+    margin-top: 0 !important;
+  }
+  .calculator-form button[type="submit"] {
+    width: 100%;
+    max-width: 78%;
+    padding: 8px;
+    margin-top: 8px !important;
+  }
+  .phone-input-container {
+  flex-direction: column;
+}
+div#time-dropdowns select {
+    padding: 8px;
+}
+  .phone-input-container select {
+    width: 100%;
+  }
+}
+
+/* AlpineJS utility */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Privacy note styling */
+.privacy-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Updated Product Card Styling */
+.results-section {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 0 12px;
+  -webkit-tap-highlight-color: transparent; /* Removes tap highlight on iOS */
+}
+
+.result-heading {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.result-details {
+  font-size: 16px;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-transition: -webkit-transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-transform: translateZ(0); /* Add hardware acceleration */
+  will-change: transform, box-shadow; /* Hint for the browser about what will change */
+}
+#gemstone-recommendation .card{
+    width: 100%;
+}
+.card:hover {
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.img-hover-zoom {
+  height: 240px;
+  overflow: hidden;
+  -webkit-transform: translateZ(0); /* Force hardware acceleration */
+}
+
+.img-hover-zoom img {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -webkit-transform: translateZ(0); /* Hardware acceleration */
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+}
+
+.card-content {
+  padding: 12px;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.card-significance {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.how-to-wear {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.how-to-wear span {
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.how-to-wear span strong {
+  font-weight: 600;
+}
+
+.link-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.link-btn a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #000000;
+  color: white;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -webkit-appearance: none;
+}
+
+.link-btn a:hover {
+  background: #333333;
+  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Add styles for recommendation percentage */
+.recommendation-text {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+}
+
+.recommendation-percentage {
+    font-weight: 700;
+    color: #CD1162;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .img-hover-zoom {
+    height: 200px;
+  }  
+  .recommendation-heading h2
+ {
+        font-size: 20px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+  .calculator-form form {
+    gap: 16px;
+}
+  .products-container {
+    display: flex;
+    flex-direction: column;
+ }
+  .results-section {
+    margin: 28px auto 0;
+  }
+  .result-heading {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .card-title {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Base input styles */
+.gs-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: #fff;
+  font: 500 14px/1.2 Inter, sans-serif;
+  color: #595959;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  min-height: 40px;
+}
+
+/* Updated Product Card Styling */
+.result-container {
+  background: #F5F5F5;
+  border-radius: 16px;
+  padding: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.result-heading {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .products-container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+
+.card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .no-tob {
+    min-height: auto !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px 0 !important;
+  }
+  
+  .no-tob-checkbox {
+    width: 20px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    background-color: white !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .no-tob-checkbox:checked {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    padding: 4px !important;
+    background-clip: content-box !important;
+  }
+}
+
+/* Android specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  .no-tob {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 8px 0 !important;
+  }
+  
+  .no-tob-checkbox {
+    width: 20px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    background-color: white !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .no-tob-checkbox:checked {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    padding: 4px !important;
+    background-clip: content-box !important;
+  }
+}
+
+/* Fix for mobile devices in general */
+@media (max-width: 768px) {
+  #gemstone-recommendation{
+    padding: 0;
+  }
+  .no-tob {
+    display: flex;
+    align-items: center;
+    min-height: auto !important;
+    height: auto !important;
+    margin-top: 12px !important;
+    padding: 8px 0 !important;
+  }
+  
+  .no-tob-checkbox {
+    width: 20px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    background-color: white !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .no-tob-checkbox:checked {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    padding: 4px !important;
+    background-clip: content-box !important;
+  }
+  
+  .no-tob-text {
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+  }
+  .gemstone-cover {
+    background: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/mobile_1.webp?v=1749817091);
+    padding: 20px;
+    background-size: cover;
+}
+}
+
+/* Gender field specific fixes */
+.gender-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gender-field select {
+  text-indent: 0;
+  padding-left: 12px;
+  text-align: left;
+  -webkit-padding-start: 12px;
+  -webkit-padding-end: 30px;
+  direction: ltr;
+  font-size: 14px;
+}
+
+/* Place Suggestions Styling */
+.place-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.place-suggestions-portal {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 4px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+
+.place-suggestions-portal.show {
+  display: block;
+}
+
+.place-suggestions {
+  padding: 4px 0;
+}
+
+.suggestion-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background-color: var(--bg-lighter);
+}
+
+/* iOS specific fixes for place suggestions */
+@supports (-webkit-touch-callout: none) {
+  .place-suggestions-portal {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .suggestion-item {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+</style>
+
+{% comment %}
+// <p class="result-details">
+          //   Based on: Date of Birth: ${this.formatDate(this.dob)} • Time of Birth: ${this.formatTime()} • 
+          //   Place of Birth: ${this.city} • Recommended Weight: ${recommendedWeight}
+          // </p>
+{% endcomment %}
+
+<script>
+// Add the global callback for reCAPTCHA
+window.onRecaptchaSuccess = function(token) {
+  if (window.gemstoneWidgetSubmit) {
+    window.gemstoneWidgetSubmit(token);
+  }
+};
+function gemstoneWidget() {
+  return {
+    /* ---------------- STATE ---------------- */
+    name: '',
+    phone: '',
+    dob: '',              // yyyy-mm-dd
+    tob: '',              // HH:MM (hidden, calculated from the dropdowns)
+    hours: '12',          // Hours dropdown
+    minutes: '00',        // Minutes dropdown
+    ampm: 'AM',           // AM/PM dropdown
+    noTob: false,
+    weight: '',
+    city: '',
+    tz: '+05:30',        // Set default to India timezone
+    calculating: false,
+    resultHtml: null,
+    products: [],
+    googleScriptUrl: '{{ section.settings.google_script_url }}',
+
+    /* ---------------- CONSTANTS ---------------- */
+    rashiProductMap: {
+      "Aquarius": ["hessonite", "ruby-stone", "pukhraj-stone"],
+      "Aries": ["emerald", "fire-opal", "neelam"],
+      "Cancer": ["emerald", "neelam", "fire-opal"],
+      "Capricorn": ["pukhraj-stone", "pearl", "hessonite"],
+      "Gemini": ["ruby-stone", "pukhraj-stone", "hessonite"],
+      "Leo": ["fire-opal", "neelam", "emerald"],
+      "Libra": ["pukhraj-stone", "hessonite", "ruby-stone"],
+      "Pisces": ["fire-opal", "emerald", "neelam"],
+      "Sagittarius": ["neelam", "emerald", "fire-opal"],
+      "Scorpio": ["neelam", "fire-opal", "emerald"],
+      "Taurus": ["pearl", "hessonite", "pukhraj-stone"],
+      "Virgo": ["hessonite", "pukhraj-stone", "pearl"]
+    },
+
+    gemstoneDetails: {
+      "hessonite": {
+        title: "Hessonite (Gomed)",
+        significance: "Represents Mars, enhancing courage, determination, and physical strength. It helps in overcoming competitors and achieving success in competitive fields.",
+        metal: "Silver",
+        finger: "Middle finger of right hand",
+        timing: "Tuesday morning during Shukla Paksha",
+        weight: "Minimum 6-12 carats",
+        mantra: "Om Rahave Namah",
+        collection: "hessonite-gomed"
+      },
+      "ruby-stone": {
+        title: "Ruby (Manik)",
+        significance: "Represents Sun, boosts confidence, leadership qualities, and vitality. It brings fame, power, and success in career.",
+        metal: "Gold",
+        finger: "Ring finger of right hand",
+        timing: "Sunday morning during Shukla Paksha",
+        weight: "Minimum 3-6 carats",
+        mantra: "Om hrim hrum hraum sah suryaya namah",
+        collection: "ruby-manik"
+      },
+      "pukhraj-stone": {
+        title: "Yellow Sapphire (Pukhraj)",
+        significance: "Represents Jupiter, bringing wisdom, prosperity, and good fortune. It improves education, spirituality, and wealth.",
+        metal: "Gold",
+        finger: "Index finger of right hand",
+        timing: "Thursday morning during Shukla Paksha",
+        weight: "Minimum 3-5 carats",
+        mantra: "Om gram grim graum sah gurave namah",
+        collection: "yellow-sapphire-pukhraj"
+      },
+      "emerald": {
+        title: "Emerald (Panna)",
+        significance: "Represents Mercury, enhancing intelligence, communication skills, and business acumen. It improves memory and analytical thinking.",
+        metal: "Gold or Silver",
+        finger: "Little finger of right hand",
+        timing: "Wednesday morning during Shukla Paksha",
+        weight: "Minimum 3-5 carats",
+        mantra: "Om bram brim braum sah budhaya namah",
+        collection: "emerald-panna"
+      },
+      "fire-opal": {
+        title: "Fire Opal ",
+        significance: "Represents Saturn, helping overcome obstacles and bringing stability. It provides protection and helps in career advancement.",
+        metal: "White Gold or Silver",
+        finger: "Middle finger of right hand",
+        timing: "Saturday evening during Shukla Paksha",
+        weight: "Minimum 3-5 carats",
+        mantra: "Om pram prim praum sah shanaischaraya namah",
+        collection: "fire-opal"
+      },
+      "neelam": {
+        title: "Blue Sapphire (Neelam)",
+        significance: "Represents Saturn, helping overcome obstacles and bringing stability. It provides protection and helps in career advancement.",
+        metal: "White Gold or Silver",
+        finger: "Middle finger of right hand",
+        timing: "Saturday evening during Shukla Paksha",
+        weight: "Minimum 3-5 carats",
+        mantra: "Om pram prim praum sah shanaischaraya namah",
+        collection: "blue-sapphire-neelam"
+      },
+      "pearl": {
+        title: "Pearl (Moti)",
+        significance: "Represents Moon, bringing mental peace, emotional balance, and enhanced intuition. It improves relationships and creativity.",
+        metal: "Silver",
+        finger: "Little finger of right hand",
+        timing: "Monday evening during Shukla Paksha",
+        weight: "Minimum 4-6 carats",
+        mantra: "Om som somaya namah",
+        collection: "pearl-moti"
+      }
+    },
+
+    /* ---------------- HELPERS ---------------- */
+    pad(n) { return String(n).padStart(2,'0'); },
+    mod360(x) { return ((x % 360) + 360) % 360; },
+    calcJD(y,m,d) {
+      if (m<=2) { y-=1; m+=12; }
+      const A=Math.floor(y/100);
+      const B=2-A+Math.floor(A/4);
+      return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+d+B-1524.5;
+    },
+    formatMoney(cents) {
+      const money = (cents/100).toFixed(2);
+      return `${Shopify.currency.active || '₹'} ${money}`;
+    },
+    getCurrentDate() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    },
+    scrollToResults() {
+      setTimeout(() => {
+        const resultsSection = document.getElementById('results-section');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 200); // Small delay to ensure content is rendered
+    },
+
+    /* ---------------- LIFECYCLE ---------------- */
+    init() {
+      console.log('Initializing widget...');
+      this.setupAutocomplete();
+      this.setupTimeWatcher();
+      this.resetState();
+      
+      // Initial time update
+      setTimeout(() => this.updateTimeOfBirth(), 100);
+    },
+
+    resetState() {
+      console.log('Resetting state...');
+      this.name = '';
+      this.phone = '';
+      this.dob = '';
+      this.tob = '';
+      this.hours = '12';
+      this.minutes = '00';
+      this.ampm = 'AM';
+      this.noTob = false;
+      this.weight = '';
+      this.city = '';
+      this.resultHtml = null;
+      this.calculating = false;
+    },
+
+    setupTimeWatcher() {
+      // Watch for changes to the time fields and update tob field
+      this.$watch('hours', () => this.updateTimeOfBirth());
+      this.$watch('minutes', () => this.updateTimeOfBirth());
+      this.$watch('ampm', () => this.updateTimeOfBirth());
+      this.$watch('noTob', value => {
+        if (value) {
+          this.hours = '12';
+          this.minutes = '00';
+          this.ampm = 'AM';
+          this.tob = '';
+        } else {
+          this.updateTimeOfBirth();
+        }
+      });
+    },
+
+    updateTimeOfBirth() {
+      if (this.noTob) return;
+      
+      let hours = parseInt(this.hours);
+      const minutes = parseInt(this.minutes);
+      
+      // Convert to 24-hour format if PM
+      if (this.ampm === 'PM' && hours < 12) {
+        hours += 12;
+      } else if (this.ampm === 'AM' && hours === 12) {
+        hours = 0;
+      }
+      
+      this.tob = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+      console.log('Time of birth updated:', this.tob);
+    },
+
+    setupAutocomplete() {
+      const pobInput = document.getElementById('city');
+      const portalContainer = document.getElementById('place-suggestions-portal');
+      let currentTimeout;
+      
+      pobInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+        
+        if (query.length < 3) {
+          portalContainer.innerHTML = '';
+          portalContainer.classList.remove('show');
+          return;
+        }
+        
+        clearTimeout(currentTimeout);
+        
+        currentTimeout = setTimeout(() => {
+          fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=in&limit=5`)
+            .then(response => response.json())
+            .then(data => {
+              portalContainer.innerHTML = '';
+              if (data.length > 0) {
+                const suggestionsList = document.createElement('div');
+                suggestionsList.className = 'place-suggestions';
+                
+                data.forEach(place => {
+                  const div = document.createElement('div');
+                  div.className = 'suggestion-item';
+                  div.textContent = place.display_name;
+                  div.addEventListener('click', () => {
+                    pobInput.value = place.display_name;
+                    this.city = place.display_name;
+                    portalContainer.innerHTML = '';
+                    portalContainer.classList.remove('show');
+                  });
+                  suggestionsList.appendChild(div);
+                });
+                
+                portalContainer.appendChild(suggestionsList);
+                portalContainer.classList.add('show');
+                this.updateSuggestionsPosition();
+              } else {
+                portalContainer.classList.remove('show');
+              }
+            })
+            .catch(error => {
+              console.error('Error fetching places:', error);
+              portalContainer.classList.remove('show');
+            });
+        }, 300);
+      });
+      
+      // Close suggestions when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!pobInput.contains(e.target) && !portalContainer.contains(e.target)) {
+          portalContainer.classList.remove('show');
+        }
+      });
+    },
+    
+    updateSuggestionsPosition() {
+      const portalContainer = document.getElementById('place-suggestions-portal');
+      const pobInput = document.getElementById('city');
+      const inputRect = pobInput.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Check if suggestions would go below viewport
+      if (inputRect.bottom + portalContainer.offsetHeight > windowHeight) {
+        portalContainer.style.top = 'auto';
+        portalContainer.style.bottom = '100%';
+        portalContainer.style.marginTop = '0';
+        portalContainer.style.marginBottom = '4px';
+      } else {
+        portalContainer.style.top = '100%';
+        portalContainer.style.bottom = 'auto';
+        portalContainer.style.marginTop = '4px';
+        portalContainer.style.marginBottom = '0';
+      }
+    },
+
+    /* Calculate Rashi based on birth date */
+    calculateRashi(dob) {
+      const [year, month, day] = dob.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      const monthDay = month * 100 + day;
+
+      if ((monthDay >= 321 && monthDay <= 419)) return "Aries";
+      if ((monthDay >= 420 && monthDay <= 520)) return "Taurus";
+      if ((monthDay >= 521 && monthDay <= 621)) return "Gemini";
+      if ((monthDay >= 622 && monthDay <= 722)) return "Cancer";
+      if ((monthDay >= 723 && monthDay <= 822)) return "Leo";
+      if ((monthDay >= 823 && monthDay <= 922)) return "Virgo";
+      if ((monthDay >= 923 && monthDay <= 1022)) return "Libra";
+      if ((monthDay >= 1023 && monthDay <= 1121)) return "Scorpio";
+      if ((monthDay >= 1122 && monthDay <= 1221)) return "Sagittarius";
+      if ((monthDay >= 1222 || monthDay <= 119)) return "Capricorn";
+      if ((monthDay >= 120 && monthDay <= 218)) return "Aquarius";
+      if ((monthDay >= 219 && monthDay <= 320)) return "Pisces";
+      
+      return null;
+    },
+
+    /* Calculate recommended weight in ratti based on body weight */
+    calculateRecommendedWeight(bodyWeight) {
+      const ratti = Math.ceil(bodyWeight / 12); // 1 ratti for every 12 kg
+      return `${ratti} ratti`;
+    },
+
+    /* ---------------- MAIN ---------------- */
+    isFormValid() {
+      console.log('Validating form:', {
+        name: this.name,
+        phone: this.phone,
+        dob: this.dob,
+        city: this.city,
+        weight: this.weight,
+        tob: this.tob,
+        noTob: this.noTob,
+        hours: this.hours,
+        minutes: this.minutes,
+        ampm: this.ampm
+      });
+      
+      // Check if all required fields are filled
+      if (!this.name || !this.phone) {
+        console.log('Name or Phone missing');
+        return false;
+      }
+      if (!this.dob) {
+        console.log('DOB missing');
+        return false;
+      }
+      if (!this.city) {
+        console.log('City missing');
+        return false;
+      }
+      if (!this.weight) {
+        console.log('Weight missing');
+        return false;
+      }
+      
+      // Time of birth is required unless noTob is checked
+      if (!this.noTob && !this.tob) {
+        console.log('Time of birth missing');
+        this.updateTimeOfBirth(); // Try to update time from dropdowns
+        return false;
+      }
+      
+      return true;
+    },
+
+    async submit() {
+      // Save reference to this for use in callback
+      window.gemstoneWidgetSubmit = async (recaptchaToken) => {
+        console.log('Submit function called');
+        if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) {
+          clevertap.event.push('GC_form_submitted');
+        }
+        // Force update time before validation
+        this.updateTimeOfBirth();
+        
+        if (!this.isFormValid()) {
+          console.log('Form validation failed:', {
+            name: this.name,
+            phone: this.phone,
+            dob: this.dob,
+            city: this.city,
+            weight: this.weight,
+            tob: this.tob,
+            noTob: this.noTob
+          });
+          this.calculating = false;
+          return;
+        }
+        
+        this.calculating = true; 
+        this.resultHtml = '';
+        
+        const rashi = this.calculateRashi(this.dob);
+        if (!rashi) {
+          this.resultHtml = `<div class="rounded bg-red-100 border border-red-300 p-4 text-red-700 text-center">Could not determine your Rashi.</div>`;
+          this.calculating = false;
+          return;
+        }
+
+        const handles = this.rashiProductMap[rashi];
+        if (!handles || !handles.length) {
+          this.resultHtml = `<div class="rounded bg-red-100 border border-red-300 p-4 text-red-700 text-center">No gemstones mapped for Rashi <strong>${rashi}</strong>.</div>`;
+          this.calculating = false;
+          return;
+        }
+
+        // Log user inputs to Google Sheet
+        try {
+          const payload = new FormData();
+          payload.append('name', this.name);
+          payload.append('phone', this.phone);
+          payload.append('dob', this.dob);
+          payload.append('tob', this.noTob ? '' : this.tob);
+          payload.append('noTob', this.noTob);
+          payload.append('city', this.city);
+          payload.append('weight', this.weight);
+          payload.append('recommendation', handles.join(', '));
+          
+          if (this.googleScriptUrl) {
+            fetch(this.googleScriptUrl, {
+              method: 'POST',
+              body: payload
+            }).catch(err => console.error('Sheet logging failed:', err));
+          }
+        } catch(err) {
+          console.error('Error preparing sheet payload:', err);
+        }
+
+        // --- Submit to external API ---
+        try {
+          // Fetch product details for recommendationMetaData
+          const products = await Promise.all(
+            handles.map(handle => 
+              fetch(`/products/${handle}.js`).then(r => r.json())
+            )
+          );
+          this.products = products;
+
+          // Prepare recommendationMetaData
+          const recommendationMetaData = products.map(prod => ({
+            productName: prod.title,
+            link: `${window.location.origin}/products/${prod.handle}`
+          }));
+
+          // Format timeOfBirth as "hh:mm:ss AM/PM" if available
+          let timeOfBirth = '';
+          if (!this.noTob && this.tob) {
+            const [h, m] = this.tob.split(":");
+            let hour = parseInt(h);
+            let ampm = 'AM';
+            if (hour >= 12) {
+              ampm = 'PM';
+              if (hour > 12) hour -= 12;
+            } else if (hour === 0) {
+              hour = 12;
+            }
+            timeOfBirth = `${hour.toString().padStart(2, '0')}:${m}:00 ${ampm}`;
+          }
+
+          // Prepare formMetaData (add weight, and any other extra info)
+          const formMetaData = {
+            weight: this.weight
+          };
+
+          // Prepare API payload
+          const apiPayload = {
+            name: this.name,
+            gender: '', // Not present in form, leave blank or add to formMetaData if needed
+            phone: this.phone,
+            countryCode: '+91', // Static, or extract from phone if needed
+            dateOfBirth: this.dob,
+            timeOfBirth: timeOfBirth,
+            place: this.city,
+            leadType: 'GEMSTONE_CALCULATOR',
+            formMetaData: formMetaData,
+            recommendationMetaData: recommendationMetaData,
+            recaptchaToken: recaptchaToken // <-- Add the recaptcha token here
+          };
+
+          // Send POST request to API
+          console.log('Submitting to external API:', apiPayload);
+          fetch('https://er0z4juur5.execute-api.eu-north-1.amazonaws.com/store-lead', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(apiPayload)
+          }).then(res => {
+            if (!res.ok) {
+              console.error('API submission failed', res.status);
+            } else {
+              console.log('API submission successful', res);
+            }
+          }).catch(err => {
+            console.error('API submission error', err);
+          });
+
+          // Render product cards as before
+          this.resultHtml = this.renderProductCards(products, rashi);
+          
+          if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) {
+            const eventData = {};
+            handles.forEach((handle, index) => {
+              eventData[`handle${index + 1}`] = handle;
+            });
+            clevertap.event.push('GC_product_recommended', eventData);
+          }
+
+          // Scroll to results after rendering
+          this.scrollToResults();
+        } catch(e) {
+          console.error('Error fetching products or submitting to API:', e);
+          this.resultHtml = `<div class="rounded bg-red-100 border border-red-300 p-4 text-red-700 text-center">Could not load products.</div>`;
+        }
+        this.calculating = false;
+      };
+      // Trigger reCAPTCHA
+      grecaptcha.execute();
+    },
+
+    renderProductCards(products, rashi) {
+      // Define percentage ranges for recommendation display
+     const percentages = [
+  (Math.random() * (99 - 97) + 97).toFixed(2), // 97.00 - 98.99
+  (Math.random() * (97 - 96) + 96).toFixed(2), // 96.00 - 96.99
+  (Math.random() * (96 - 95) + 95).toFixed(2)  // 95.00 - 95.99
+];
+
+      
+      const recommendedWeight = this.calculateRecommendedWeight(parseFloat(this.weight));
+      
+      return `
+        <div class="result-wrapper">
+          <h3 class="result-heading">Gemstone Recommendations</h3>
+          
+          
+          <div class="products-container">
+            ${products.map((prod, index) => {
+              const handle = prod.handle;
+              const details = this.gemstoneDetails[handle] || {
+                title: prod.title,
+                significance: "Brings positive energy and divine blessings.",
+                metal: "Gold or Silver",
+                finger: "Consult an astrologer",
+                timing: "Auspicious day during Shukla Paksha",
+                weight: "Based on body weight",
+                mantra: "Consult an expert",
+                collection: handle
+              };
+              
+              // Get recommendation percentage based on position
+              const recommendationPercentage = percentages[index] || 85;
+              
+              // Calculate minimum ratti based on body weight
+              const minRatti = Math.ceil(parseFloat(this.weight) / 12);
+              const maxRatti = minRatti + 2; // Add 2 ratti as maximum
+              
+              return `
+                <div class="card" onclick="window.location.href='/products/${prod.handle}'">
+                  <div class="img-hover-zoom">
+                    <img src="${prod.featured_image}" alt="${details.title}">
+                  </div>
+                  <div class="card-content">
+                    <h2 class="card-title">${details.title}</h2>
+                    <p class="card-significance">${details.significance}</p>
+                    <div class="how-to-wear">
+                      <span><strong>Metal:</strong> ${details.metal}</span>
+                      <span><strong>Finger:</strong> ${details.finger}</span>
+                      <span><strong>Timing:</strong> ${details.timing}</span>
+                      <span><strong>Recommended Weight:</strong> ${minRatti}-${maxRatti} ratti</span>
+                      <span><strong>Mantra:</strong> ${details.mantra}</span>
+                    </div>
+                    <div class="link-btn">
+                      <a href="/products/${prod.handle}" onclick="if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) { clevertap.event.push('GC_view_product_clicked', { product_handle: '${prod.handle}' }); }">View Product</a>
+                    </div>
+                    <div class="recommendation-text">
+                      <span class="recommendation-percentage">${recommendationPercentage}% astrologers</span> recommended this product based on the details entered
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    },
+
+    async addToCart(e) {
+      e.stopPropagation(); // Prevent the card click from triggering
+      
+      const variantId = e.target.getAttribute('data-variant');
+      e.target.disabled = true;
+      const originalText = e.target.textContent;
+      e.target.textContent = 'Adding...';
+      
+      try {
+        const response = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: variantId, quantity: 1 })
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to add item to cart');
+        }
+
+        // Validate cart after adding item
+        const cartResponse = await fetch('/cart.js');
+        if (!cartResponse.ok) {
+          throw new Error('Failed to validate cart');
+        }
+
+        const cart = await cartResponse.json();
+        
+        // Update cart count if function exists
+        if (typeof window.updateCartCount === 'function') {
+          window.updateCartCount(cart.item_count);
+        }
+
+        // Trigger Alpine.js cart events if available
+        if (typeof Alpine !== 'undefined') {
+          Alpine.store('cart')?.setCart(cart);
+        }
+
+        // Open cart drawer or redirect to cart page
+        if (document.querySelector('[x-data="cart"]')) {
+          Alpine.store('cart').open();
+        } else {
+        document.dispatchEvent(new CustomEvent('cart:open'));
+        }
+        
+        e.target.textContent = 'Added!';
+        
+        setTimeout(() => {
+          e.target.textContent = originalText;
+          e.target.disabled = false;
+        }, 1500);
+      } catch (error) {
+        console.error('Cart error:', error);
+        e.target.textContent = 'Failed';
+        
+        setTimeout(() => {
+          e.target.textContent = originalText;
+          e.target.disabled = false;
+        }, 1500);
+        
+        alert('Could not add to cart. Please try again.');
+      }
+    },
+
+    formatDate(dateString) {
+      if (!dateString) return '';
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+    },
+
+    formatTime() {
+      if (this.noTob) return 'Not provided';
+      let displayTime = '';
+      
+      if (this.hours && this.minutes) {
+        displayTime = `${this.hours}:${this.minutes} ${this.ampm}`;
+      } else if (this.tob) {
+        const [hours, minutes] = this.tob.split(':');
+        const hour = parseInt(hours);
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const hour12 = hour % 12 || 12;
+        displayTime = `${hour12}:${minutes} ${ampm}`;
+      }
+      
+      return displayTime || 'Not provided';
+    }
+  };
+}
+</script>
+<!-- Google reCAPTCHA v2 Invisible script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+{% schema %}
+{
+  "name": "Gemstone Recommendation",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Gemstone Recommendation Widget"
+    },
+    {
+      "type": "text",
+      "id": "google_script_url",
+      "label": "Google Apps Script Webhook URL",
+      "default": "https://script.google.com/macros/s/AKfycbzfTWt_-fWOc9-BX6cBdP-d5klEKj1_uHQQ2t__yKci2olIZmjh5Dkyg06QEIiKCdcm/exec"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gemstone Recommendation"
+    }
+  ]
+}
+{% endschema %}

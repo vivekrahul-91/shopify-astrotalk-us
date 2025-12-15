@@ -1,0 +1,668 @@
+ <style>  
+        .cart-offers-link {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .cart-offers-link {
+            text-align: center;
+            margin: 10px 10px 0;
+            background: #f6f6f6;
+            border-radius: 6px;
+        }
+
+        /* Popup Overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        /* Popup Container */
+        .offers-popup {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 90%;
+            max-width: 385px;
+            height: 100vh;
+            background: #fff;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .offers-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+        }
+
+        .offers-header h3 {
+            font-size: 18px !important;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .close-offer {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Timer */
+        .timer-section {
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .timer {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timer-value {
+            background: #333;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        /* Tabs */
+        .offers-tabs {
+            display: flex;
+            padding: 0 20px;
+            background: #fff;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: #2f9567;
+            border-bottom-color: #2f9567;
+        }
+
+        /* Content Area */
+        .offers-content {
+            max-height: 77vh;
+            overflow-y: auto;
+            background: #fff;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Coupon Input */
+        .coupon-input-section {
+            margin-bottom: 20px;
+        }
+
+        .coupon-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #999;
+            background: #f8f9fa;
+        }
+
+        .coupon-input::placeholder {
+            color: #999;
+        }
+
+        /* Available Offers Section */
+        .available-offers-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        /* Offer Box */
+        .offer-box {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: #fff;
+            position: relative;
+        }
+
+        .offer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .offer-code {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .offer-icon {
+            width: 20px;
+            height: 20px;
+            background: #2f9567;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .offer-code-text {
+    background: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    border: 1px dashed;
+    border-style: dashed;
+}
+
+        .copy-offer {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 4px 10px;
+            margin-left: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.3s ease;
+            }
+            .copy-offer:disabled {
+            background: #2e7d32; /* green when copied */
+            cursor: default;
+            }
+
+
+        .savings-text {
+            color: #2f9567;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .offer-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Payment Offers Specific Styling */
+        .payment-offer-box {
+            border-left: 4px solid #2f9567;
+        }
+
+        .payment-offer-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2px;
+            margin-bottom: 8px;
+            flex-direction: column;
+        }
+        .payment-logo img{
+            width: 32px;
+            height: 32px;
+        }
+        .payment-logo {
+            flex-direction: row;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            flex-shrink: 0;
+            gap: 8px;
+        }
+
+        .payment-offer-content {
+            flex: 1;
+        }
+
+        .payment-offer-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .auto-applied {
+            color: #2f9567;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .payment-offer-desc {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .offer-details {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .offer-details ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .offer-details li {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 4px;
+            padding-left: 8px;
+            position: relative;
+        }
+
+        .offer-details li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        .show-toggle {
+            color: #007bff;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        /* Applied Offer Banner */
+        .applied-offer-banner {
+            display: none;
+            background: #e8f5e8;
+            padding: 12px 20px;
+            border-bottom: 1px solid #d4edda;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .applied-offer-banner.show {
+            display: flex;
+        }
+
+        .applied-offer-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .applied-offer-info .offer-icon {
+            background: #2f9567;
+        }
+
+        .applied-code {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .applied-savings {
+            background: #2f9567;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .remove-applied {
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Proceed Link */
+        .proceed-link {
+            background-color: #e8f0fe;
+            color: #2962ff;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .offer-front {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            gap: 8px;
+        }
+
+.offer-front > img {
+    width: 30px;
+}
+
+.offer-front-div h4 {
+    font-size: 14px;
+    font-family: 'Noto Sans';
+    font-weight: 600;
+}
+
+.offer-front-div h4 span {
+    color: #2f9567;
+}
+
+.offer-front-div > span {
+    font-size: 12px;
+    color: #000;
+    font-family: 'Noto Sans';
+    line-height: 1;
+}
+
+.offer-front-div {
+    text-align: left;
+    width: 100%;
+}
+.front-icon {
+    width: 15px;
+    transform: rotate(275deg);
+}
+@media screen and (max-width: 749px){
+.offers-popup {
+    width: 100%;
+    max-width: 100%;
+}
+}
+</style>
+    <div class="cart-offers-link">
+        <a href="#" id="view-offers"> 
+            <div class="offer-front">
+                <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/icons8-discount-50.png?v=1757933739">
+                <div class="offer-front-div">
+                    <h4>You have unlocked <span>new coupons</span></h4>
+                    <span>Explore Now</span>
+                </div>
+                <div class="front-icon">
+               {% render 'icon-alls', icon: 'icon-caret' %}
+               </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="offers-popup" id="offersPopup">
+            <div class="offers-header">
+                <h3>Offers & Benefits</h3>
+                <span id="closeOffers" class="close-offer">✕</span>
+            </div>
+
+
+            <div class="offers-tabs">
+                <button class="tab-btn active" data-tab="brand">Brand Offers</button>
+                <button class="tab-btn" data-tab="payment">Payment Offers</button>
+            </div>
+
+            <div class="offers-content">
+                <!-- Brand Offers -->
+                <div class="tab-content active" id="brand">
+
+                    <div class="available-offers-title">Available Offers</div>
+
+                    <div class="proceed-link">Copy this coupon code and use it during checkout to avail your discount.</div>
+                    <div class="offer-box">
+                        <div class="offer-header">
+                            <div class="offer-code">
+                                <div class="offer-icon">✓</div>
+                                <span class="offer-code-text">SAVE10</span>
+                            </div>
+                            <button type="button" class="copy-offer" data-code="SAVE10">Copy</button>
+                        </div>
+                        <div class="savings-text">You save ₹10</div>
+                        <div class="offer-description">Get FLAT ₹10 OFF on your purchase</div>
+                    </div>
+
+
+
+                    {% comment %} <div class="offer-box">
+                        <div class="offer-header">
+                            <div class="offer-code">
+                                <div class="offer-icon">🎁</div>
+                                <span class="offer-code-text">FREERUDRAKSHA</span>
+                            </div>
+                            <button type="button" class="copy-offer" data-code="FREERUDRAKSHA">Copy</button>
+
+                        </div>
+                        <div class="savings-text">You save ₹499</div>
+                        <div class="offer-description">Free 5 Mukhi Rudraksha worth ₹499 on prepaid orders</div>
+                    </div> {% endcomment %}
+                </div>
+
+                <!-- Payment Offers -->
+                <div class="tab-content" id="payment">
+                    <div class="proceed-link">Proceed to checkout to avail</div>
+
+                    <div class="offer-box payment-offer-box">
+                        <div class="payment-offer-header">
+                            <div class="payment-logo">
+                                <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/bhim-offer.svg?v=1757999493">
+                                <div class="payment-offer-title">
+                                    Upto ₹100 instant cashback on using BHIM App
+                                </div>
+                                
+                            </div>
+                            <div class="payment-offer-content">
+                                
+                                <span class="auto-applied">Auto applied with select payment method</span>
+                                <div class="payment-offer-desc">Upto ₹100 instant cashback on using BHIM App</div>
+                                <div class="show-toggle" onclick="toggleDetails(this)">Show Less</div>
+                                <div class="offer-details">
+                                    <ul>
+                                        <li>Get assured cashback up to ₹100 on using BHIM App</li>
+                                        <li>Offer valid on a min transaction of ₹599</li>
+                                        <li>Offer is valid once per user till 30 September, 2025</li>
+                                        <li>Other T&Cs may apply</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offer-box payment-offer-box">
+                        <div class="payment-offer-header">
+                            <div class="payment-logo">
+                                <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/cred-upi-offer.svg?v=1757999493">
+                                <div class="payment-offer-title">Upto ₹200 instant cashback on using CRED UPI
+                            </div>
+                            </div>
+                                <div class="payment-offer-content">
+                                    
+                                <span class="auto-applied">Auto applied with select payment method</span>
+                                <div class="payment-offer-desc">Upto ₹200 instant cashback on using CRED UPI</div>
+                                <div class="show-toggle" onclick="toggleDetails(this)">Show More</div>
+                                <div class="offer-details" style="display:none">
+                                    <ul>
+                                        <li>Get upto ₹300 cashback and Paytm vouchers up to ₹2000 on using Paytm UPI</li>
+                                        <li>Offer valid on a min transaction of ₹49</li>
+                                        <li>Offer is valid once per user till 30 September, 2025</li>
+                                        <li>Users who complete an eligible transaction will receive a scratch card</li>
+                                        <li>Scratch cards issued expire after 2 days of issuance</li>
+                                        <li>Upon scratching the scratch cards, users will get the cashback in their UPI linked account</li>
+                                        <li>Up to ₹2000 Paytm vouchers will be issued once, on your 1st transaction during the offer period</li>
+                                        <li>Cashback will be credited within max 30 days from the completion of transaction and redemption of the scratch card</li>
+                                        <li>Other T&Cs may apply</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offer-box payment-offer-box">
+                        <div class="payment-offer-header">
+                            <div class="payment-logo">
+                                <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/supermoney-offer-logo.svg?v=1757999493">
+                                <div class="payment-offer-title">Upto ₹50 cashback via SuperMoney UPI</div>
+                            </div>
+                            <div class="payment-offer-content">
+                                <div class="auto-applied">Auto applied with select payment method</div>
+                                <div class="payment-offer-desc">Upto ₹50 cashback via SuperMoney UPI</div>
+                                <div class="show-toggle" onclick="toggleDetails(this)">Show More</div>
+                                <div class="offer-details" style="display:none">
+                                    <ul>
+                                        <li>New MobiKwik users get flat ₹75 cashback</li>
+                                        <li>Existing MobiKwik users get upto ₹50 cashback</li>
+                                        <li>Offer valid on a minimum transaction value of ₹249</li>
+                                        <li>Offer valid once till 30 September, 2025</li>
+                                        <li>Cashback will be credited in MobiKwik wallet within 24 hours of successful transaction</li>
+                                        <li>Cashback will only be processed for KYC customers</li>
+                                        <li>Offer valid only on @ikwik UPI transactions via MobiKwik</li>
+                                        <li>Other T&Cs may apply</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offer-box payment-offer-box">
+                        <div class="payment-offer-header">
+                            <div class="payment-logo">
+                                <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/paytmupi-latest-logo-upi.svg?v=1757999492">
+                                <div class="payment-offer-title">Upto ₹300 cashback & vouchers upto ₹2000 on using Paytm UPI</div>
+                            </div>
+                            <div class="payment-offer-content">
+                                <div class="auto-applied">Auto applied with select payment method</div>
+                                <div class="payment-offer-desc">Upto ₹300 cashback & vouchers upto ₹2000 on using Paytm UPI</div>
+                                <div class="show-toggle" onclick="toggleDetails(this)">Show More</div>
+                                <div class="offer-details" style="display:none">
+                                    <ul>
+                                        <li>Get upto ₹25 cashback using Amazon Pay UPI</li>
+                                        <li>Reward is applicable when the payment of ₹100 & above is made using Amazon Pay UPI</li>
+                                        <li>This offer can not be clubbed with any other offer & is valid once per user till 30 September, 2025</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const viewOffers = document.getElementById("view-offers");
+            const popupOverlay = document.getElementById("popupOverlay");
+            const closeOffers = document.getElementById("closeOffers");
+            const tabBtns = document.querySelectorAll(".tab-btn");
+            const tabContents = document.querySelectorAll(".tab-content");
+       
+            document.querySelectorAll(".copy-offer").forEach(function(button) {
+                button.addEventListener("click", function() {
+                var code = this.getAttribute("data-code");
+                navigator.clipboard.writeText(code).then(() => {
+                    let originalText = button.textContent;
+                    button.textContent = "Copied!";
+                    button.disabled = true; // disable button while showing copied text
+
+                    setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    }, 3000); // revert back after 5 seconds
+                });
+                });
+            });
+
+
+        
+            // Open popup
+            viewOffers.addEventListener("click", function(e) {
+                e.preventDefault();
+                popupOverlay.style.display = "block";
+            });
+
+            // Close popup
+            closeOffers.addEventListener("click", function() {
+                popupOverlay.style.display = "none";
+            });
+
+            // Close popup when clicking overlay
+            popupOverlay.addEventListener("click", function(e) {
+                if (e.target === popupOverlay) {
+                    popupOverlay.style.display = "none";
+                }
+            });
+
+            // Tab switching
+            tabBtns.forEach(btn => {
+                btn.addEventListener("click", function() {
+                    tabBtns.forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+
+                    let tabId = this.dataset.tab;
+                    tabContents.forEach(c => {
+                        c.classList.remove("active");
+                        if (c.id === tabId) c.classList.add("active");
+                    });
+                });
+            });
+
+        });
+
+
+        // Toggle details function
+        function toggleDetails(element) {
+            const details = element.parentNode.querySelector('.offer-details');
+            if (element.textContent === 'Show More') {
+                details.style.display = 'block';
+                element.textContent = 'Show Less';
+            } else {
+                details.style.display = 'none';
+                element.textContent = 'Show More';
+            }
+        }
+    </script>

@@ -1,0 +1,522 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "text_CQqapF": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.subtitle.value }}</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        },
+        "judge_me_reviews_preview_badge_AVXcCM": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "trust_badge_pGhQia": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "show_meta_trust_badge": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 110
+          }
+        },
+        "watsapp_block_jqFgnr": {
+          "type": "watsapp-block",
+          "settings": {}
+        },
+        "variant_picker_fL9RjK": {
+          "type": "variant_picker",
+          "settings": {
+            "color_option_content": "<p><strong>Variant: </strong></p>",
+            "picker_type": "button",
+            "show_variant_option": true,
+            "enable_color_swatches": true,
+            "swatch_size": "medium",
+            "ringsize_list": "Free/Adjustable Ring,I don't know Please call me,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30"
+          }
+        },
+        "trust_badge_gQUebQ": {
+          "type": "trust_badge",
+          "settings": {
+            "show_meta_trust_badge": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "pickup_availability": false,
+            "hide_when_pre_order": false,
+            "preorder_button_label": "Pre-order",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "box_type": "square",
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "#f0df20",
+            "button_text_light": "#131313",
+            "button_hover_light": "#f0df20",
+            "button_text_hover_light": "#131313",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "prod_spec_accordian_x9brTP": {
+          "type": "prod-spec-accordian",
+          "settings": {}
+        },
+        "delivery_check_gbT73i": {
+          "type": "delivery_check",
+          "settings": {
+            "enable_delivery_check": true
+          }
+        },
+        "custom_tab_bN6z7X": {
+          "type": "custom-tab",
+          "settings": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M5 7.808V19H19V7.808H15V14.596L12 13.096L9 14.596V7.808H5ZM4 20V6.916L6.416 4H17.566L20 6.954V20H4ZM5.38 6.808H18.6L17.077 5H6.904L5.38 6.808ZM10 7.808V12.961L12 11.961L14 12.961V7.809L10 7.808Z\" fill=\"#585858\"></path>\n</svg>",
+            "title": "Product Description",
+            "content": "{{ product.description }}"
+          }
+        },
+        "who_wear_accordian_Vz8PWM": {
+          "type": "who-wear-accordian",
+          "settings": {}
+        },
+        "custom_tab_LPyB8j": {
+          "type": "custom-tab",
+          "disabled": true,
+          "settings": {
+            "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M12 8.75C11.31 8.75 10.75 9.31 10.75 10V10.107C10.75 10.3059 10.671 10.4967 10.5303 10.6373C10.3897 10.778 10.1989 10.857 10 10.857C9.80109 10.857 9.61032 10.778 9.46967 10.6373C9.32902 10.4967 9.25 10.3059 9.25 10.107V10C9.25 9.27065 9.53973 8.57118 10.0555 8.05546C10.5712 7.53973 11.2707 7.25 12 7.25H12.116C12.654 7.25025 13.179 7.41522 13.6204 7.72272C14.0618 8.03023 14.3985 8.46553 14.5852 8.97008C14.7718 9.47463 14.7995 10.0242 14.6645 10.545C14.5295 11.0657 14.2383 11.5327 13.83 11.883L13.06 12.543C12.9634 12.6269 12.8858 12.7304 12.8323 12.8466C12.7789 12.9628 12.7508 13.0891 12.75 13.217V13.75C12.75 13.9489 12.671 14.1397 12.5303 14.2803C12.3897 14.421 12.1989 14.5 12 14.5C11.8011 14.5 11.6103 14.421 11.4697 14.2803C11.329 14.1397 11.25 13.9489 11.25 13.75V13.217C11.25 12.52 11.554 11.858 12.083 11.405L12.854 10.745C13.0299 10.5942 13.1554 10.3931 13.2136 10.1689C13.2718 9.9446 13.26 9.70787 13.1796 9.49056C13.0992 9.27325 12.9541 9.08578 12.764 8.95338C12.5738 8.82098 12.3477 8.75 12.116 8.75H12ZM12 17C12.2652 17 12.5196 16.8946 12.7071 16.7071C12.8946 16.5196 13 16.2652 13 16C13 15.7348 12.8946 15.4804 12.7071 15.2929C12.5196 15.1054 12.2652 15 12 15C11.7348 15 11.4804 15.1054 11.2929 15.2929C11.1054 15.4804 11 15.7348 11 16C11 16.2652 11.1054 16.5196 11.2929 16.7071C11.4804 16.8946 11.7348 17 12 17Z\" fill=\"#585858\"></path>\n  <path d=\"M3.25 12C3.25 9.67936 4.17187 7.45376 5.81282 5.81282C7.45376 4.17187 9.67936 3.25 12 3.25C14.3206 3.25 16.5462 4.17187 18.1872 5.81282C19.8281 7.45376 20.75 9.67936 20.75 12C20.75 14.3206 19.8281 16.5462 18.1872 18.1872C16.5462 19.8281 14.3206 20.75 12 20.75C9.67936 20.75 7.45376 19.8281 5.81282 18.1872C4.17187 16.5462 3.25 14.3206 3.25 12ZM12 4.75C11.0479 4.75 10.1052 4.93753 9.22554 5.30187C8.34593 5.66622 7.5467 6.20025 6.87348 6.87348C6.20025 7.5467 5.66622 8.34593 5.30187 9.22554C4.93753 10.1052 4.75 11.0479 4.75 12C4.75 12.9521 4.93753 13.8948 5.30187 14.7745C5.66622 15.6541 6.20025 16.4533 6.87348 17.1265C7.5467 17.7997 8.34593 18.3338 9.22554 18.6981C10.1052 19.0625 11.0479 19.25 12 19.25C13.9228 19.25 15.7669 18.4862 17.1265 17.1265C18.4862 15.7669 19.25 13.9228 19.25 12C19.25 10.0772 18.4862 8.23311 17.1265 6.87348C15.7669 5.51384 13.9228 4.75 12 4.75Z\" fill=\"#585858\"></path>\n</svg>",
+            "title": "How to Wear?",
+            "content": "<p>{{ product.metafields.custom.how_to_wear_ | metafield_tag }}</p>"
+          }
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": false,
+            "button_light": "#f0df20",
+            "button_text_light": "#131313",
+            "button_hover_light": "#f0df20",
+            "button_text_hover_light": "#131313",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "badges",
+        "text_CQqapF",
+        "judge_me_reviews_preview_badge_AVXcCM",
+        "trust_badge_pGhQia",
+        "price",
+        "watsapp_block_jqFgnr",
+        "variant_picker_fL9RjK",
+        "trust_badge_gQUebQ",
+        "buy_buttons",
+        "prod_spec_accordian_x9brTP",
+        "delivery_check_gbT73i",
+        "custom_tab_bN6z7X",
+        "who_wear_accordian_Vz8PWM",
+        "custom_tab_LPyB8j",
+        "sticky-atc"
+      ],
+      "custom_css": [
+        ".product-variant-option_main {width: 100%;}"
+      ],
+      "settings": {
+        "enable_sticky_image": true,
+        "show_product_name": true,
+        "title_size": 120,
+        "heading_tag": "h1",
+        "show_vendor": false,
+        "link_vendor": false,
+        "make_content_center": false,
+        "desktop_layout": "left",
+        "desktop_media_layout": "thumbnail_slider",
+        "show_arrow_button": true,
+        "mobile_media_size": "75%",
+        "show_thumnail_mobile": true,
+        "image_ratio": "square",
+        "thumbnail_position": "horizontal",
+        "enable_image_zoom": false,
+        "enable_video_autoplay": true,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": false,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "enable_microdata": false,
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": false,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#ffffff",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "full_width": false,
+        "spacing_col": "small",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "product_reason_block_FNkHf7": {
+      "type": "product-reason-block",
+      "name": "Product Reason Block",
+      "settings": {}
+    },
+    "how_to_wear_img_eJegkG": {
+      "type": "how-to-wear-img",
+      "name": "How to wear img",
+      "settings": {}
+    },
+    "product_gemstone_care_7UTBRn": {
+      "type": "product-gemstone-care",
+      "name": "Gemstone Care Block",
+      "settings": {}
+    },
+    "benefits_img_text_PkAKWd": {
+      "type": "Benefits-img-text",
+      "name": "Product Benefits",
+      "settings": {
+        "heading": "Benefits of {{ product.title }}",
+        "show_dots": true
+      }
+    },
+    "who_can_wear_w4pTTa": {
+      "type": "who-can-wear",
+      "name": "Wear Section",
+      "settings": {
+        "title": "Our Promise to You"
+      }
+    },
+    "faq_6PKreh": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_43VQc8": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "faq",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n<path d=\"M0 4.5V6H14.25V17.25H9.633C9.2985 15.9607 8.139 15 6.75 15C5.361 15 4.2015 15.9607 3.867 17.25H3V13.5H1.5V18.75H3.867C4.2015 20.0393 5.361 21 6.75 21C8.139 21 9.2985 20.0393 9.633 18.75H15.867C16.2015 20.0393 17.361 21 18.75 21C20.139 21 21.2985 20.0393 21.633 18.75H24V12.633L23.9528 12.5153L22.4528 8.01525L22.29 7.5H15.75V4.5H0ZM0.75 7.5V9H7.5V7.5H0.75ZM15.75 9H21.2108L22.5 12.8438V17.25H21.633C21.2985 15.9607 20.139 15 18.75 15C17.361 15 16.2015 15.9607 15.867 17.25H15.75V9ZM1.5 10.5V12H6V10.5H1.5ZM6.75 16.5C7.58775 16.5 8.25 17.1622 8.25 18C8.25 18.8378 7.58775 19.5 6.75 19.5C5.91225 19.5 5.25 18.8378 5.25 18C5.25 17.1622 5.91225 16.5 6.75 16.5ZM18.75 16.5C19.5877 16.5 20.25 17.1622 20.25 18C20.25 18.8378 19.5877 19.5 18.75 19.5C17.9123 19.5 17.25 18.8378 17.25 18C17.25 17.1622 17.9123 16.5 18.75 16.5Z\" fill=\"#585858\"></path>\n</svg>",
+            "heading": "Shipping Policy",
+            "row_content": "<p><strong>We are committed to delivering your gemstone with complete care and spiritual readiness.</strong></p><ul><li>Loose gemstones are shipped within 5–7 business days.</li><li>Gemstones with rings are shipped within 7–10 business days, as crafting the ring takes additional time.</li><li>Please note, each gemstone undergoes a 2–3 day energization process before dispatch to ensure it's spiritually activated and ready for use.</li><li>Delivery timelines may vary slightly based on location and logistics.<br/></li></ul>"
+          }
+        },
+        "frequently_asked_question_wFLMwi": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "arrow-left",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n<path d=\"M21 11V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H13M13 6L16 9M13 6L16 3M3 13V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H11M11 18L8 15M11 18L8 21M3 4C3 3.73478 3.10536 3.48043 3.29289 3.29289C3.48043 3.10536 3.73478 3 4 3H8C8.26522 3 8.51957 3.10536 8.70711 3.29289C8.89464 3.48043 9 3.73478 9 4V8C9 8.26522 8.89464 8.51957 8.70711 8.70711C8.51957 8.89464 8.26522 9 8 9H4C3.73478 9 3.48043 8.89464 3.29289 8.70711C3.10536 8.51957 3 8.26522 3 8V4ZM15 16C15 15.7348 15.1054 15.4804 15.2929 15.2929C15.4804 15.1054 15.7348 15 16 15H20C20.2652 15 20.5196 15.1054 20.7071 15.2929C20.8946 15.4804 21 15.7348 21 16V20C21 20.2652 20.8946 20.5196 20.7071 20.7071C20.5196 20.8946 20.2652 21 20 21H16C15.7348 21 15.4804 20.8946 15.2929 20.7071C15.1054 20.5196 15 20.2652 15 20V16Z\" stroke=\"#585858\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "heading": "Replacement Policy",
+            "row_content": "<p>We do not initiate returns as a standard practice. However, in the event of a genuine defect or damage, we can replace your gemstone within 7 days of delivery.<br/><br/><strong>Return Process – Steps to Follow</strong></p><ul><li>Always record an unboxing video before opening your order.</li><li> Keep the Extra Tag Tie sent by us safely with you. </li><li>Create a video while packing the gemstone securely in the same tin box in which you received it. </li><li>Seal the box using the Cable Tie provided, and in the video clearly display the Cable Tie Number.</li><li>Hand over the sealed package to the pickup personnel and create a video while handing over the package.</li></ul><p><strong>Verification by Us</strong></p><ul><li> Once we receive your package, we will record an unboxing video at our end, showing the seal’s serial number for transparency and verification purposes.</li><li>These steps are mandatory since gemstones are high-value products, and this process ensures fairness, authenticity, and security for both parties.</li></ul>"
+          }
+        },
+        "frequently_asked_question_XjWxer": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "piggy-bank",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n<path d=\"M16.2 15.6C16.0409 15.6 15.8883 15.6633 15.7758 15.7758C15.6632 15.8883 15.6 16.0409 15.6 16.2C15.6 16.3592 15.6632 16.5118 15.7758 16.6243C15.8883 16.7368 16.0409 16.8 16.2 16.8H18.6C18.7592 16.8 18.9118 16.7368 19.0243 16.6243C19.1368 16.5118 19.2 16.3592 19.2 16.2C19.2 16.0409 19.1368 15.8883 19.0243 15.7758C18.9118 15.6633 18.7592 15.6 18.6 15.6H16.2ZM2.40002 8.10005C2.40002 7.22483 2.7477 6.38547 3.36657 5.7666C3.98544 5.14773 4.82481 4.80005 5.70002 4.80005H18.3C19.1752 4.80005 20.0146 5.14773 20.6335 5.7666C21.2523 6.38547 21.6 7.22483 21.6 8.10005V15.9C21.6 16.7753 21.2523 17.6146 20.6335 18.2335C20.0146 18.8524 19.1752 19.2 18.3 19.2H5.70002C4.82481 19.2 3.98544 18.8524 3.36657 18.2335C2.7477 17.6146 2.40002 16.7753 2.40002 15.9V8.10005ZM5.70002 6.00005C5.14307 6.00005 4.60893 6.2213 4.2151 6.61512C3.82127 7.00895 3.60002 7.54309 3.60002 8.10005V9.60005H20.4V8.10005C20.4 7.54309 20.1788 7.00895 19.7849 6.61512C19.3911 6.2213 18.857 6.00005 18.3 6.00005H5.70002ZM20.4 10.8H3.60002V15.9C3.60002 17.0592 4.54082 18 5.70002 18H18.3C18.857 18 19.3911 17.7788 19.7849 17.385C20.1788 16.9911 20.4 16.457 20.4 15.9V10.8Z\" fill=\"#585858\"></path>\n</svg>",
+            "heading": "Payment Method",
+            "row_content": "<p><strong>Payment Methods</strong></p><ul><li>We accept all major credit and debit cards.</li><li>Net banking available for all leading banks.</li><li>UPI and wallets (PhonePe, Google Pay, Paytm) supported.</li><li>Easy Cardless EMI through UPI available – buy in simple installments without a credit card.</li><li>EMI options also available on select cards at checkout.</li><li>Cash on Delivery (COD) not applicable for gemstone orders.</li></ul>"
+          }
+        },
+        "frequently_asked_question_yRUi6U": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 32 32\" fill=\"none\">\n<path d=\"M8.01927 20.0957C8.75441 20.0957 9.3686 20.0943 9.87474 20.1377C10.3323 20.177 10.7586 20.2559 11.1697 20.4316L11.3454 20.5137L11.6345 20.6738C11.8212 20.7881 11.9972 20.9178 12.1628 21.0615L12.404 21.2881L12.406 21.29C12.7686 21.6628 13.0083 22.0936 13.2136 22.5801C13.4127 23.052 13.6055 23.6429 13.8386 24.3525V24.3535L14.3298 25.8506C14.6162 26.7244 14.8679 27.4838 14.9763 28.1016C15.0885 28.7413 15.0879 29.4464 14.6423 30.0771L14.6413 30.0791C14.1909 30.7127 13.5235 30.9396 12.8826 31.0352C12.2679 31.1267 11.4765 31.124 10.573 31.124H5.46654C4.56277 31.124 3.77087 31.1268 3.15599 31.0352C2.55535 30.9456 1.9306 30.741 1.48411 30.1924L1.3972 30.0781C0.950246 29.4475 0.950285 28.7427 1.06224 28.1025C1.17041 27.4845 1.42229 26.7244 1.70872 25.8506L2.19896 24.3535V24.3525C2.43223 23.6424 2.62528 23.0513 2.82493 22.5791C3.03069 22.0926 3.27135 21.6623 3.63353 21.29C3.9424 20.9721 4.297 20.7121 4.6931 20.5137C5.1581 20.2795 5.64023 20.1826 6.16282 20.1377C6.66891 20.0943 7.28394 20.0957 8.01927 20.0957ZM24.572 20.0957C25.3074 20.0957 25.9222 20.0942 26.4284 20.1377C26.9513 20.1826 27.4338 20.2799 27.8992 20.5137C28.2935 20.7122 28.647 20.9717 28.9568 21.2881L28.9587 21.29C29.3214 21.6628 29.562 22.0935 29.7673 22.5801C29.9665 23.052 30.1592 23.6428 30.3923 24.3525V24.3535L30.8826 25.8506C31.169 26.7244 31.4207 27.4837 31.529 28.1016C31.6412 28.7413 31.6416 29.4464 31.196 30.0771L31.1941 30.0791C30.7437 30.7126 30.0772 30.9396 29.4363 31.0352C28.8215 31.1268 28.0296 31.124 27.1257 31.124H22.0202C21.1164 31.124 20.3237 31.1268 19.7087 31.0352C19.1083 30.9456 18.4842 30.7407 18.0378 30.1924L17.9509 30.0781C17.5038 29.4475 17.503 28.7428 17.615 28.1025C17.7231 27.4845 17.975 26.7244 18.2615 25.8506L18.7527 24.3525C18.9859 23.6425 19.179 23.0513 19.3786 22.5791C19.5844 22.0927 19.8241 21.6623 20.1863 21.29L20.1882 21.2881C20.4955 20.9742 20.8529 20.7129 21.2449 20.5146L21.2468 20.5137C21.7119 20.2796 22.1939 20.1826 22.7165 20.1377C23.2225 20.0943 23.8368 20.0957 24.572 20.0957ZM8.01927 22.0957C7.25028 22.0957 6.73552 22.0965 6.3347 22.1309C5.95107 22.1638 5.74671 22.2228 5.59349 22.2998L5.59056 22.3008C5.39455 22.3988 5.22161 22.5265 5.0681 22.6846H5.06712C4.94344 22.8117 4.82145 22.9949 4.66771 23.3584C4.58777 23.5475 4.50627 23.7669 4.41478 24.0312L4.09935 24.9766L3.60911 26.4736C3.30278 27.4082 3.10933 28.0053 3.03197 28.4473C2.99548 28.656 2.99624 28.7771 3.00462 28.8438C3.01118 28.8953 3.02165 28.9105 3.02904 28.9209V28.9219C3.03552 28.931 3.04354 28.9427 3.0847 28.9629C3.1392 28.9895 3.24699 29.0272 3.45091 29.0576C3.88364 29.1221 4.49735 29.124 5.46654 29.124H10.573C11.5419 29.124 12.1552 29.122 12.5876 29.0576C12.7915 29.0272 12.9002 28.9896 12.9548 28.9629C12.9941 28.9436 13.0036 28.9315 13.0105 28.9219C13.0177 28.9116 13.0276 28.8952 13.0339 28.8447C13.0423 28.7777 13.0423 28.6564 13.0056 28.4473C12.928 28.0051 12.7348 27.4082 12.4284 26.4736L11.9382 24.9766C11.6945 24.2345 11.5305 23.7359 11.3708 23.3574C11.218 22.9954 11.0971 22.8132 10.9743 22.6865C10.8169 22.5259 10.642 22.398 10.447 22.2998C10.2926 22.2223 10.0877 22.1638 9.70384 22.1309C9.3028 22.0964 8.78835 22.0957 8.01927 22.0957ZM24.572 22.0957C23.8028 22.0957 23.2883 22.0965 22.8874 22.1309C22.5035 22.1638 22.2995 22.2227 22.1462 22.2998L22.1452 22.2988C21.9495 22.3981 21.7715 22.5306 21.6179 22.6875L21.6169 22.6865C21.494 22.8136 21.3733 22.997 21.2204 23.3584C21.0606 23.7365 20.8955 24.2345 20.6521 24.9756L20.1618 26.4736C19.8555 27.4081 19.663 28.0053 19.5857 28.4473C19.5492 28.656 19.549 28.7771 19.5574 28.8438C19.5639 28.895 19.5744 28.9105 19.5818 28.9209L19.5827 28.9219C19.5892 28.931 19.5967 28.9429 19.6374 28.9629C19.6919 28.9895 19.7996 29.0272 20.0036 29.0576C20.4364 29.1221 21.0508 29.124 22.0202 29.124H27.1257C28.0952 29.124 28.7088 29.1221 29.1413 29.0576C29.3451 29.0272 29.4529 28.9896 29.5076 28.9629C29.5468 28.9437 29.5564 28.9315 29.5632 28.9219C29.5705 28.9116 29.5812 28.8956 29.5876 28.8447C29.596 28.7777 29.5959 28.6563 29.5593 28.4473C29.4818 28.0051 29.2885 27.4081 28.9822 26.4736L28.4919 24.9766C28.2481 24.2345 28.0843 23.7359 27.9245 23.3574C27.7718 22.9955 27.6507 22.8132 27.5281 22.6865V22.6875C27.3706 22.5267 27.1958 22.3981 27.0007 22.2998V22.3008C26.8463 22.2232 26.6415 22.1639 26.2576 22.1309C25.8565 22.0964 25.3413 22.0957 24.572 22.0957ZM16.2956 8.05664C17.0308 8.05664 17.645 8.0562 18.1511 8.09961C18.6741 8.14451 19.1564 8.24076 19.6218 8.47461H19.6228C20.0171 8.67313 20.3707 8.93269 20.6804 9.24902L20.6833 9.25293C21.0444 9.62517 21.2846 10.0547 21.49 10.541C21.6893 11.013 21.8817 11.6042 22.115 12.3145H22.1159L22.6062 13.8115L22.8122 14.4453C23.0089 15.0568 23.1706 15.5999 23.2517 16.0635C23.3636 16.7031 23.3643 17.4069 22.9206 18.0371L22.9177 18.04C22.4673 18.6737 21.8001 18.9015 21.1589 18.9971C20.5441 19.0886 19.7518 19.0859 18.8474 19.0859H13.7429C12.8387 19.0859 12.047 19.0886 11.4324 18.9971C10.7915 18.9015 10.1234 18.674 9.67357 18.0391V18.0381C9.22725 17.4077 9.22665 16.7034 9.33861 16.0635C9.44678 15.4454 9.69866 14.6854 9.98509 13.8115L10.4753 12.3145C10.7081 11.6037 10.9016 11.0134 11.1013 10.541C11.307 10.0545 11.5465 9.62471 11.907 9.25293L11.9109 9.24902C12.2206 8.93277 12.5742 8.67308 12.9685 8.47461H12.9695C13.4347 8.24093 13.9164 8.14451 14.4392 8.09961C14.9454 8.05618 15.5603 8.05664 16.2956 8.05664ZM16.2956 10.0566C15.5267 10.0566 15.0121 10.0574 14.6111 10.0918C14.2271 10.1248 14.0214 10.1832 13.8669 10.2607L13.8679 10.2617C13.6741 10.3593 13.4992 10.4853 13.3425 10.6445C13.2188 10.7721 13.0968 10.956 12.9431 11.3193C12.7833 11.6973 12.6193 12.1966 12.3767 12.9375L11.8855 14.4346C11.5791 15.3691 11.3867 15.9662 11.3093 16.4082C11.2727 16.6172 11.2726 16.738 11.281 16.8047C11.2876 16.857 11.298 16.8723 11.3054 16.8828H11.3064C11.313 16.8922 11.3204 16.9039 11.3611 16.9238C11.4153 16.9504 11.5233 16.9881 11.7273 17.0186C12.1597 17.0829 12.7732 17.0859 13.7429 17.0859H18.8474C19.8176 17.0859 20.4322 17.083 20.865 17.0186C21.0687 16.9882 21.1766 16.9505 21.2312 16.9238C21.2707 16.9044 21.28 16.8925 21.2868 16.8828C21.2941 16.8722 21.3042 16.8546 21.3103 16.8057C21.3186 16.7382 21.3185 16.6169 21.282 16.4082C21.2046 15.9661 21.012 15.3687 20.7058 14.4346L20.2146 12.9375V12.9365C19.9712 12.1958 19.8069 11.6976 19.6472 11.3193C19.4934 10.9553 19.3712 10.7728 19.2478 10.6455V10.6445C19.1306 10.5255 19.0035 10.4249 18.8659 10.3408L18.7234 10.2617C18.5689 10.1842 18.3641 10.1248 17.9802 10.0918C17.5792 10.0574 17.0647 10.0566 16.2956 10.0566ZM8.81614 3.5498C9.20652 3.15966 9.83971 3.15986 10.2302 3.5498L12.488 5.80762C12.8781 6.1981 12.8782 6.83126 12.488 7.22168C12.0975 7.61213 11.4635 7.61218 11.073 7.22168L8.81614 4.96484C8.42595 4.57432 8.4258 3.94023 8.81614 3.5498ZM22.3591 3.5498C22.7495 3.15938 23.3836 3.15958 23.7742 3.5498C24.1647 3.94033 24.1647 4.57432 23.7742 4.96484L21.5163 7.22168C21.1258 7.61199 20.4927 7.61212 20.1023 7.22168C19.7121 6.8312 19.7121 6.19806 20.1023 5.80762L22.3591 3.5498ZM16.2947 1C16.8469 1 17.2945 1.44782 17.2947 2V5.00977C17.2946 5.56201 16.8469 6.00977 16.2947 6.00977C15.7427 6.00941 15.2947 5.56179 15.2947 5.00977V2C15.2948 1.44804 15.7427 1.00035 16.2947 1Z\" fill=\"#585858\"></path>\n</svg>",
+            "heading": "Gold Jewellery Available on Request",
+            "row_content": "<p>You can order a gold ring or pendant made specially for you. An advance of ₹10,000 per gram is required at the time of booking. The final price will be calculated on the day your jewellery is ready, based on:<br/></p><ul><li> The current gold rate</li><li>The weight of your jewellery</li><li>Applicable making charges</li></ul><p>Our gemstone expert will guide you through the process to make sure everything is perfect.<br/>Please note: Custom gold jewellery takes 2–3 extra days to make before it is dispatched.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_43VQc8",
+        "frequently_asked_question_wFLMwi",
+        "frequently_asked_question_XjWxer",
+        "frequently_asked_question_yRUi6U"
+      ],
+      "settings": {
+        "heading": "Things you want to know before purchase",
+        "class": "faq-policy",
+        "heading_size": 140,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "right",
+        "desktop_height": "adapt",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "care_instructions_6U9mzU": {
+      "type": "care-instructions",
+      "disabled": true,
+      "name": "Gemstone Care Instructions",
+      "settings": {
+        "gemstone_image": "shopify://shop_images/Gemstone-Care-Instruction-Web_2b9db990-eb1d-4a9b-8b6b-00128d171160.png",
+        "gemstone_image2": "shopify://shop_images/Gemstone-Care-Instruction-Mobile-img.png",
+        "section_title": "Gemstone Care Instruction",
+        "cleaning_title": "Cleaning",
+        "cleaning_description": "Use lukewarm water, mild soap, and a soft brush to clean gently.",
+        "avoid_title": "Avoid",
+        "avoid_description": "Keep away from harsh chemicals, ultrasonic or steam cleaners.",
+        "wearing_title": "While Wearing",
+        "wearing_description": "Avoid wearing during heavy work, gym, or while using harsh detergents.",
+        "energized_title": "Re-Energised",
+        "energized_description": "Get it re-energized periodically for continued astrological benefits."
+      }
+    },
+    "sheets_contact_form_aYJEG7": {
+      "type": "sheets-contact-form",
+      "name": "Lead Form Block",
+      "settings": {
+        "heading": "Not Sure What to Buy?",
+        "subheading": "Drop your number and our experts will reach out to you soon!",
+        "button_label": "Submit",
+        "disclaimer_text": "By signing up, you agree to receive call from our expert astrologers at the phone number provided. View our privacy policy and terms of service for more info.",
+        "google_script_url": "https://script.google.com/macros/s/AKfycby7PReCZ57jDJOcxOkWui39Dvjs34kpVlsmC6f6imGKHkpvhsF2rqqbh3t-cLVw5wOOQw/exec",
+        "image": "shopify://shop_images/Untitled-7sad_1.png"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 4,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_quickview": false,
+        "enable_carousel_desktop": true,
+        "enable_swiper_mobile": true,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 15,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "columns_mobile": "2",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 12,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "promotion_banner_eUqjUR": {
+      "type": "promotion-banner",
+      "name": "t:sections.promotion-banner.presets.name",
+      "settings": {
+        "heading": "Promotion Banner",
+        "image": "shopify://shop_images/Group_69.png",
+        "image_mobile": "shopify://shop_images/Group_69.png",
+        "image_link": "",
+        "open_new_window": false,
+        "image_overlay_opacity": 0,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "position_content_mobile": "center",
+        "content_alignment": "center",
+        "show_hero": false,
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "faq_jkMBM6": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_J876L8": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_1.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans1 | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_yRVTdy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_2.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans2 | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_AhCcW9": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_3.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans3 | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_Fj4kW9": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_4.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans4 | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_VVJe8g": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "{{ product.metafields.custom.faq_5.value }}",
+            "row_content": "<p>{{ product.metafields.custom.faq_ans5 | metafield_tag }}</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_J876L8",
+        "frequently_asked_question_yRVTdy",
+        "frequently_asked_question_AhCcW9",
+        "frequently_asked_question_Fj4kW9",
+        "frequently_asked_question_VVJe8g"
+      ],
+      "settings": {
+        "heading": "FAQs",
+        "class": "",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "17234523003b158916": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_wmMxnV": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_wmMxnV"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_reason_block_FNkHf7",
+    "how_to_wear_img_eJegkG",
+    "product_gemstone_care_7UTBRn",
+    "benefits_img_text_PkAKWd",
+    "who_can_wear_w4pTTa",
+    "faq_6PKreh",
+    "care_instructions_6U9mzU",
+    "sheets_contact_form_aYJEG7",
+    "product-recommendations",
+    "promotion_banner_eUqjUR",
+    "faq_jkMBM6",
+    "17234523003b158916"
+  ]
+}

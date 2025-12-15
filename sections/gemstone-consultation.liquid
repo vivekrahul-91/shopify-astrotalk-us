@@ -1,0 +1,900 @@
+<!-- sections/form-lead.liquid -->
+<div class="form-section">
+  {% if section.settings.image != blank %}
+  <div class="form-image">
+    <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt | escape }}">
+  </div>
+  {% endif %}
+  
+  <div class="form-container">
+    <div id="form-content">
+      <!-- Service Title -->
+      <div class="service-header">
+        <h2>{{ section.settings.heading | default: 'Gemstone Consultation' }}</h2>
+      </div>
+
+      <form id="lead-form">
+        <input type="text" name="first_name" placeholder="First name" required />
+
+        <div class="phone-wrapper">
+          <select name="country_code" id="country_code">
+            <option value="+91" selected>+91</option>
+            <option value="+1">+1</option>
+            <option value="+44">+44</option>
+            <option value="+880">+880</option>
+          </select>
+          <input type="tel" name="phone" placeholder="Contact no" required />
+        </div>
+
+        <button type="submit" id="submit-btn" class="book-now-btn">
+          <span class="btn-text">{{ section.settings.button_label | default: 'BOOK FREE CONSULTATION' }}</span>
+          <span class="btn-loader" style="display: none;">
+            <svg class="spinner" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+                <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+                <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </span>
+        </button>
+
+        
+      </form>
+
+      <!-- Description Section -->
+      <div class="description-section">
+        <p class="main-description">
+          {{ section.settings.subheading }}
+        </p>
+        
+        <div class="benefits-section">
+          <h3>{{ section.settings.benefits_title }}</h3>
+          <ul class="benefits-list">
+            <li><strong>{{ section.settings.benefit_1_title }}:</strong> {{ section.settings.benefit_1_desc }}</li>
+            <li><strong>{{ section.settings.benefit_2_title }}:</strong> {{ section.settings.benefit_2_desc }}</li>
+            <li><strong>{{ section.settings.benefit_3_title }}:</strong> {{ section.settings.benefit_3_desc }}</li>
+            <li><strong>{{ section.settings.benefit_4_title }}:</strong> {{ section.settings.benefit_4_desc }}</li>
+            <li><strong>{{ section.settings.benefit_5_title }}:</strong> {{ section.settings.benefit_5_desc }}</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success State -->
+    <div id="success-state" style="display: none;">
+      <div class="success-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+          <path d="M4.89163 13.2687L9.16582 17.5427L18.7085 8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <h3>Thank You!</h3>
+      <p>Someone from our team will connect with you in the next available slot.</p>
+      <button type="button" id="submit-another" class="secondary-btn">
+        Submit Another Response
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky Book Now Button for Mobile -->
+<div class="sticky-book-btn mobile-only" id="sticky-book-btn">
+  <button type="button" onclick="submitLeadForm()" class="sticky-btn">
+    {{ section.settings.button_label | default: 'BOOK FREE CONSULTATION' }}
+  </button>
+</div>
+
+<style>
+  .form-section {
+    background-color: #fff;
+    width: 100vw;
+    min-height: 600px;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  /* Image on left, form on right for desktop */
+  .form-image {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    order: 1;
+    aspect-ratio: 1 / 1;
+  }
+
+  .form-container {
+    flex: 1;
+    order: 2;
+    background-color: #fff;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+  }
+
+  .form-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top center;
+    background-color: #fff;
+  }
+
+  /* Service Header */
+  .service-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .service-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .original-price {
+    font-size: 18px;
+    color: #888;
+    text-decoration: line-through;
+  }
+
+  .current-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e74c3c;
+  }
+
+  /* Form Styles */
+  #lead-form {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  #lead-form input,
+  #lead-form select {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+
+  #lead-form input:focus,
+  #lead-form select:focus {
+    outline: none;
+    border-color: #4285f4;
+  }
+
+  .phone-wrapper {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .phone-wrapper select {
+    width: 25% !important;
+    flex: none;
+    margin-bottom: 0;
+  }
+
+  .phone-wrapper input {
+    width: 73% !important;
+    flex: none;
+    margin-bottom: 0;
+  }
+
+  /* Description Section */
+  .description-section {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .main-description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .benefits-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .benefits-list li {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .benefits-list li:before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .benefits-list li strong {
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+
+  .form-description {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  /* Book Now Button */
+  .book-now-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .book-now-btn:hover:not(:disabled) {
+    background-color: #333;
+    transform: translateY(-2px);
+  }
+
+  .book-now-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-text, .btn-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
+
+  #lead-form small {
+    display: block;
+    font-size: 11px;
+    margin-top: 15px;
+    color: #888;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* Success State Styles */
+  #success-state {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    animation: scaleIn 0.5s ease-out 0.2s both;
+  }
+
+  .success-icon svg {
+    display: block;
+  }
+
+  #success-state h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 12px;
+    animation: fadeInUp 0.5s ease-out 0.3s both;
+  }
+
+  #success-state p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 32px;
+    line-height: 1.5;
+    animation: fadeInUp 0.5s ease-out 0.4s both;
+  }
+
+  .secondary-btn {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out 0.5s both;
+  }
+
+  .secondary-btn:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  /* Sticky Button for Mobile */
+  .sticky-book-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    display: none;
+  }
+
+  .sticky-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .sticky-btn:active {
+    background-color: #333;
+    transform: scale(0.98);
+  }
+
+  /* Desktop Responsive */
+  @media (min-width: 768px) {
+    .form-container {
+      padding: 80px 60px;
+    }
+    
+    .service-header h2 {
+      font-size: 32px;
+    }
+    
+    .main-description {
+      padding-top:10px;
+    }
+
+    .benefits-section h3 {
+      font-size: 20px;
+    }
+
+    .benefits-list li {
+      font-size: 15px;
+    }
+    
+    #lead-form {
+      max-width: 450px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .form-container {
+      padding: 100px 80px;
+    }
+    
+    .service-header h2 {
+      font-size: 36px;
+    }
+
+    .main-description {
+      font-size: 20px;
+    }
+
+    .benefits-section h3 {
+      font-size: 22px;
+    }
+
+    .benefits-list li {
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 767px) {
+    .form-section {
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    .form-image {
+      flex: none;
+      width: 100%;
+      height: auto;
+      order: 1;
+      aspect-ratio: 1 / 1;
+    }
+
+    .form-container {
+      order: 2;
+      padding: 40px 20px 10px 20px; /* Extra bottom padding for sticky button */
+    }
+
+    .service-header h2 {
+      font-size: 22px;
+    }
+
+    .current-price {
+      font-size: 22px;
+    }
+
+    .original-price {
+      font-size: 16px;
+    }
+
+    .sticky-book-btn {
+      display: block;
+    }
+
+    .mobile-only {
+      display: block !important;
+    }
+
+    /* Hide the form's book now button on mobile */
+    .form-container .book-now-btn {
+      display: none;
+    }
+
+    #success-state .secondary-btn {
+      margin-bottom: 80px; /* Space for sticky button */
+    }
+  }
+
+  @media (min-width: 768px) {
+    .mobile-only {
+      display: none !important;
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+  }
+
+  .fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const leadForm = document.getElementById("lead-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const btnText = submitBtn.querySelector(".btn-text");
+    const btnLoader = submitBtn.querySelector(".btn-loader");
+    const formContent = document.getElementById("form-content");
+    const successState = document.getElementById("success-state");
+    const submitAnotherBtn = document.getElementById("submit-another");
+    const stickyBtn = document.getElementById("sticky-book-btn");
+
+    // Function to scroll to form
+    window.scrollToForm = function() {
+      document.querySelector('.form-section').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+      });
+    };
+
+    // Programmatically submit the form from the sticky button
+    window.submitLeadForm = function() {
+      if (!leadForm) return;
+
+      // Ensure form is in view on mobile
+      try {
+        document.querySelector('.form-section').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      } catch (e) {}
+
+      // Basic checks for required fields; focus the first missing
+      var requiredFields = [leadForm.first_name, leadForm.phone];
+      for (var i = 0; i < requiredFields.length; i++) {
+        var field = requiredFields[i];
+        if (!field || !field.value || !field.value.trim()) {
+          try { field.focus(); } catch (e) {}
+          return;
+        }
+      }
+
+      // Submit via native requestSubmit if available; otherwise dispatch submit
+      try {
+        if (typeof leadForm.requestSubmit === 'function') {
+          leadForm.requestSubmit();
+        } else {
+          leadForm.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+        }
+      } catch (e) {
+        // Fallback to clicking the visible submit button
+        try { submitBtn.click(); } catch (_) {}
+      }
+    };
+
+    // Show/hide sticky button based on form visibility
+    function handleStickyButton() {
+      if (window.innerWidth <= 767) {
+        const formSection = document.querySelector('.form-section');
+        const rect = formSection.getBoundingClientRect();
+        const isFormVisible = rect.bottom > window.innerHeight * 0.7;
+        
+        if (stickyBtn) {
+          stickyBtn.style.display = isFormVisible ? 'none' : 'block';
+        }
+      }
+    }
+
+    // Handle sticky button visibility on scroll and resize
+    if (window.innerWidth <= 767) {
+      window.addEventListener('scroll', handleStickyButton);
+      window.addEventListener('resize', handleStickyButton);
+      handleStickyButton(); // Initial check
+    }
+
+    // Function to get page URL handle
+    function getPageHandle() {
+      const currentUrl = window.location.href;
+      const urlParts = currentUrl.split('/');
+      
+      let handle = urlParts[urlParts.length - 1];
+      handle = handle.split('?')[0].split('#')[0];
+      
+      if (handle === '' || handle === window.location.hostname) {
+        handle = 'home';
+      }
+      
+      return handle;
+    }
+
+    // Product handle not needed on this page
+
+    if (leadForm) {
+      leadForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        btnText.style.display = "none";
+        btnLoader.style.display = "flex";
+
+        const form = e.target;
+        const params = new URLSearchParams();
+
+        // Add form fields (trim where sensible)
+        params.append("first_name", (form.first_name.value || '').trim());
+        params.append("country_code", (form.country_code.value || '').toString().trim());
+        params.append("phone", (form.phone.value || '').trim());
+
+        // Add page URL and handle
+        params.append("page_url", window.location.href);
+        params.append("page_handle", getPageHandle());
+
+        // Add timestamp (client ISO)
+        params.append("timestamp", new Date().toISOString());
+
+        const scriptURL = "{{ section.settings.google_script_url }}";
+
+        try {
+          console.log("[Gemstone Consultation] Submitting to:", scriptURL);
+          console.log("[Gemstone Consultation] Payload:", params.toString());
+
+          const [response] = await Promise.all([
+            fetch(scriptURL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+              },
+              body: params.toString()
+            }),
+            new Promise(resolve => setTimeout(resolve, 1000))
+          ]);
+
+          let responseText = '';
+          try {
+            responseText = await response.text();
+          } catch (readErr) {
+            console.warn("[Gemstone Consultation] Unable to read response body:", readErr);
+          }
+
+          console.log("[Gemstone Consultation] Response status:", response.status, response.statusText, "type:", response.type);
+          console.log("[Gemstone Consultation] Response body:", responseText);
+
+          const status = response.status;
+          const isOpaque = response.type === 'opaque';
+          const looksSuccessfulBody = /success|ok/i.test(responseText || '');
+          const isRedirect = status === 302 || status === 301;
+          const isZeroStatus = status === 0; // common for opaque/no-cors
+
+          if (response.ok || isOpaque || isRedirect || isZeroStatus || looksSuccessfulBody) {
+            showSuccessState();
+          } else {
+            throw new Error(`HTTP ${status}: ${response.statusText}`);
+          }
+        } catch (err) {
+          console.error("[Gemstone Consultation] Form submission error:", err);
+          const msg = String((err && err.message) || err || "");
+          const isLikelyCors = (err && err.name === 'TypeError') || /cors|failed to fetch|network/i.test(msg);
+          if (isLikelyCors) {
+            console.warn("[Gemstone Consultation] Likely CORS/network error after submit. Treating as success.");
+            showSuccessState();
+          } else {
+            // Reset button state on other failures
+            submitBtn.disabled = false;
+            btnText.style.display = "flex";
+            btnLoader.style.display = "none";
+            alert("There was a problem submitting your request. Please try again.");
+          }
+        }
+      });
+
+      // Handle "Submit Another Response" button
+      submitAnotherBtn.addEventListener("click", function() {
+        // Reset form
+        leadForm.reset();
+        
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.style.display = "flex";
+        btnLoader.style.display = "none";
+        
+        // Hide success state and show form
+        successState.classList.add("fade-out");
+        setTimeout(() => {
+          successState.style.display = "none";
+          successState.classList.remove("fade-out");
+          formContent.style.display = "block";
+          formContent.style.animation = "fadeInUp 0.5s ease-out";
+        }, 300);
+      });
+
+      function showSuccessState() {
+        // Hide sticky button when showing success state
+        if (stickyBtn) {
+          stickyBtn.style.display = 'none';
+        }
+        
+        // Hide form content
+        formContent.classList.add("fade-out");
+        setTimeout(() => {
+          formContent.style.display = "none";
+          formContent.classList.remove("fade-out");
+          successState.style.display = "flex";
+        }, 300);
+      }
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Gemstone Consultation",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Service Title",
+      "default": "Free Gemstone Consultation"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Description",
+      "default": "Gemstone Consultation helps you discover the perfect stone as per your planets. Whether it's marriage delays, money issues, career blocks, or relationship struggles - the right gemstone can remove obstacles and bring positivity. Know your ideal gemstone today with guidance from our top expert astrologers."
+    },
+    {
+      "type": "text",
+      "id": "benefits_title",
+      "label": "Benefits Section Title",
+      "default": "🌟 Key Benefits of Gemstone Consultation"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_title",
+      "label": "Benefit 1 Title",
+      "default": "Personalized Guidance"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_desc",
+      "label": "Benefit 1 Description",
+      "default": "Find the gemstone that matches your planets and birth chart."
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_title",
+      "label": "Benefit 2 Title",
+      "default": "Problem-Specific Solutions"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_desc",
+      "label": "Benefit 2 Description",
+      "default": "Get remedies for marriage delays, money issues, career blocks, health or relationship struggles."
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_title",
+      "label": "Benefit 3 Title",
+      "default": "Certified Natural Gemstones"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_desc",
+      "label": "Benefit 3 Description",
+      "default": "Only authentic, lab-certified gemstones recommended for true astrological results."
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_title",
+      "label": "Benefit 4 Title",
+      "default": "Expert Astrologers"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_desc",
+      "label": "Benefit 4 Description",
+      "default": "Consult with highly experienced astrologers trusted by millions."
+    },
+    {
+      "type": "text",
+      "id": "benefit_5_title",
+      "label": "Benefit 5 Title",
+      "default": "Step-by-Step Wearing Guidance"
+    },
+    {
+      "type": "text",
+      "id": "benefit_5_desc",
+      "label": "Benefit 5 Description",
+      "default": "Know the exact finger, metal, and rituals for maximum benefit."
+    },
+    {
+      "type": "text",
+      "id": "benefit_6_title",
+      "label": "Benefit 6 Title",
+      "default": "Safe & Reliable"
+    },
+    {
+      "type": "text",
+      "id": "benefit_6_desc",
+      "label": "Benefit 6 Description",
+      "default": "Avoid the risk of wearing the wrong stone with professional advice."
+    },
+    {
+      "type": "text",
+      "id": "benefit_7_title",
+      "label": "Benefit 7 Title",
+      "default": "Positive Life Changes"
+    },
+    {
+      "type": "text",
+      "id": "benefit_7_desc",
+      "label": "Benefit 7 Description",
+      "default": "Experience growth, peace, and prosperity through the right gemstone."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "BOOK FREE CONSULTATION"
+    },
+    
+    {
+      "type": "text",
+      "id": "google_script_url",
+      "label": "Google Apps Script Webhook URL",
+      "default": "https://script.google.com/macros/s/AKfycbwdIvu6oPkb9aeOEc0NR1sGwjjzEED86cjpXEJD32YHv6Ng0UJM5l59pF5oZyG0snbHFQ/exec"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left Side Image (Gemstone/Consultation Image)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gemstone Consultation"
+    }
+  ]
+}
+{% endschema %}

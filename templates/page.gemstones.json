@@ -1,0 +1,249 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_xKxwxL": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_zyREnP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sushil_kanya_banners_d.webp",
+            "image_mobile": "shopify://shop_images/sushil_kanya_banners_d.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 140,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "custom",
+            "custom_horizontal": 0,
+            "custom_vertical": 70,
+            "alignment": "left",
+            "color_text": "#2e1c13",
+            "color_button": "#ffffff",
+            "color_text_button": "#2e1c13",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_zyREnP"
+      ],
+      "settings": {
+        "show_hero": true,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "slideshow_pcQbTL": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_dkTBJF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/2_bb168b3e-503d-4756-ba65-2a39ef43364a.webp",
+            "image_mobile": "shopify://shop_images/2_bb168b3e-503d-4756-ba65-2a39ef43364a.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 50,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_dkTBJF"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": false,
+        "change_slides_speed": 3,
+        "show_arrow": false,
+        "slider_visual": "none",
+        "transition_style": "default",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "gemstones_collection_tpPQ7M": {
+      "type": "gemstones-collection",
+      "settings": {
+        "section_title": "",
+        "collection": "gemstones",
+        "cards_per_row_mobile": 2,
+        "cards_per_row_desktop": 4,
+        "show_tags": false,
+        "show_trust_badges": true
+      }
+    },
+    "sheets_contact_form_ejXjdU": {
+      "type": "sheets-contact-form",
+      "custom_css": [
+        ".form-section {margin-top: 10px;}"
+      ],
+      "name": "Lead Form Block",
+      "settings": {
+        "heading": "Not Sure What to Buy?",
+        "subheading": "Drop your number and our experts will reach out to you soon!",
+        "button_label": "Submit",
+        "disclaimer_text": "By signing up, you agree to receive call from our expert astrologers at the phone number provided. View our privacy policy and terms of service for more info.",
+        "google_script_url": "https://script.google.com/macros/s/AKfycby7PReCZ57jDJOcxOkWui39Dvjs34kpVlsmC6f6imGKHkpvhsF2rqqbh3t-cLVw5wOOQw/exec",
+        "image": "shopify://shop_images/ChatGPT_Image_Jun_2_2025_06_57_39_PM.png"
+      }
+    },
+    "image_with_text_iqNKed": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_7aRmdP": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Gemstones & You",
+            "heading_base_size": 110,
+            "heading_tag": "h2",
+            "text": "<p>Through the sacred lens of Vedic astrology, we come to realize that the divine rhythms of the universe are deeply intertwined with the celestial movements of the planets.</p><p>These sacred planets—the radiant Sun, gentle Moon, fiery Mars, wise Jupiter, graceful Venus, swift Mercury, and steadfast Saturn—along with the mystical shadow forces Rahu and Ketu, guide the course of our earthly journey.</p><p>Gemstones, created by divine will over countless ages, are imbued with the pure energies of these cosmic beings. As sacred vessels of planetary grace, they help harmonize and align our lives with the blessings of the universe, offering protection, strength, and spiritual upliftment.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7aRmdP"
+      ],
+      "custom_css": [
+        "img {object-fit: contain;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/sushil_kanya.webp",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "750px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#fbf6ee",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_xKxwxL",
+    "slideshow_pcQbTL",
+    "gemstones_collection_tpPQ7M",
+    "sheets_contact_form_ejXjdU",
+    "image_with_text_iqNKed"
+  ]
+}

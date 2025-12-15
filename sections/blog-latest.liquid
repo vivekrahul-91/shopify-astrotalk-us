@@ -1,0 +1,78 @@
+{% assign latest_articles = blogs[section.settings.blog].articles | sort: 'created_at' | reverse | slice: 0, 7 %}
+
+<div class="latest-blogs-wrapper">
+  <h2 class="latest-heading">{{ section.settings.heading }}</h2>
+
+  <div class="latest-blogs-flex">
+    {% assign main_article = latest_articles[0] %}
+    <!-- Main Blog -->
+    <div class="main-blog-card">
+      <a href="{{ main_article.url }}">
+        <div class="blog-image">
+          {% if main_article.image %}
+            <img src="{{ main_article.image | img_url: '720x480' }}" alt="{{ main_article.title }}">
+          {% endif %}
+        </div>
+        <div class="blog-content">
+          <p class="blog-meta">{{ main_article.author }} · {{ main_article.created_at | date: '%b %d, %Y' }}</p>
+          <h3 class="blog-title"><a href="{{ main_article.url }}">{{ main_article.title }}</a></h3>
+          <p class="blog-excerpt">{{ main_article.excerpt | strip_html | truncate: 100 }}</p>
+          <div class="blog-tags">
+            {% for tag in main_article.tags %}
+              <span class="tag-pill">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Side Blogs -->
+    <div class="side-blogs-column">
+      {% for article in latest_articles offset:1 %}
+        <div class="side-blog-card">
+          <a href="{{ article.url }}">
+            <div class="side-blog-flex">
+              {% if article.image %}
+                <img src="{{ article.image | img_url: '300x200' }}" alt="{{ article.title }}">
+              {% endif %}
+              <div class="blog-content">
+                <p class="blog-meta">{{ article.author }} · {{ article.created_at | date: "%d %B %Y" }}</p>
+                <h4 class="blog-title">{{ article.title }}</h4>
+                <p class="blog-excerpt">{{ article.excerpt | strip_html | truncate: 60 }}</p>
+                <div class="blog-tags">
+                  {% for tag in article.tags %}
+                    <span class="tag-pill">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Latest Blogs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Latest Blogs"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select Blog"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Latest Blogs"
+    }
+  ]
+}
+{% endschema %}

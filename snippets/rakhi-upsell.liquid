@@ -1,0 +1,124 @@
+{%- assign upsell_handle = 'siddh-dhan-yog-rakhi-1' -%}
+{%- assign upsell_product = all_products[upsell_handle] -%}
+
+{%- assign show_upsell = true -%}
+{% for item in cart.items %}
+  {% if item.product.handle == upsell_handle %}
+    {%- assign show_upsell = false -%}
+  {% endif %}
+{% endfor %}
+
+{% if show_upsell and upsell_product.available %}
+  <div class="cart-upsell" style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #e2e2e2; border-radius: 8px; padding: 12px; margin: 16px 0;">
+    
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="{{ upsell_product.featured_image | image_url: width: 120 }}" alt="{{ upsell_product.title }}" style="width: 80px; height: auto; border-radius: 8px;">
+      
+      <div style="display: flex; flex-direction: column;">
+        <span style="font-weight: 500;">{{ upsell_product.title }}</span>
+        <div>
+          <span style="font-weight: 700; font-size: 16px;">{{ upsell_product.price | money }}</span>
+          {% if upsell_product.compare_at_price > upsell_product.price %}
+            <span style="text-decoration: line-through; color: #999; margin-left: 4px;">
+              {{ upsell_product.compare_at_price | money }}
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class=" mob-atc-card quick-view-container z-20 bottom-2 right-2 rtl:right-auto rtl:left-2 rtl:lg:left-auto lg:top-auto lg:right-auto lg:bottom-4 lg:w-full lg:group-hover:opacity-100 lg:group-hover:translate-y-0 focus:opacity-100 focus:translate-y-0 lg:translate-y-full transition-all duration-200 ease-in-out lg:opacity-0"
+                  x-show="$store.xQuickView" x-cloak
+                > 
+                  <div x-data="xProductCart" x-show="$store.xQuickView && $store.xQuickView.show_atc_button" class="w-full lg:px-4" :class="$store.xQuickView && $store.xQuickView.btn_atc_bottom && 'hidden md:block'" x-cloak>
+                    {%- assign product_form_id = 'product-form-' | append: upsell_product.id | append: '-' | append: section.id -%}
+                    {%- form 'product', upsell_product, id: product_form_id, data-pid: upsell_product.id, class: 'form h-full', novalidate: 'novalidate', data-type: 'add-to-cart-form', x-ref: 'product_form' -%}
+                      <input type="hidden" name="id" value="{{ upsell_product.selected_or_first_available_variant.id }}">
+                      {% if upsell_product.metafields.custom.minimum_order_quantity != blank %}
+                        <input type="hidden" name="properties[_maxqty]" value="{{ upsell_product.metafields.custom.minimum_order_quantity }}">
+                      {% endif %}
+                      {% if settings.show_in_cart_items != 'none' %}
+                        {% render 'estimate-shipping-cart', product: product, message: settings.message_estimate_cart %}
+                      {% endif %}
+                      {% if can_show_preorder %}
+                        <input name="properties[{{ 'general.preorder.name' | t }}]" class="hidden" value="{{ settings.message_preorder }}"/>
+                      {% endif %}
+                      {%- if thiscnnt <= 0 -%}
+                        <p class="qty_err_msg text-center {% unless template contains 'collection' %}!hidden lg:!block{% endunless %}">You can't add more quantity of this item</p>
+                      {%- endif -%}
+                      <button
+                        type="{% if thiscnnt <= 0 %}button{% else %}submit{% endif %}"
+                        {% if thiscnnt <= 0 %}
+                        disabled
+                        {% endif %}
+                        name="add"
+                        {% if template contains 'index' %}
+                          onclick="clevertap.event.push('Home_Card_ATC', {'Product name': '{{ upsell_product.title }}'})"
+                        {% elsif template contains 'collection' %}
+                          onclick="clevertap.event.push('Collection_CTA_click', {'Product name': '{{ upsell_product.title }}','Collection name': '{{ collection.title }}'})"
+                        {% endif %}
+                        {%- if upsell_product.has_only_default_variant -%}
+                        @click.prevent="errorMessage == false && addToCart($event)"
+                        {%- else -%}
+                        @click.prevent="$store.xQuickView && $store.xQuickView.loadChooseOptions('{{ upsell_product.url | within: collection | split: "?" | first }}', $el, '{{ section_id }}-{{ upsell_product.id }}-{{ block_id }}', {{ index_param }}); showOptions =! showOptions; $store.xQuickView.showChooseOption('{{ section_id }}-{{ upsell_product.id }}-{{ block_id }}');"
+                        x-on:mouseover="$store.xQuickView && $store.xQuickView.loadChooseOptions('{{ upsell_product.url | within: collection | split: "?" | first }}', $el, '{{ section_id }}-{{ upsell_product.id }}-{{ block_id }}', {{ index_param }})" 
+                        {%- endif -%}
+                        data-id="{{ section_id }}-{{ upsell_product.id }}-{{ block_id }}"
+                        class="button classproduct-{{ upsell_product.id }} hasmsg {% unless show_quick_view_at_bottom %}button--quickview{% endunless %} button-solid not-icon leading-normal  w-full py-2.5 lg:py-3 z-50 text-[12px] lg:text-[14px] "
+                        :class="errorMessage && 'opacity-60 cursor-not-allowed'"
+                        {% if upsell_product.selected_or_first_available_variant.available == false %}
+                          disabled
+                          aria-label="{{ 'products.product.sold_out' | t }}"
+                        {% else %}
+                          {%- if upsell_product.has_only_default_variant -%}
+                            aria-label="{{ 'products.product.add_to_cart' | t }}"
+                          {% else %}
+                            aria-label="{{ 'products.product.choose_options' | t }}"
+                          {% endif %}
+                        {% endif %}
+                      >
+                        <span :class="{ 'lg:block opacity-0' : loading, 'hidden' : errorMessage}">
+                          {%- if upsell_product.selected_or_first_available_variant.available -%}
+                            {%- if upsell_product.has_only_default_variant -%}
+                              {% liquid
+                                if can_show_preorder
+                                  assign button_label = 'products.product.pre_order' | t
+                                  if settings.card_button_preorder != blank
+                                    assign button_label = settings.card_button_preorder
+                                  endif
+                                else 
+                                  assign button_label = 'products.product.add_to_cart' | t
+                                endif
+                              %}
+                              <span class="flex items-center justify-center">
+                                ADD
+                              </span>
+                            {%- else -%}
+                              {% assign button_label = 'products.product.choose_options' | t %}
+                              <span class="flex items-center justify-center">
+                                OPTIONS
+                                <!-- {% render 'button-label', button_label: button_label, show_button_style: 'primary' %} -->
+                              </span>
+                            {%- endif -%}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <div
+                          class="flex gap-x-2 items-center justify-center"
+                          role="alert"
+                          x-cloak
+                          x-show="errorMessage"
+                        >
+                          {{ 'products.product.sold_out' | t }}
+                        </div>
+                        <div class="lg:inline-block animate-spin w-4 h-4 md:w-5 md:h-5 absolute top-[calc(50%-8px)] left-[calc(50%-8px)] md:top-[calc(50%-10px)] md:left-[calc(50%-10px)]" x-show="loading" x-cloak>
+                          {% render 'icon-alls', icon: 'icon-loading' %}
+                        </div>
+                      </button>
+                      
+                    {%- endform -%}
+                  </div>
+                </div>
+  </div>
+{% endif %}

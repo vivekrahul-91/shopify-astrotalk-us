@@ -1,0 +1,413 @@
+{% comment %}
+  Why Choose Us Section
+  
+  A customizable section displaying features/benefits with icons and text.
+  Each feature is added as a block with an uploaded image and customizable text.
+{% endcomment %}
+
+<!-- {{ 'section-why-choose-us.css' | asset_url | stylesheet_tag }} -->
+
+<div class="why-choose-section {{ section.settings.class}}" id="why-choose-{{ section.id }}">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+      <div class="section-header">
+        <h2 class="section-title">{{ section.settings.title }}</h2>
+        {% if section.settings.subtitle != blank %}
+          <p class="section-subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+         <div class="image-div">
+           {% for i in (1..section.settings.image_count) %}
+            {% assign image_setting = 'image_' | append: i %}
+            {% assign image_value = section.settings[image_setting] %}
+            {% if image_value != blank %}
+              <div class="img-divs">
+               <img src="{{ image_value | img_url: 'large' }}"
+                   alt="{{ section.settings.image_count | escape }}"
+                    loading="lazy">
+                
+              </div>
+            {% endif %}
+          {% endfor %}
+      </div>
+      
+      </div>
+    {% endif %}
+    
+    <div class="features-grid">
+      {% for block in section.blocks %}
+        <div class="feature-item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <div class="feature-icon">
+              <img src="{{ block.settings.icon | img_url: 'large' }}" 
+                alt="{{ block.settings.heading | escape }}"
+                width="60"
+                height="60"
+                loading="lazy">
+            </div>
+          {% endif %}
+          
+          <div class="feature-content">
+            {% if block.settings.heading != blank %}
+              <h3 class="feature-heading">{{ block.settings.heading }}</h3>
+            {% endif %}
+            
+            {% if block.settings.text != blank %}
+              <p class="feature-text">{{ block.settings.text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+.why-choose-section {
+    background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/why_choose_64137103-7d69-4730-9fa5-3d220f0ad275.png?v=1747723583);
+    padding: 60px 0;
+    text-align: center;
+    background-size: cover;
+}
+
+.why-choose-section .section-header {
+  margin-bottom: 30px !important;
+}
+
+.why-choose-section .section-title {
+    margin-bottom: 6px;
+    letter-spacing: 0;
+  
+}
+
+.why-choose-section .section-subtitle {
+  font-size: 16px;
+  /* opacity: 0.8; */
+  color: #000;
+}
+
+.why-choose-section .features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.why-choose-section .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(13% - 20px);
+    padding: 15px 0;
+}
+  .reet-text-icons  .feature-item {
+    width: calc(25% - 20px);
+    
+  }
+.why-choose-section .feature-icon {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(159, 71, 35, .5);
+    margin-bottom: 15px;
+}
+
+.why-choose-section .feature-icon img {
+    width: 100%;
+    height: auto;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.why-choose-section .feature-heading {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.why-choose-section .feature-text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #000;
+}
+.why-choose-section .image-div {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto 0;
+}
+
+.why-choose-section .image-div > img {
+    width: calc(33% - 40px);
+}
+  .reet-text-icons .feature-item:nth-child(2n) {
+    border-left: 1px solid #ffffff33;
+}
+
+  .reet-text-icons {
+    background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Group_21_451b0b28-6f86-4816-829a-0d43a7ac2ec9.png?v=1748858978);
+ }
+
+.reet-text-icons  .feature-icon {
+    background: rgba(255, 249, 241, 1);
+    border: 1px solid rgba(255, 249, 241, 1);
+      width: 38%;
+}
+  .reet-text-icons h2, .reet-text-icons p.section-subtitle, .reet-text-icons .feature-text {
+    color: #fff !important;
+}
+  .recomender-icons {
+    background: #863E20;
+    color: #fff;
+    background-image: none;
+    padding: 40px 0;
+  }
+   .recomender-icons  .feature-icon{
+     background: #FFF;
+   }
+  .recomender-icons  .feature-item {
+    width: calc(18% - 20px);
+  }
+  .recomender-icons .image-div{
+    display : none;
+    
+  }
+  .recomender-icons h2.section-title, .recomender-icons .feature-text {
+    color: #ffffff !important ;
+}
+ .recomender-icons .feature-icon img{
+    padding: 15px;
+  }
+  .img-divs img {
+    width: 100%;
+}
+
+.image-div {
+    gap: 40px;
+}
+@media screen and (max-width: 990px) {
+.why-choose-section  .feature-item {
+    width: calc(33.333% - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .why-choose-section .image-div > img {
+    width: calc(33% - 4px);
+}
+  .img-divs img {
+    width: 100%;
+}
+.reet-text-icons  .feature-icon{
+  width: 50%;
+}
+.image-div {
+    gap: 10px;
+}
+  .why-choose-section .image-div{
+    justify-content: space-between;
+ }
+  .why-choose-section {
+    padding: 40px 0;
+  }
+  .why-choose-section {
+    background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/why_choose_bg_for_phone.png?v=1747825520);
+    padding:60px 0 15px;
+    text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: top;
+}
+   .reet-text-icons {
+    background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Group_21_451b0b28-6f86-4816-829a-0d43a7ac2ec9.png?v=1748858978);
+ }
+  
+   .why-choose-section .section-title {
+    font-size: 24px;
+  }
+  
+ .why-choose-section  .features-grid {
+    gap: 15px;
+  }
+   .temp-rudraksha-recommender .features-grid {
+    gap: 5px;
+  }
+  
+ .why-choose-section .feature-item {
+    width: calc(33.3% - 10px);
+    /* padding: 10px; */
+  }
+  .reet-text-icons .feature-item {
+    width: calc(50% - 10px);
+}
+  .why-choose-section .feature-heading {
+    font-size: 14px;
+  }
+  
+  .why-choose-section .feature-text {
+            font-size: 16px;
+        line-height: 18px;
+  }
+    .recomender-icons {
+    background-image: none;
+        padding: 35px 0 15px;
+  }
+  .recomender-icons  .section-header {
+    margin-bottom: 5px !important;
+}
+ .temp-rudraksha-recommender .recomender-icons .feature-icon {
+    width: 45%;
+  margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .why-choose-section .feature-item {
+    width: calc(33.333% - 10px);
+  }
+  
+   .reet-text-icons .feature-item ,   .recomender-icons .feature-item{
+    width: calc(50% - 10px);
+}
+  .why-choose-section .feature-icon img {
+    padding: 6px;
+  }
+
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Why Choose Us",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "class",
+      "label": "Class",
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Why choose Astrotalk?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "100% Original Rudraksha Certified by Trusted Lab"
+    },
+    {
+      "type": "range",
+      "id": "image_count",
+      "label": "Number of URLs",
+      "min": 1,
+      "max": 10,
+      "default": 3
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Image 5"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Feature Title"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Feature description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Choose Us",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "Easy 10 days Return",
+            "text": ""
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "100% Authentic Beads",
+            "text": ""
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "10x Benefits",
+            "text": ""
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "108 Hours of Mantra Charging",
+            "text": ""
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "Sourced from Himalayas",
+            "text": ""
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "heading": "6+ Years Trust",
+            "text": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

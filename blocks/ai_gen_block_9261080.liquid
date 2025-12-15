@@ -1,0 +1,113 @@
+{% doc %}
+  @prompt
+    Create a custom product section that displays multiple edge-to-edge images from product metafields, similar to Amazon A+ content. The section should fetch multiple images from a product metafield and display them with one image per row, stacked vertically without any gaps or spacing between rows. Each image should span the full width edge-to-edge across the page, be responsive, and maintain its aspect ratio. Include settings to customize the metafield namespace and key for fetching the image list.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-edge-to-edge-images-{{ ai_gen_id }} {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-edge-to-edge-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+  }
+
+  .ai-edge-to-edge-image-{{ ai_gen_id }} {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-edge-to-edge-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16/9;
+  }
+
+  .ai-edge-to-edge-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+{% endstyle %}
+
+<div class="ai-edge-to-edge-images-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if product.metafields[block.settings.metafield_namespace][block.settings.metafield_key] != blank %}
+    {% assign image_urls = product.metafields[block.settings.metafield_namespace][block.settings.metafield_key] %}
+    
+    {% if image_urls.value.size > 0 %}
+      {% for image in image_urls.value %}
+        <div class="ai-edge-to-edge-image-wrapper-{{ ai_gen_id }}">
+          <img 
+            src="{{ image.src }}" 
+            alt="{{ image.alt | default: product.title | escape }}" 
+            class="ai-edge-to-edge-image-{{ ai_gen_id }}" 
+            loading="lazy"
+            width="{{ image.width }}"
+            height="{{ image.height }}"
+          >
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="ai-edge-to-edge-placeholder-{{ ai_gen_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="ai-edge-to-edge-placeholder-{{ ai_gen_id }}">
+      {{ 'image' | placeholder_svg_tag }}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Edge-to-Edge Images",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Metafield Configuration"
+    },
+    {
+      "type": "text",
+      "id": "metafield_namespace",
+      "label": "Metafield namespace",
+      "default": "custom",
+      "info": "The namespace of the metafield containing the images"
+    },
+    {
+      "type": "text",
+      "id": "metafield_key",
+      "label": "Metafield key",
+      "default": "a_plus_content",
+      "info": "The key of the metafield containing the images (must be a list of files)"
+    },
+    {
+      "type": "paragraph",
+      "content": "This block displays images from a product metafield. The metafield should be a list of files. You can create this metafield in the product editor."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Edge-to-Edge Images"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

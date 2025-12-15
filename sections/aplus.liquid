@@ -1,0 +1,111 @@
+{% comment %}
+  Section: A+ Content (Desktop/Mobile Images)
+  Metafield: product.metafields.custom.aplus
+  Metaobject: a_content (with fields desktop & mobile)
+{% endcomment %}
+
+<div class="aplus-content">
+  {% assign aplus_entry = product.metafields.custom.aplus.value %}
+  
+  {% if aplus_entry != blank %}
+    <!-- Desktop Images -->
+    <div class="aplus-images aplus-desktop">
+      {% comment %} {% for image in aplus_entry.desktop %}
+        <img 
+          src="{{ image | image_url }}" 
+          alt="Desktop Content Image {{ forloop.index }}" 
+          loading="lazy">
+      {% endfor %} {% endcomment %}
+      {% for image1 in aplus_entry.desktop.value %}
+        <img 
+          src="{{ image1 | image_url }}" 
+          alt="Desktop Content Image {{ forloop.index }}" 
+          loading="lazy">
+      {% endfor %}
+    </div>
+
+    <!-- Mobile Images -->
+    <div class="aplus-images aplus-mobile">
+      {% for image2 in aplus_entry.mobile.value %}
+        <img 
+          src="{{ image2 | image_url }}" 
+          alt="Mobile Content Image {{ forloop.index }}" 
+          loading="lazy">
+      {% endfor %}
+    </div>
+  {% else %}
+    <p> </p>
+  {% endif %}
+</div>
+
+<style>
+
+ .aplus-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .aplus-desktop img {
+    width: 100%;
+    max-width: 49%;
+    height: auto;
+    display: block;
+  }
+.aplus-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+}
+  .aplus-desktop { display: flex; }
+  .aplus-mobile { display: none; }
+
+  @media (max-width: 767px) {
+    .aplus-images.aplus-mobile img{
+      padding: 8px 8px;
+  }
+      .aplus-images.aplus-mobile img:first-child {
+      padding: 8px 8px 8px 15px;
+  }
+
+.aplus-images.aplus-mobile img {
+    max-width: 70%;
+}
+.aplus-content {
+  padding: 16px 0;
+}
+    .aplus-desktop { display: none; }
+    .aplus-mobile { 
+      display: flex; 
+      overflow: auto;
+    }
+ .aplus-section{
+  border-radius:0;
+    }
+  }
+  {% comment %} .aplus-desktop img {
+    max-width: 50%;
+    padding: 8px;
+  }
+  .aplus-mobile img {
+    max-width: 88%;
+    padding: 8px;
+  } {% endcomment %}
+  
+</style>
+
+{% schema %}
+{
+  "name": "Aplus",
+  "class": "aplus-section",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Aplus"
+    }
+  ]
+}
+{% endschema %}

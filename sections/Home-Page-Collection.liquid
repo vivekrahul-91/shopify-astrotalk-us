@@ -1,0 +1,721 @@
+{% schema %}
+{
+  "name": "All Products Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "collection_handle",
+      "label": "Collection Handle",
+      "default": "all"
+    },
+    {
+      "type": "text",
+      "id": "storefront_token",
+      "label": "Storefront Access Token (Base64 Reversed)",
+      "default": "YOUR_REVERSED_BASE64_STOREFRONT_TOKEN"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Products per row (Desktop)"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "default": "Our Products",
+      "label": "Section Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "default": "Browse our collection of products",
+      "label": "Section Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "Show Product Reviews",
+      "default": true,
+      "info": "Enable to display Judge.me review badges on product cards"
+    }
+  ],
+  "presets": [
+    {
+      "name": "All Products Collection",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="apc-products-collection-section">
+  <div class="apc-container">
+    <div class="apc-section-header apc-text-center">
+      <h2>{{ section.settings.section_heading }}</h2>
+      <div class="apc-section-description">{{ section.settings.section_description }}</div>
+    </div>
+    
+    <div class="apc-products-grid" id="apc-products-container">
+      <div class="apc-loading">Loading products...</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .apc-products-collection-section {
+    padding: 4px 4px 60px;
+    position: relative;
+    background: #fff;
+  }
+
+  @media (min-width: 786px) {
+    .apc-products-collection-section {
+      padding: 10px 120px 60px;
+    }
+  }
+
+  .apc-section-header {
+    margin-bottom: 30px;
+  }
+  .apc-section-header h2{
+    font-size:22px;
+  }
+
+  .apc-text-center {
+    text-align: center;
+  }
+
+  .apc-section-description {
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  .apc-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 1200px) {
+    .apc-products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      padding: 0 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .apc-products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 0 10px;
+    }
+  }
+
+  .apc-product-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    margin: 0;
+  }
+
+  .apc-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  .apc-product-card__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .apc-collection-product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+  }
+
+  .apc-collection-product-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    padding:8px;
+    border-radius:12px;
+  }
+
+  .apc-product-card:hover .apc-collection-product-image {
+    transform: scale(1.05);
+  }
+
+  .apc-product-card__info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .apc-product-card__title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 36px; /* Fixed height for two lines */
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  .apc-product-card__title a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+  }
+
+  .apc-product-card__rating .jdgm-widget {
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+
+  .apc-product-card-price {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .apc-compare-at-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .apc-discount-percentage {
+    color: green;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  /* New styles for card buttons */
+  .apc-card-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Push to bottom if product card has dynamic height */
+    width: 100%; /* Ensure it takes full width of product-card__info content */
+    box-sizing: border-box; /* Include padding in width calculation if any */
+    padding-bottom: 15px; /* Only bottom padding for the card-buttons container */
+  }
+
+  .apc-product-actions {
+    width: 100%; /* Ensure product actions takes full width within card-buttons */
+  }
+
+  .apc-product-actions form {
+    width: 100%; /* Ensure the form takes full width within product-actions */
+  }
+
+  .apc-view-product-btn {
+    padding: 8px 15px;
+    background: #eee;
+    color: #333;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-grow: 1; /* Allow button to grow */
+  }
+
+  .apc-view-product-btn:hover {
+    background: #ddd;
+    border-color: #ddd;
+  }
+
+  .apc-add-to-cart-btn {
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 15px; /* Re-add horizontal padding to the button itself */
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    font-weight: 600;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Force button to span full width */
+  }
+
+  .apc-add-to-cart-btn:hover {
+    background-color: #2F3645;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .apc-add-to-cart-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  /* Loading Animation */
+  .apc-add-to-cart-btn.apc-is-loading {
+    cursor: wait;
+    pointer-events: none;
+  }
+
+  .apc-add-to-cart-btn.apc-is-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg, 
+      transparent, 
+      rgba(255,255,255,0.3), 
+      transparent
+    );
+    animation: apc-loading-pulse 1.5s infinite;
+  }
+
+  @keyframes apc-loading-pulse {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Success Animation */
+  .apc-add-to-cart-btn.apc-added {
+    background-color: #2F3645;
+    color: white;
+    animation: apc-success-bounce 0.5s;
+  }
+
+  @keyframes apc-success-bounce {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .apc-view-more-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .apc-view-more-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    padding: 5px 0;
+    border-bottom: 1px solid #000;
+  }
+
+  .apc-empty-collection-message,
+  .apc-loading,
+  .apc-error,
+  .apc-no-products {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const collectionHandle = "{{ section.settings.collection_handle }}";
+    const encodedToken = "{{ section.settings.storefront_token }}";
+    const showReviews = {{ section.settings.show_reviews | json }};
+    const productsContainer = document.getElementById("apc-products-container");
+    let currentCursor = null;
+    let hasMoreProducts = true;
+    const PRODUCTS_PER_PAGE = 20;
+
+    // Function to decode the reversed base64 token
+    function decodeToken(encoded) {
+      try {
+        const reversed = encoded.split('').reverse().join('');
+        return atob(reversed);
+      } catch (error) {
+        console.error('Error decoding token:', error);
+        return '';
+      }
+    }
+
+    const storefrontToken = decodeToken(encodedToken);
+
+    async function fetchProducts(handle, cursor = null) {
+      const endpoint = '/api/2023-07/graphql.json';
+      const url = 'https://' + window.location.hostname + endpoint;
+
+      const query = `
+        query getCollectionProducts($handle: String!, $cursor: String) {
+          collection(handle: $handle) {
+            products(first: ${PRODUCTS_PER_PAGE}, after: $cursor) {
+              edges {
+                cursor
+                node {
+                  id
+                  title
+                  handle
+                  images(first: 1) {
+                    edges {
+                      node {
+                        src
+                        altText
+                      }
+                    }
+                  }
+                  priceRange {
+                    minVariantPrice {
+                      amount
+                    }
+                    maxVariantPrice {
+                      amount
+                    }
+                  }
+                  compareAtPriceRange {
+                    minVariantPrice {
+                      amount
+                    }
+                    maxVariantPrice {
+                      amount
+                    }
+                  }
+                  variants(first: 1) {
+                    edges {
+                      node {
+                        id
+                        price {
+                          amount
+                        }
+                        compareAtPrice {
+                          amount
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              pageInfo {
+                hasNextPage
+              }
+            }
+          }
+        }
+      `;
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Shopify-Storefront-Access-Token': storefrontToken,
+          },
+          body: JSON.stringify({
+            query,
+            variables: {
+              handle,
+              cursor
+            }
+          })
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        const json = await res.json();
+
+        if (json.errors) {
+          console.error('GraphQL Errors:', json.errors);
+          throw new Error(json.errors[0].message);
+        }
+
+        if (!json.data?.collection) {
+          console.error('No collection data returned:', json);
+          throw new Error('Collection not found. Please check the collection handle.');
+        }
+
+        const edges = json.data.collection.products?.edges || [];
+        hasMoreProducts = json.data.collection.products?.pageInfo?.hasNextPage || false;
+        currentCursor = edges.length ? edges[edges.length - 1].cursor : null;
+
+        return edges.map(edge => edge.node);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        throw error;
+      }
+    }
+
+    function formatMoney(amount) {
+        const formatter = new Intl.NumberFormat('en-IN', {
+            style: 'currency',
+            currency: 'INR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 2,
+        });
+        return formatter.format(amount);
+    }
+
+    function createViewMoreButton() {
+      const buttonContainer = document.createElement('div');
+      buttonContainer.className = 'apc-view-more-container';
+
+      const button = document.createElement('a');
+      button.className = 'apc-view-more-link';
+      button.textContent = 'View More';
+
+      button.addEventListener('click', async (e) => {
+        e.preventDefault();
+        if (!hasMoreProducts) return;
+        
+        button.textContent = 'Loading...';
+        button.style.pointerEvents = 'none';
+        
+        try {
+          const newProducts = await fetchProducts(collectionHandle, currentCursor);
+          renderProducts(newProducts, true);
+          
+          if (!hasMoreProducts) {
+            buttonContainer.remove();
+          } else {
+            button.textContent = 'View More';
+            button.style.pointerEvents = 'auto';
+          }
+        } catch (error) {
+          console.error('Error loading more products:', error);
+          button.textContent = 'Error loading products. Try again.';
+          button.style.pointerEvents = 'auto';
+        }
+      });
+
+      buttonContainer.appendChild(button);
+      return buttonContainer;
+    }
+
+    function renderProducts(products, append = false) {
+      const parentContainer = productsContainer.parentNode;
+
+      if (!products.length) {
+        if (!append) {
+          productsContainer.innerHTML = '<p class="apc-no-products">No products found in this collection.</p>';
+          const existingViewMore = parentContainer.querySelector('.apc-view-more-container');
+          if (existingViewMore) {
+            existingViewMore.remove();
+          }
+        }
+        return;
+      }
+
+      const productsHtml = products.map(product => {
+        const image = product.images.edges[0]?.node;
+        const variant = product.variants.edges[0]?.node;
+        const price = parseFloat(variant?.price?.amount || product.priceRange.minVariantPrice.amount);
+        const compareAtPrice = parseFloat(variant?.compareAtPrice?.amount || product.compareAtPriceRange.minVariantPrice.amount);
+
+        let discountPercentage = '';
+        if (compareAtPrice > price && compareAtPrice > 0) {
+          const percentage = ((compareAtPrice - price) / compareAtPrice) * 100;
+          discountPercentage = `${Math.round(percentage)}% OFF`;
+        }
+
+        return `
+          <div class="apc-product-card" 
+               data-product-id="${product.id.split('/').pop()}" 
+               data-product-price="${parseFloat(price)}"
+               data-product-title="${product.title}"
+               data-product-handle="${product.handle}">
+            <div class="apc-product-card__inner">
+              <div class="apc-collection-product-image-wrapper">
+                <a href="/products/${product.handle}">
+                <!-- Metafield badge -->
+                  {%- if product.metafields.custom.product_image_label != blank -%}
+                    <div class="product-media-badge " style="margin: 16px" >
+                      {{ product.metafields.custom.product_image_label }} 
+                    </div>
+                    <style>
+                      .product-media-badge {
+                        position: absolute;
+                        z-index: 1;
+                        padding: 3px 7px;
+                        background: #ffffff;
+                        border-radius: 5px;
+                        border: 1px solid #ddd;
+                        margin: 10px;
+                        font-size: 12px;
+                        font-family: Outfit, 'Segoe UI', sans-serif;
+                        font-weight: 500;
+                    }
+                    </style>
+                  {%- endif -%}
+                  ${image ? `<img src="${image.src}" alt="${image.altText || ''}" loading="lazy" class="apc-collection-product-image">` : ''}
+                </a>
+              </div>
+              <div class="apc-product-card__info">
+                <h3 class="apc-product-card__title">
+                  <a href="/products/${product.handle}">${product.title}</a>
+                </h3>
+                ${showReviews ? `
+                <div class="apc-product-card__rating">
+                  <div
+                    class="jdgm-widget jdgm-preview-badge"
+                    data-id="${product.id.split('/').pop()}"
+                  >
+                  </div>
+                </div>
+                ` : ''}
+                <div class="apc-product-card-price">
+                  ${formatMoney(price)}
+                  ${compareAtPrice && compareAtPrice > price ? 
+                    `<span class="apc-compare-at-price">${formatMoney(compareAtPrice)}</span>` : 
+                    ''
+                  }
+                  ${discountPercentage ? `<span class="apc-discount-percentage">${discountPercentage}</span>` : ''}
+                </div>
+                <div class="apc-card-buttons">
+                  <div class="apc-product-actions" x-data="xProductCart()">
+                    <form method="post" action="/cart/add" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate data-type="add-to-cart-form" x-ref="product_form">
+                      <input type="hidden" name="form_type" value="product">
+                      <input type="hidden" name="utf8" value="✓">
+                      <input type="hidden" name="id" value="${variant?.id.split('/').pop() || ''}">
+                      <button 
+                        type="button" 
+                        class="apc-add-to-cart-btn" 
+                        aria-label="Add to cart"
+                        @click="addToCart($event, true)"
+                        x-intersect.once.margin.200px="Alpine.store('xCartHelper').validateCart();">
+                        Add to Cart
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      if (append) {
+        // Remove existing view more button if it exists
+        const existingViewMore = parentContainer.querySelector('.apc-view-more-container');
+        if (existingViewMore) {
+          existingViewMore.remove();
+        }
+
+        // Create a temporary div to parse the HTML string into DOM elements
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = productsHtml;
+
+        // Append each product card from the temporary div directly to productsContainer
+        while (tempDiv.firstChild) {
+          productsContainer.appendChild(tempDiv.firstChild);
+        }
+
+        // Add view more button at the end if there are more products, appended to parentContainer
+        if (hasMoreProducts) {
+          parentContainer.appendChild(createViewMoreButton());
+        }
+      } else {
+        productsContainer.innerHTML = productsHtml;
+        if (hasMoreProducts) {
+          parentContainer.appendChild(createViewMoreButton());
+        }
+      }
+
+      // Add click listener to product cards for navigation, excluding add to cart button
+      const newCards = productsContainer.querySelectorAll('.apc-product-card');
+      newCards.forEach(card => {
+        card.addEventListener('click', (event) => {
+          if (!event.target.closest('.apc-add-to-cart-btn')) {
+            const productHandle = card.dataset.productHandle;
+            if (productHandle) {
+              window.location.href = `/products/${productHandle}`;
+            }
+          }
+        });
+      });
+
+      // Initialize Judge.me widgets for newly rendered products
+      if (showReviews && window.jdgm && window.jdgm.widgets) {
+        const newWidgets = productsContainer.querySelectorAll('.jdgm-widget');
+        newWidgets.forEach(widget => {
+          if (widget.dataset.id) {
+            window.jdgm.widgets.init(widget);
+          }
+        });
+      } else if (showReviews) {
+        // Fallback: wait for Judge.me to load and then initialize
+        const checkJudgeMe = setInterval(() => {
+          if (window.jdgm && window.jdgm.widgets) {
+            const newWidgets = productsContainer.querySelectorAll('.jdgm-widget');
+            newWidgets.forEach(widget => {
+              if (widget.dataset.id) {
+                window.jdgm.widgets.init(widget);
+              }
+            });
+            clearInterval(checkJudgeMe);
+          }
+        }, 100);
+        
+        // Stop checking after 10 seconds to avoid infinite loop
+        setTimeout(() => clearInterval(checkJudgeMe), 10000);
+      }
+    }
+
+    // Load initial products with delay
+    setTimeout(() => {
+      fetchProducts(collectionHandle)
+        .then(products => renderProducts(products))
+        .catch(err => {
+          console.error('Error fetching products:', err);
+          productsContainer.innerHTML = `
+            <p class="apc-error">
+              Error loading products: ${err.message}<br>
+              Please check that:<br>
+              1. The collection handle is correct<br>
+              2. The Storefront API token is valid<br>
+              3. The collection exists and has products
+            </p>`;
+        });
+    }, 200);
+  });
+</script>

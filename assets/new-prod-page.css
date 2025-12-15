@@ -1,0 +1,80 @@
+.price-new-product-page .main-product-price .comp_price {
+        text-align: left !important;
+        color: rgb(128, 128, 128) !important;
+        font-size: 14.29px !important;
+        font-weight: 700;
+        line-height: 19px;
+    }
+
+    .price-new-product-page  .main-product-price .pricing_wrapper_custom .price-sale {
+        font-size: 21px;
+    }
+
+    .price-new-product-page .main-product-price  .comp_price::after {
+        content: Inclusive of all taxes;
+    }
+    .price-new-product-page .main-product-price .pricing_wrapper_custom > div {
+        display: inline-flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 5px;
+    }
+
+        .price-new-product-page .main-product-price  .pricing_wrapper_custom .saving {
+        color: #fff !important;
+        background: #008000 !important;
+        padding: 3px 8px;
+        font-size: 13px !important;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    .price-new-product-page .main-product-price span.extra-discount {
+        color: #fff !important;
+        font-size: 13px !important;
+    }
+
+    .price-new-product-page  .main-product-price  .comp_price::before {
+        content: "MRP :";
+    }
+
+    .price-new-product-page  .main-product-price .pricing_wrapper_custom {
+        gap: 5px;
+        align-items: center;
+    }
+
+    .price-new-product-page .main-product-price .comp_price::after {
+        content: "Inclusive of all taxes";
+        font-size: 11px !important;
+        line-height: 6px;
+        font-weight: 400;
+        color: rgb(128, 128, 128) !important;
+        width: 100%;
+        display: block;
+    }
+    .pricing_wrapper_custom div {
+        display: flex;
+    }
+        .main-product-price .pricing_wrapper_custom div {
+            display: flex ;
+            align-items: center;
+            gap: 5px;
+        }
+    .temp-new-product-page .block-price {
+    width: 100% !important;
+    }
+@media screen and (max-width:550px){
+    .temp-new-product-page .main-product-price .pricing_wrapper_custom {
+        padding: 0 0 10px;
+    }          
+    .temp-new-product-page .main-product-price .pricing_wrapper_custom .comp_price {
+        font-size: 13px !important;
+        font-weight: 700;
+    }
+    .price-new-product-page .main-product-price .comp_price::after {
+        font-size: 10px !important;
+    }
+    .price-new-product-page .main-product-price .pricing_wrapper_custom .price-sale  {
+        font-size: 18px !important;
+    }
+}

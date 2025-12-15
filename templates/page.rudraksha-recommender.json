@@ -1,0 +1,873 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rudraksha_recommender_JzrGWw": {
+      "type": "rudraksha-recommender",
+      "name": "Rudraksha Recommendation",
+      "settings": {
+        "heading": "Rudraksha Calculator",
+        "text": "Let your birth chart reveal the perfect Rudraksha for you",
+        "google_script_url": "https://script.google.com/macros/s/AKfycbyc3_rckQhPHJsRUmdy1RyFCVWoe1Rhtf9N4chpUAnAWQmtpIGHZCG3B825ARuwDejb/exec"
+      }
+    },
+    "image_with_text_dYgcwc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_kMpMYh": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Astrotalk’s Divine Rudraksha Calculator",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>Have you ever felt drawn to <a href=\"https://astrotalk.store/collections/rudraksha\" target=\"_blank\" title=\"https://astrotalk.store/collections/rudraksha\">Rudraksha</a> beads but didn’t know which one was truly meant for you? That’s where a Rudraksha calculator comes in; it helps you find the right bead based on your birth details and planetary alignments. Rooted in ancient Vedic knowledge, this tool aligns your energy with the divine vibrations of specific Rudrakshas to bring balance and positivity into your life.</p><p>In India, where spiritual practices are deeply connected with daily life, many people use a Rudraksha calculator to choose a bead that brings peace, prosperity, or healing. You can think of it as a tool that connects you to your ideal spiritual companion. </p><p>This platform helps you learn everything about using a Rudraksha calculator and discover the bead that matches your energy. You’ll also explore the different types of Rudraksha and their practical benefits—be it for career, emotional balance, or spiritual growth.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kMpMYh"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/rudraksha_on_wood.webp",
+        "class": "rudra-img-text",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "start",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "right",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_kNk6wV": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_K4cBKV": {
+          "type": "heading",
+          "settings": {
+            "heading": "WHAT IS RUDRAKSHA?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_qUzxdf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Interestingly, the name \"Rudraksha\" comes from Sanskrit, meaning “tears of Lord Shiva.” Imagine the divine connection in something so simple yet powerful.</p><p>Each Rudraksha has natural grooves on its surface, known as “Mukhi.” These Mukhi lines decide the kind of energy the bead carries and which planet’s force it aligns with. Whether you’re dealing with constant stress, financial hurdles, or relationship ups and downs, there’s a specific Mukhi to support you.</p><p>You’ll often see people wearing Rudraksha as malas, bracelets, or even keeping them in pooja rooms. Many believe and swear by the positive shifts they’ve felt, whether it’s peace of mind, career breakthroughs, or simply better energy around them.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_K4cBKV",
+        "text_qUzxdf"
+      ],
+      "custom_css": [],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "benefits_list_EwTqKU": {
+      "type": "benefits-list",
+      "name": "Product Benefits Slider",
+      "settings": {
+        "collection": "rudraksha-beads",
+        "heading": "Type of Rudraksha",
+        "text": "Discover how each Rudraksha brings unique healing and spiritual benefits to your life."
+      }
+    },
+    "image_with_text_TFAPkg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mwFeLa": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "What is the spiritual significance of wearing a Rudraksha?",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>Wearing a Rudraksha isn’t just about tradition, it’s like carrying your energy shield. It naturally creates a protective aura around you, helping keep negativity at bay. Think of it as having your spiritual armour, keeping you safe while also keeping you centered. For many of us, especially in today’s fast-paced life, it’s a powerful reminder to stay grounded and connected to higher consciousness.<br/><br/>When you wear Rudraksha regularly, it does more than just look sacred. It actually supports your meditation journey you’ll find it easier to focus and sit in silence without distractions. Over time, it starts clearing up emotional clutter and sharpens your thought process, helping you feel more balanced from within. Whether you're starting your spiritual journey or deepening your existing practice, Rudraksha becomes a quiet, constant guide toward inner harmony.<br/><br/></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mwFeLa"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/image.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#863e20",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_Baiz4m": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_M9wRxK": {
+          "type": "heading",
+          "settings": {
+            "heading": "What are the Benefits of Wearing Rudraksha?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_DLbWjP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Rudraksha holds deep spiritual significance and offers practical benefits that touch almost every aspect of your life. If you often feel stressed or anxious, wearing the right Rudraksha can naturally calm your nervous system, helping you feel more grounded and at peace. Many people even notice better sleep and clearer thinking once they start wearing their specific Rudraksha.</p><p>When it comes to your career, Rudraksha can become a powerful ally. It helps you stay focused on your goals, clears away professional hurdles, and sharpens your decision-making. If you're someone who hesitates to take risks, Rudraksha boosts your inner strength, so you act with confidence. Even at home, it fosters harmony, helping you build more understanding relationships with your family or partner.</p><p>Health-wise, Rudraksha strengthens your immunity, helps regulate blood pressure, and improves concentration. It also supports emotional stability and shields you from negativity in a natural way. Financially, you may find yourself more focused, drawing better opportunities, and breaking through blocks that once held back your prosperity.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_M9wRxK",
+        "text_DLbWjP"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "#fffcf8",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "image_with_text_hJix9Q": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cAfMV4": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "How to wear Rudraksha?",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>Wearing a Rudraksha isn’t just about putting on a bead; it’s a sacred moment, a quiet promise to yourself. Start by gently washing it with clean water. If it’s new, you can soak it in milk and honey for a few minutes. This isn’t just cleansing, it’s preparing the bead to connect with your energy.<br/><br/>Next, hold it in your right hand and chant “Om Namah Shivaya” 108 times. Do it with focus and love, it’s how you align the Rudraksha with your intention. Mondays are great, or Shivratri if you want to go deeper. Try wearing it early in the morning, between 6–8 AM.<br/><br/>When you finally wear it, take a quiet moment. Close your eyes, chant your mantra, and set your intention for peace, strength, clarity, whatever your heart needs. Just remember to treat it with love. Avoid soaps or perfumes, and clean it regularly. It’s not just a bead, it’s your spiritual companion.<br/><br/></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cAfMV4"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/rudraksha_in_water_copy.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#863e20",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_JrAXHf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_F4GCWW": {
+          "type": "heading",
+          "settings": {
+            "heading": "What are the Types of Rudraksha?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_Lr6rFX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Rudraksha beads come in different types based on the number of natural lines or \"Mukhi\" on their surface. Each type has unique powers and helps with specific life areas.</p><h3>Ek Mukhi Rudraksha</h3><p><a href=\"https://astrotalk.store/products/ek-mukhi-rudraksha\" target=\"_blank\">Ek Mukhi</a> Rudraksha has one natural line and represents Lord Shiva himself. This rare bead brings spiritual enlightenment and removes ego. Moreover, it helps in meditation and connecting with divine consciousness.</p><h3>2 Mukhi Rudraksha</h3><p>The 2 Mukhi Rudraksha represents the unity of Shiva and Parvati. This bead is excellent for improving relationships and bringing harmony between couples. Additionally, it helps resolve conflicts in marriages and partnerships.</p><h3>3 Mukhi Rudraksha</h3><p><a href=\"https://astrotalk.store/products/nepal-origin-3-mukhi-rudraksha\" target=\"_blank\">3 Mukhi</a> Rudraksha is ruled by Agni and helps overcome past life karma. This bead removes negative patterns and bad habits. Moreover, it gives courage to face challenges and enhances memory for students.</p><h3>4 Mukhi Rudraksha</h3><p>The <a href=\"https://astrotalk.store/products/nepal-origin-4-mukhi-rudraksha\" target=\"_blank\">4 Mukhi</a> Rudraksha represents Lord Brahma and enhances creativity and knowledge. This bead is perfect for students, teachers, and creative professionals. Furthermore, it improves communication skills and intellectual abilities.</p><h3>5 Mukhi Rudraksha</h3><p><a href=\"https://astrotalk.store/products/nepal-origin-5-mukhi-rudraksha\" target=\"_blank\">5 Mukhi </a>Rudraksha is the most common bead, representing Lord Kalagni. This Rudraksha brings overall well-being and protects from negative energies. Most Rudraksha calculator recommendations include the 5 Mukhi because of its universal benefits.</p><h3>6 Mukhi Rudraksha</h3><p><a href=\"https://astrotalk.store/products/nepal-origin-6-mukhi-rudraksha\" target=\"_blank\">6 Mukhi</a> Rudraksha is ruled by Lord Kartikeya and brings willpower and determination. This bead helps people who lack motivation or struggle with completing tasks. Additionally, it develops leadership qualities and courage.</p><h3>7 Mukhi Rudraksha</h3><p>The <a href=\"https://astrotalk.store/products/7-mukhi-nepali-origin-rudraksha-silver-capped\">7 Mukhi</a> Rudraksha represents Goddess Lakshmi and attracts wealth and prosperity. This bead is particularly beneficial for people struggling with financial problems. Moreover, it brings opportunities for wealth creation.</p><h3>8 Mukhi Rudraksha</h3><p><a href=\"https://astrotalk.store/products/nepal-origin-8-mukhi-rudraksha\">8 Mukhi</a> Rudraksha is governed by Lord Ganesha and removes obstacles from all areas of life. This powerful bead helps people who face repeated failures. Furthermore, it brings success in new ventures and projects.</p><h3>9 Mukhi Rudraksha</h3><p>The <a href=\"https://astrotalk.store/products/nepal-origin-9-mukhi-rudraksha\">9 Mukhi</a> Rudraksha represents Goddess Durga and protects from negative forces. This bead gives courage to face life's battles and emerge victorious. Additionally, it removes fear and anxiety from the mind.</p><h3>10 Mukhi Rudraksha</h3><p><a href=\"https://astrotalk.store/products/nepal-origin-10-mukhi-rudraksha\" target=\"_blank\">10 Mukhi</a> Rudraksha is ruled by Lord Vishnu and brings stability and peace in life. This bead helps people who face constant changes or instability. Furthermore, it promotes mental balance and emotional stability.</p><h3>11 Mukhi Rudraksha</h3><p>The <a href=\"https://astrotalk.store/products/nepal-origin-11-mukhi-rudraksha\">11 Mukhi</a> Rudraksha represents Lord Hanuman and enhances physical and mental strength. This bead is excellent for building confidence and overcoming weaknesses. Moreover, it helps athletes and fitness enthusiasts improve performance.</p><h3>12 Mukhi Rudraksha</h3><p><a href=\"https://astrotalk.store/products/nepal-origin-12-mukhi-rudraksha\">12 Mukhi</a> Rudraksha is governed by Lord Surya and brings leadership qualities and radiance. This bead helps people who want to influence others positively. Furthermore, it enhances personality and charisma for public speakers.</p><h3>13 Mukhi Rudraksha</h3><p>The <a href=\"https://astrotalk.store/products/nepal-origin-13-mukhi-rudraksha\">13 Mukhi</a> Rudraksha represents Lord Indra and fulfills worldly desires and wishes. This rare bead is powerful for manifesting goals and achieving material success. Additionally, it brings luxury and comfort to life.</p><h3>14 Mukhi Rudraksha</h3><p>14 Mukhi Rudraksha is the most powerful bead, representing Lord Shiva himself. This rare Rudraksha awakens intuition and provides divine protection. Furthermore, it helps in spiritual advancement and connecting with higher consciousness.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_F4GCWW",
+        "text_Lr6rFX"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_J4q4nc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_J86d37": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is the spiritual significance of wearing a Rudraksha?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_AURgaW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wearing a Rudraksha isn’t just about tradition, it’s like carrying your energy shield. It naturally creates a protective aura around you, helping keep negativity at bay. Think of it as having your spiritual armour, keeping you safe while also keeping you centered. For many of us, especially in today’s fast-paced life, it’s a powerful reminder to stay grounded and connected to higher consciousness.</p><p>When you wear Rudraksha regularly, it does more than just look sacred. It actually supports your meditation journey you’ll find it easier to focus and sit in silence without distractions. Over time, it starts clearing up emotional clutter and sharpens your thought process, helping you feel more balanced from within. Whether you're starting your spiritual journey or deepening your existing practice, Rudraksha becomes a quiet, constant guide toward inner harmony.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_J86d37",
+        "text_AURgaW"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_NYc9fr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wtyqLj": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is the process of wearing a Rudraksha?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_TYqBK9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wearing a Rudraksha isn’t just about putting on a bead; it’s a sacred moment, a quiet promise to yourself. Start by gently washing it with clean water. If it’s new, you can soak it in milk and honey for a few minutes. This isn’t just cleansing, it’s preparing the bead to connect with your energy.</p><p>Next, hold it in your right hand and chant “Om Namah Shivaya” 108 times. Do it with focus and love, it’s how you align the Rudraksha with your intention. Mondays are great, or Shivratri if you want to go deeper. Try wearing it early in the morning, between 6–8 AM.</p><p>When you finally wear it, take a quiet moment. Close your eyes, chant your mantra, and set your intention for peace, strength, clarity, whatever your heart needs. Just remember to treat it with love. Avoid soaps or perfumes, and clean it regularly. It’s not just a bead, it’s your spiritual companion.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wtyqLj",
+        "text_TYqBK9"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_GBWqaG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_z8f7ja": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is a Rudraksha Calculator?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_QnMwDX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ever wondered which Rudraksha bead truly aligns with you and your journey? That’s exactly where a Rudraksha calculator comes in. Using your date, time, and place of birth, it taps into your unique planetary positions and guides you based on Vedic astrology.</p><p>Instead of blindly picking any bead or relying on generic suggestions, this tool reads your birth chart and pinpoints which planets are strong, which ones need support, and how to balance your energies. </p><p>What's even more helpful is how it connects to your current life phase, whether you’re looking for peace, progress in your career, or protection from negativity. The tool helps you answer the big question: Which Rudraksha is best for me, by date of birth? It cuts through confusion and offers clarity rooted in age-old wisdom.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_z8f7ja",
+        "text_QnMwDX"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "#fffcf8",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_cbtJAG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bTP36x": {
+          "type": "heading",
+          "settings": {
+            "heading": "How to use a Rudraksha Calculator?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_KYAct8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Using a Rudraksha calculator is quite simple; you just need a few key birth details to get started. All you have to do is note down your exact date, time, and place of birth. These details help the calculator give you the most accurate results. And don’t worry, even if you're not deeply into astrology, this process is super user-friendly.</p><p>Once you've entered your birth date, try to include the exact time too, if you know it. This helps the system create a more precise birth chart, which is the base for recommending the right Rudraksha. After that, you’ll usually be asked a few questions about your current situation, like any challenges you're facing or goals you're working towards. It’s all about customizing the result to your needs.</p><p>Finally, the Rudraksha calculator processes everything and offers you personalized recommendations. It suggests the ideal Mukhi Rudraksha for you, whether it’s <a href=\"https://astrotalk.store/products/5-mukhi-rudraksha-bracelet\" target=\"_blank\">5 Mukhi</a>, <a href=\"https://astrotalk.store/products/7-mukhi-nepali-origin-rudraksha-silver-capped\" target=\"_blank\">7 Mukhi</a>, or any other type, based on your unique planetary alignment. You’ll also get simple wearing instructions and insights on how it can benefit you, whether that’s better focus, emotional balance, or spiritual growth.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bTP36x",
+        "text_KYAct8"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "testimonials_k6gyHE": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_DbcEx7": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>“I’ve been wearing the 7 Mukhi Rudraksha bracelet for a month, and I feel a positive shift in my life. The energy around me is calmer, and I have more clarity in my decisions. It’s more than just jewelry—it's a source of strength. Highly recommend it for anyone seeking peace and balance.”<br/><br/></p>",
+            "author_image": "shopify://shop_images/image_2.webp",
+            "author": "Shrishti Sharma",
+            "author_note": "<p>Delhi</p>"
+          }
+        },
+        "testimonial_TkWY44": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Astrotalk’s Rudraksha came energized and ready to wear—no confusion, no rituals needed. I bought it during a tough time in my life and I truly believe it helped restore balance and positivity.\"<br/><br/><br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.37.08_PM_d8969d3f-185d-4b53-9519-9faf0fd68fc0.webp",
+            "author": "Pooja Sinha",
+            "author_note": "<p>Bengaluru</p>"
+          }
+        },
+        "testimonial_afyy4J": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"As a working professional, I needed something to help with mental focus and stress. The 5 Mukhi Rudraksha from Astrotalk has been a real support. Plus, it looks great with my formal wear!\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.57_PM_1_cb78c79f-8129-4130-8cd8-cd858ddb79a5.webp",
+            "author": "Ankita Mehra",
+            "author_note": "<p>Gurgaon</p>"
+          }
+        },
+        "testimonial_PwBdRX": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Running a business comes with stress and sleepless nights. Since wearing my Rudraksha from Astrotalk, I feel more mentally stable and less reactive. Even my wife noticed the difference in me.\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.57_PM_de205be8-ce17-4f67-b7dc-06c495eca854.webp",
+            "author": "Rajeev Chopra",
+            "author_note": "<p>Delhi</p>"
+          }
+        },
+        "testimonial_Rixq4H": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p>\"Thank you for this Original 7 Mukhi Rudraksha.... Started feeling very divine life and increased positivity rate along with purified pure soul by 7 Mukhi by blessings of lord Shiva and devi Lakshmi.\"<br/><br/></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.36.56_PM_7420402a-bb55-4268-9ce4-f72a01a6ccf9.webp",
+            "author": "Rohan Malviya",
+            "author_note": "<p>Bengaluru</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_DbcEx7",
+        "testimonial_TkWY44",
+        "testimonial_afyy4J",
+        "testimonial_PwBdRX",
+        "testimonial_Rixq4H"
+      ],
+      "name": "t:sections.testimonials.presets.name",
+      "settings": {
+        "heading": "Testimonials",
+        "class": "testmonials-div",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "multiple",
+        "show_arrow": true,
+        "show_pagination": true,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "show_author_image": true,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 300,
+        "background_color_light": "rgba(0,0,0,0)",
+        "item_background_color_light": "rgba(0,0,0,0)",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "rgba(0,0,0,0)",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 0,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_Pn3RQM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_izPeWi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Conclusion",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_iTyexc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ever feel like you’re doing all the right things, but life still feels a bit off? That’s where Rudraksha comes in, not just as a bead, but as a powerful support system. Using a proper Rudraksha calculator based on your birth date makes this journey personal and precise.</p><p>Whether you’re stressed at work, facing relationship troubles, or seeking spiritual balance, there’s a Rudraksha meant just for you. No guesswork or blind choices, this free calculator helps you find your perfect match with ease.</p><p>And if you want to dive deeper, chatting with an experienced astrologer who understands your birth chart can reveal even more about your unique energetic needs.So why wait? Let ancient wisdom guide you and see how these sacred beads can bring real, grounded change into your everyday life.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_izPeWi",
+        "text_iTyexc"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "#fffcf8",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_3Tzp6j": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CGdcEG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Benefits of Wearing Rudraksha",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_w8aKU4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wearing the right Rudraksha, identified through <strong>Astrotalk’s Rudraksha Recommender</strong>, unlocks divine blessings that elevate every facet of life. Each <em>mukhi</em> Rudraksha carries unique cosmic energy, but here’s how these sacred beads universally transform your journey:</p><p>● <strong>Amplifies Success</strong>: Enhances the positivity of your efforts, turning aspirations into achievements.<br/>● <strong>Shields Against Negativity</strong>: Creates an aura of spiritual protection, repelling harmful energies.<br/>● <strong>Heals Body & Mind</strong>: Balances emotions and alleviates physical ailments through divine vibrations.<br/>● <strong>Balances Karma</strong>: Counters malefic planetary influences (like Saturn, Rahu) and harmonizes your karmic cycle.<br/>● <strong>Guards Against Misfortune</strong>: Shields you from accidents and unexpected challenges.<br/>● <strong>Boosts Inner Strength</strong>: Fuels courage, willpower, determination, and vitality to overcome obstacles.<br/>● <strong>Aligns Chakras</strong>: Activates energy centers, connecting you to universal cosmic forces.<br/>● <strong>Attracts Abundance</strong>: Magnetizes prosperity, success, and opportunities into your life.<br/>● <strong>Accelerates Spiritual Growth</strong>: Deepens self-awareness and awakens your soul’s purpose when paired with your ideal Rudraksha.</p><p>Rudraksha is more than a bead—it’s divine companionship. It illuminates your path, empowers your steps, safeguards your journey, and manifests blessings as prosperity, joy, and soulful fulfillment.</p><p><strong>Why Astrotalk?</strong><br/>Our <em>Rudraksha Recommender</em> ensures you wear a bead attuned to your birth chart, maximizing its celestial power. This isn’t just jewelry—it’s a cosmic key to your highest potential.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CGdcEG",
+        "text_w8aKU4"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "p {font-size: 14px;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "faq_UJzF8W": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_rBN6Nf": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How many Mukhi Rudraksha should I wear?",
+            "row_content": "<p>Most people wear one primary Rudraksha based on their birth chart analysis. However, you can wear multiple Rudrakshas for different purposes, like combining a 5 Mukhi for general well-being with a 7 Mukhi for career growth.</p>"
+          }
+        },
+        "frequently_asked_question_nB87gM": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How to calculate which Rudraksha to wear?",
+            "row_content": "<p>Use a reliable free Rudraksha calculator by entering your birth date, time, and place. The calculator analyzes your planetary positions and life challenges to suggest the best rudraksha to wear.</p>"
+          }
+        },
+        "frequently_asked_question_N9eQML": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How much time does Rudraksha take to work?",
+            "row_content": "<p>Rudraksha typically shows initial effects within 30-45 days of regular wearing. However, significant changes often become noticeable after 3-6 months of consistent use. </p>"
+          }
+        },
+        "frequently_asked_question_kikKkF": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How do you know which Rudraksha is best for you?",
+            "row_content": "<p>The best way is to use a Rudraksha calculator that considers your birth details and current life situation. Additionally, observe your feelings and life changes after wearing different Rudraksha types. <br/></p>"
+          }
+        },
+        "frequently_asked_question_k6p4Um": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How powerful is Rudraksha?",
+            "row_content": "<p>Rudraksha is extremely powerful for spiritual and material growth when worn correctly. These sacred beads can transform negative energy into positive vibrations and remove major life obstacles.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_rBN6Nf",
+        "frequently_asked_question_nB87gM",
+        "frequently_asked_question_N9eQML",
+        "frequently_asked_question_kikKkF",
+        "frequently_asked_question_k6p4Um"
+      ],
+      "name": "t:sections.question_and_answer.presets.name",
+      "settings": {
+        "heading": "FAQs",
+        "class": "",
+        "heading_size": 140,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "#fff7e7",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "text_icon_image_KKnpUJ": {
+      "type": "text-icon-image",
+      "blocks": {
+        "feature_mUjNJe": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/easy_return_1.webp",
+            "heading": "",
+            "text": "Easy 7 days Return"
+          }
+        },
+        "feature_4ArDgn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/108_hour_mantra_copy.webp",
+            "heading": "",
+            "text": "108 Hours of Mantra Charging"
+          }
+        },
+        "feature_Mar7wh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/10x_benefits_copy_1.webp",
+            "heading": "",
+            "text": "10x Benefits"
+          }
+        },
+        "feature_khhWGq": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/authentic_6a478351-85b4-4eb2-97e4-d5f618718f1e.png",
+            "heading": "",
+            "text": "100% Authentic Beads"
+          }
+        }
+      },
+      "block_order": [
+        "feature_mUjNJe",
+        "feature_4ArDgn",
+        "feature_Mar7wh",
+        "feature_khhWGq"
+      ],
+      "name": "Why Choose Us",
+      "settings": {
+        "class": "recomender-icons",
+        "title": "Our Commitment To You",
+        "subtitle": "",
+        "image_count": 1
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rudraksha_recommender_JzrGWw",
+    "image_with_text_dYgcwc",
+    "rich_text_kNk6wV",
+    "benefits_list_EwTqKU",
+    "image_with_text_TFAPkg",
+    "rich_text_Baiz4m",
+    "image_with_text_hJix9Q",
+    "rich_text_JrAXHf",
+    "rich_text_J4q4nc",
+    "rich_text_NYc9fr",
+    "rich_text_GBWqaG",
+    "rich_text_cbtJAG",
+    "testimonials_k6gyHE",
+    "rich_text_Pn3RQM",
+    "rich_text_3Tzp6j",
+    "faq_UJzF8W",
+    "text_icon_image_KKnpUJ"
+  ]
+}

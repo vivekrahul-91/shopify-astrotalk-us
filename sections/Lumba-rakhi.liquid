@@ -1,0 +1,181 @@
+{% schema %}
+{
+  "name": "Rakhi Combo Offer",
+  "settings": [
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Select Rakhi Product"
+    },
+    {
+      "type": "text",
+      "id": "custom_input_label",
+      "label": "Custom Text Label",
+      "default": "Add your message"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rakhi Combo Offer"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="rakhi-combo-wrapper">
+  <div class="rakhi-offer-box">
+    <h3>Buy any Rakhi and get the 7 Chakra Lumba Rakhi <strong>@199</strong></h3>
+    {% comment %} <p>Buy any Rakhi and get the 7 Chakra<br> Lumba Rakhi for just <strong>₹199 <s>₹599</s></strong></p> {% endcomment %}
+    <div class="rakhi-combo-images">
+       <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/DSC_0270_1.jpg?v=1752127772" alt="Any Rakhi">
+      <span class="plus-sign">+</span>
+      <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/creative_11.jpg?v=1752065928" alt="7 Chakra Lumba Rakhi">
+    </div>
+  </div>
+</section>
+
+<style>
+.rakhi-combo-wrapper {
+  background-color: #ffe3f0;
+  padding:  20px 30px;
+  text-align: center;
+}
+
+.rakhi-single-product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  gap: 20px;
+  align-items: center;
+}
+
+.rakhi-product-image img {
+  max-width: 160px;
+  border-radius: 12px;
+}
+
+.rakhi-product-info {
+  max-width: 300px;
+  text-align: left;
+}
+
+.rakhi-product-info h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.rakhi-product-info p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.rakhi-price-add {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rakhi-price {
+  background: #ec008c;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.rakhi-cart-btn {
+  background-color: #ec008c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.custom-input-wrap label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.custom-input-wrap input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+  .rakhi-offer-box {
+    width: 100%;
+    max-width: 60%;
+    margin: auto;
+    padding:  20px;
+    border-radius: 12px;
+    {% comment %} background-color: white; {% endcomment %}
+}
+
+
+.rakhi-offer-box h3 {
+  font-size: 20px;
+  {% comment %} font-weight: 700; {% endcomment %}
+  margin-bottom: 8px;
+}
+
+.rakhi-offer-box p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.rakhi-combo-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.rakhi-combo-images img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+}
+
+.plus-sign {
+  font-size: 24px;
+  font-weight: bold;
+}
+@media screen and (max-width:749px){
+.rakhi-offer-box {
+    width: 100%;
+    max-width: 100%;
+    }
+    .rakhi-combo-images img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
+.rakhi-offer-box h3
+ {
+    font-size: 16px;
+    }
+}
+</style>
+
+
+
+
+
+
+
+
+

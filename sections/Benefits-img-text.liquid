@@ -1,0 +1,321 @@
+{% comment %}
+Section: Product Benefits
+Description: Displays benefits with images and text from metaobject metafields
+{% endcomment %}
+
+<div class="benefits-section">
+  {% if section.settings.heading != blank %}
+    <div class="benefits-heading">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+  {% endif %}
+
+  {% if product.metafields.custom.pro_benefits != blank %}
+    <div class="benefits-container">
+      <div class="benefits-grid">
+        {% for benefit in product.metafields.custom.pro_benefits.value %}
+          {% if benefit.title != blank and benefit.image != blank %}
+            <div class="benefit-card">
+              <div class="benefit-image">
+                {% assign image_alt = benefit.title | default: 'Benefit image' %}
+                {{ benefit.image | image_url: width: 400, height: 300 | image_tag: alt: image_alt, loading: 'lazy' }}
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">{{ benefit.title }}</h3>
+                {% if benefit.description != blank %}
+                  <p class="benefit-description">{{ benefit.description }}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      {% comment %} {% if section.settings.show_dots and product.metafields.custom.benefits.value.size > 1 %}
+        <div class="benefits-dots">
+          {% for benefit in product.metafields.custom.benefits.value limit: 8 %}
+            <span class="dot{% if forloop.first %} active{% endif %}" data-slide="{{ forloop.index0 }}"></span>
+          {% endfor %}
+        </div>
+      {% endif %} {% endcomment %}
+    </div>
+  {% else %}
+    {% comment %} Fallback content for theme editor {% endcomment %}
+    {% if request.design_mode %}
+      <div class="benefits-container">
+        <div class="benefits-grid">
+          {% for i in (1..4) %}
+            <div class="benefit-card">
+              <div class="benefit-image">
+                {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+              <div class="benefit-content">
+                <h3 class="benefit-title">Benefit {{ i }}</h3>
+                <p class="benefit-description">Add your benefit description here</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
+
+<style>
+  .benefits-section {
+    padding: 60px 0;
+    background-color: var(--color-background, #ffffff);
+  }
+
+  .benefits-heading {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .benefits-heading h2 {
+    margin: 0;
+    color: var(--Primary, #292526);
+    text-align: center;
+  font-family: var(--rudra-heading-family);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+  .benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .benefits-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 768px) {
+    .benefits-grid {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .benefits-grid {
+    }
+  }
+
+  .benefit-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .benefit-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-image img,
+  .benefit-image svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .benefit-card:hover .benefit-image img {
+    transform: scale(1.05);
+  }
+
+  .benefit-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 260px;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    display: flex;
+}
+
+  .benefit-title {
+    margin: 0 0 8px 0;
+    align-content: flex-end;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+  .benefit-description {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+
+  .benefits-dots {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active,
+  .dot:hover {
+    background-color: var(--color-accent, #333333);
+  }
+
+  .placeholder-svg {
+    background-color: #f0f0f0;
+    color: #999;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 767px) {
+    .benefits-heading h2{
+    font-size: 20px !important;
+    }
+    .benefits-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .benefit-content {
+      padding: 16px;
+    }
+    
+    .benefit-title {
+      font-size: 15px;
+    }
+    
+    .benefit-description {
+      font-size: 13px;
+    }
+    .benefits-heading {
+    text-align: center;
+    margin-bottom: 16px;
+}
+.benefits-container {
+    padding: 0;
+}
+
+.benefit-card {
+    margin: 0 6px;
+    min-width: 210px;
+}
+
+.benefits-grid {
+    gap: 0;
+    padding: 0 0 18px;
+    overflow: auto;
+    margin: 0;
+}
+
+.benefit-card:first-child {
+    margin-left: 12px;
+}
+
+.benefit-card:last-child {
+    margin-right: 12px;
+}
+    .benefits-section {
+        padding: 24px 0 12px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Optional: Add interactive functionality for dots
+    const dots = document.querySelectorAll('.benefits-dots .dot');
+    const cards = document.querySelectorAll('.benefit-card');
+    
+    if (dots.length > 0 && cards.length > 0) {
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+          // Remove active class from all dots
+          dots.forEach(d => d.classList.remove('active'));
+          // Add active class to clicked dot
+          this.classList.add('active');
+          
+          // Optional: Scroll to corresponding card on mobile
+          if (window.innerWidth <= 767 && cards[index]) {
+            cards[index].scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'nearest' 
+            });
+          }
+        });
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Benefits",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Benefits of Pukhraj",
+      "label": "Section Heading",
+      "info": "Leave empty to hide heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "default": true,
+      "label": "Show navigation dots"
+    },
+    {
+      "type": "header",
+      "content": "Setup Instructions"
+    },
+    {
+      "type": "paragraph",
+      "content": "1. Create a metaobject type 'benefit' with fields: title (single line text), description (multi-line text), image (file)"
+    },
+    {
+      "type": "paragraph", 
+      "content": "2. Create a product metafield 'benefits' of type 'list of metaobjects' referencing the 'benefit' metaobject"
+    },
+    {
+      "type": "paragraph",
+      "content": "3. Add this section to your product template"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Benefits"
+    }
+  ]
+}
+{% endschema %}

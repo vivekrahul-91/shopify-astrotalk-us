@@ -1,0 +1,957 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_TgW9xW": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_PAKhPg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Valentine_without_cta.jpg",
+            "image_mobile": "shopify://shop_images/valentain_banner_mobile_a8e05a5f-a8cd-4e79-8288-49b1dac0ac97.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PAKhPg"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "flash_sale_KRnB8q": {
+      "type": "flash-sale",
+      "blocks": {
+        "image_banner_rdPq8L": {
+          "type": "image_banner",
+          "settings": {
+            "heading": "SALE ENDS IN",
+            "heading_size": 100,
+            "heading_tag": "h2",
+            "text": "",
+            "text_size": 100,
+            "coupon_code": "",
+            "coupon_color": "rgba(0,0,0,0)",
+            "coupon_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "countdown_timer_izXHqa": {
+          "type": "countdown_timer",
+          "settings": {
+            "timezone": "6",
+            "end_year": 2025,
+            "end_month": "2",
+            "end_day": "14",
+            "end_hour": "0",
+            "end_minute": "30",
+            "timer_style": "square",
+            "border_style": "line_vertical",
+            "overlay_opacity": 100,
+            "timer_color_countdown": "#131313",
+            "text_color_countdown": "#131313",
+            "bg_color_countdown": "rgba(0,0,0,0)",
+            "spacing_col": 40,
+            "spacing_col_mobile": 4
+          }
+        }
+      },
+      "block_order": [
+        "image_banner_rdPq8L",
+        "countdown_timer_izXHqa"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "show_hero": false,
+        "border_section": "none",
+        "content_layout": "horizontal",
+        "content_alignment": "center",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "spacing_col": 0,
+        "spacing_row": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "spacing_row_mobile": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "background_color_light": "#ffffff",
+        "heading_light": "#131313",
+        "text_light": "#ffffff",
+        "line_border_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)"
+      }
+    },
+    "promotion_banner_6pRLcY": {
+      "type": "promotion-banner",
+      "disabled": true,
+      "settings": {
+        "heading": "Promotion Banner",
+        "image": "shopify://shop_images/republic_day_sale.png",
+        "image_mobile": "shopify://shop_images/republic_day_sale.png",
+        "image_link": "",
+        "open_new_window": false,
+        "image_overlay_opacity": 0,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "position_content_mobile": "center",
+        "content_alignment": "center",
+        "show_hero": false,
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_7ahtDA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_nVNWby": {
+          "type": "heading",
+          "settings": {
+            "heading": "SALE ENDS IN",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nVNWby"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading_light": "#ffffff",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#000000",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "promotion_banner_kjhEcx": {
+      "type": "promotion-banner",
+      "blocks": {
+        "countdown_timer_cHtnzR": {
+          "type": "countdown_timer",
+          "settings": {
+            "timezone": "-4",
+            "end_year": 2025,
+            "end_month": "1",
+            "end_day": "28",
+            "end_hour": "0",
+            "end_minute": "0",
+            "timer_style": "square",
+            "border_style": "border",
+            "overlay_opacity": 100,
+            "timer_color_countdown": "#ffffff",
+            "text_color_countdown": "#ffffff",
+            "bg_color_countdown": "rgba(0,0,0,0)",
+            "spacing_col": 12,
+            "spacing_col_mobile": 8
+          }
+        }
+      },
+      "block_order": [
+        "countdown_timer_cHtnzR"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Promotion Banner",
+        "image_mobile": "shopify://shop_images/Untitled_design_2.png",
+        "image_link": "",
+        "open_new_window": false,
+        "image_overlay_opacity": 0,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "position_content_mobile": "center",
+        "content_alignment": "center",
+        "show_hero": false,
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_q67bG4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Ezi99K": {
+          "type": "heading",
+          "settings": {
+            "heading": "Valentine's Special Deal",
+            "heading_size": 110,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ezi99K"
+      ],
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "collage_QHBrer": {
+      "type": "collage",
+      "blocks": {
+        "product_tGrVDy": {
+          "type": "product",
+          "settings": {
+            "product": "the-ultimate-love-combo",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        },
+        "product_ehBTTw": {
+          "type": "product",
+          "settings": {
+            "product": "vitalized-love-combo",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        },
+        "product_Q8MRxK": {
+          "type": "product",
+          "settings": {
+            "product": "love-attraction-bracelet",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        },
+        "product_dwiW8w": {
+          "type": "product",
+          "settings": {
+            "product": "love-attraction-chips-bracelet",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        },
+        "product_zfBxLa": {
+          "type": "product",
+          "settings": {
+            "product": "rose-quartz-heart-pendant",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        },
+        "product_AfwAJY": {
+          "type": "product",
+          "settings": {
+            "product": "love-attraction-dome-tree",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        }
+      },
+      "block_order": [
+        "product_tGrVDy",
+        "product_ehBTTw",
+        "product_Q8MRxK",
+        "product_dwiW8w",
+        "product_zfBxLa",
+        "product_AfwAJY"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "subheading": "",
+        "text": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "show_vendor": false,
+        "show_rating": false,
+        "max_columns": 6,
+        "spacing": 28,
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 52,
+        "padding_bottom": 80,
+        "min_columns_mobile": "2",
+        "spacing_mobile": 18,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "scrolling_banner_QC6kLQ": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_gi4BDz": {
+          "type": "text",
+          "settings": {
+            "text": "FREE GIFT WORTH ₹499",
+            "text_size": 100,
+            "text_color": "primary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        },
+        "text_mrkqVb": {
+          "type": "text",
+          "settings": {
+            "text": "100% GENUINE PRODUCS ONLY",
+            "text_size": 100,
+            "text_color": "primary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_gi4BDz",
+        "text_mrkqVb"
+      ],
+      "settings": {
+        "show_border": true,
+        "speed": 20,
+        "direction": "right",
+        "pause_hover": true,
+        "bg_light": "#ffb6ce",
+        "color_text_light": "#131313",
+        "color_text_light_2": "rgba(0,0,0,0)",
+        "bg_dark": "rgba(0,0,0,0)",
+        "color_text_dark": "rgba(0,0,0,0)",
+        "color_text_dark_2": "rgba(0,0,0,0)",
+        "space_block": 110,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "space_block_mobile": 25,
+        "padding_top_mobile": 4,
+        "padding_bottom_mobile": 4
+      }
+    },
+    "rich_text_9zXWHm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8rqgWW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Featured Product",
+            "heading_size": 120,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8rqgWW"
+      ],
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "image_with_text_m8MQAq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ckpw4g": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Astrotalk Valentine's Special Combo",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Embrace love with our <strong>Rose Quartz Pendant & Bracelet Combo</strong>, crafted to attract romance, enhance self-love, and bring emotional harmony. A perfect Valentine’s gift to strengthen bonds and invite positivity.</p>",
+            "number_of_lines_shown": "large",
+            "read_more_label": "read more.",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_FbeyUa": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_link": "shopify://products/raw-pyrite-bracelet",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ckpw4g",
+        "button_FbeyUa"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Untitled-4_f1be7722-bdb1-4708-91c3-574e80f0c260.jpg",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 10,
+        "content_layout": "overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 20,
+        "bottom_padding": 20,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 4,
+        "bottom_padding_mobile": 20
+      }
+    },
+    "promotion_banner_AaTnB8": {
+      "type": "promotion-banner",
+      "settings": {
+        "heading": "Promotion Banner",
+        "image": "shopify://shop_images/p_banner.jpg",
+        "image_mobile": "shopify://shop_images/p_banner_mobile.jpg",
+        "image_link": "",
+        "open_new_window": false,
+        "image_overlay_opacity": 0,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "position_content_mobile": "center",
+        "content_alignment": "center",
+        "show_hero": false,
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "collection_list_AdfFRE": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_LEBfw7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "love"
+          }
+        },
+        "featured_collection_8rFJpk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gifting"
+          }
+        },
+        "featured_collection_rwirCm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "health"
+          }
+        },
+        "featured_collection_RUhXpM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "money-collection"
+          }
+        },
+        "featured_collection_kkQM3x": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "career"
+          }
+        },
+        "featured_collection_KnBAFq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "evil-eye"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_LEBfw7",
+        "featured_collection_8rFJpk",
+        "featured_collection_rwirCm",
+        "featured_collection_RUhXpM",
+        "featured_collection_kkQM3x",
+        "featured_collection_KnBAFq"
+      ],
+      "settings": {
+        "heading": "Shop By Purpose",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "show_view_all": false,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "image_ratio": "square",
+        "title_size": 50,
+        "show_text_overlay": false,
+        "content_alignment": "center",
+        "content_position": "bottom",
+        "image_overlay_opacity": 5,
+        "title_color": "#ffffff",
+        "text_light": "#ffffff",
+        "title_color_dark": "#ffffff",
+        "text_dark": "#ffffff",
+        "show_item_count": false,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": true,
+        "spacing": 4,
+        "show_section_divider": false,
+        "full_width": false,
+        "padding_top": 28,
+        "padding_bottom": 32,
+        "spacing_mobile": 4,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "collage_RrQY7t": {
+      "type": "collage",
+      "blocks": {
+        "video_aAin7b": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Video 4_1.mp4",
+            "show_sound_control": false,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "number_of_columns": 2,
+            "number_of_row": 2
+          }
+        }
+      },
+      "block_order": [
+        "video_aAin7b"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "subheading": "",
+        "text": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "show_vendor": false,
+        "show_rating": false,
+        "max_columns": 2,
+        "spacing": 28,
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "min_columns_mobile": "1",
+        "spacing_mobile": 20,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 16
+      }
+    },
+    "rich_text_bz3rzR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_d9P4GQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Astrotalk Valentines Special Combo",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "button_WMdkzn": {
+          "type": "button",
+          "settings": {
+            "button_label": "BUY NOW",
+            "button_link": "shopify://products/the-ultimate-love-combo",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "open_new_window_button_2": false,
+            "button_link_2": "",
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_d9P4GQ",
+        "button_WMdkzn"
+      ],
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "collage_JNGVcQ": {
+      "type": "collage",
+      "blocks": {
+        "product_Fk7EHa": {
+          "type": "product",
+          "settings": {
+            "product": "love-attraction-necklace",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        },
+        "product_ghWQFR": {
+          "type": "product",
+          "settings": {
+            "product": "rose-quartz-heart-bracelet",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        },
+        "product_MfKqNN": {
+          "type": "product",
+          "settings": {
+            "product": "love-attraction-tulsi-bracelet",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        },
+        "product_faJV7x": {
+          "type": "product",
+          "settings": {
+            "product": "love-attraction-resin-pyramid",
+            "show_quickview": false,
+            "info_alignment": "center",
+            "desktop_size": "large",
+            "number_of_columns": 1,
+            "number_of_row": 1
+          }
+        }
+      },
+      "block_order": [
+        "product_Fk7EHa",
+        "product_ghWQFR",
+        "product_MfKqNN",
+        "product_faJV7x"
+      ],
+      "settings": {
+        "heading": "More Products",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "subheading": "",
+        "text": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "show_vendor": false,
+        "show_rating": false,
+        "max_columns": 4,
+        "spacing": 28,
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "min_columns_mobile": "2",
+        "spacing_mobile": 18,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "promotion_banner_NjHQ7M": {
+      "type": "promotion-banner",
+      "disabled": true,
+      "settings": {
+        "heading": "Promotion Banner",
+        "image": "shopify://shop_images/Untitled_design_1.png",
+        "image_mobile": "shopify://shop_images/Untitled_design.png",
+        "image_link": "",
+        "open_new_window": false,
+        "image_overlay_opacity": 0,
+        "content_position": "center",
+        "content_horizontal": 50,
+        "content_vertical": 50,
+        "position_content_mobile": "center",
+        "content_alignment": "center",
+        "show_hero": false,
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "testimonial_custom_46kGgd": {
+      "type": "testimonial-custom",
+      "blocks": {
+        "testimonial_block_xnXP8Y": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": false,
+            "testimonial_text": "I got the rose quartz pendant and bracelet set from a friend as a gift and started to wear it not really expecting anything. Wore them solely because they look pretty and go with every outfit, but I actually started to feel more positive and calm after a few days of wearing them.",
+            "testimonial_name": "Archita",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_QYLHiV": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": false,
+            "testimonial_text": "I wasn’t a big believer lol, I am still learning infact...but I was going through a really weird phase and saw this girl’s reel who said wearing amethyst helps with sleep. Searched around and bought their purple amethyst bracelet. It has worked for me like a charm.",
+            "testimonial_name": "Arshita",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_CrFKcG": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "Got the evil eye bracelet for my mother, she loves it! Her health has also been better since she started to wear this regularly.",
+            "testimonial_name": "Nikita",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_block_xnXP8Y",
+        "testimonial_block_QYLHiV",
+        "testimonial_block_CrFKcG"
+      ],
+      "settings": {
+        "section_title": "What our customers say",
+        "section_subtitle": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_TgW9xW",
+    "flash_sale_KRnB8q",
+    "promotion_banner_6pRLcY",
+    "rich_text_7ahtDA",
+    "promotion_banner_kjhEcx",
+    "rich_text_q67bG4",
+    "collage_QHBrer",
+    "scrolling_banner_QC6kLQ",
+    "rich_text_9zXWHm",
+    "image_with_text_m8MQAq",
+    "promotion_banner_AaTnB8",
+    "collection_list_AdfFRE",
+    "collage_RrQY7t",
+    "rich_text_bz3rzR",
+    "collage_JNGVcQ",
+    "promotion_banner_NjHQ7M",
+    "testimonial_custom_46kGgd"
+  ]
+}

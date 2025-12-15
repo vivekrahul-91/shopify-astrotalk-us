@@ -1,0 +1,71 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "track_order_new_h89PQj": {
+      "type": "track-order-new",
+      "settings": {}
+    },
+    "sheets_contact_form_XidRVj": {
+      "type": "sheets-contact-form",
+      "disabled": true,
+      "name": "Lead Form Block",
+      "settings": {
+        "heading": "Not Sure What to Buy?",
+        "subheading": "Drop your number and our experts will reach out to you soon!",
+        "button_label": "Submit",
+        "disclaimer_text": "By signing up, you agree to receive call from our expert astrologers at the phone number provided. View our privacy policy and terms of service for more info.",
+        "google_script_url": "https://script.google.com/macros/s/AKfycby7PReCZ57jDJOcxOkWui39Dvjs34kpVlsmC6f6imGKHkpvhsF2rqqbh3t-cLVw5wOOQw/exec"
+      }
+    },
+    "gemstone_consultation_Dkpytg": {
+      "type": "gemstone-consultation",
+      "name": "Gemstone Consultation",
+      "settings": {
+        "heading": "Gemstone Consultation",
+        "subheading": "Book free gemstone consultation with our top astrologers and get the right gemstone for you",
+        "button_label": "BOOK NOW - ₹0",
+        "disclaimer_text": "By signing up, you agree to receive call from our expert astrologers at the phone number provided. View our privacy policy and terms of service for more info.",
+        "google_script_url": "https://script.google.com/macros/s/AKfycbzISLxxK6_3D8eVdCwdZ4pRvpRCQTfZns1IKZN0_FdG1QnCZAQ3QkGL3Rfp0kQzzSn5/exec",
+        "image": "shopify://shop_images/Gemstone_Cons_1.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "track_order_new_h89PQj",
+    "sheets_contact_form_XidRVj",
+    "gemstone_consultation_Dkpytg"
+  ]
+}

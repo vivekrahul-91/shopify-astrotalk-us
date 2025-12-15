@@ -1,0 +1,1916 @@
+{% comment %}
+  Astro Cash Wallet – Final Version
+{% endcomment %}
+
+<style>
+  .astro-wallet-container {
+    font-family: 'Noto Sans';
+    max-width: 500px;
+    margin: 0 auto 20px;
+    background: linear-gradient(to bottom, #f8f9ff, #fff);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+  }
+
+  .wallet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wallet-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  #walletContent > div {
+    background: linear-gradient(123deg, #fdf9dd, #fde993);
+    padding: 12px;
+    border-radius: 8px 8px 0 0;
+        background: #fdf9dd;
+  }
+
+  .total-balance-amount {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .balance-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .balance-card {
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  }
+
+  .balance-card.gold {
+    background: linear-gradient(135deg, #FFF9E6, #FFE5B4);
+    background: linear-gradient(90deg, #fcff9e 0%, #c67700e3 100%);
+  }
+
+  .balance-card.silver {
+    background: linear-gradient(135deg, #F0F0F0, #D3D3D3);
+   background: linear-gradient(to right, #c6c6c6c2, #3a4857c9);
+
+  }
+.balance-card-header span {
+    line-height: 16px;
+}
+  .balance-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .balance-card-amount {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .balance-card-expiry {
+    font-size: 11px;
+    font-weight: 400;
+  }
+.balance-card-header small {
+    font-weight: 100;
+    line-height: 1;
+}
+  .view-history-btn {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Modal */
+  .wallet-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    background: rgba(0,0,0,.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wallet-modal.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+  }
+  .modal-header strong{
+        font-size: 16px;
+        font-family: var(--font-heading-family);
+  }
+.modal-balance-amount {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+}
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .modal-body {
+    padding: 12px;
+  }
+
+  .modal-balance-card {
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  .modal-balance-card > div.modal-flex {
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+  }
+.bal-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+  .modal-balance-card.gold {
+    background: linear-gradient(135deg, #FFF9E6, #FFE5B4);
+    background: linear-gradient(90deg, #fcff9e 0%, #c67700e3 100%);
+        background: #ffffffc4;
+  }
+
+  .modal-balance-card.silver {
+    background: linear-gradient(135deg, #F0F0F0, #D3D3D3);
+   background: linear-gradient(to right, #c6c6c6c2, #3a4857c9);
+       background: #ffffffc4;
+  }
+  .modal-balance-container {
+    padding: 10px;
+    border-radius: 8px;
+    background: navy;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, .1);
+    background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/store_credit_background_2.webp?v=1754464044);
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: linear-gradient(84deg, rgba(252, 248, 214, 1) 0%, rgba(254, 232, 139, 1) 100%);
+}
+  /* Expandable Expiry */
+ .view-expiry-link {
+    margin-top: 12px;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    text-transform: capitalize;
+    color: #000;
+}
+
+  .expiry-expandable {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+    margin-top: 0;
+  }
+
+  .expiry-expandable.active {
+    max-height: 800px;
+    margin-top: 10px;
+  }
+
+ .expiry-item {
+    display: flex;
+    justify-content: space-between;
+    background: #f9f9f9;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    line-height: normal;
+}
+
+  .expiry-amount {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .expiry-date {
+    font-size: 12px;
+    color: #ef4444;
+}
+
+  /* Transactions */
+  .transactions-section {
+    margin-top: 20px;
+  }
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .transaction-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  .transaction-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .transaction-date {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .transaction-amount {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .transaction-amount.credit { color: #10B981; }
+  .transaction-amount.debit { color: #EF4444; }
+
+  .loading-spinner {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #eee;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @media(max-width:749px){
+    .modal-content {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      border-radius: 0;
+    }
+  }
+</style>
+
+<div class="astro-wallet-container">
+  <div id="walletLoading" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading wallet...</p>
+  </div>
+
+  <div id="walletContent" style="display:none">
+    <div>
+      <div class="wallet-header">
+        <h2 class="wallet-title">Astro Cash</h2>
+        <span class="total-balance-amount" id="totalBalance">₹0</span>
+      </div>
+
+      <div class="balance-cards">
+        <div class="balance-card gold">
+          <div class="balance-card-header">
+            <span>GOLD</span>
+            <small>Never expires</small>
+          </div>
+          <div class="balance-card-amount" id="goldBalance">₹0</div>
+        </div>
+
+        <div class="balance-card silver">
+          <div class="balance-card-header">
+            <span>SILVER</span>
+            <small>Check expiry</small>
+          </div>
+          <div class="balance-card-amount" id="silverBalance">₹0</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="view-history-btn" onclick="openWalletModal()">View Details ›</button>
+  </div>
+</div>
+
+<!-- Wallet Modal -->
+<div class="wallet-modal" id="walletModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <strong>Wallet Details</strong>
+      <button class="modal-close" onclick="closeWalletModal()">×</button>
+    </div>
+
+    <div class="modal-body">
+      <div class=" modal-balance-container">
+      <div class="modal-balance-card gold">
+        <div class="modal-flex">
+        <div class="bal-title">Gold Cash</div>
+        <div class="modal-balance-amount" id="modalGoldBalance">₹0</div>
+        </div>
+      </div>
+
+      <div class="modal-balance-card silver">
+        <div class="modal-flex">
+        <div class="bal-title">Silver Cash</div>
+        <div class="modal-balance-amount" id="modalSilverBalance">₹0</div>
+        </div>
+        <button class="view-expiry-link" onclick="toggleExpiry(event)">
+          View expiry details →
+        </button>
+
+        <div class="expiry-expandable" id="expiryExpandable">
+          <div class="expiry-titles">
+            <span>Amount</span>
+            <span>Expiry</span>
+            </div>
+          <div id="expiryList"></div>
+        </div>
+      </div>
+    </div>
+
+      <div class="transactions-section">
+        <h4 class="section-title">Recent Transactions</h4>
+        <div id="transactionsList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  let walletData = null;
+
+  async function fetchWalletData() {
+    const res = await fetch('https://admin.astrotalk.store/api/shopify/wallet', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shop-Api-Key': 'Oakt6FAsaPLp_g-rPSleiJbFyhmdCTEMxktJHMgYntw'
+      },
+      body: JSON.stringify({
+        customer_email: "{{ customer.email }}",
+        transactions_limit: 10,
+        entries_limit: 20
+      })
+    });
+
+    walletData = await res.json();
+
+    walletLoading.style.display = 'none';
+    walletContent.style.display = 'block';
+
+    totalBalance.textContent = `₹${walletData.balances.total}`;
+    goldBalance.textContent = `₹${walletData.balances.unlocked.gold}`;
+    silverBalance.textContent = `₹${walletData.balances.unlocked.silver}`;
+    modalGoldBalance.textContent = `₹${walletData.balances.unlocked.gold}`;
+    modalSilverBalance.textContent = `₹${walletData.balances.unlocked.silver}`;
+  }
+
+  window.openWalletModal = () => {
+    walletModal.classList.add('active');
+    renderTransactions();
+  };
+
+  window.closeWalletModal = () =>
+    walletModal.classList.remove('active');
+
+  window.toggleExpiry = e => {
+    e.preventDefault();
+    if (!expiryExpandable.classList.contains('active')) renderExpiry();
+    expiryExpandable.classList.toggle('active');
+  };
+
+  function renderExpiry() {
+    const list = document.getElementById('expiryList');
+    const exps = walletData.upcoming?.expiries || [];
+    list.innerHTML = exps.length
+      ? exps.map(e => `
+        <div class="expiry-item">
+          <div class="expiry-amount">₹${e.amount}</div>
+          <div class="expiry-date">
+            Expires on ${new Date(e.expiresAt).toDateString()}
+          </div>
+        </div>`).join('')
+      : '<p style="font-size:12px;color:#666">No upcoming expiries</p>';
+  }
+
+  function renderTransactions() {
+    const box = document.getElementById('transactionsList');
+    const txns = walletData.activity || [];
+
+    box.innerHTML = txns.length
+      ? txns.map(t => `
+        <div class="transaction-item">
+          <div>
+            <div class="transaction-title">${t.reason}</div>
+            <div class="transaction-date">
+              ${new Date(t.createdAt).toDateString()}
+            </div>
+          </div>
+          <div class="transaction-amount ${t.type}">
+            ${t.type === 'credit' ? '+' : '-'}₹${t.amount}
+          </div>
+        </div>`).join('')
+      : '<p style="font-size:12px;color:#666">No transactions found</p>';
+  }
+
+  fetchWalletData();
+})();
+</script>
+
+
+{% comment %} {% comment %}
+  Astro Cash Wallet Component
+  Usage: {% render 'astro-cash-wallet' %}
+{% endcomment %}
+
+<style>
+  .astro-wallet-container {
+    font-family: 'Noto Sans';
+    max-width: 500px;
+    margin: 0px auto 20px;
+    background: linear-gradient(to bottom, #f8f9ff 0%, #ffffff 100%);
+    {% comment %} padding: 12px; {% endcomment %}
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.10);
+}
+
+  {% comment %} .astro-wallet-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+} {% endcomment %}
+  .wallet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ .wallet-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+}
+
+div#walletContent > div {
+    background: linear-gradient(123deg, rgba(253, 249, 221, 1) 0%, rgba(253, 233, 147, 1) 100%);
+    {% comment %} background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/store_credit_background_2.webp?v=1754464044); {% endcomment %}
+    {% comment %} background-size: cover; {% endcomment %}
+    {% comment %} background-position: center; {% endcomment %}
+    {% comment %} background-repeat: no-repeat; {% endcomment %}
+    padding: 12px;
+    border-radius: 8px 8px 0 0;
+}
+
+.balance-card-header span {
+    line-height: normal;
+}
+
+
+.total-balance-amount {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+ .balance-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.balance-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.balance-card.gold {
+    background: linear-gradient(135deg, #FFF9E6 0%, #FFE5B4 100%);
+}
+  .balance-card.silver {
+    background: linear-gradient(135deg, #F0F0F0 0%, #D3D3D3 100%);
+  }
+
+.balance-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+  .balance-card-icon {
+    font-size: 16px;
+  }
+
+ .balance-card-amount {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+  .balance-card-expiry {
+    font-size: 11px;
+    color: #000;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.view-history-btn {
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+  .view-history-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Modal Styles */
+  .wallet-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wallet-modal.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .modal-header {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+}
+
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-body {
+    padding: 12px;
+  }
+
+  .modal-balance-cards {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .modal-balance-card {
+    border-radius: 8px;
+    padding: 12px;
+}
+
+  .modal-balance-card.gold {
+    background: linear-gradient(135deg, #FFF9E6 0%, #FFE5B4 100%);
+    color: #333;
+  }
+
+  .modal-balance-card.silver {
+    {% comment %} background: #E5E5E5; {% endcomment %}
+    background: #linear-gradient(135deg, #F0F0F0 0%, #D3D3D3 100%);
+    color: #333;
+  }
+
+  .modal-balance-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .modal-balance-amount {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 5px 0;
+  }
+
+  .modal-balance-status {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .view-expiry-link {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 5px;
+  }
+
+  .transactions-section {
+    margin-top: 20px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    background: #F9F9F9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+  .transaction-info {
+    flex: 1;
+  }
+
+  .transaction-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .transaction-date {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .transaction-amount {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .transaction-amount.credit {
+    color: #10B981;
+  }
+
+  .transaction-amount.debit {
+    color: #EF4444;
+  }
+
+  /* Expiry Modal */
+  .expiry-modal-content {
+    padding: 30px;
+  }
+
+  .expiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .expiry-title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .expiry-item {
+    background: #F9F9F9;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+
+  .expiry-amount {
+    font-size: 28px;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 5px;
+  }
+
+  .expiry-date {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .expiry-label {
+    display: inline-block;
+    background: #E0E7FF;
+    color: #667eea;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .loading-spinner {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .error-message {
+    background: #FEE2E2;
+    color: #DC2626;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  @media screen and (max-width:749px){
+    .modal-content{
+        border-radius: 0;
+        max-width: 100%;
+        width: 100%;
+        max-height: 100vh;
+    }
+  }
+</style>
+
+<div class="astro-wallet-container" id="astroWallet">
+  <div id="walletLoading" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading wallet...</p>
+  </div>
+
+  <div id="walletError" style="display: none;"></div>
+
+  <div id="walletContent" style="display: none;">
+    <!-- Main Wallet Card -->
+    <div>
+        <div class="astro-wallet-card">
+        <div class="wallet-header">
+            <h2 class="wallet-title">Astro Cash</h2>
+            <span class="total-balance-amount" id="totalBalance">₹0</span>
+        </div>
+
+        </div>
+
+        <!-- Balance Cards -->
+        <div class="balance-cards">
+        <div class="balance-card gold">
+            <div class="balance-card-header">
+            <span>GOLD</span>
+            <div class="balance-card-expiry">Never expires</div>
+            </div>
+            <div class="balance-card-amount" id="goldBalance">₹0</div>
+        </div>
+
+        <div class="balance-card silver">
+            <div class="balance-card-header">
+            <span>SILVER</span>
+            <div class="balance-card-expiry">Check expiry</div>
+            </div>
+            <div class="balance-card-amount" id="silverBalance">₹0</div>
+        </div>
+        </div>
+    </div>
+    <button class="view-history-btn" onclick="openWalletModal()">
+      View Details ›
+    </button>
+  </div>
+</div>
+
+<!-- Wallet Details Modal -->
+<div class="wallet-modal" id="walletModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Wallet Details</h3>
+      <button class="modal-close" onclick="closeWalletModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-balance-cards">
+        <div class="modal-balance-card gold">
+          <div class="modal-balance-title">Gold Astro Cash</div>
+          <div class="modal-balance-amount" id="modalGoldBalance">₹0</div>
+          <div class="modal-balance-status">Non-expirable</div>
+        </div>
+        <div class="modal-balance-card silver">
+          <div class="modal-balance-title">Silver Astro Cash</div>
+          <div class="modal-balance-amount" id="modalSilverBalance">₹0</div>
+          <div class="modal-balance-status">Expirable</div>
+          <a href="#" class="view-expiry-link" onclick="openExpiryModal(event)">View expiry details →</a>
+        </div>
+      </div>
+
+      <div class="transactions-section">
+        <h4 class="section-title">Recent Transactions</h4>
+        <div id="transactionsList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Expiry Details Modal -->
+<div class="wallet-modal" id="expiryModal">
+  <div class="modal-content">
+    <div class="expiry-modal-content">
+      <div class="expiry-header">
+        <h3 class="expiry-title">Silver Cash Expiry</h3>
+        <button class="modal-close" onclick="closeExpiryModal()">×</button>
+      </div>
+      <div id="expiryList"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  let walletData = null;
+
+  // Fetch wallet data
+  async function fetchWalletData() {
+    try {
+      const customerEmail = "{{ customer.email }}";
+      
+      if (!customerEmail) {
+        showError("Please log in to view your wallet");
+        return;
+      }
+
+      const response = await fetch('https://admin.astrotalk.store/api/shopify/wallet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Shop-Api-Key': 'Oakt6FAsaPLp_g-rPSleiJbFyhmdCTEMxktJHMgYntw'
+        },
+        body: JSON.stringify({
+          customer_email: customerEmail,
+          transactions_limit: 10,
+          entries_limit: 20
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch wallet data');
+      }
+
+      walletData = await response.json();
+      displayWalletData();
+    } catch (error) {
+      console.error('Error fetching wallet:', error);
+      showError('Unable to load wallet. Please try again later.');
+    }
+  }
+
+  function displayWalletData() {
+    document.getElementById('walletLoading').style.display = 'none';
+    document.getElementById('walletContent').style.display = 'block';
+
+    // Display balances
+    const totalBalance = walletData.balances.total || 0;
+    const goldBalance = walletData.balances.unlocked.gold || 0;
+    const silverBalance = walletData.balances.unlocked.silver || 0;
+
+    document.getElementById('totalBalance').textContent = `₹${totalBalance}`;
+    document.getElementById('goldBalance').textContent = `₹${goldBalance}`;
+    document.getElementById('silverBalance').textContent = `₹${silverBalance}`;
+    document.getElementById('modalGoldBalance').textContent = `₹${goldBalance}`;
+    document.getElementById('modalSilverBalance').textContent = `₹${silverBalance}`;
+  }
+
+  function showError(message) {
+    document.getElementById('walletLoading').style.display = 'none';
+    const errorDiv = document.getElementById('walletError');
+    errorDiv.innerHTML = `<div class="error-message">${message}</div>`;
+    errorDiv.style.display = 'block';
+  }
+
+  window.openWalletModal = function() {
+    document.getElementById('walletModal').classList.add('active');
+    displayTransactions();
+  }
+
+  window.closeWalletModal = function() {
+    document.getElementById('walletModal').classList.remove('active');
+  }
+
+  window.openExpiryModal = function(event) {
+    event.preventDefault();
+    document.getElementById('expiryModal').classList.add('active');
+    displayExpiryDetails();
+  }
+
+  window.closeExpiryModal = function() {
+    document.getElementById('expiryModal').classList.remove('active');
+  }
+
+  function displayTransactions() {
+    const transactionsList = document.getElementById('transactionsList');
+    const transactions = walletData.activity || [];
+
+    if (transactions.length === 0) {
+      transactionsList.innerHTML = '<p style="text-align: center; color: #666;">No transactions found</p>';
+      return;
+    }
+
+    transactionsList.innerHTML = transactions.map(transaction => {
+      const date = new Date(transaction.createdAt).toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      });
+      
+      const amountClass = transaction.type === 'credit' ? 'credit' : 'debit';
+      const amountPrefix = transaction.type === 'credit' ? '+' : '-';
+
+      return `
+        <div class="transaction-item">
+          <div class="transaction-info">
+            <div class="transaction-title">${transaction.reason}</div>
+            <div class="transaction-date">${date}</div>
+          </div>
+          <div class="transaction-amount ${amountClass}">
+            ${amountPrefix}₹${transaction.amount}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function displayExpiryDetails() {
+    const expiryList = document.getElementById('expiryList');
+    const expiries = walletData.upcoming?.expiries || [];
+
+    if (expiries.length === 0) {
+      expiryList.innerHTML = '<p style="text-align: center; color: #666;">No upcoming expiries</p>';
+      return;
+    }
+
+    expiryList.innerHTML = expiries.map(expiry => {
+      const expiryDate = new Date(expiry.expiresAt).toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      });
+
+      return `
+        <div class="expiry-item">
+          <div class="expiry-amount">₹${expiry.amount}</div>
+          <div class="expiry-date">Expires: ${expiryDate}</div>
+          <span class="expiry-label">FREE ASTRO CASH</span>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Close modals when clicking outside
+  window.addEventListener('click', function(event) {
+    if (event.target.classList.contains('wallet-modal')) {
+      event.target.classList.remove('active');
+    }
+  });
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fetchWalletData);
+  } else {
+    fetchWalletData();
+  }
+})();
+</script> {% endcomment %}
+
+{% comment %} <style>
+ 
+
+  .container {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* MAIN WALLET CARD - Enhanced */
+  .wallet-card {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 24px;
+    padding: 0;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+    margin-bottom: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+  }
+
+  .card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 24px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 8s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .wallet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .wallet-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0.95;
+  }
+
+  .wallet-icon {
+    font-size: 28px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .balance-section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .balance-label {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .balance-amount {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .balance-type {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  /* BALANCE BREAKDOWN */
+  .balance-breakdown {
+    padding: 20px 24px;
+    background: linear-gradient(to bottom, #f8f9ff 0%, #ffffff 100%);
+  }
+
+  .breakdown-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .breakdown-item {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .breakdown-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.2);
+  }
+
+  .breakdown-item.gold {
+    background: linear-gradient(135deg, #FFF9E6 0%, #FFE5B4 100%);
+  }
+
+  .breakdown-item.silver {
+    background: linear-gradient(135deg, #F0F0F0 0%, #D3D3D3 100%);
+  }
+
+  .breakdown-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .breakdown-label .icon {
+    font-size: 14px;
+  }
+
+  .breakdown-amount {
+    font-size: 24px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  .breakdown-note {
+    font-size: 10px;
+    opacity: 0.7;
+    font-weight: 500;
+  }
+
+  .view-details-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    letter-spacing: 0.5px;
+  }
+
+  .view-details-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+  }
+
+  .view-details-btn:active {
+    transform: translateY(0);
+  }
+
+  /* INFO CARD */
+  .info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .info-item {
+    text-align: center;
+    padding: 12px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    border-radius: 12px;
+  }
+
+  .info-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .info-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .info-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #667eea;
+  }
+
+  /* POPUP - Enhanced */
+  .popup-backdrop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    display: none;
+    z-index: 998;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .popup-backdrop.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: calc(100% - 40px);
+    max-width: 420px;
+    max-height: 85vh;
+    background: white;
+    border-radius: 24px;
+    z-index: 999;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+  }
+
+  .popup.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .popup-header {
+    padding: 24px 24px 20px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    background: linear-gradient(to bottom, #ffffff 0%, #fafbff 100%);
+  }
+
+  .popup-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #333;
+    letter-spacing: -0.5px;
+  }
+
+  .close-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: #666;
+  }
+
+  .close-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: rotate(90deg);
+  }
+
+  .popup-content {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  /* BALANCE CARDS IN POPUP - Enhanced */
+  .balance-cards {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .balance-card {
+    padding: 24px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+  }
+
+  .balance-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+  }
+
+  .balance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  }
+
+  .balance-card.gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: white;
+  }
+
+  .balance-card.silver {
+    background: linear-gradient(135deg, #C0C0C0 0%, #808080 100%);
+    color: white;
+  }
+
+  .balance-card-label {
+    font-size: 13px;
+    opacity: 0.95;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+
+  .balance-card-amount {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -1px;
+  }
+
+  .balance-card-type {
+    font-size: 12px;
+    opacity: 0.85;
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+  }
+
+  .expiry-link {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.95;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s;
+  }
+
+  .expiry-link:hover {
+    opacity: 1;
+    gap: 8px;
+  }
+
+  /* TRANSACTIONS - Enhanced */
+  .section-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+  }
+
+  .transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+  }
+
+  .transaction-item:hover {
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.1);
+    transform: translateX(4px);
+    border-color: rgba(102, 126, 234, 0.2);
+  }
+
+  .transaction-info {
+    flex: 1;
+  }
+
+  .transaction-reason {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 6px;
+  }
+
+  .transaction-date {
+    font-size: 12px;
+    color: #999;
+    font-weight: 500;
+  }
+
+  .transaction-amount {
+    font-size: 18px;
+    font-weight: 800;
+    white-space: nowrap;
+    margin-left: 12px;
+    padding: 8px 14px;
+    border-radius: 10px;
+  }
+
+  .transaction-amount.credit {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  .transaction-amount.debit {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+  }
+
+  /* EXPIRY ENTRIES - Enhanced */
+  .expiry-item {
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .expiry-item:hover {
+    border-color: rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.12);
+  }
+
+  .expiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .expiry-amount {
+    font-size: 24px;
+    font-weight: 800;
+    color: #667eea;
+  }
+
+  .expiry-date {
+    font-size: 13px;
+    color: #666;
+    font-weight: 700;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  .expiry-label {
+    font-size: 11px;
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+  }
+
+  .empty-state-icon {
+    font-size: 56px;
+    margin-bottom: 16px;
+    opacity: 0.4;
+  }
+
+  .empty-state-text {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  /* LOADING - Enhanced */
+  .loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+  }
+
+  .spinner {
+    border: 4px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    border-top: 4px solid white;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .loading-text {
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0.9;
+  }
+
+  /* MOBILE OPTIMIZATIONS */
+  @media (max-width: 480px) {
+
+    .container {
+      max-width: 100%;
+    }
+
+    .balance-amount {
+      font-size: 42px;
+    }
+
+    .popup {
+      width: calc(100% - 32px);
+      max-height: 90vh;
+    }
+  }
+</style>
+
+<div class="container">
+  <div id="loading-state" class="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">Loading your wallet...</div>
+  </div>
+
+  <div id="wallet-content" style="display: none;">
+    <!-- MAIN WALLET CARD -->
+    <div class="wallet-card">
+      <div class="card-header">
+        <div class="wallet-header">
+          <div class="wallet-title">Astro Cash Wallet</div>
+          <div class="wallet-icon">💰</div>
+        </div>
+
+        <div class="balance-section">
+          <div class="balance-label">Total Balance</div>
+          <div class="balance-amount" id="total-balance">₹0</div>
+          <div class="balance-type">Available to spend</div>
+        </div>
+      </div>
+
+      <div class="balance-breakdown">
+        <div class="breakdown-grid">
+          <div class="breakdown-item gold">
+            <div class="breakdown-label">
+              <span class="icon">🥇</span>
+              Gold Cash
+            </div>
+            <div class="breakdown-amount" id="gold-amount">₹0</div>
+            <div class="breakdown-note">Never expires</div>
+          </div>
+          <div class="breakdown-item silver">
+            <div class="breakdown-label">
+              <span class="icon">🥈</span>
+              Silver Cash
+            </div>
+            <div class="breakdown-amount" id="silver-amount">₹0</div>
+            <div class="breakdown-note">Check expiry</div>
+          </div>
+        </div>
+        <button class="view-details-btn" id="view-details-btn">
+          View Transaction History
+        </button>
+      </div>
+    </div>
+
+    <!-- INFO CARD -->
+    <div class="info-card">
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-icon">📊</div>
+          <div class="info-label">Total Transactions</div>
+          <div class="info-value" id="transaction-count">0</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">⏰</div>
+          <div class="info-label">Expiring Soon</div>
+          <div class="info-value" id="expiring-count">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAILS POPUP -->
+<div class="popup-backdrop" id="details-backdrop"></div>
+<div class="popup" id="details-popup">
+  <div class="popup-header">
+    <div class="popup-title">Wallet Details</div>
+    <button class="close-btn" id="close-details">✕</button>
+  </div>
+  <div class="popup-content">
+    <div class="balance-cards">
+      <div class="balance-card gold">
+        <div class="balance-card-label">Gold Astro Cash</div>
+        <div class="balance-card-amount" id="popup-gold">₹0</div>
+        <div class="balance-card-type">Non-expirable</div>
+      </div>
+      <div class="balance-card silver">
+        <div class="balance-card-label">Silver Astro Cash</div>
+        <div class="balance-card-amount" id="popup-silver">₹0</div>
+        <div class="balance-card-type">Expirable</div>
+        <div class="expiry-link" id="view-expiry">
+          View expiry details →
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Recent Transactions</div>
+    <div id="transactions-list"></div>
+  </div>
+</div>
+
+<!-- EXPIRY POPUP -->
+<div class="popup-backdrop" id="expiry-backdrop"></div>
+<div class="popup" id="expiry-popup">
+  <div class="popup-header">
+    <div class="popup-title">Silver Cash Expiry</div>
+    <button class="close-btn" id="close-expiry">✕</button>
+  </div>
+  <div class="popup-content">
+    <div id="expiry-list"></div>
+  </div>
+</div>
+
+<script>
+  (async function() {
+    // Mock email for demo - replace with actual Shopify variable
+    const email = "vivekrahul90@gmail.com";
+    
+    if (!email) {
+      document.getElementById('loading-state').innerHTML = 
+        '<div class="empty-state"><div class="empty-state-icon">🔒</div><div class="empty-state-text">Please log in to view your wallet</div></div>';
+      return;
+    }
+
+    try {
+      const res = await fetch("https://admin.astrotalk.store/api/shopify/wallet", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Shop-Api-Key": "Oakt6FAsaPLp_g-rPSleiJbFyhmdCTEMxktJHMgYntw"
+        },
+        body: JSON.stringify({
+          customer_email: email,
+          transactions_limit: 20,
+          entries_limit: 20
+        })
+      });
+
+      const wallet = await res.json();
+      console.log("Wallet data:", wallet);
+
+      const gold = wallet.balances.unlocked.gold || 0;
+      const silver = wallet.balances.unlocked.silver || 0;
+      const total = gold + silver;
+
+      // Update main card
+      document.getElementById('total-balance').textContent = `₹${total}`;
+      document.getElementById('gold-amount').textContent = `₹${gold}`;
+      document.getElementById('silver-amount').textContent = `₹${silver}`;
+
+      // Update popup
+      document.getElementById('popup-gold').textContent = `₹${gold}`;
+      document.getElementById('popup-silver').textContent = `₹${silver}`;
+
+      // Update info stats
+      document.getElementById('transaction-count').textContent = wallet.transactions?.length || 0;
+      document.getElementById('expiring-count').textContent = wallet.entries?.silver?.length || 0;
+
+      // Render transactions
+      const transactionsList = document.getElementById('transactions-list');
+      if (wallet.transactions && wallet.transactions.length > 0) {
+        transactionsList.innerHTML = wallet.transactions.map(t => {
+          const isCredit = t.type === 'credit';
+          const date = new Date(t.createdAt).toLocaleDateString('en-IN', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+          });
+          
+          return `
+            <div class="transaction-item">
+              <div class="transaction-info">
+                <div class="transaction-reason">${t.reason}</div>
+                <div class="transaction-date">${date}</div>
+              </div>
+              <div class="transaction-amount ${isCredit ? 'credit' : 'debit'}">
+                ${isCredit ? '+' : '-'}₹${t.amount}
+              </div>
+            </div>
+          `;
+        }).join('');
+      } else {
+        transactionsList.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-text">No transactions yet</div></div>';
+      }
+
+      // Render expiry entries
+      const expiryList = document.getElementById('expiry-list');
+      const silverEntries = wallet.entries.silver || [];
+      if (silverEntries.length > 0) {
+        expiryList.innerHTML = silverEntries.map(e => {
+          const date = new Date(e.expiresAt).toLocaleDateString('en-IN', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+          });
+          
+          return `
+            <div class="expiry-item">
+              <div class="expiry-header">
+                <div class="expiry-amount">₹${e.remainingAmount}</div>
+                <div class="expiry-date">Expires: ${date}</div>
+              </div>
+              <div class="expiry-label">Free Astro Cash</div>
+            </div>
+          `;
+        }).join('');
+      } else {
+        expiryList.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✨</div><div class="empty-state-text">No expiring cash</div></div>';
+      }
+
+      // Show content
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('wallet-content').style.display = 'block';
+
+    } catch (error) {
+      console.error('Error fetching wallet data:', error);
+      document.getElementById('loading-state').innerHTML = 
+        '<div class="empty-state"><div class="empty-state-icon">⚠️</div><div class="empty-state-text">Failed to load wallet data</div></div>';
+    }
+
+    // Popup controls
+    const detailsBackdrop = document.getElementById('details-backdrop');
+    const detailsPopup = document.getElementById('details-popup');
+    const expiryBackdrop = document.getElementById('expiry-backdrop');
+    const expiryPopup = document.getElementById('expiry-popup');
+
+    document.getElementById('view-details-btn').onclick = () => {
+      detailsBackdrop.classList.add('active');
+      setTimeout(() => detailsPopup.classList.add('active'), 10);
+    };
+
+    document.getElementById('close-details').onclick = () => {
+      detailsPopup.classList.remove('active');
+      setTimeout(() => detailsBackdrop.classList.remove('active'), 300);
+    };
+
+    detailsBackdrop.onclick = () => {
+      document.getElementById('close-details').click();
+    };
+
+    document.getElementById('view-expiry').onclick = () => {
+      expiryBackdrop.classList.add('active');
+      setTimeout(() => expiryPopup.classList.add('active'), 10);
+    };
+
+    document.getElementById('close-expiry').onclick = () => {
+      expiryPopup.classList.remove('active');
+      setTimeout(() => expiryBackdrop.classList.remove('active'), 300);
+    };
+
+    expiryBackdrop.onclick = () => {
+      document.getElementById('close-expiry').click();
+    };
+  })();
+</script>
+ {% endcomment %}

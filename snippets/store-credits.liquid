@@ -1,0 +1,363 @@
+<div id="store-credit-widget"></div>
+
+<!-- Modal -->
+<div id="credit-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#00000080; z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#fff;  overflow:auto; padding:20px; position:relative;">
+    <button onclick="document.getElementById('credit-modal').style.display='none'" style="position: absolute; top: 13px; right: 20px; background: none; border: none;font-size: 28px; line-height: 34px; cursor: pointer;">&times;</button>
+    <h3 style="margin-bottom:5px; font-size:16px; font-weight:600;">All Transactions</h3>
+    <div id="credit-modal-content"></div>
+
+    <!-- Accordion Section -->
+    {% comment %} <details style="margin-top: 20px; " open>
+      <summary style="font-weight: 600; cursor: pointer;">How Store Credit Works</summary>
+        <ul class="cred-how-works " style="font-weight: 600; cursor: pointer;">
+        <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/light-bulb.webp?v=1754473772">
+
+        <li>
+          <h4><span>1</span> When Is Store Credit Issued?</h4>
+          <ul>
+            <h5>Returns</h5>
+            <li>If you return a product within our 7-day Return Window, you'll receive store credit equal to the value of the returned item(s).</li>
+            <li>For defective or damaged products, full store credit will be issued once the return is processed.</li>
+            <li>For partial returns, store credit will be issued only for the returned product(s).</li>
+          </ul>
+          <ul>
+            <h5>Exchanges</h5>
+            <li>If you exchange a product for a different item, store credit equal to the original product's value will be added to your account. You can use it for the new item.</li>
+            <li>If exchanging for the same product, no credit action will be taken.</li>
+          </ul>
+        </li>
+        <li>
+          <h4><span>2</span>How to Use Store Credit?</h4>
+          <ul>
+            <h5> At Checkout</h5>
+            <li>You can apply your store credit at checkout to pay for your order — either fully or partially.</li>
+            <li>If your credit doesn't cover the full amount, you can pay the balance using another method (card, UPI, wallet, etc.).</li>
+            <li>If your credit exceeds the order amount, the remaining credit stays in your account for future use.</li>
+          </ul>
+          <ul>
+            <h5>Multiple Uses</h5>
+            <li>Store credit can be combined with promo codes, discounts, and loyalty points.</li>
+            <li>It is always applied after any coupon discounts during checkout.</li>
+          </ul>
+          <ul>
+            <h5>Credit Expiry</h5>
+            <li>Store credit is valid for 3 months from the date it is issued.</li>
+            <li>We'll notify you 30 days before expiry via email or in your account, so you don't miss out.</li>
+          </ul>
+          
+        </li>
+      </ul>
+    </details>
+
+    <details style="margin-top: 15px;" open>
+      <summary style="font-weight: 600; cursor: pointer;">Guidelines and Restrictions</summary>
+      <ul style="font-size: 14px; margin-top: 10px;">
+        <img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/guidelines.webp?v=1754473772">
+        <li><strong>Refund Handling:</strong> If you choose a full refund instead of store credit for your return, the amount will be processed back to your original payment method.</li>
+        <li><strong>RTO Policy:</strong> For prepaid RTO returns (orders returned to us due to non-delivery), we offer store credit only.
+        Customers who frequently refuse deliveries or misuse this policy may have their access to store credit restricted in future purchases.</li>
+        <li><strong>Store Credit Terms: </strong> Store credit is not redeemable for cash. It can only be used to purchase products on our platform.</li>
+        <li><strong>Partial Credit:</strong> If your store credit balance is less than the total order value, you'll need to pay the remaining amount using another accepted payment method.</li>
+      </ul>
+      
+    </details> {% endcomment %}
+    <style>
+    summary   svg {
+        width: 12px;
+    }
+
+    summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    </style>
+    <details style="margin-top: 15px;" >
+      <summary style="font-weight: 600; cursor: pointer;">Store Credit Terms & Conditions  {% render 'icon-alls', icon: 'icon-caret' %}</summary> 
+      <ul style="font-size: 14px; margin-top: 10px;">
+        <p>These Terms and Conditions ("Terms") govern the issuance, use, and management of Store Credit on the Astrotalk store platform (the "Platform"). By accepting or using Store Credit, you agree to be bound by these Terms. </p>
+
+    <li>
+      <strong>1. General</strong>
+      <ul>
+        <li><strong>1.1. What is Store Credit?</strong> Store Credit is a non-monetary credit issued by Maskyeti Solutions Pvt. Ltd. to a customer's account. It can be used as a payment method for purchasing products available on the Astrotalk store.</li>
+        <li><strong>1.2. No Cash Value:</strong> Store Credit is not legal tender, has no cash value, and cannot be redeemed for cash or withdrawn to a bank account under any circumstances.</li>
+        <li><strong>1.3. Non-Transferable:</strong> Store Credit is linked to the individual customer account to which it was issued. It is strictly non-transferable and cannot be sold, gifted, or assigned to any other person or account.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>2. Issuance of Store Credit</strong>
+      <ul>
+        <li>Store Credit will be issued at the sole discretion of Maskyeti Solutions Pvt. Ltd. in the following situations:</li>
+        <li>
+          <strong>2.1. Returns:</strong>
+          <ul>
+            <li>For eligible products returned within the 7-day return window, Store Credit equivalent to the value of the returned item(s) will be issued to your account instead of a refund to the original payment method.</li>
+            <li>If a product is found to be defective or damaged upon delivery, a full Store Credit refund will be issued upon successful processing of the return.</li>
+            <li>Partial returns of an order will result in a partial Store Credit being issued for the value of the specific product(s) returned.</li>
+          </ul>
+        </li>
+        <li><strong>2.2. Exchanges:</strong> If the customer wishes to exchange a product for a lower-priced item, the customer may be offered Store Credit to cover the price difference at Maskyeti’s discretion.</li>
+        <li><strong>2.3. Prepaid RTO (Return to Origin):</strong> For prepaid orders that are returned to us because they were undelivered or refused at the destination, Store Credit for the order value will be issued to the customer’s account. This will be processed approximately 7 days after the RTO is initiated and will be subject to deductions for any applicable shipping charges or penalties.</li>
+        <li><strong>2.4. Promotional &amp; Marketing Campaigns:</strong> Maskyeti Solutions Pvt. Ltd. may issue promotional Store Credit as part of marketing campaigns. Such credits will be subject to specific terms, including shorter expiration periods (e.g., 3 days), which will be clearly communicated during the campaign.</li>
+        <li><strong>2.5. Customer Service &amp; Goodwill Gestures:</strong> Store Credit may be issued as a gesture of goodwill in various situations, at the sole discretion of Maskyeti.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>3. Using Your Store Credit</strong>
+      <ul>
+        <li>
+          <strong>3.1. At Checkout:</strong>
+          <ul>
+            <li>You can use your available Store Credit balance to pay for all or part of your order at the checkout page.</li>
+            <li>If your order total is less than your Store Credit balance, the remaining credit will be saved in your account for future use.</li>
+            <li>If your order total exceeds your Store Credit balance, you must pay the remaining amount using another accepted payment method (e.g., credit/debit card, UPI, digital wallet).</li>
+          </ul>
+        </li>
+        <li><strong>3.2. Application:</strong> Store Credit will be applied to the final cart value and no discount coupons or promotional codes will be applied when store credit is used.</li>
+        <li><strong>3.3. Minimum Purchase:</strong> Maskyeti Solutions Pvt. Ltd. reserves the right to implement a minimum purchase value for the redemption of Store Credit. Any such requirement will be communicated on the platform.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>4. Expiration of Store Credit</strong>
+      <ul>
+        <li><strong>4.1. Standard Expiration:</strong> Unless specified otherwise (e.g., for promotional credits), Store Credit is valid for a period of 3 (three) months from the date of issuance.</li>
+        <li><strong>4.2. Promotional Expiration:</strong> Promotional credits may have a shorter validity period (e.g., 3 days). The specific expiry date will be communicated at the time of issuance.</li>
+        <li><strong>4.3. Expiration Notifications:</strong> We will attempt to notify the customer via email and/or in-app notifications 30 days before the standard Store Credit balance is set to expire. It is the customer’s responsibility to monitor your account and use the credit before it expires.</li>
+        <li><strong>4.4. Credit from Cancelled Refunded Orders:</strong> If an order paid for using Store Credit is cancelled or returned, the amount of Store Credit used will be refunded back to the customer’s Store Credit balance.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>5. Visibility and Management</strong>
+      <ul>
+        <li>The customer can view their current Store Credit balance, a detailed transaction history (credits issued and used), and the expiry dates of the credits in the "My Account" section of the Astrotalk store.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>6. Guidelines and Restrictions</strong>
+      <ul>
+        <li><strong>6.1. Policy Abuse:</strong> Maskyeti Solutions Pvt. Ltd. reserves the right to suspend, revoke, or restrict Store Credit privileges for any customer found to be abusing the return, RTO, or cancellation policies. Repeated refusal of prepaid deliveries may lead to restrictions on future transactions.</li>
+        <li><strong>6.2. Refunds to Original Payment Method:</strong> In specific cases where you request and are approved for a refund to your original payment method instead of Store Credit, the refund will be processed accordingly, and no Store Credit will be issued for that transaction.</li>
+        <li><strong>6.3. Disputes:</strong> Any disputes or discrepancies regarding your Store Credit balance must be reported to our Customer Service team for investigation.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>7. Modification of Terms</strong>
+      <ul>
+        <li>Maskyeti Solutions Pvt. Ltd. reserves the right to modify, suspend, or terminate the Store Credit program or these Terms and Conditions at any time, with or without notice. Any changes will be updated on this page and will be effective immediately. Continued use of the Store Credit program after any such changes constitutes your acceptance of the new Terms.</li>
+      </ul>
+    </li>
+
+    <p>For any questions, please contact our Customer Service team.</p>
+</ul>
+      
+    </details>
+  </div>
+</div>
+
+<script>
+  const customerEmail = "{{ customer.email }}";
+  const storeCreditBalance = {{ customer.metafields.creditsyard.store_credit_balance | default: 0 }};
+  
+
+  // Use mock data for demo - replace this with your actual fetch call
+
+  // Uncomment and use this for your actual implementation:
+
+  const apiUrl = "https://q3uztb28gi.execute-api.eu-north-1.amazonaws.com/store-credit-transactions";
+
+  fetch(`${apiUrl}?customer_email=${encodeURIComponent(customerEmail)}`, {
+    method: 'GET'
+  })
+  .then(res => res.json())
+  .then(data => {
+    processStoreCredit(data); // your existing function to handle balance & transactions
+  })
+  .catch(err => {
+    console.error("Error loading store credit:", err);
+  });
+ 
+
+  function processStoreCredit(data) {
+    const allTransactions = data.activity || [];
+    const last2 = allTransactions.slice(0, 2);
+    const balance = data.balance || storeCreditBalance;
+    const hasTransactions = allTransactions.length > 0;
+
+    const widget = `
+      <div style="background:#fff; border-radius:8px; padding:15px; box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.10); margin-bottom:20px;">
+        <div class="storecred-div" style="display:flex; justify-content:space-around; align-items:center; border-radius:8px; padding:14px 16px; margin-bottom:16px;">
+          <h2 style="display:flex; align-items:center; font-weight:600; font-size:16px; color:#333; margin:0;">
+            Store Credit
+          </h2>
+          <div style="font-size:18px; font-weight:700; color:#333;">₹${balance.toLocaleString()}</div>
+        </div>
+
+        <div>
+          ${hasTransactions ? `
+            <div style="font-weight:600; margin-bottom:4px; font-size:14px; color:#000; display:none;">Last Transaction</div>
+            <div style="margin-bottom:12px; display:none;">
+              ${last2.map(tx => renderTx(tx)).join('')}
+            </div>
+          ` : ''}
+          <div style="text-align:center;">
+            <a href="javascript:void(0);" onclick="document.getElementById('credit-modal').style.display='flex'" 
+               style="text-decoration:none; font-weight:600; font-size:14px;">${hasTransactions ? 'View details' : 'View details'} ›</a>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById("store-credit-widget").innerHTML = widget;
+    
+    // Set modal content based on whether there are transactions
+    if (hasTransactions) {
+      document.getElementById("credit-modal-content").innerHTML = allTransactions.map(tx => renderTx(tx)).join('');
+    } else {
+      document.getElementById("credit-modal-content").innerHTML = `
+        <div style="text-align: center; padding: 40px 20px; color: #666;">
+          <div style="font-size: 16px; margin-bottom: 10px;">No Transaction History</div>
+          <div style="font-size: 14px;">You haven't made any store credit transactions yet.</div>
+        </div>
+      `;
+    }
+  }
+
+  function renderTx(tx) {
+    const amount = parseFloat(tx.amount);
+    const isCredit = amount > 0;
+    const date = tx.date || '';
+    const reason = tx.reason || (isCredit ? 'Credit added' : 'Credit used');
+    
+    return `
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f0f0f0;">
+        <div style="display:flex; align-items:center; flex:1;">
+          <div style="min-width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:10px; background:${isCredit ? '#379b3bd9' : '#ef1610c9'};">
+            ${isCredit 
+              ? '<img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Arrow_Pointing_Left_2.png?v=1754470729"   style="width:18px; height:18px; transform: rotate(180deg);" >'
+              : '<img src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Arrow_Pointing_Left_2.png?v=1754470729"  style="width:18px; height:18px;">'
+            }
+          </div>
+          <div>
+            <div style="font-weight:500; font-size:14px; color:#333; margin-bottom:2px;">${reason}</div>
+            <div style="font-size:12px; color:#666;">${date}</div>
+          </div>
+        </div>
+        <div style="font-weight:600; font-size:14px; color:${isCredit ? '#379B3B' : '#EF1610'};">
+          ${isCredit ? '+' : '-'} ₹${Math.abs(amount).toLocaleString()}
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .storecred-div {
+    background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/store_credit_background_2.webp?v=1754464044);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  summary {
+    color: #000;
+    font-family: "Libre Baskerville";
+    font-size: 13px;
+    letter-spacing: 1.01px;
+    font-style: normal;
+    line-height: normal;
+}
+details img {
+    width: 38px;
+    display: flex;
+    justify-self: center;
+    margin: 15px;
+}
+
+details li {
+    font-size: 13px;
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+details {
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.10);
+    padding: 12px;
+}
+details h4 {
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 15px 0;
+    font-family: var(--font-body-family);
+}
+
+ul.cred-how-works > li {
+    list-style: none;
+    margin-left: 0;
+}
+
+details ul h5 {
+    font-weight: 700;
+    font-size: 14px;
+    font-family: var(--font-body-family);
+    margin: 15px 0;
+}
+
+details h4 span {
+    background: #FFDC75;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+ul.cred-how-works li > ul {
+    margin-left: 6px;
+}
+details ul p{
+    font-size: 13px !important;
+    margin-bottom: 5px;
+}
+
+  /* Additional styling for better mobile responsiveness */
+  @media (max-width: 480px) {
+    #credit-modal > div {
+      width: 100% !important;
+      /* margin: 10px; */
+      background:#fff;
+      height:100vh; 
+      overflow:auto; 
+     position:relative;
+    }
+
+  }
+  
+  @media (min-width : 749px){
+    div#store-credit-widget > div {
+      width: 50%;
+      padding: 20px !important;
+      {% comment %} margin: auto; {% endcomment %}
+    }
+    div#credit-modal > div {
+    border-radius: 8px;
+    width: 90vh;
+    height: 70vh;
+    margin: 10px;
+}
+  }
+</style>

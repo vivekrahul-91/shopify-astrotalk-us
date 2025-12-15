@@ -1,0 +1,757 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "gemstone_recommender_VK7DE3": {
+      "type": "gemstone-recommender",
+      "settings": {
+        "google_script_url": "https://script.google.com/macros/s/AKfycbzfTWt_-fWOc9-BX6cBdP-d5klEKj1_uHQQ2t__yKci2olIZmjh5Dkyg06QEIiKCdcm/exec"
+      }
+    },
+    "rich_text_beCyW7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ebP8QT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Gemstone Calculator: Finding Your Perfect Lucky Stone",
+            "heading_size": 140,
+            "heading_tag": "h1"
+          }
+        },
+        "text_YtecWT": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br/>Are you facing constant hurdles like career struggles, relationship stress, or recurring health issues even though you’re doing everything right? Sometimes, the missing piece isn’t what you’re doing, but the energy you’re working with. A <a href=\"https://astrotalk.store/pages/gemstones\"><span style=\"text-decoration:underline\">Gemstone</span></a> Calculator, based on your birth chart, can help you find the right gemstone.<br/><br/>To make this process easier, many now rely on a gemstone calculator — a modern tool that connects astrological insights with personalized gemstone recommendations that match your planetary placements and energy blueprint. It’s like getting a personalized remedy from the cosmos that aligns with your unique vibe to attract success, stability, and peace of mind.<br/><br/>In India, we’ve long believed in the power of ratnas, but not every stone is meant for everyone. Wearing the wrong one can intensify challenges. But when chosen correctly, with proper astrological guidance, a gemstone can turn the tide in your favour.<br/><br/>If you’re facing a specific problem whether it’s related to career, relationship, or health and want personal guidance, you can take a <a href=\"/products/gemstone-consultation\" title=\"Gemstone Consultation\"><span style=\"text-decoration:underline\">Gemstone Consultation</span></a> with our expert. They’ll personally check your birth chart and tell you which gemstone will be most suitable and helpful for you.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ebP8QT",
+        "text_YtecWT"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_kNk6wV": {
+      "type": "rich-text",
+      "blocks": {
+        "text_qUzxdf": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>To make this process easier, many now rely on a gemstone calculator<strong>,</strong> which is a modern tool that bridges astrological insights with personalized gemstone recommendations that match your planetary placements and energy blueprint. It’s like getting a personalised remedy from the cosmos that aligns with your unique vibe to attract success, stability, and peace of mind.</p><p>In India, we’ve long believed in the power of <em>ratnas,</em> but not every stone is meant for everyone. Wearing the wrong one can intensify challenges. But when chosen correctly, with proper astrological guidance, a gemstone can turn the tide in your favour. </p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "text_qUzxdf"
+      ],
+      "custom_css": [
+        "p {font-size: 14px;}"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_eMtntV": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RXgnqC": {
+          "type": "heading",
+          "settings": {
+            "heading": "What are Gemstones?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_KEzFei": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You’ve probably admired gemstones for their beauty, shimmering rubies, sparkling <a href=\"https://astrotalk.store/products/emerald\"><span style=\"text-decoration:underline\">emeralds</span></a>, or the deep calm of a blue sapphire. But did you know that these stunning stones are not just eye-catching accessories? Formed deep within the Earth over millions of years, gemstones are believed to hold powerful energies that can influence your emotions, health, and even your destiny.</p><p>In Vedic astrology, gemstones are much more than ornaments. They’re tools that help align your life with planetary energies, boosting the good effects of favourable planets and softening the blow of the not-so-friendly ones in your birth chart. But here’s the catch: not every gemstone suits everyone. Each one vibrates at a unique frequency that connects with a specific planet, so choosing the right stone based on your birth chart is key. That’s why using a <strong>gemstone calculator by date of birth</strong> can help you take the guesswork out and get more accurate, customized guidance.</p><p>These stones owe their power to the way they’re formed, their mineral content, crystal structure, and the intense conditions they survive under. That’s also what gives them their color, strength, and energy. In astrology, quality matters. Natural, untreated gemstones are preferred over synthetic ones because their pure energy is believed to work more effectively. </p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RXgnqC",
+        "text_KEzFei"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 12,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "image_with_text_TFAPkg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mwFeLa": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "How Do Gemstones Work?       ",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>Have you ever wondered how a small stone worn on a finger or pendant could shift your energy or even change the course of your luck? In Vedic astrology, gemstones are believed to act like cosmic antennas drawing in the positive vibrations of specific planets and amplifying their influence in your life. When chosen based on your birth chart, these stones can help align your energy with the universe in a way that supports growth, clarity, and protection.</p><p>On a scientific level, crystals are known to have piezoelectric properties, meaning they generate tiny electric currents when under pressure. This may subtly interact with your body’s own energy field, influencing how you feel and function on a daily basis. What’s fascinating is that each gemstone has a unique atomic makeup that resonates with particular planetary frequencies, syncing you with energies that might otherwise feel out of reach.</p><p>According to Vedic wisdom, every planet is constantly radiating energy that affects our mind, moods, and life events. Wearing the right gemstone can help you draw in beneficial planetary support and reduce the intensity of difficult influences. The continuous contact of the stone with your skin allows your body to absorb its vibrations slowly over time making the effect gentle yet deep. Pairing gemstones with mantras, pujas, or other remedies often leads to more noticeable and lasting results. For the best results, consider pairing your stone with insights from an <strong>accurate gemstone calculator</strong> that takes into account your birth details and planetary periods.<br/><br/></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mwFeLa"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Ruby_pendant_2.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#61020d",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_GBWqaG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_z8f7ja": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is a Gemstone Calculator?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_QnMwDX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ever wondered if a gemstone could help you feel more grounded, focused, or lucky? A gemstone calculator does just that: it looks at your <strong>entire birth chart</strong> to suggest the most suitable gemstones based on your planets, life phase, and energy balance. Think of it as a modern blend of Vedic astrology and tech that decodes what’s truly working (or not) in your life right now.</p><p>This isn’t just about picking your lucky stone based on your Sun Sign. A good calculator checks how strong or weak each of the nine planets is in your horoscope. It looks into their house placements, their roles in your current <em>dasha</em>, and how ongoing <em>gochar</em> (transits) are influencing your life. What’s smart is that it avoids recommending conflicting gemstones, something that could actually backfire if not chosen wisely.</p><p>Today’s gemstone calculators combine <strong>ancient Vedic wisdom</strong> with easy-to-use interfaces, making them accessible to everyone from curious beginners to serious spiritual seekers. The better ones also guide you on how to wear the stone, what day to start, and what you might experience emotionally or energetically. It's not just about the \"what,\" but also the \"why\" and \"how,\" which makes the whole experience more empowering. Whether you’re searching for a <strong>lucky gemstone calculator</strong> or a full <strong>gemstone astrology calculator</strong>, these tools offer clarity backed by tradition and tech.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_z8f7ja",
+        "text_QnMwDX"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_cbtJAG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bTP36x": {
+          "type": "heading",
+          "settings": {
+            "heading": "How Does the Gemstone Effect Calculator Work?  ",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_KYAct8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>An advanced <strong>gemstone calculator astrology</strong> setup helps predict planetary strengths and their impact across all areas of life. A gemstone effect calculator is more than just a fancy tool; it's like having a personal astrological guide that helps you make smarter, well-timed choices. By looking at the planetary positions in your birth chart and matching them with the unique energies of different gemstones, it predicts which stones can benefit you, whether it's for your career, relationships, health, or even spiritual progress.</p><p>The process starts by analysing the strength of each planet in your kundli, its position by sign and house, the aspects it receives, and the overall balance in your chart. But it doesn’t stop there. The calculator also looks at your current <em>dasha</em> period and ongoing planetary transits to see which energies are most active right now. Based on this, it suggests gemstones that can enhance helpful planets or balance out the tough ones, all while following trusted Vedic gemstone traditions.</p><p>Some advanced calculators even check how multiple gemstones might interact if worn together. They look for any clashes or combinations that could create a stronger, more supportive effect. What’s more, they often consider your current phase of life, big upcoming changes in your chart, and what goals or struggles you’re facing. Some even tell you how </p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bTP36x",
+        "text_KYAct8"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 72,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "slideshow_T83rBM": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_XaC8xF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/web_fe2c52c7-205b-4fc0-8dff-7f9f389e102d.webp",
+            "image_mobile": "shopify://shop_images/web_fe2c52c7-205b-4fc0-8dff-7f9f389e102d.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_XaC8xF"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_Baiz4m": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_M9wRxK": {
+          "type": "heading",
+          "settings": {
+            "heading": "How are Gemstones and Planets related?   ",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_DLbWjP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In Vedic astrology, gemstones aren't just pretty accessories, they're powerful tools that connect you to specific planetary energies. Just like each planet has a unique influence on your life, certain gemstones are believed to amplify their positive effects and protect you from negative ones when worn correctly. Think of it as nature’s way of helping you align with the cosmos.</p><p>The science behind this isn't just spiritual, it's vibrational. Tools like a <strong>numerology gemstone calculator</strong> or a <strong>gemstone calculator by date of birth and time</strong> further help fine-tune this cosmic match for real-life results.</p><p> Each gemstone has a unique mineral makeup and structure that naturally resonates with the energy of a particular planet. Over centuries, our ancestors observed how different stones affected people depending on their birth charts. </p><p>Choosing a gemstone isn’t just about birth month or personal preference. It depends on your birth chart, especially the strength and position of ruling planets. For example, wearing a stone linked to a weak or troubled planet can help balance its effects. Even the timing matters. Knowing your planetary periods (<em>dashas</em>) and current transits helps you start gemstone therapy when it’s most effective.<br/><br/></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_M9wRxK",
+        "text_DLbWjP"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fff9f1",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 40,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "benefits_list_EwTqKU": {
+      "type": "benefits-list",
+      "settings": {
+        "collection": "gemstones",
+        "heading": "What are the Gemstones for different planets?",
+        "text": "The nine planetary gemstones form the foundation of Vedic gem therapy, with each stone specifically chosen to enhance its ruling planet's positive influences while protecting from negative effects. Understanding these associations helps you choose the right gemstone based on your birth chart analysis and current life circumstances."
+      }
+    },
+    "image_with_text_hJix9Q": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cAfMV4": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "How to Wear Gemstones?",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>Before you wear any stone, it's smart to first <strong>find your lucky stone based on your date of birth</strong> using an expert-approved calculator. Wearing gemstones isn’t just about picking a pretty stone and slipping it on; it’s an art that involves careful steps like purification, energization, the right setting, finger placement, and timing. These traditional Vedic guidelines aren’t random rules; they’re designed to make sure the gemstone’s energy works in your favor and avoids any unwanted effects. When worn correctly, a gemstone can truly boost your life in powerful ways.</p><p>The first step is purification. Think of it as cleansing the stone from any negative vibes it may have picked up before it reaches you. But not all stones are the same. Delicate ones like Pearl need gentle care, while sturdier stones like Ruby can handle a deeper cleanse. And purification isn’t a one-time thing; regular cleansing keeps the stone’s energy fresh and effective.</p><p>Then comes energization; this is where mantras, prayers, and rituals awaken the gemstone’s planetary energy. Typically, you’ll chant the ruling planet’s mantra 108 times while holding or focusing on the gem. Timing matters here, too; doing this during auspicious planetary hours can boost the stone’s power even more.</p><p>The metal you set your gemstone in also plays a big role. Certain metals, like gold or silve,r resonate better with specific stones, enhancing their positive effects. Plus, the setting should allow the stone to touch your skin directly, so you get the full energy benefits while keeping the gem safe.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cAfMV4"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/gem_energization_1.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#581335",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_mwQyxC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QeFN3w": {
+          "type": "heading",
+          "settings": {
+            "heading": "What are the benefits of wearing gemstones?",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_LiERdm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wearing gemstones based on Vedic astrology isn’t just about tradition; it's a powerful way to balance your life by strengthening positive planetary energies and softening challenging ones in your birth chart. When chosen thoughtfully, these stones can bring real changes across your career, relationships, health, and spiritual growth.</p><p>In your professional life, the right gemstone can boost your confidence, sharpen your decision-making, and improve how you connect with bosses and colleagues. For example, Emerald is known to enhance communication and business skills, while Blue Sapphire supports careers in tech and administration. Many people find that after wearing their recommended stones, they gain clearer direction and overcome workplace hurdles more easily.</p><p>Health-wise, gemstones can uplift your energy, improve sleep, and support recovery, though they should complement regular medical care. For instance, Ruby is linked with heart health, Emerald with the nervous system, and Red Coral with circulation and physical strength.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QeFN3w",
+        "text_LiERdm"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "image_with_text_yBGeUJ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_CQtfUD": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "What are the harmful effects of wearing the wrong gemstone?",
+            "heading_base_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>Wearing the wrong gemstone can do more harm than good, sometimes causing anything from mild discomfort to serious issues in health, relationships, career, and overall life balance. That’s why it’s so important to consult an expert astrologer before picking a stone, instead of relying on random online suggestions or just going by what looks pretty.</p><p>Physically, wearing a gemstone that clashes with your birth chart or current planetary periods can trigger headaches, tiredness, sleep problems, or digestive troubles. Some even notice skin irritations, joint pain, or strange symptoms that disappear once they take the stone off. Without proper guidance, stones meant for malefic planets can sometimes make health problems worse instead of better.</p><p>On the emotional side, wrong stones may stir anxiety, mood swings, irritability, or confusion. They can amplify emotional ups and downs, making daily life and relationships harder to manage. You might even feel restless or mentally drained, especially if the stone doesn’t suit your nature or current life phase.</p><p>To avoid these pitfalls, start with a detailed birth chart reading and consult a qualified astrologer. Introduce new stones slowly and watch how your body and mind respond. Be mindful of your current planetary periods and avoid powerful stones during difficult transits. </p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "heading_light": "#ffffff",
+            "text_light": "#ffffff",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CQtfUD"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/gems_in_hand.webp",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 0,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#8e4302",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": true,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": true,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_Pn3RQM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_izPeWi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Conclusion",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "text_iTyexc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Using a gemstone calculator the right way can truly change how you connect with cosmic energies and tap into the planetary influences guiding your life. These tools bring together age-old Vedic wisdom and today’s easy access, making it simpler for you to get personalized gemstone suggestions that suit your unique birth chart and help you attract more success, happiness, and spiritual growth. Using a trusted <strong>gemstone calculator</strong> can save you from wearing the wrong stone and guide you toward the right one with spiritual precision.</p><p>Choosing the right gemstone isn’t something to rush. It takes patience, clear guidance, and realistic expectations because these subtle energies work gradually to bring positive shifts. That’s why consulting an experienced astrologer on Astrotalk is so important, they can make sure your gemstone matches your planetary alignments instead of blindly following generic advice that might not fit your situation.</p><p><strong>Astrotalk's Store Collection:</strong> Browse our spiritual marketplace featuring sacred <a href=\"https://astrotalk.store/collections/god-idols\"><span style=\"text-decoration:underline\">idols</span></a>, <a href=\"https://astrotalk.store/collections/evil-eye\"><span style=\"text-decoration:underline\">evil eye</span></a> protection, <a href=\"https://astrotalk.store/collections/rudraksha\"><span style=\"text-decoration:underline\">Rudraksha</span></a> beads, <a href=\"https://astrotalk.store/collections/healing\"><span style=\"text-decoration:underline\">healing</span></a> crystals, spiritual <a href=\"https://astrotalk.store/collections/dome-trees\"><span style=\"text-decoration:underline\">gifting & decor</span></a>, <a href=\"https://astrotalk.store/collections/limited-edition\"><span style=\"text-decoration:underline\">Pooja essentials</span></a>, <a href=\"https://astrotalk.store/collections/love\"><span style=\"text-decoration:underline\">love</span></a> items, and <a href=\"https://astrotalk.store/collections/zodiac-collection\"><span style=\"text-decoration:underline\">zodiac collection</span></a> to support your spiritual journey.<br/><br/></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_izPeWi",
+        "text_iTyexc"
+      ],
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "#fffcf8",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "faq_UJzF8W": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_rBN6Nf": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How to calculate gemstones?",
+            "row_content": "<p>Gemstone calculation requires analyzing your complete birth char,t including planetary positions, strengths, current dashas, and transits. Professional astrologers examine which planets need strengthening or balancing before recommending specific stones. </p>"
+          }
+        },
+        "frequently_asked_question_nB87gM": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How to choose the correct gemstone?",
+            "row_content": "<p>Choose gemstones based on thorough birth chart analysis by qualified astrologers rather than sun sign or general recommendations. Consider your current planetary periods, life goals, and specific challenges when selecting stones.</p>"
+          }
+        },
+        "frequently_asked_question_N9eQML": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "What makes gemstones valuable?",
+            "row_content": "<p>Gemstone value depends on rarity, beauty, durability, and demand in both commercial and astrological markets. Color, clarity, cut, and carat weight determine market value, while astrological effectiveness requires natural origin and minimal treatment. </p>"
+          }
+        },
+        "frequently_asked_question_kikKkF": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How do you measure gemstones quality?",
+            "row_content": "<p>Gemstone quality assessment involves evaluating color intensity and uniformity, clarity and transparency, cut proportions and finish, and carat weight. Additionally, origin and treatment history significantly affect both market value and astrological effectiveness. </p>"
+          }
+        },
+        "frequently_asked_question_k6p4Um": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Do Gemstones help with family relationships and career growth?",
+            "row_content": "<p>Yes, properly selected gemstones can significantly improve family harmony and career prospects by strengthening beneficial planetary influences in your birth chart. Yellow Sapphire often enhances family relationships and wisdom-based careers, while Pearl promotes emotional stability and domestic peace.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_rBN6Nf",
+        "frequently_asked_question_nB87gM",
+        "frequently_asked_question_N9eQML",
+        "frequently_asked_question_kikKkF",
+        "frequently_asked_question_k6p4Um"
+      ],
+      "settings": {
+        "heading": "FAQs",
+        "class": "",
+        "heading_size": 140,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "#fffcf8",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "text_icon_image_KKnpUJ": {
+      "type": "text-icon-image",
+      "blocks": {
+        "feature_mUjNJe": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/purity.webp",
+            "heading": "",
+            "text": "Guarantee of Purity"
+          }
+        },
+        "feature_4ArDgn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/certified.webp",
+            "heading": "",
+            "text": "100% Natural and Certified"
+          }
+        },
+        "feature_Mar7wh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/easy_return_1_488e781a-8b54-4fd3-adb7-931c96993227.webp",
+            "heading": "",
+            "text": "7 Days Easy Return"
+          }
+        },
+        "feature_khhWGq": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/shipping.webp",
+            "heading": "",
+            "text": "Free Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "feature_mUjNJe",
+        "feature_4ArDgn",
+        "feature_Mar7wh",
+        "feature_khhWGq"
+      ],
+      "settings": {
+        "class": "recomender-icons",
+        "title": "Our Commitment to you",
+        "subtitle": "",
+        "image_count": 1
+      }
+    }
+  },
+  "order": [
+    "main",
+    "gemstone_recommender_VK7DE3",
+    "rich_text_beCyW7",
+    "rich_text_kNk6wV",
+    "rich_text_eMtntV",
+    "image_with_text_TFAPkg",
+    "rich_text_GBWqaG",
+    "rich_text_cbtJAG",
+    "slideshow_T83rBM",
+    "rich_text_Baiz4m",
+    "benefits_list_EwTqKU",
+    "image_with_text_hJix9Q",
+    "rich_text_mwQyxC",
+    "image_with_text_yBGeUJ",
+    "rich_text_Pn3RQM",
+    "faq_UJzF8W",
+    "text_icon_image_KKnpUJ"
+  ]
+}

@@ -1,0 +1,251 @@
+<style> 
+       .rudraksha-cform {
+              padding: 40px;
+              /* border-radius: 20px; */
+              box-shadow: none;
+              width: 100%;
+              max-width: 95%;
+              margin: 0 auto;
+              /* backdrop-filter: blur(10px); */
+              /* border: none; */
+          }
+          form#bookingForm {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 18px;
+          }
+        .rudraksha-cform .form-group {
+          width: 100%;
+        }
+
+      .rudraksha-cform .form-input {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid rgba(80, 42, 33, 0.2);
+          border-radius: 8px;
+          font-size: 13px;
+          font-family: var(--font-heading-family);
+          transition: all 0.3s ease;
+      }
+
+        .rudraksha-cform .form-input:focus {
+            border-color: #c67c4e;
+            box-shadow: 0 0 0 3px rgba(198, 124, 78, 0.1);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .rudraksha-cform .form-input::placeholder {
+            color: #999;
+            font-weight: 300;
+        }
+
+        .rudraksha-cform .submit-btn {
+            width: 100%;
+            max-width: 50%;
+            padding: 12px;
+            border-radius: 10px;
+            background: linear-gradient(204deg, #D56A42 15.48%, #9F4723 123.44%);
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .rudraksha-cform .submit-btn:hover {
+            background: linear-gradient(135deg, #b8704a 0%, #a65a3f 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(198, 124, 78, 0.3);
+        }
+
+        .rudraksha-cform .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .rudraksha-cform .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .rudraksha-cform .error-message {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #f5c6cb;
+        }
+
+        .rudraksha-cform .date-input-wrapper {
+            position: relative;
+        }
+
+        .rudraksha-cform .date-input-wrapper input[type="date"] {
+            color: transparent;
+        }
+
+        .rudraksha-cform .date-input-wrapper input[type="date"]:focus {
+            color: #333;
+        }
+
+        .rudraksha-cform .date-input-wrapper input[type="date"]:valid {
+            color: #333;
+        }
+
+        .rudraksha-cform .date-placeholder {
+            position: absolute;
+            left: 12px;
+            font-size: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-family: var(--font-heading-family);
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+       .rudraksha-cform  .date-input-wrapper input[type="date"]:focus + .date-placeholder,
+       .rudraksha-cform .date-input-wrapper input[type="date"]:valid + .date-placeholder {
+            opacity: 0;
+        }
+
+        .rudraksha-cform .validation-error {
+            color: #721c24;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .rudraksha-cform .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .rudraksha-cform .loading .submit-btn {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 600px) {
+            .rudraksha-cform {
+                padding: 0px;
+                /* margin: 10px; */
+            }
+        }
+    </style>
+    
+    <div class=" rudraksha-cform form-container">
+        <form id="bookingForm">
+            <div class="form-group">
+                <input type="text" class="form-input" name="firstName" placeholder="First name" required>
+            </div>
+            
+            
+            <div class="form-group">
+                <div class="date-input-wrapper">
+                    <input type="date" class="form-input" name="dateOfBirth" required>
+                    <div class="date-placeholder">Date of birth</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="tel" class="form-input" name="contactNo" placeholder="Contact no." pattern="[0-9+\-\s\(\)]+" title="Please enter a valid phone number" required>
+                <div class="validation-error" id="contactError">Please enter a valid phone number (numbers, spaces, +, -, and parentheses only)</div>
+            </div>
+            
+            
+            
+            <button type="submit" class="submit-btn">Book now</button>
+        </form>
+        
+        <div id="successMessage" class="success-message">
+            Thank you! Your booking request has been submitted successfully.
+        </div>
+        <div id="errorMessage" class="error-message">
+            Sorry, there was an error submitting your form. Please try again.
+        </div>
+    </div>
+
+    <script>
+        // Replace with your Google Apps Script Web App URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxLfc0j-1CmYlaCzchnC-c57YPgSRGBswik4pzzQe2qh12IWrMwmk2m6dBNRy_mY9rMdg/exec';
+
+        document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const container = document.querySelector('.form-container');
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+            
+            // Validate contact number
+            const contactInput = form.querySelector('input[name="contactNo"]');
+            const contactError = document.getElementById('contactError');
+            const contactPattern = /^[0-9+\-\s\(\)]+$/;
+            
+            if (!contactPattern.test(contactInput.value)) {
+                contactError.style.display = 'block';
+                contactInput.focus();
+                return;
+            } else {
+                contactError.style.display = 'none';
+            }
+            
+            // Hide previous messages
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            
+            // Show loading state
+            container.classList.add('loading');
+            
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.text();
+                
+                if (response.ok) {
+                    successMsg.style.display = 'block';
+                    form.reset();
+                    
+                    // Scroll to success message
+                    successMsg.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error('Server error');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                errorMsg.style.display = 'block';
+                errorMsg.scrollIntoView({ behavior: 'smooth' });
+            } finally {
+                container.classList.remove('loading');
+            }
+        });
+        
+        // Real-time contact number validation
+        document.querySelector('input[name="contactNo"]').addEventListener('input', function(e) {
+            const contactError = document.getElementById('contactError');
+            const contactPattern = /^[0-9+\-\s\(\)]+$/;
+            
+            if (e.target.value && !contactPattern.test(e.target.value)) {
+                contactError.style.display = 'block';
+                e.target.style.borderColor = '#dc3545';
+            } else {
+                contactError.style.display = 'none';
+                e.target.style.borderColor = '#e0e0e0';
+            }
+        });
+    </script>
+    
+    

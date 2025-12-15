@@ -1,0 +1,65 @@
+  <script>
+function onBuyNow(e) {
+     
+    const variantID = ShopifyAnalytics.meta.selectedVariantId;
+;
+let qty=document.querySelector('input[name=quantity]')?.value;
+
+    // CleverTap event tracking
+    if (typeof clevertap !== 'undefined') {
+        clevertap.event.push("Buy Now Clicked", {
+            "Product ID": variantID || ShopifyAnalytics.meta.product.variants[0].id,
+            "Product Title": "{{ product.title | escape }}"
+        });
+    }
+
+    if (variantID) {
+        console.log('Variant ID:', variantID);
+        onBuyNowClick(e, false, [{'id': variantID, 'quantity': qty}]);
+    } else {
+        onBuyNowClick(e, false, [{'id': ShopifyAnalytics.meta.product.variants[0].id, 'quantity': qty}]);
+    }
+}
+
+ 
+</script>
+
+
+
+
+
+{% if settings.goBuynowEnable %}             
+<button type="button" class="button button-solid" onclick="onBuyNow(this)" id="gokwik-buy-now" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
+
+{% if product.id == 9861643272489 or product.id == 9858998370601 %}
+  Book Now
+{% elsif product.tags contains 'bookbutton' %}
+    Book Now
+{% elsif product.selected_or_first_available_variant.available == false %}
+    Sold out
+  {% elsif template == 'product.whiff-6-services' or template == 'product.whiff-6-jaap'%}
+    Book Now - {{ product.selected_or_first_available_variant.price | money }}
+  {% elsif template == 'product.whiff-6-book-now' or 'product.product-copy'%}
+    Buy Now
+  {% elsif template == 'product.whiff-6-frames-test' %}
+    "BUY NOW - ₹1,499"
+  {% elsif template == 'product.whiff-6-prebook' or template == 'product.siddhi-prebooking' %}
+    Pre-book now
+  {% else %}
+    {{ settings.buynow-titile }}
+  {% endif %}
+  <div style="display:none"><div class="cir-loader">Loading..</div></div>
+</button>  
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+

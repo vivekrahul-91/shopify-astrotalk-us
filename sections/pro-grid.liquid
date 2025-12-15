@@ -1,0 +1,116 @@
+
+
+{% schema %}
+{
+  "name": "Pro-Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "collection_handle",
+      "label": "Collection Handle",
+      "default": "frontpage"
+    },
+    {
+      "type": "text",
+      "id": "storefront_token",
+      "label": "Storefront Access Token",
+      "default": "REPLACE_WITH_YOUR_TOKEN"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pro-Grid"
+    }
+  ]
+}
+{% endschema %}
+
+<div id="product-list"></div>
+
+<script>
+  const collectionHandle = "{{ section.settings.collection_handle }}";
+  const storefrontToken = "{{ section.settings.storefront_token }}";
+  const productListEl = document.getElementById("product-list");
+
+  async function fetchAllProducts(handle) {
+    const endpoint = '/api/2023-07/graphql.json'; // Storefront API endpoint (adjust if needed)
+    const url = 'https://' + window.location.hostname + endpoint;
+
+    const query = `
+      query getCollectionProducts($handle: String!, $cursor: String) {
+        collection(handle: $handle) {
+          products(first: 50, after: $cursor) {
+            edges {
+              cursor
+              node {
+                id
+                title
+                handle
+                images(first: 1) {
+                  edges {
+                    node {
+                      src
+                      altText
+                    }
+                  }
+                }
+              }
+            }
+            pageInfo {
+              hasNextPage
+            }
+          }
+        }
+      }
+    `;
+
+    let allProducts = [];
+    let cursor = null;
+    let hasNextPage = true;
+
+    while (hasNextPage) {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Shopify-Storefront-Access-Token': storefrontToken,
+        },
+        body: JSON.stringify({
+          query,
+          variables: {
+            handle,
+            cursor
+          }
+        })
+      });
+
+      const json = await res.json();
+      const edges = json.data.collection?.products?.edges || [];
+      allProducts.push(...edges.map(edge => edge.node));
+      hasNextPage = json.data.collection?.products?.pageInfo?.hasNextPage;
+      cursor = edges.length ? edges[edges.length - 1].cursor : null;
+    }
+
+    return allProducts;
+  }
+
+  function renderProducts(products) {
+    productListEl.innerHTML = products.map(product => {
+      const image = product.images.edges[0]?.node;
+      return `
+        <div style="margin-bottom: 20px;">
+          <img src="${image?.src}" alt="${image?.altText || ''}" style="max-width: 150px;" />
+          <p>${product.title}</p>
+          <a href="/products/${product.handle}">View Product</a>
+        </div>
+      `;
+    }).join('');
+  }
+
+  fetchAllProducts(collectionHandle)
+    .then(renderProducts)
+    .catch(err => {
+      console.error('Error fetching products:', err);
+      productListEl.innerHTML = '<p>Error loading products.</p>';
+    });
+</script>

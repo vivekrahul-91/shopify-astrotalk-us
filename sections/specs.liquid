@@ -1,0 +1,75 @@
+{% comment %}
+Product Specifications Section
+File: sections/product-specifications.liquid
+{% endcomment %}
+{% assign specs = product.metafields.custom.product_specs %}
+{% if specs.value.size > 0 %}
+  <div class="product-specifications ">
+  <div class="page-width">
+    
+    <h3>Product Specifications</h3>
+    <ul class="spec-list">
+      {% for spec in specs.value %}
+        <li>{{ spec }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  </div>
+
+  <style>
+    .product-specifications {
+      margin: 2rem auto;
+    }
+    .product-specifications h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+          text-align: center;
+    }
+    .spec-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .spec-list li:first-child, .spec-list li:nthchild(2){
+      border-top: 1px solid #e1e1e1;
+    }
+    
+    .spec-list li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #e1e1e1;
+      width: 100%;
+      max-width: calc(50% - 5px);
+      padding: 6px 10px;
+      font-size: 14px;
+      word-spacing: 8px;
+}
+    ul.spec-list {
+    display: flex;
+    justify-content: space-between;
+}
+    @media screen and (max-width:749px){
+      .spec-list li:nthchild(2){
+      border-top: none;
+    }
+      .spec-list li {
+        max-width: 100%;
+      }
+    }
+  </style>
+  {% endif %}
+
+{% schema %}
+{
+  "name": "Product-Specifications",
+  "tag": "section",
+  "class": "product-specifications-section",
+  "settings": [
+ 
+  ],
+  "presets": [
+    {
+      "name": "Product-Specifications"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1537 @@
+{% comment %}
+  SECTION: Rudraksha Recommendation
+  Author: Responsive Update 
+  Drop in /sections and add through the Customizer
+{% endcomment %}
+<section id="rudraksha-recommendation"
+         class=" recommender-forms rk-wrapper w-full max-w-7xl mx-auto px-4 sm:px-6 py-12"
+         x-data="rudrakshaWidget()"
+         x-init="init()">
+<div class="cont-form-div">
+<div class="recommender-content page-width">
+  <h2>
+    {{ section.settings.heading }}  
+  </h2>
+  <p>{{ section.settings.text }}</p>
+</div>
+  
+  <!-- Heading -->
+  <!-- <h2 class="section-heading">RUDRAKSHA RECOMMENDATION</h2> -->
+
+  <div class="flex flex-col md:flex-row page-width  gap-6 r-form ">
+    <!-- Form container -->
+    <div class="rk-card w-full  mx-auto md:mx-0 mb-4">
+      <h3 class="section-title">Rudraksha Personalized <span class="font-bold">For You!</span></h3>
+      <p>Enter your details below to receive a personalized Rudraksha recommendation tailored to your needs and astrology.</p>
+
+      <form @submit.prevent="submit" class="space-y-4">
+        <!-- Type Selection Tabs -->
+        <div class="type-tabs flex gap-2 mb-4">
+          <button type="button" 
+                  @click="selectedType = 'birth'"
+                  :class="{'active-tab': selectedType === 'birth'}"
+                  class="type-tab">
+            By Birth
+          </button>
+          <button type="button"
+                  @click="selectedType = 'purpose'"
+                  :class="{'active-tab': selectedType === 'purpose'}"
+                  class="type-tab">
+            By Purpose
+          </button>
+        </div>
+
+        <!-- Name & Phone (side by side) -->
+        <div class="flex flex-row gap-3">
+          <div class="flex-1">
+            <label class="rk-label">Name
+              <input type="text" x-model="name" class="rk-input mt-1" name="name" placeholder="Enter your name" required>
+            </label>
+          </div>
+          <div class="flex-1">
+            <label class="rk-label">Phone Number
+              <input type="tel" x-model="phone" class="rk-input mt-1" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10,15}">
+            </label>
+          </div>
+        </div>
+
+        <!-- Purpose Dropdown (only shown when purpose is selected) -->
+        <div x-show="selectedType === 'purpose'" class="purpose-dropdown">
+          <label class="rk-label">Select Purpose
+            <select x-model="selectedPurpose" 
+                    class="rk-input mt-1" 
+                    :required="selectedType === 'purpose'"
+                    name="purpose">
+              <option value="">Select a purpose</option>
+              <option value="business">Business</option>
+              <option value="concentration">Concentration</option>
+              <option value="creativity">Creativity</option>
+              <option value="decision_making">Decision Making</option>
+              <option value="educational">Educational</option>
+              <option value="financial">Financial</option>
+              <option value="great_wealth">Great Wealth</option>
+              <option value="growth">Growth</option>
+              <option value="legal_matters">Legal Matters</option>
+              <option value="love_affection">Love & Affection</option>
+              <option value="love_relationship">Love Relationship</option>
+              <option value="mental_health">Mental Health</option>
+              <option value="overthinking">Overthinking</option>
+              <option value="pregnancy_delay">Pregnancy Delay</option>
+              <option value="respect">Respect</option>
+              <option value="success_real_state">Success in Real Estate</option>
+              <option value="wealth_prosperity">Wealth & Prosperity</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- DOB & TOB -->
+        <div class="dob-tob-container flex flex-row gap-3">
+          <div class="flex-1">
+            <label class="rk-label">Date of Birth
+              <input type="date" x-model="dob" class="rk-input mt-1" name="dob" required>
+            </label>
+          </div>
+          <div class="flex-1">
+            <label class="rk-label flex flex-col">
+              <span>Time of Birth</span>
+              <input type="time" x-model="tob" class="rk-input mt-1"
+                    :disabled="noTob"
+                    step="1"
+                    :required="!noTob"
+                    name="tob">
+            </label>
+            <label class="mt-1 flex items-center gap-2 no-tob text-white">
+              <input type="checkbox" x-model="noTob" class="accent-yellow-400" name="noTob">
+              I don't have time of birth
+            </label>
+          </div>
+        </div>
+
+        <!-- Place -->
+        <div>
+          <label class="rk-label">Place of Birth
+            <input type="text" x-model="city" id="rk-city" list="rk-city-list"
+                  class="rk-input mt-1" placeholder="Start typing…" autocomplete="off" required name="city">
+            <datalist id="rk-city-list"></datalist>
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <div class="pt-2">
+          <button type="submit"
+            class="rk-btn"
+            :disabled="calculating || !isFormValid()"
+            x-text="calculating ? 'Calculating…' : 'Know your Rudraksha'">
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Result -->
+  </div>
+  </div>
+    <div x-show="resultHtml"  class="resultHtml" x-cloak class="w-full  mx-auto md:mx-0">
+      <div x-html="resultHtml"></div>
+    </div>
+</section>
+<style>
+/* Color Variables */
+:root {
+  --primary-gradient: linear-gradient(204deg, #D56A42 15.48%, #9F4723 123.44%);
+  --primary-color: #9F4723;
+  --bg-color: #FFF9F1;
+  --text-color: #000000;
+  --border-color: #9F4723;
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --medium-gray: #666666;
+  --dark-gray: #333333;
+}
+
+/* Base Responsive Styles */
+/* @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap'); */
+
+.rk-wrapper {
+  /* font-family: 'Inter', sans-serif; */
+  padding: 0;
+}
+.resultHtml {
+    background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/background_for_web_1_1.png?v=1749641088);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Typography */
+.section-heading {
+  /* font-family: 'Inter', sans-serif; */
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  margin: 16px 0;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.section-title {
+    color: var(--white);
+    margin-bottom: 5px;
+    font-family: "Libre Baskerville";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.rk-card p {
+    color: var(--white);
+    margin-bottom: 25px;
+  font-size: 14px;
+    line-height: 16px;
+}
+/* Form Controls */
+.rk-label {
+  color: var(--white);
+  font: 500 14px/16px var(--font-button);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.rk-input {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--white);
+    font: 500 14px / 1.2 'Inter', sans-serif;
+    color: rgba(0, 0, 0, 0.70);
+    transition: all 0.2s ease;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.rk-input::placeholder {
+  color: #999;
+}
+
+.rk-input:focus {
+  outline: 2px solid rgba(159, 71, 35, 0.5);
+  box-shadow: 0 0 0 1px rgba(159, 71, 35, 0.25);
+}
+
+/* Date and time input styling */
+input[type="date"].rk-input,
+input[type="time"].rk-input {
+  position: relative;
+  padding-right: 40px;
+}
+
+input[type="date"].rk-input::-webkit-calendar-picker-indicator,
+input[type="time"].rk-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 8px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+input[type="date"].rk-input::-webkit-calendar-picker-indicator:hover,
+input[type="time"].rk-input::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Button Styles */
+.rk-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    justify-self: center;
+    padding: 10px 20px;
+    max-width: fit-content;
+    border-radius: 10px;
+    background: var(--primary-gradient);
+    font: 500 14px / 17px var(--font-button);
+    color: var(--white) !important;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1 !important;
+}
+
+.rk-btn:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(159, 71, 35, 0.2);
+}
+
+.rk-btn:disabled {
+  opacity: 1 !important;
+  cursor: pointer;
+  transform: none;
+}
+
+/* No TOB Text */
+.no-tob {
+  font-size: 0.65rem;
+  color: var(--white);
+}
+
+/* Product Card Buttons */
+.card-buttons {
+ /* For older IE */
+  gap: 12px;
+  width: 100%;
+  margin-top: 16px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  -webkit-box-sizing: border-box; /* For older Safari and Chrome on iOS */
+  -moz-box-sizing: border-box; /* For Firefox */
+  box-sizing: border-box; /* Standard */
+}
+
+
+
+.view-product-btn {
+  background: var(--white);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.add-to-cart-btn {
+  background: var(--primary-gradient);
+  color: var(--white);
+  border: none;
+}
+
+.view-product-btn:hover,
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.view-product-btn:hover {
+  background: var(--bg-color);
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.9;
+}
+
+/* Card Styles */
+.rk-card {
+  width: 100%;
+  max-width: 44%;
+  margin: 0;
+  padding: 20px 16px;
+ 
+}
+
+/* Type Tabs */
+.type-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+
+.type-tab {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font-body-family);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid var(--primary-color);
+}
+
+.type-tab:hover {
+  background: rgba(159, 71, 35, 0.2);
+}
+
+.type-tab.active-tab {
+  background: var(--primary-color);
+  color: var(--white) !important;
+  border-color: var(--primary-color);
+}
+
+/* Purpose Dropdown */
+.purpose-dropdown {
+  width: 100%;
+}
+
+.purpose-dropdown select {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--white);
+    font: 500 14px / 1.2 sans-serif;
+    color: rgba(0, 0, 0, 0.70);
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E);
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 10px;
+}
+
+.purpose-dropdown select:focus {
+  outline: 2px solid rgba(159, 71, 35, 0.5);
+  box-shadow: 0 0 0 1px rgba(159, 71, 35, 0.25);
+}
+
+/* DOB/TOB Container */
+.dob-tob-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}
+
+.dob-tob-container > div {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Place Suggestions */
+.place-suggestions-portal {
+  position: absolute;
+  /* z-index: 1000; */
+  display: none;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.place-suggestions-portal.show {
+  display: block;
+}
+
+.suggestion-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: var(--light-gray);
+}
+
+/* Results Section */
+.results-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 48px auto 0;
+  padding: 0 12px;
+}
+
+.result-wrapper {
+  width: 100%;
+  padding-top: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  scroll-margin-top: 24px;
+}
+
+.result-heading {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Card Styles */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.img-hover-zoom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+  color: var(--text-color);
+}
+
+.card-title {
+  font-size: 20px;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.card-significance {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 16px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.how-to-wear {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.how-to-wear span {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.how-to-wear span strong {
+  font-weight: 600;
+}
+
+.recommendation-text {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.recommendation-percentage {
+    font-weight: 700;
+    color: #9F4723;
+}
+
+/* Product Details Section */
+.product-details-section {
+  margin-top: 48px;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  width: 100%;
+  font-family: var(--font-body-family);
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-line-height);
+  -webkit-box-sizing: border-box; /* For older Safari and Chrome on iOS */
+  -moz-box-sizing: border-box; /* For Firefox */
+  box-sizing: border-box; /* Standard */
+}
+
+.product-image-large {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-info-detailed {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  -webkit-box-sizing: border-box; /* For older Safari and Chrome on iOS */
+  -moz-box-sizing: border-box; /* For Firefox */
+  box-sizing: border-box; /* Standard */
+}
+
+.product-details-title {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+ }
+
+.product-description {
+  font-family: var(--font-body-family);
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-line-height);
+  color: var(--text-color);
+  margin-bottom: 24px;
+  -webkit-box-sizing: border-box; /* For older Safari and Chrome on iOS */
+  -moz-box-sizing: border-box; /* For Firefox */
+  box-sizing: border-box; /* Standard */
+}
+
+
+
+.product-benefits h4 {
+  font-family: var(--font-heading-family);
+  font-size: var(--font-heading-size);
+  font-weight: var(--font-heading-weight);
+  color: var(--text-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.product-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-benefits li {
+  font-family: var(--font-body-family);
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-line-height);
+  color: var(--text-color);
+  padding-left: 24px;
+      padding-bottom: 4px;
+  position: relative;
+}
+
+.product-benefits li:before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Utility Classes */
+[x-cloak] {
+  display: none !important;
+}
+
+  
+  .result-cont {
+    display: flex;
+}
+
+.result-cont .products-container {width: 40%;}
+
+.product-details-section {
+    width: 100%;
+    max-width: 60%;
+}
+
+.products-container .img-hover-zoom {
+    padding: 15px 15px 0;
+    border-radius: 20px !important;
+    height: 300px;
+}
+
+.result-wrapper {
+    padding: 60px;
+}
+
+.card-buttons > * {
+    width: 100%;
+    max-width: calc(50% - 10px);
+    border-radius: 10px;
+    text-align: center;
+}
+
+button.add-to-cart-btn {
+    width: 100%;
+    padding: 10px;
+}
+
+.card-buttons {
+    align-items: center;
+}
+
+.card-buttons a.view-product-btn {
+    padding: 10px;
+    color: #9F4723;
+    border-radius: 10px !important;
+}
+.card-content .card-buttons{
+    display: none;
+}
+  .product-info-detailed .card-buttons {
+    display: flex;
+}
+  .product-info-detailed .card-buttons {
+    display: flex;
+    width: 100%;
+    max-width: 80%;
+    gap: 50px;
+    margin-top: 30px;
+    justify-content: center;
+}
+  .product-info-detailed .card-buttons > * {
+    max-width: calc(40% - 20px);
+}
+/* Media Queries */
+@media (max-width: 749px) {
+  .result-wrapper {
+    padding: 40px 20px;
+}
+  .result-cont .products-container , .product-details-section {
+    width: 100%;
+    max-width: 100%;
+}
+  .product-details-section {
+    margin-top: 28px;
+    padding: 0;
+  }
+  .product-info-detailed{
+    padding: 0;
+  }
+  .product-details-title {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+  .product-description, .product-benefits {
+    font-size: 14px;
+}
+  .product-benefits h4 {
+    text-align: left;
+}
+  .result-cont {
+    display: flex;
+    flex-direction: column;
+}
+  .card-content .card-buttons {
+      display: -webkit-box; /* For older Safari and Chrome on iOS */
+  display: -ms-flexbox;
+    display: flex;
+}
+  .product-info-detailed .card-buttons{
+    display: none;
+  }
+  .section-title{
+    font-size: var(--recom-heading-fsize);
+  }
+      .rk-card {
+        padding: 125px 0 40px;
+        max-width:100%;
+    }
+  .recommender-content h2 {
+    text-align: center;
+}
+
+.recommender-content p {
+    text-align: center;
+         font-size: 14px;
+        line-height: 16px;
+    word-break: auto-phrase;
+}
+.recommender-content,  .r-form {
+    padding: 0;
+}
+  .dob-tob-container {
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .dob-tob-container > div {
+    flex: 1;
+  }
+  
+  .img-hover-zoom {
+    height: 200px;
+  }
+  
+  .product-benefits ul {
+    grid-template-columns: 1fr;
+  }
+      .rk-card {
+        padding: 200px 0 40px;
+      }
+}
+
+@media (min-width: 567px) {
+  .results-section {
+    width: 80vw;
+  }
+  
+  .flex-col.md\:flex-row {
+    flex-direction: column !important;
+  }
+  
+  .rk-card {
+    margin-bottom: 48px;
+  }
+}
+
+@media (min-width: 749px) {
+  .result-wrapper {
+    max-width: 1200px;
+  }
+
+  
+  .product-details-section {
+    display: -webkit-box; /* For older Safari and Chrome on iOS */
+    display: -ms-flexbox; /* For older IE */
+    display: flex;
+    -webkit-box-orient: horizontal; /* For older Safari and Chrome on iOS */
+    -webkit-box-direction: normal; /* For older Safari and Chrome on iOS */
+    -ms-flex-direction: row; /* For older IE */
+    flex-direction: row; /* Arrange items in a row */
+    gap: 32px;
+    align-items: start;
+    padding: 0 24px;
+    -webkit-box-sizing: border-box; /* For older Safari and Chrome on iOS */
+    -moz-box-sizing: border-box; /* For Firefox */
+    box-sizing: border-box; /* Standard */
+  }
+  
+  .product-image-large {
+    -webkit-box-flex: 0; /* For older Safari and Chrome on iOS */
+    -ms-flex: 0 0 400px; /* For older IE */
+    flex: 0 0 400px; /* Don't grow, don't shrink, base width of 400px */
+    max-width: 400px;
+    width: 100%; /* Ensure it scales down on smaller screens */
+    margin: 0;
+    -webkit-box-sizing: border-box; /* For older Safari and Chrome on iOS */
+    -moz-box-sizing: border-box; /* For Firefox */
+    box-sizing: border-box; /* Standard */
+  }
+  
+  .product-info-detailed {
+    -webkit-box-flex: 1; /* For older Safari and Chrome on iOS */
+    -ms-flex-positive: 1; /* For older IE */
+    flex-grow: 1; /* Allow to grow to fill space */
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box; /* For older Safari and Chrome on iOS */
+    -moz-box-sizing: border-box; /* For Firefox */
+    box-sizing: border-box; /* Standard */
+  }
+  
+  .product-details-title,
+  .product-description,
+  .product-benefits h4 {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 390px){
+  
+      .rk-card {
+        padding: 150px 0 40px;
+      }
+}
+  
+@media (min-width: 768px) {
+
+}
+
+/* Firefox specific styles */
+@-moz-document url-prefix() {
+  input[type="date"].rk-input,
+  input[type="time"].rk-input {
+    padding-right: 8px;
+  }
+}
+</style>
+<script>
+function rudrakshaWidget() {
+  return {
+    /* ---------------- STATE ---------------- */
+    selectedType: 'birth',
+    selectedPurpose: '',
+    name: '',
+    phone: '',
+    dob: '',              // yyyy-mm-dd
+    tob: '',              // HH:MM:SS
+    noTob: false,
+    city: '',
+    tz: '+05:30',        // Set default to India timezone
+    calculating: false,
+    resultHtml: null,
+    product: null,
+    googleScriptUrl: '{{ section.settings.google_script_url }}',
+    requireConsultation: false,
+    consultationMessage: '',
+    cityData: null,
+
+    /* ---------------- CONSTANTS ---------------- */
+    nakshatras: ["Ashwini","Bharani","Krittika","Rohini","Mrigashira","Ardra",
+                "Punarvasu","Pushya","Ashlesha","Magha","Purva Phalguni",
+                "Uttara Phalguni","Hasta","Chitra","Swati","Vishakha",
+                "Anuradha","Jyeshtha","Mula","Purva Ashadha","Uttara Ashadha",
+                "Shravana","Dhanishta","Shatabhisha","Purva Bhadrapada",
+                "Uttara Bhadrapada","Revati"],
+
+    /* Purpose to Rudraksha mapping */
+    purposeRudrakshaMap: {
+      "business": "nepal-origin-12-mukhi-rudraksha",
+      "concentration": "nepal-origin-4-mukhi-rudraksha",
+      "creativity": "gauri-shankar-rudraksha",
+      "decision_making": "nepal-origin-12-mukhi-rudraksha",
+      "educational": "nepal-origin-4-mukhi-rudraksha",
+      "financial": "7-mukhi-nepali-origin-rudraksha-silver-capped",
+      "great_wealth": "7-mukhi-nepali-origin-rudraksha-silver-capped",
+      "growth": "nepal-origin-5-mukhi-rudraksha",
+      "legal_matters": "nepal-origin-4-mukhi-rudraksha",
+      "love_affection": "nepal-origin-6-mukhi-rudraksha",
+      "love_relationship": "nepal-origin-3-mukhi-rudraksha",
+      "mental_health": "nepal-origin-10-mukhi-rudraksha",
+      "overthinking": "nepal-origin-11-mukhi-rudraksha",
+      "pregnancy_delay": "gauri-shankar-rudraksha",
+      "respect": "nepal-origin-4-mukhi-rudraksha",
+      "success_real_state": "nepal-origin-10-mukhi-rudraksha",
+      "wealth_prosperity": "7-mukhi-nepali-origin-rudraksha-silver-capped"
+    },
+
+    // Map mukhi number to product handle (extracted from above)
+    mukhiToHandle: {
+      1: "ek-mukhi-rudraksha",
+      3: "nepal-origin-3-mukhi-rudraksha",
+      4: "nepal-origin-4-mukhi-rudraksha",
+      5: "nepal-origin-5-mukhi-rudraksha",
+      6: "nepal-origin-6-mukhi-rudraksha",
+      7: "7-mukhi-nepali-origin-rudraksha-silver-capped",
+      8: "nepal-origin-8-mukhi-rudraksha",
+      9: "nepal-origin-9-mukhi-rudraksha",
+      10: "nepal-origin-10-mukhi-rudraksha",
+      11: "nepal-origin-11-mukhi-rudraksha",
+      12: "nepal-origin-12-mukhi-rudraksha",
+      13: "nepal-origin-13-mukhi-rudraksha",
+      // Add more if you have handles for other mukhi numbers
+    },
+
+    /* Sanitize key: lowercase, strip spaces and special characters */
+    key(n) { 
+      return n.toLowerCase()
+        .replace(/\s+/g, '')
+        .replace(/[^a-z0-9]/g, '')
+        .replace(/mula/g, 'moola')
+        .replace(/phalguni/g, 'phalguni')
+        .replace(/bhadrapada/g, 'bhadrapada')
+        .replace(/ashadha/g, 'ashadha');
+    },
+
+    /* Birth Nakshatra to Rudraksha mapping */
+    birthRudrakshaMap: {
+      "anuradha": ["7-mukhi-nepali-origin-rudraksha-silver-capped","nepal-origin-10-mukhi-rudraksha"],
+      "ardra": ["nepal-origin-8-mukhi-rudraksha"],
+      "ashlesha": ["nepal-origin-4-mukhi-rudraksha"],
+      "ashwini": ["nepal-origin-9-mukhi-rudraksha"],
+      "bharani": ["nepal-origin-6-mukhi-rudraksha","nepal-origin-13-mukhi-rudraksha"],
+      "chitra": ["nepal-origin-3-mukhi-rudraksha"],
+      "dhanishta": ["nepal-origin-3-mukhi-rudraksha"],
+      "hasta": ["gauri-shankar-rudraksha"],
+      "jyeshtha": ["nepal-origin-4-mukhi-rudraksha"],
+      "krittika": ["ek-mukhi-rudraksha","nepal-origin-12-mukhi-rudraksha"],
+      "magha": ["nepal-origin-9-mukhi-rudraksha"],
+      "moola": ["nepal-origin-9-mukhi-rudraksha"],
+      "mrigashira": ["nepal-origin-3-mukhi-rudraksha"],
+      "punarvasu": ["nepal-origin-5-mukhi-rudraksha"],
+      "purvaashadha": ["nepal-origin-6-mukhi-rudraksha","nepal-origin-13-mukhi-rudraksha"],
+      "purvabhadrapada": ["nepal-origin-5-mukhi-rudraksha"],
+      "purvaphalguni": ["nepal-origin-6-mukhi-rudraksha","nepal-origin-13-mukhi-rudraksha"],
+      "pushya": ["7-mukhi-nepali-origin-rudraksha-silver-capped","nepal-origin-10-mukhi-rudraksha"],
+      "revati": ["nepal-origin-4-mukhi-rudraksha"],
+      "rohini": ["gauri-shankar-rudraksha"],
+      "shatabhisha": ["nepal-origin-8-mukhi-rudraksha"],
+      "shravana": ["gauri-shankar-rudraksha"],
+      "swati": ["nepal-origin-8-mukhi-rudraksha"],
+      "uttaraashadha": ["ek-mukhi-rudraksha","nepal-origin-12-mukhi-rudraksha"],
+      "uttarabhadrapada": ["7-mukhi-nepali-origin-rudraksha-silver-capped","nepal-origin-10-mukhi-rudraksha"],
+      "uttaraphalguni": ["ek-mukhi-rudraksha","nepal-origin-12-mukhi-rudraksha"],
+      "vishakha": ["nepal-origin-5-mukhi-rudraksha"]
+    },
+
+    /* ---------------- HELPERS ---------------- */
+    pad(n) { return String(n).padStart(2,'0'); },
+    mod360(x) { return ((x % 360) + 360) % 360; },
+    calcJD(y,m,d) {
+      if (m<=2) { y-=1; m+=12; }
+      const A=Math.floor(y/100);
+      const B=2-A+Math.floor(A/4);
+      return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+d+B-1524.5;
+    },
+    formatMoney(cents) {
+      const money = (cents/100).toFixed(2);
+      return `${Shopify.currency.active || '₹'} ${money}`;
+    },
+    formatTime12h(time24) {
+      if (!time24) return '';
+      let [h, m, s] = time24.split(':');
+      h = parseInt(h, 10);
+      s = s || '00';
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+      return `${h.toString().padStart(2, '0')}:${m}:${s} ${ampm}`;
+    },
+
+    /* ---------------- LIFECYCLE ---------------- */
+    init() {
+      console.log('Initializing widget...');
+      this.setupAutocomplete();
+      this.resetState();
+    },
+
+    resetState() {
+      console.log('Resetting state...');
+      this.selectedType = 'birth';
+      this.selectedPurpose = '';
+      this.resultHtml = null;
+      this.calculating = false;
+      this.name = '';
+      this.phone = '';
+      this.dob = '';
+      this.tob = '';
+      this.noTob = false;
+      this.city = '';
+      this.requireConsultation = false;
+      this.consultationMessage = '';
+      this.cityData = null;
+    },
+
+    setupAutocomplete() {
+      const cityInput = document.getElementById('rk-city');
+      const portalContainer = document.createElement('div');
+      portalContainer.className = 'place-suggestions-portal';
+      document.body.appendChild(portalContainer);
+      let currentTimeout;
+      cityInput.addEventListener('input', (e) => {
+        const query = e.target.value;
+        clearTimeout(currentTimeout);
+        if (query.length < 3) {
+          portalContainer.classList.remove('show');
+          return;
+        }
+        currentTimeout = setTimeout(() => {
+          fetch(`https://api.supportchat.astrotalk.com/AstroChat/cities/allcountries/autocomplete?limit=5&key=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+              portalContainer.innerHTML = '';
+              const suggestions = data.data || [];
+              if (suggestions.length > 0) {
+                const suggestionsList = document.createElement('div');
+                suggestionsList.className = 'place-suggestions';
+                suggestions.forEach(place => {
+                  const div = document.createElement('div');
+                  div.className = 'suggestion-item';
+                  div.textContent = place.name + (place.state ? ', ' + place.state : '') + (place.countryName ? ', ' + place.countryName : '');
+                  div.addEventListener('click', () => {
+                    cityInput.value = div.textContent;
+                    this.city = div.textContent;
+                    this.cityData = place;
+                    portalContainer.innerHTML = '';
+                    portalContainer.classList.remove('show');
+                  });
+                  suggestionsList.appendChild(div);
+                });
+                portalContainer.appendChild(suggestionsList);
+                portalContainer.classList.add('show');
+                this.updateSuggestionsPosition(cityInput, portalContainer);
+              } else {
+                portalContainer.classList.remove('show');
+              }
+            })
+            .catch(error => {
+              console.error('Error fetching places:', error);
+              portalContainer.classList.remove('show');
+            });
+        }, 500);
+      });
+      document.addEventListener('click', (e) => {
+        if (!cityInput.contains(e.target) && !portalContainer.contains(e.target)) {
+          portalContainer.classList.remove('show');
+        }
+      });
+    },
+
+    updateSuggestionsPosition(input, portal) {
+      const rect = input.getBoundingClientRect();
+      portal.style.top = `${rect.bottom + window.scrollY}px`;
+      portal.style.left = `${rect.left + window.scrollX}px`;
+      portal.style.width = `${rect.width}px`;
+    },
+
+    /* ---------------- MAIN ---------------- */
+    isFormValid() {
+      const baseValidation = this.name && this.phone && this.dob && this.city && (this.tob || this.noTob);
+      if (this.selectedType === 'purpose') {
+        return baseValidation && this.selectedPurpose;
+      }
+      return baseValidation;
+    },
+
+    async submit() {
+      // CleverTap: RC_form_submitted
+      if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) {
+        clevertap.event.push('RC_form_submitted');
+      }
+      // Data Layer push for analytics
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'Letsgorudra',
+        'formName': 'rudrakshRecommendation',
+        'formId': 'mainContactForm'
+      });
+      console.log('Submit called with state:', {
+        selectedType: this.selectedType,
+        dob: this.dob,
+        tob: this.tob,
+        noTob: this.noTob,
+        city: this.city,
+        selectedPurpose: this.selectedPurpose,
+        isFormValid: this.isFormValid()
+      });
+
+      if (!this.isFormValid()) {
+        console.log('Form validation failed');
+        return;
+      }
+      this.calculating = true; 
+      this.resultHtml = '';
+
+      // Use cityData for lat/lon
+      const place = this.cityData || {};
+      // Prepare date/time fields
+      const dob = new Date(this.dob);
+      const day = dob.getDate();
+      const month = dob.getMonth() + 1;
+      const year = dob.getFullYear();
+      let hour = 0, minute = 0, sec = 0;
+      if (!this.noTob && this.tob) {
+        [hour, minute, sec] = this.tob.split(':').map(Number);
+        if (isNaN(sec)) sec = 0;
+      }
+
+      let handles = [];
+      let products = [];
+      // --- By Purpose ---
+      if (this.selectedType === 'purpose') {
+        const handle = this.purposeRudrakshaMap[this.selectedPurpose];
+        if (!handle) {
+          this.resultHtml = `<div class=\"rounded bg-red-100 border border-red-300 p-4 text-red-700 text-center\">No Rudraksha mapped for selected purpose.</div>`;
+          this.calculating = false;
+          return;
+        }
+        handles = [handle];
+        products = await Promise.all(
+          handles.map(h => fetch(`/products/${h}.js`).then(r => r.json()))
+        );
+        this.product = products[0];
+        this.resultHtml = this.renderProductCard(products[0]);
+      } else {
+        // --- By Birth (API) ---
+        const payload = {
+          detail: {
+            name: this.name,
+            year: year,
+            month: month,
+            day: day,
+            hour: hour,
+            min: minute,
+            sec: sec,
+            lat: place.latitude || '',
+            lon: place.longitude || '',
+            tzone: place.timezoneOffset || 5.5,
+            place: this.city,
+            languageId: 1
+          },
+          languageId: 1,
+          part: 2
+        };
+        try {
+          const response = await fetch('https://api.kundali.astrotalk.com/v1/combined/report', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const data = await response.json();
+          const mukhiList = (data.data && data.data.rudraksha_recommendation && data.data.rudraksha_recommendation.rudraksha) || [];
+          handles = mukhiList.map(mukhi => this.mukhiToHandle[mukhi]).filter(Boolean);
+          if (!handles.length) {
+            this.resultHtml += `<div class=\"rounded bg-red-100 border border-red-300 p-4 text-red-700 text-center\">No Rudraksha recommended by the astrologer API.</div>`;
+            this.calculating = false;
+            return;
+          }
+          products = await Promise.all(
+            handles.map(handle => fetch(`/products/${handle}.js`).then(r => r.json()))
+          );
+          this.product = products[0]; // Show the first recommended product
+          this.resultHtml = this.renderProductCard(products[0]);
+        } catch(e) {
+          console.error('Error fetching product or submitting to API:', e);
+          this.resultHtml = `<div class=\"rounded bg-red-100 border border-red-300 p-4 text-red-700 text-center\">Could not load product.</div>`;
+          this.calculating = false;
+          return;
+        }
+      }
+
+      // --- Google Sheet Submission ---
+      try {
+        const sheetPayload = new FormData();
+        sheetPayload.append('name', this.name);
+        sheetPayload.append('phone', this.phone);
+        sheetPayload.append('selectedType', this.selectedType);
+        sheetPayload.append('selectedPurpose', this.selectedPurpose || '');
+        sheetPayload.append('dob', this.dob);
+        sheetPayload.append('tob', this.noTob ? '' : this.tob);
+        sheetPayload.append('noTob', this.noTob);
+        sheetPayload.append('city', this.city);
+        sheetPayload.append('recommendation', handles.join(','));
+        fetch(this.googleScriptUrl, {
+          method: 'POST',
+          body: sheetPayload
+        }).catch(err => console.error('Sheet logging failed:', err));
+      } catch(err) {
+        console.error('Error preparing sheet payload:', err);
+      }
+
+      // --- External API Submission (store-lead) ---
+      try {
+        const apiPayload = {
+          name: this.name,
+          phone: this.phone,
+          countryCode: '+91',
+          problemArea: this.selectedType === 'purpose' ? 'By Purpose' : 'By Birth',
+          dateOfBirth: this.dob,
+          timeOfBirth: this.noTob ? '' : (this.tob ? this.formatTime12h(this.tob) : ''),
+          place: this.city,
+          leadType: 'RUDRAKSHA_CALCULATOR',
+          formMetaData: {
+            name: this.name,
+            selectedPurpose: this.selectedPurpose || '',
+            dob: this.dob,
+            tob: this.noTob ? '' : (this.tob ? this.formatTime12h(this.tob) : ''),
+            noTob: this.noTob,
+            city: this.city
+          },
+          recommendationMetaData: handles.map((handle, i) => ({
+            productName: products[i]?.title || '',
+            link: products[i] ? `${window.location.origin}/products/${products[i].handle}` : ''
+          }))
+        };
+        fetch('https://er0z4juur5.execute-api.eu-north-1.amazonaws.com/store-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(apiPayload)
+        }).catch(err => console.error('External API submission error:', err));
+      } catch(err) {
+        console.error('Error preparing external API payload:', err);
+      }
+
+      this.calculating = false;
+    },
+
+    renderProductCard(prod) {
+      const price = this.formatMoney(prod.price);
+      const comparePrice = prod.compare_at_price ? this.formatMoney(prod.compare_at_price) : '';
+      const variant = prod.variants[0];
+      
+      // Add auto-scroll after rendering
+      setTimeout(() => {
+        const resultWrapper = document.querySelector('.result-wrapper');
+        if (resultWrapper) {
+          resultWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      
+      return `
+        <div class="result-wrapper">
+          <h3 class="result-heading">Recommended Rudraksha</h3>
+          <div class="result-cont">
+          <div class="products-container">
+            <div class="card">
+              <div class="img-hover-zoom">
+                <a href="/products/${prod.handle}" onclick="if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) { clevertap.event.push('RC_View_Product', { product_title: '${prod.title.replace(/'/g, "\\'")}' }); }">
+                  <img src="${prod.featured_image}" alt="${prod.title}" loading="lazy">
+                </a>
+              </div>
+              <div class="card-content">
+                <h2 class="card-title">
+                  <a href="/products/${prod.handle}" style="color: inherit; text-decoration: none;" onclick="if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) { clevertap.event.push('RC_View_Product', { product_title: '${prod.title.replace(/'/g, "\\'")}' }); }">
+                    ${prod.title}
+                  </a>
+                </h2>
+                <p class="card-significance">Brings peace of mind and protection from negative energies. Strengthens focus and spiritual growth.</p>
+                <div class="how-to-wear">
+                  <span><strong>Origin:</strong> Nepal</span>
+                  <span><strong>Certification:</strong> Government-Recognized Lab Certificate</span>
+                </div>
+                <div class="card-buttons">
+                  <a href="/products/${prod.handle}" class="view-product-btn" onclick="if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) { clevertap.event.push('RC_View_Product', { product_title: '${prod.title.replace(/'/g, "\\'")}' }); }">View Product</a>
+                  <div class="product-actions" x-data="xProductCart()">
+                    <form method="post" action="/cart/add" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate data-type="add-to-cart-form" x-ref="product_form">
+                      <input type="hidden" name="form_type" value="product">
+                      <input type="hidden" name="utf8" value="✓">
+                      <input type="hidden" name="id" value="${variant.id}">
+                      <button 
+                        type="button" 
+                        class="add-to-cart-btn" 
+                        aria-label="Add to cart"
+                        @click="addToCart($event, true); if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) { clevertap.event.push('RC_Add_to_cart', { product_title: '${prod.title.replace(/'/g, "\\'")}' }); }"
+                        x-intersect.once.margin.200px="Alpine.store('xCartHelper').validateCart();">
+                        Add to Cart
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <div class="recommendation-text">
+                  <span class="recommendation-percentage">95% astrologers</span> recommended this Rudraksha based on your birth details
+                </div>
+                <div class="consultation-toggle" style="margin-top: 24px; text-align: center;">
+                  <label style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <input type="checkbox" x-model="requireConsultation" id="consultation-toggle" style="accent-color: #9F4723;">
+                    <span>Have any questions? <strong>Book a free consultation.</strong></span>
+                  </label>
+                  <button type="button" class="rk-btn" style="margin-top: 12px;" @click="bookConsultation" x-bind:disabled="!requireConsultation">Book Consultation</button>
+                  <div x-show="consultationMessage" x-text="consultationMessage" style="margin-top: 10px; color: #2e7d32; font-weight: 500;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-details-section">
+            
+            <div class="product-info-detailed">
+              <h3 class="product-details-title">
+                <a href="/products/${prod.handle}" style="color: inherit; text-decoration: none;" onclick="if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) { clevertap.event.push('RC_View_Product', { product_title: '${prod.title.replace(/'/g, "\\'")}' }); }">
+                  ${prod.title}
+                </a>
+              </h3>
+              <div class="product-description">
+                <p>${prod.description ? prod.description.replace(/\\/g, '') : 'A powerful Rudraksha that brings divine blessings and spiritual growth.'}</p>
+              </div>
+              <div class="product-benefits">
+                <h4>Benefits</h4>
+                <ul>
+                  ${prod.metafields?.custom?.benefits ? 
+                    prod.metafields.custom.benefits.split('\n').map(benefit => 
+                      `<li>${benefit}</li>`
+                    ).join('') : 
+                    `<li>Brings peace of mind and protection from negative energies</li>
+                     <li>Strengthens focus and spiritual growth</li>
+                     <li>Calms anxiety and helps with meditation</li>
+                     <li>Enhances concentration and mental clarity</li>
+                     <li>Promotes overall well-being and harmony</li>`
+                  }
+                </ul>
+              </div>
+              <div class="card-buttons">
+                  <a href="/products/${prod.handle}" class="view-product-btn" onclick="if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) { clevertap.event.push('RC_View_Product', { product_title: '${prod.title.replace(/'/g, "\\'")}' }); }">View Product</a>
+                  <div class="product-actions" x-data="xProductCart()">
+                    <form method="post" action="/cart/add" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate data-type="add-to-cart-form" x-ref="product_form">
+                      <input type="hidden" name="form_type" value="product">
+                      <input type="hidden" name="utf8" value="✓">
+                      <input type="hidden" name="id" value="${variant.id}">
+                      <button 
+                        type="button" 
+                        class="add-to-cart-btn" 
+                        aria-label="Add to cart"
+                        @click="addToCart($event, true); if (typeof clevertap !== 'undefined' && clevertap.event && clevertap.event.push) { clevertap.event.push('RC_Add_to_cart', { product_title: '${prod.title.replace(/'/g, "\\'")}' }); }"
+                        x-intersect.once.margin.200px="Alpine.store('xCartHelper').validateCart();">
+                        Add to Cart
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    },
+
+    scrollToResults() {
+      setTimeout(() => {
+        const resultsSection = document.getElementById('results-section');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 200);
+    },
+
+    async addToCart(e, validate = false) {
+      const form = e.target.closest('form');
+      const button = e.target;
+      const originalText = button.textContent;
+      
+      button.disabled = true;
+      button.textContent = 'Adding...';
+      
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (validate) {
+          Alpine.store('xCartHelper').validateCart();
+        }
+        
+        button.textContent = 'Added!';
+        document.dispatchEvent(new CustomEvent('cart:open'));
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 1500);
+      })
+      .catch(error => {
+        console.error('Error adding to cart:', error);
+        button.textContent = 'Failed';
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 1500);
+      });
+    },
+
+    bookConsultation() {
+      if (!this.requireConsultation) return;
+      this.consultationMessage = '';
+      try {
+        const payload = new FormData();
+        payload.append('name', this.name);
+        payload.append('phone', this.phone);
+        payload.append('selectedType', this.selectedType);
+        payload.append('selectedPurpose', this.selectedPurpose || '');
+        payload.append('dob', this.dob);
+        payload.append('tob', this.noTob ? '' : this.tob);
+        payload.append('noTob', this.noTob);
+        payload.append('city', this.city);
+        payload.append('recommendation', this.product ? this.product.handle : '');
+        payload.append('require_consultation', 'Yes');
+        fetch(this.googleScriptUrl, {
+          method: 'POST',
+          body: payload
+        })
+        .then(() => {
+          this.consultationMessage = 'Your free consultation request has been submitted!';
+        })
+        .catch(err => {
+          // Show success even if CORS error occurs
+          this.consultationMessage = 'Your free consultation request has been submitted!';
+          console.error('Consultation logging error (likely CORS, safe to ignore):', err);
+        });
+      } catch(err) {
+        this.consultationMessage = 'There was an error preparing your consultation request.';
+        console.error('Error preparing consultation payload:', err);
+      }
+    }
+  };
+}
+
+// Add Alpine.js component for cart functionality
+function xProductCart() {
+  return {
+    addToCart(event, validate = false) {
+      const form = event.target.closest('form');
+      const button = event.target;
+      const originalText = button.textContent;
+      
+      button.disabled = true;
+      button.textContent = 'Adding...';
+      
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (validate) {
+          Alpine.store('xCartHelper').validateCart();
+        }
+        
+        button.textContent = 'Added!';
+        document.dispatchEvent(new CustomEvent('cart:open'));
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 1500);
+      })
+      .catch(error => {
+        console.error('Error adding to cart:', error);
+        button.textContent = 'Failed';
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 1500);
+      });
+    }
+  };
+}
+
+// Add Alpine.js store for cart validation
+document.addEventListener('alpine:init', () => {
+  Alpine.store('xCartHelper', {
+    validateCart() {
+      fetch('/cart.js')
+        .then(response => response.json())
+        .then(cart => {
+          if (typeof updateCartCount === 'function') {
+            updateCartCount(cart.item_count);
+          }
+        })
+        .catch(error => console.error('Error validating cart:', error));
+    }
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Rudraksha Recommendation",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Rudraksha Recommendation Widget"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "google_script_url",
+      "label": "Google Apps Script Webhook URL",
+      "default": "https://script.google.com/macros/s/AKfycbyc3_rckQhPHJsRUmdy1RyFCVWoe1Rhtf9N4chpUAnAWQmtpIGHZCG3B825ARuwDejb/exec"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rudraksha Recommendation"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,120 @@
+{% if customer %}
+<div id="store-credit-history-app" style="font-family: 'Poppins', sans-serif; padding: 20px;"></div>
+
+<script>
+  const customerId = "{{ customer.id }}";
+  const apiUrl = `https://q3uztb28gi.execute-api.eu-north-1.amazonaws.com/store-credit-transactions?customer_id=${customerId}`;
+  const pageSize = 5;
+
+  fetch(apiUrl)
+    .then(res => res.json())
+    .then(data => {
+      const transactions = data.transactions.reverse(); // latest first
+      let currentPage = 1;
+      let filter = "All"; // or "Credit", "Debit"
+
+      function render() {
+        const filtered = transactions.filter(tx => {
+          return filter === "All" || tx.type === filter;
+        });
+
+        const totalPages = Math.ceil(filtered.length / pageSize);
+        const paginated = filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+        const tableRows = paginated.map(tx => {
+          const isCredit = tx.type === "Credit";
+          const amount = parseFloat(tx.amount.amount);
+          const date = new Date(tx.createdAt).toLocaleString('en-GB', {
+            day: '2-digit', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata'
+          });
+          return `
+            <tr>
+              <td style="padding: 10px;">${date}</td>
+              <td style="padding: 10px;">${tx.type}</td>
+              <td style="padding: 10px; color: ${isCredit ? '#2e7d32' : '#d32f2f'};">
+                ${isCredit ? '+' : '-'} ₹${Math.abs(amount).toLocaleString()}
+              </td>
+              <td style="padding: 10px;">₹${parseFloat(tx.balanceAfter.amount).toLocaleString()}</td>
+            </tr>
+          `;
+        }).join('');
+
+        const paginationControls = `
+          <div style="text-align: center; margin-top: 10px;">
+            ${currentPage > 1 ? `<button onclick="prevPage()" style="margin-right: 10px;">Prev</button>` : ''}
+            Page ${currentPage} of ${totalPages}
+            ${currentPage < totalPages ? `<button onclick="nextPage()" style="margin-left: 10px;">Next</button>` : ''}
+          </div>
+        `;
+
+        const html = `
+          <h2 style="font-size: 24px; font-weight: 600; margin-bottom: 10px;">Store Credit History</h2>
+
+          <div style="margin-bottom: 20px;">
+            <button onclick="setFilter('All')" style="margin-right: 8px;" ${filter === 'All' ? 'disabled' : ''}>All</button>
+            <button onclick="setFilter('Credit')" style="margin-right: 8px;" ${filter === 'Credit' ? 'disabled' : ''}>Credit</button>
+            <button onclick="setFilter('Debit')" ${filter === 'Debit' ? 'disabled' : ''}>Debit</button>
+          </div>
+
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="border-bottom: 1px solid #ddd;">
+                <th style="padding: 10px; text-align: left;">Date</th>
+                <th style="padding: 10px; text-align: left;">Type</th>
+                <th style="padding: 10px; text-align: left;">Amount</th>
+                <th style="padding: 10px; text-align: left;">Balance After</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableRows || `<tr><td colspan="4" style="padding: 10px;">No transactions found.</td></tr>`}
+            </tbody>
+          </table>
+
+          ${paginationControls}
+        `;
+
+        document.getElementById("store-credit-history-app").innerHTML = html;
+      }
+
+      window.setFilter = (type) => {
+        filter = type;
+        currentPage = 1;
+        render();
+      };
+
+      window.prevPage = () => {
+        if (currentPage > 1) {
+          currentPage--;
+          render();
+        }
+      };
+
+      window.nextPage = () => {
+        const totalPages = Math.ceil(transactions.filter(tx => filter === "All" || tx.type === filter).length / pageSize);
+        if (currentPage < totalPages) {
+          currentPage++;
+          render();
+        }
+      };
+
+      render();
+    })
+    .catch(err => {
+      console.error("Error loading transactions:", err);
+      document.getElementById("store-credit-history-app").innerHTML = `<p>Failed to load transactions.</p>`;
+    });
+</script>
+{% else %}
+  <p>You need to be logged in to view your store credit history.</p>
+{% endif %}
+ {% schema %}
+  {
+    "name": "Credits transaction",
+    "settings": [],
+    "presets": [
+      {
+        "name" : "Credits transaction"
+      }
+    ]
+  }
+{% endschema %}

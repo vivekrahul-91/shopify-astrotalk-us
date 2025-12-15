@@ -1,0 +1,504 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_TgW9xW": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_PAKhPg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Desktop_76258ef4-a730-419f-8284-cefb66b0a5ac.webp",
+            "image_mobile": "shopify://shop_images/Desktop_76258ef4-a730-419f-8284-cefb66b0a5ac.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PAKhPg"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "scrolling_banner_EFyfAk": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_xnweyY": {
+          "type": "text",
+          "settings": {
+            "text": "COMBOS STARTING AT JUST ₹799",
+            "text_size": 100,
+            "text_color": "primary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        },
+        "text_fbByCP": {
+          "type": "text",
+          "settings": {
+            "text": "Pay Day Sale : Extra 20% OFF",
+            "text_size": 110,
+            "text_color": "secondary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_xnweyY",
+        "text_fbByCP"
+      ],
+      "name": "t:sections.scrolling_promotion.presets.name",
+      "settings": {
+        "show_border": true,
+        "speed": 34,
+        "direction": "right",
+        "pause_hover": true,
+        "bg_light": "#000000",
+        "color_text_light": "#ffffff",
+        "color_text_light_2": "#f0df20",
+        "bg_dark": "rgba(0,0,0,0)",
+        "color_text_dark": "rgba(0,0,0,0)",
+        "color_text_dark_2": "rgba(0,0,0,0)",
+        "space_block": 65,
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "space_block_mobile": 65,
+        "padding_top_mobile": 8,
+        "padding_bottom_mobile": 8
+      }
+    },
+    "simple_collection_grid_jRF93x": {
+      "type": "simple-collection-grid",
+      "name": "Simple Collection Grid",
+      "settings": {
+        "section_title": "💎 Pay Day Offer: Free Raw Selenite Plate",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "combos-799",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0
+      }
+    },
+    "rich_text_7pwd9Y": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9tzFcQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Combos Starting @799",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9tzFcQ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_cjYhYR": {
+      "type": "simple-collection-grid",
+      "custom_css": [
+        ".collection-grid-simple {padding-bottom: 15px; padding-top: 10px;}",
+        "button.product-card__add-to-cart {color: white; background-color: black;}"
+      ],
+      "settings": {
+        "section_title": "",
+        "subtitle": "",
+        "button-text": "ADD TO CART",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "freebies",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "image_with_text_m8MQAq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ckpw4g": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Karungali Mala & Bracelet Combo",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Grab the Karungali Mala & Bracelet combo for the price of just the Karungali mala</p>",
+            "number_of_lines_shown": "medium",
+            "read_more_label": "",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_hwKNmj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Order Now",
+            "button_link": "shopify://products/karungali-malai-8mm-with-karungali-bracelet",
+            "open_new_window": false,
+            "show_button_style": "secondary",
+            "button_light": "#000000",
+            "button_text_light": "#000000",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "#000000",
+            "secondary_button_light": "#000000",
+            "secondary_button_text_light": "#ffffff",
+            "button_dark": "#131313",
+            "button_text_dark": "#131313",
+            "button_hover_dark": "#000000",
+            "button_text_hover_dark": "#000000",
+            "secondary_button_dark": "#131313",
+            "secondary_button_text_dark": "#131313"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ckpw4g",
+        "button_hwKNmj"
+      ],
+      "custom_css": [
+        ".button {background-color: black;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/karungalicombo_1.jpg",
+        "class": "",
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "image_corner_radius": 10,
+        "content_layout": "overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "top_padding": 44,
+        "bottom_padding": 12,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 32,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "simple_collection_grid_nbBNUx": {
+      "type": "simple-collection-grid",
+      "custom_css": [
+        ".collection-grid-simple {padding-bottom: 15px; padding-top: 10px;}",
+        "button.product-card__add-to-cart {color: white; background-color: black;}"
+      ],
+      "settings": {
+        "section_title": "Our Bestsellers",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 16,
+        "collection_handle": "our-top-selling-products",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 10
+      }
+    },
+    "testimonial_custom_46kGgd": {
+      "type": "testimonial-custom",
+      "blocks": {
+        "testimonial_block_RCRXfn": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I was a bit skeptical at first, but after using the Dhan Yog Bracelet, I noticed a positive shift in my financial situation. New opportunities started coming my way, and managing money became a lot easier. It has truly helped bring financial stability into my life!",
+            "testimonial_name": "Gourav Mittal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_xnXP8Y": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I’ve been wearing the Karz Mukti Bracelet for a few months now, and I can genuinely feel a positive shift in my financial and mental well-being. Initially, I was skeptical, but I decided to give it a try, and I’m glad I did!",
+            "testimonial_name": "Yash",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_CrFKcG": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "I purchased the Money Maker Bracelet with the hope of improving my financial situation, and I must say, it has exceeded my expectations!",
+            "testimonial_name": "Nikita",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_XephJP": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Dhan Lakshmi Murti has brought a sense of balance and focus into my life. I’ve experienced fewer obstacles, improved financial stability, and a boost in my overall well-being. It’s a wonderful addition for anyone looking to invite positivity and prosperity into their life!",
+            "testimonial_name": "Prayush",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_UpjBWa": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Raksha-Kavach Yantra Combo has given me a sense of safety and confidence. I feel more protected while traveling and notice less negativity around me. It’s a great choice for anyone looking for extra security and peace of mind!",
+            "testimonial_name": "Davinder Goyal",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_6gXEAh": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": true,
+            "testimonial_text": "The Hanuman Chalisa Kawach has brought me immense strength and protection. I feel more confident, and challenges that once seemed overwhelming now feel easier to overcome. It’s a powerful tool for anyone seeking divine guidance and spiritual support!",
+            "testimonial_name": "Vaibhav",
+            "secondary_label": "Astrotalk Customer",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        },
+        "testimonial_block_fPmTWe": {
+          "type": "testimonial_block",
+          "settings": {
+            "show_quotes_icon": false,
+            "testimonial_text": "Slumberly supplements have been a game-changer. After trying the first bottle, I switched to the subscription because I never want to go back to restless nights!",
+            "testimonial_name": "Laura P.",
+            "secondary_label": "Slumberly Member",
+            "show_verified_buyer": true,
+            "show_star_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_block_RCRXfn",
+        "testimonial_block_xnXP8Y",
+        "testimonial_block_CrFKcG",
+        "testimonial_block_XephJP",
+        "testimonial_block_UpjBWa",
+        "testimonial_block_6gXEAh",
+        "testimonial_block_fPmTWe"
+      ],
+      "settings": {
+        "section_title": "Customer Feedback",
+        "section_subtitle": ""
+      }
+    },
+    "simple_collection_grid_QyWBHF": {
+      "type": "simple-collection-grid",
+      "disabled": true,
+      "name": "Simple Collection Grid",
+      "settings": {
+        "section_title": "New Launches",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "new-launches",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0
+      }
+    },
+    "collection_list_qM9BbB": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_9BCKeT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "murti"
+          }
+        },
+        "featured_collection_UAC3mb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gemstones"
+          }
+        },
+        "featured_collection_kYbtjt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "siddh-products"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_9BCKeT",
+        "featured_collection_UAC3mb",
+        "featured_collection_kYbtjt"
+      ],
+      "disabled": true,
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "heading": "Check Other Collections",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "show_view_all": false,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "image_ratio": "square",
+        "title_size": 80,
+        "show_text_overlay": false,
+        "content_alignment": "center",
+        "content_position": "bottom",
+        "image_overlay_opacity": 5,
+        "title_color": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "title_color_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "show_item_count": true,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": true,
+        "spacing": 4,
+        "show_section_divider": false,
+        "full_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "spacing_mobile": 4,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_TgW9xW",
+    "scrolling_banner_EFyfAk",
+    "simple_collection_grid_jRF93x",
+    "rich_text_7pwd9Y",
+    "simple_collection_grid_cjYhYR",
+    "image_with_text_m8MQAq",
+    "simple_collection_grid_nbBNUx",
+    "testimonial_custom_46kGgd",
+    "simple_collection_grid_QyWBHF",
+    "collection_list_qM9BbB"
+  ]
+}

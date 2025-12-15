@@ -1,0 +1,352 @@
+{% comment %}
+  FAQ Section
+  
+  Displays FAQs as open panels on desktop and collapsible dropdowns on mobile.
+  Each FAQ item can be added as a block with question and answer.
+{% endcomment %}
+
+<!-- {{ 'section-faq.css' | asset_url | stylesheet_tag }} -->
+
+<div class="faq-section" id="faq-section-{{ section.id }}">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+      <div class="section-header">
+        <h2 class="section-title">{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+    
+    <div class="faq-container">
+      <div class="faq-grid desktop-view">
+        {% for block in section.blocks %}
+          <div class="faq-item" {{ block.shopify_attributes }}>
+            <div class="faq-panel">
+              <h3 class="faq-question">{{ block.settings.question }}</h3>
+              <div class="faq-answer">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <div class="faq-accordion mobile-view">
+        {% for block in section.blocks %}
+          <div class="accordion-item" {{ block.shopify_attributes }}>
+            <button class="accordion-header">
+              <span class="accordion-title">{{ block.settings.question }}</span>
+              <svg class="accordion-icon" width="12" height="8" viewBox="0 0 12 8">
+                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', function() {
+        const accordionItem = this.parentElement;
+        const isActive = accordionItem.classList.contains('active');
+        
+        // Close all accordion items
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          item.classList.remove('active');
+          const content = item.querySelector('.accordion-content');
+          content.style.maxHeight = null;
+        });
+        
+        // Toggle current item if it wasn't active
+        if (!isActive) {
+          accordionItem.classList.add('active');
+          const content = accordionItem.querySelector('.accordion-content');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+        
+        // Rotate the icon
+        const icons = document.querySelectorAll('.accordion-icon');
+        icons.forEach(icon => {
+          icon.classList.remove('rotated');
+        });
+        
+        if (!isActive) {
+          this.querySelector('.accordion-icon').classList.add('rotated');
+        }
+      });
+    });
+    
+    // Handle resize event to reset accordion on desktop/mobile switch
+    let previousWidth = window.innerWidth;
+    const mobileBreakpoint = 768;
+    
+    window.addEventListener('resize', function() {
+      const currentWidth = window.innerWidth;
+      
+      // Only process if we're crossing the breakpoint
+      if ((previousWidth < mobileBreakpoint && currentWidth >= mobileBreakpoint) || 
+          (previousWidth >= mobileBreakpoint && currentWidth < mobileBreakpoint)) {
+        
+        // Reset accordion states when switching between mobile and desktop
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          item.classList.remove('active');
+          const content = item.querySelector('.accordion-content');
+          content.style.maxHeight = null;
+        });
+        
+        document.querySelectorAll('.accordion-icon').forEach(icon => {
+          icon.classList.remove('rotated');
+        });
+      }
+      
+      previousWidth = currentWidth;
+    });
+  });
+</script>
+
+{% stylesheet %}
+.faq-section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.faq-section .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Desktop FAQ Grid */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.faq-panel{
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  background-color: #FFF9F1;
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.faq-answer {
+  font-size: 16px;
+  line-height: normal;
+  color: #555;
+}
+
+/* Mobile Accordion */
+.faq-accordion {
+  display: none;
+}
+
+.accordion-item {
+  margin-bottom: 15px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  background-color: white;
+  padding: 15px 20px;
+  text-align: left;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-body {
+  padding: 0 20px 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 1000px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .faq-section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .desktop-view {
+    display: none;
+  }
+  
+  .mobile-view {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .desktop-view {
+    display: grid;
+  }
+  
+  .mobile-view {
+    display: none;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "FAQ"
+    },
+    {
+      "type": "select",
+      "id": "desktop_columns",
+      "label": "Desktop Columns",
+      "options": [
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
+        }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "panel_color",
+      "label": "Panel Background Color",
+      "default": "#faf5f2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "FAQ Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Provide the answer to the question here. Keep it clear and concise.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "question": "FAQ 1",
+            "answer": "<p>Answer to the first frequently asked question.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "FAQ 2",
+            "answer": "<p>Answer to the second frequently asked question.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "FAQ 3",
+            "answer": "<p>Answer to the third frequently asked question.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "FAQ 4",
+            "answer": "<p>Answer to the fourth frequently asked question.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

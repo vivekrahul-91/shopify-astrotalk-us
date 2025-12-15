@@ -1,0 +1,148 @@
+<div class="custom-price-div">{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price            = target.price | default: 1999
+
+  if settings.currency_code_enable
+    assign money_price = price | money_with_currency
+  else
+    assign money_price = price | money
+  endif
+-%}
+{%- comment -%}
+  if target == product and product.price_varies
+    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  endif
+{%- endcomment -%}
+
+<div class="{{ container }} price leading-none"
+     data-price="{{ target.price }}"
+     data-compareprice="{{ compare_at_price }}">
+  <div class="no-collage:mb-2">
+
+    <div class="hidden">{{ target.price }}</div>
+
+    {%- if compare_at_price > price -%}
+        
+              {%- unless product.price_varies == false and product.compare_at_price_varies -%}
+                <small class="comp_price cap rtl:inline-block mr-1 rtl:ml-1 rtl:mr-0 {% if stickybtn %}hidden-phone-themebased{% endif %}">
+                  <span>MRP : </span>
+                  <s class="rtl:leading-tight">
+                    {% if settings.currency_code_enable %}
+                      {{ compare_at_price | money_with_currency }}
+                    {% else %}
+                      {{ compare_at_price | money }}
+                    {% endif %}
+                  </s>
+                </small>
+              {%- endunless -%}
+      
+             <div class="pricing_wrapper_custom {% if price_class != blank %}{{ price_class }}{% endif %}">
+        <span {% unless product.price_varies == false and product.compare_at_price_varies %}
+              class="price-sale selection:bg-text-[rgb(var(--colors-price-sale),0.2)]"
+              {% endunless %}>
+          {{ money_price }}
+        </span>
+
+      </div>
+    {%- else -%}
+      <p class="price{% if price_class != blank %} {{ price_class }}{% endif %}">
+        <span>{{ money_price }}</span>
+      </p>
+    {%- endif -%}
+       <span class="saving">
+              50%
+              <span class="extra-discount" style="color:#358326;">+ Extra 20% OFF</span>
+            </span>
+
+   <small class="text-[70%]{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}
+                  mr-1 rtl:ml-1 rtl:mr-0">
+      <span class="hidden">{{ 'products.product.price.unit_price' | t }}</span>
+      <span class="up price-item price-item--last">
+        <span>
+          {% if settings.currency_code_enable %}
+            {{ product.selected_or_first_available_variant.unit_price | money_with_currency }}
+          {% else %}
+            {{ product.selected_or_first_available_variant.unit_price | money }}
+          {% endif %}
+        </span>
+        <span aria-hidden="true">/</span>
+        <span class="hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+        <span>
+          {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+            {{ product.selected_or_first_available_variant.unit_price_measurement.reference_value }}
+          {%- endif -%}
+          {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+        </span>
+      </span>
+    </small>
+
+  </div>
+  <span class="tax-inclusive">Inclusive of all taxes</span>
+</div>
+  </div>
+
+  <style>
+    @media only screen and (min-width: 749px){
+      .temp-new-product-page .block-price {
+    width: 100% !important;
+    margin: 0 20px;
+}
+    }
+    .custom-price-div  small.comp_price {
+    text-align: center;
+    color: rgb(128, 128, 128);
+    font-size: 14.29px;
+    font-weight: 700;
+    line-height: 19px;
+}
+
+.custom-price-div  span.price-sale {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(34, 34, 34) ! important;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.custom-price-div  .price > div {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    align-items: center;
+}
+
+.custom-price-div  .price > div > * {width: max-content;}
+
+.custom-price-div {
+    margin: 15px 0;
+}
+  .custom-price-div span.tax-inclusive {
+    font-size: 11px !important;
+    line-height: 1;
+    font-weight: 400;
+    color: rgb(128, 128, 128) !important;
+}
+
+.custom-price-div span.saving {
+    color: #fff;
+    background: #008000;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.temp-new-product-page .custom-price-div .price {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+  </style>

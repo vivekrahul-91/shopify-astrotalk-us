@@ -1,0 +1,52 @@
+<p id="randomNumberOne" class="matching-h3" data-pid="{{ product.id }}"></p>
+
+<script>
+    var idSelectorOne = document.getElementById('randomNumberOne');
+
+    function generateRandomNumberOne(productId, min, max) {
+        const seed = productId.toString().split('').reduce((acc, val) => acc + parseInt(val), 0);
+        const x = Math.sin(seed) * 10000;
+        const randomNum = x - Math.floor(x);
+        return Math.floor(randomNum * (max - min + 1)) + min;
+    }
+
+    function hasHourPassedOne(lastUpdated) {
+        const now = new Date();
+        const lastUpdateDate = new Date(parseInt(lastUpdated));
+        return now.getTime() - lastUpdateDate.getTime() >= 3600000;
+    }
+
+    function updateRandomNumberOne() {
+        const min = 500;
+        const max = 1500;
+
+        let randomNumber;
+        const productId = idSelectorOne.getAttribute('data-pid');
+        let lastUpdated = localStorage.getItem('lastUpdated_' + productId);
+
+        if (lastUpdated && !hasHourPassedOne(lastUpdated)) {
+            randomNumber = localStorage.getItem('randomNumber_' + productId);
+        } else {
+            randomNumber = generateRandomNumberOne(productId, min, max);
+            localStorage.setItem('randomNumber_' + productId, randomNumber);
+            localStorage.setItem('lastUpdated_' + productId, new Date().getTime());
+        }
+
+        idSelectorOne.innerHTML = ` ${parseInt(randomNumber).toLocaleString()} Units sold`;
+    }
+
+    updateRandomNumberOne();
+
+    function checkForHourChangeOne() {
+        const now = new Date();
+        const minutesUntilNextHour = 60 - now.getMinutes();
+        const millisecondsUntilNextHour = (minutesUntilNextHour * 60 * 1000) - now.getSeconds() * 1000 - now.getMilliseconds();
+
+        setTimeout(() => {
+            updateRandomNumberOne();
+            setInterval(updateRandomNumberOne, 3600000);
+        }, millisecondsUntilNextHour);
+    }
+
+    checkForHourChangeOne();
+</script>

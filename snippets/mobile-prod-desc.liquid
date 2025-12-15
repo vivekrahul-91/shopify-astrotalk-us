@@ -1,0 +1,136 @@
+ <div class="mob-prod-cont">
+       {%- if product.title != blank and section.settings.show_product_name -%}
+          <div class="prod-group"> 
+              <{{ section.settings.heading_tag }} class="w-full {% if show_content_center %}text-center{% endif %} product-title h2 mt-2 md:mt-2 mb-2 md:mb-2 leading-tight title-size--{{ section.id }}">{{ product.title | escape }}  
+                
+              <div class="prod-badge">
+                    {% for item in product.metafields.custom.trust_badge.value %}
+                      {% if item != blank %}
+                        <span class="block rounded-full px-2 md:px-5 py-1 md:py-2 text-center trust_badge-item whitespace-nowrap bg-[#d7d9fe]">{{ item }}</span>
+                      {% endif %}
+                    {% endfor %}
+                  </div> 
+                  {% if template.suffix == "new-product-page" %}
+                    <a href="#judgeme_product_reviews" class="pro-rate">
+                        <div class='jdgm-widget jdgm-preview-badge'>
+                          {{ product.metafields.judgeme.badge }} 
+                        {%- assign hash = product.id | modulo: 30 -%}
+                        {%- assign units_float = hash | times: 0.1 | plus: 2.0 -%}
+                        <span class="units-sold">{{ units_float | round: 1 }}L+ Units Sold</span>
+
+
+                        </div>
+                    </a>
+                  
+                  {% endif %}
+              </{{ section.settings.heading_tag }}>
+          </div>
+       {%- endif -%}
+        <div class="mb-2 desc-text md:mb-5 w-full rte{% if show_content_center %} text-center{% endif %}"{{ block.shopify_attributes }}>
+              <div class="rte"><p><span class="metafield-multi_line_text_field">
+                  {{ product.metafields.custom.description }}
+              </span></p><p></p></div>
+                </div>
+                    
+            <div class="mt-2 block-price md:mt-2 mb-2 md:mb-2 w-full{% if show_content_center %} text-center{% endif %}" {{ block.shopify_attributes }}>
+                    {%- liquid
+                      assign text_size = block.settings.text_size_price | times: settings.heading_base_size | times: 0.000225
+                      assign text_size_mobile = text_size | times: 0.9
+                    -%}
+                    {%- style -%}
+                      #price-{{ section.id }} {
+                        font-size: {{ text_size_mobile }}rem;
+                      }
+                      @media (min-width: 768px) {
+                        #price-{{ section.id }} {
+                          font-size: {{ text_size }}rem;
+                        }
+                      }
+                    {%- endstyle -%}
+                    <div id="price-{{ section.id }}" role="status">
+                      {%- render 'price',
+                        product: product,
+                        use_variant: true,
+                        container: 'main-product-price'
+                      -%}
+                    </div>
+                    {% if block.settings.show_tax_and_shipping %}
+                      {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+                        <div class="flex flex-wrap mt-3{% if show_content_center %} justify-center{% endif %}">
+                          {%- if cart.taxes_included -%}
+                            <span class="mr-1">{{ 'products.product.include_taxes' | t }}</span>
+                          {%- else -%}
+                            <span class="mr-1">{{ 'products.product.not_include_taxes' | t }}</span>
+                          {%- endif -%}
+                          {%- if shop.shipping_policy.body != blank -%}
+                            {%- if quick_view -%}
+                              {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                            {%- else -%}
+                              <div x-data="xShippingPolicy( '{{ shop.shipping_policy.url }}' )">
+                                <a 
+                                  id="LoadShoppingPolicy"
+                                  href="{{ shop.shipping_policy.url }}" 
+                                  class="button-link relative cursor-pointer hover:text-[rgba(var(--colors-text-link))]" 
+                                  @click.prevent="loadShipping()">
+                                  {{ 'products.product.shipping' | t }}
+                                </a>
+                                {{ 'products.product.calculated' | t }}
+                                <template x-teleport="body">
+                                  <div 
+                                    id="ShippingPolicyPopup"
+                                    x-show="show" 
+                                    x-cloak 
+                                    class="w-full h-full fixed top-0 left-0 z-50 bg-[#acacac] bg-opacity-30">
+                                    <div x-show="show" @click.away="show = false; $store.xPopup.open = false" class="bg-[rgba(var(--background-color))] pl-5 pt-10 pb-10 md:p-16 pr-0 md:pr-0 relative min-h-[calc(75vh-80px)] md:min-h-[400px] max-w-3xl md:ml-auto md:mr-auto mt-[25vh] md:mt-[9vh]{% if settings.edges_type == 'rounded_corners' %} md:rounded-[10px]{% endif %}"
+                                      x-transition:enter="transition-all ease-in-out duration-300"
+                                      x-transition:enter-start="opacity-0 transform md:-translate-x-1/3 translate-y-1/3 md:translate-y-0"
+                                      x-transition:enter-end="opacity-100 transform md:translate-x-0 translate-y-0"
+                                      x-transition:leave="transition-all ease-in-out duration-300"
+                                      x-transition:leave-end="opacity-0 transform md:translate-x-1/3 translate-y-1/3 md:translate-y-0"
+                                      @keyup.escape="show = false; $store.xPopup.open = false; shippingRemoveFocus();"
+                                      x-intersect.full="shippingFocus()">
+                                      <button
+                                        id="CloseShopping" 
+                                        class="cursor-pointer top-0.5 md:top-6 absolute right-5 md:right-7 h-10 w-12 z-10 pt-3 pb-3.5 pl-4 pr-4"
+                                        @click.prevent="show = false; $store.xPopup.open = false">
+                                        {%- render 'icon-alls', icon: 'icon-close' -%}
+                                      </button>
+                                      <div class="overflow-y-auto scrollbar-body max-h-[65vh] min-h-[inherit]">
+                                        <div class="pr-5 md:pr-16" x-html="htmlInner"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </template>
+                              </div>
+                              <script src="{{ 'shipping-policy.js' | asset_url }}" defer></script>
+                            {%- endif -%}
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    {%- endif -%}
+                    <div class="shopify-payment-terms">
+                      {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                      {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                        {{ form | payment_terms }}
+                      {%- endform -%}
+                    </div>
+                  </div>
+            <div class="sec-share flex{% if show_content_center %} justify-center{% endif %} w-full mt-2 items-center mb-5"{{ block.shopify_attributes }}>
+                    <p class="mr-1 share-btn" style="cursor: pointer;">
+                      <img 
+                        src="https://cdn.shopify.com/s/files/1/0878/4907/4985/files/material-symbols_share_1.png?v=1742458556" 
+                        alt="Share" 
+                        width="24" 
+                        height="24">
+                        <span>{{ 'products.product.share_social' | t }}</span>
+                    </p>
+                    <div class="media-popup " style="display: none;">
+                      <div class="med-content ">
+                        <h4>Share product with your friends...</h4>
+                        <span class="close" style="cursor: pointer;">X</span>
+                      </div>
+                      {% render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+                    </div>
+                  </div>
+    </div>

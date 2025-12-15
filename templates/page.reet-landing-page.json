@@ -1,0 +1,714 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_jdfDbr": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8ELrGB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Banner_web.png",
+            "image_mobile": "shopify://shop_images/banner_efd6f2b0-de32-4fe1-bcf8-46cba320ee6d.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8ELrGB"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 6,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "natural",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "scrolling_banner_g7jqFK": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_6hHt7T": {
+          "type": "text",
+          "settings": {
+            "text": "100% Authentic",
+            "text_size": 110,
+            "text_color": "primary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        },
+        "text_DDHt3X": {
+          "type": "text",
+          "settings": {
+            "text": "Expertly Crafted",
+            "text_size": 110,
+            "text_color": "primary",
+            "spacing_left": 0,
+            "spacing_right": 0,
+            "spacing_left_mobile": 0,
+            "spacing_right_mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_6hHt7T",
+        "text_DDHt3X"
+      ],
+      "settings": {
+        "show_border": false,
+        "speed": 10,
+        "direction": "right",
+        "pause_hover": true,
+        "bg_light": "#e12c4a",
+        "color_text_light": "#ffffff",
+        "color_text_light_2": "rgba(0,0,0,0)",
+        "bg_dark": "rgba(0,0,0,0)",
+        "color_text_dark": "rgba(0,0,0,0)",
+        "color_text_dark_2": "rgba(0,0,0,0)",
+        "space_block": 110,
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "space_block_mobile": 50,
+        "padding_top_mobile": 8,
+        "padding_bottom_mobile": 8
+      }
+    },
+    "reet_collection_wwWRk4": {
+      "type": "reet-collection",
+      "blocks": {
+        "collection_widget_VA3Bq4": {
+          "type": "collection_widget",
+          "settings": {
+            "collection": "raw-pyrite-murtis",
+            "image": "shopify://shop_images/pyrite_murti_1.webp",
+            "title": "Raw Pyrite Murtis",
+            "subtitle": ""
+          }
+        },
+        "collection_widget_FkK4ym": {
+          "type": "collection_widget",
+          "settings": {
+            "collection": "brass-murti",
+            "image": "shopify://shop_images/brass_1.png",
+            "title": "Brass Murtis",
+            "subtitle": ""
+          }
+        },
+        "collection_widget_XLhbUw": {
+          "type": "collection_widget",
+          "settings": {
+            "collection": "resin-murti",
+            "image": "shopify://shop_images/artistic.png",
+            "title": "Artistic Murtis",
+            "subtitle": ""
+          }
+        },
+        "collection_widget_RDw7EG": {
+          "type": "collection_widget",
+          "settings": {
+            "collection": "3d-murtis",
+            "image": "shopify://shop_images/3d_1.png",
+            "title": "3D Murtis",
+            "subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_widget_VA3Bq4",
+        "collection_widget_FkK4ym",
+        "collection_widget_XLhbUw",
+        "collection_widget_RDw7EG"
+      ],
+      "settings": {
+        "heading": "Types of Murtis"
+      }
+    },
+    "reet_collection_tHkYyD": {
+      "type": "reet-collection",
+      "blocks": {
+        "collection_widget_WrmYdU": {
+          "type": "collection_widget",
+          "settings": {
+            "collection": "ganesh-collection",
+            "image": "shopify://shop_images/ganesh.png",
+            "title": "Ganesh Ji Collection",
+            "subtitle": ""
+          }
+        },
+        "collection_widget_w6GwFF": {
+          "type": "collection_widget",
+          "settings": {
+            "collection": "hanuman-collection",
+            "image": "shopify://shop_images/hanuman.png",
+            "title": "Hanuman Ji Collection",
+            "subtitle": ""
+          }
+        },
+        "collection_widget_myXMQz": {
+          "type": "collection_widget",
+          "settings": {
+            "collection": "shiv-ji-collection",
+            "image": "shopify://shop_images/shiv_collection.png",
+            "title": "Shiv Ji Collection",
+            "subtitle": ""
+          }
+        },
+        "collection_widget_H7d7PH": {
+          "type": "collection_widget",
+          "settings": {
+            "collection": "ram-lalla-collection",
+            "image": "shopify://shop_images/ram.png",
+            "title": "Ram Ji Collection",
+            "subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_widget_WrmYdU",
+        "collection_widget_w6GwFF",
+        "collection_widget_myXMQz",
+        "collection_widget_H7d7PH"
+      ],
+      "settings": {
+        "heading": "Gods We Worship"
+      }
+    },
+    "simple_collection_grid_VRPFJK": {
+      "type": "simple-collection-grid",
+      "settings": {
+        "section_title": "Best Sellers",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "4-best-seller-murtis",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0
+      }
+    },
+    "slideshow_TaQTHK": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_f8QRnd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/reet_card_web.webp",
+            "image_mobile": "shopify://shop_images/reet_card_mobile.webp",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_f8QRnd"
+      ],
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 6,
+        "show_arrow": true,
+        "slider_visual": "bars",
+        "transition_style": "fade",
+        "full_width": false,
+        "padding_full_width": false,
+        "rounded_corner_image": false,
+        "desktop_height": "natural",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "mobile_height": "300",
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "simple_collection_grid_LjdfdN": {
+      "type": "simple-collection-grid",
+      "settings": {
+        "section_title": "All Products",
+        "subtitle": "",
+        "button-text": "SHOP NOW",
+        "class": "",
+        "heading_font_size": 24,
+        "collection_handle": "murti",
+        "products_per_row_desktop": 4,
+        "products_per_row_mobile": "2",
+        "show_vendor": false,
+        "border_radius": 0
+      }
+    },
+    "video_4pYpTk": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "sub_heading_video": "",
+        "image": "shopify://shop_images/AdobeStock_1204075357_Preview_2x_93ad9550-8abd-4d9f-aa4f-643de65e9616.png",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_alt_text": "",
+        "full_width": false,
+        "rounded_corners": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "rounded_corners_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rudraksha_consultaion_3ybPzf": {
+      "type": "rudraksha-consultaion",
+      "disabled": true,
+      "settings": {
+        "heading": "Consultation",
+        "consultation_title": "Free Consultation from Rudraksha Expert",
+        "consultation_description": "Our expert will personally call you to help choose the right Rudraksha based on your needs and astrology, guiding you on how to wear, cleanse, and energize the beads for maximum benefits.",
+        "recommender_url": "shopify://pages/rudraksha-calculator",
+        "background_image": "shopify://shop_images/chunkyglitter.png"
+      }
+    },
+    "text_icon_image_KKnpUJ": {
+      "type": "text-icon-image",
+      "blocks": {
+        "feature_mUjNJe": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/easy_return_6abba952-da02-4a5d-87e0-adb70887ba5b.webp",
+            "heading": "",
+            "text": "Easy 7 days Return"
+          }
+        },
+        "feature_khhWGq": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/handmade_icon_86a71d11-f676-42d8-bbd9-e8768a0cdebc.webp",
+            "heading": "",
+            "text": "Crafted by Expert Artisans"
+          }
+        },
+        "feature_4ArDgn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/trust.webp",
+            "heading": "",
+            "text": "Authentic & Blessed Idols"
+          }
+        },
+        "feature_Mar7wh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/8_yrs_trust_icon_442401ba-2792-4e2e-b9e3-cdbda1adabcf.webp",
+            "heading": "",
+            "text": "8+ years Trust"
+          }
+        }
+      },
+      "block_order": [
+        "feature_mUjNJe",
+        "feature_khhWGq",
+        "feature_4ArDgn",
+        "feature_Mar7wh"
+      ],
+      "settings": {
+        "class": "reet-text-icons",
+        "title": "Why choose Astrotalk?",
+        "subtitle": "We bring handcrafted divine energy into your home.",
+        "image_count": 3,
+        "image_1": "shopify://shop_images/image_3.webp",
+        "image_2": "shopify://shop_images/image_2_8c98f82f-3831-4df2-87db-27bf61501def.webp",
+        "image_3": "shopify://shop_images/image_1.webp"
+      }
+    },
+    "faq_rudraksha_pAPUNT": {
+      "type": "faq-rudraksha",
+      "blocks": {
+        "faq_bncGLc": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Rudraksha?",
+            "answer": "<p>Rudraksha is a holy seed that comes from a tree found in Nepal and India. It is used for peace, focus, and spiritual energy.nswer to the first frequently asked question.</p>"
+          }
+        },
+        "faq_RkxE9B": {
+          "type": "faq",
+          "settings": {
+            "question": "Who can wear Rudraksha?",
+            "answer": "<p> Anyone can wear Rudraksha—men, women, students, working people, or spiritual seekers. It has no age or religion limit.</p>"
+          }
+        },
+        "faq_Ta3bGw": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I know if my Rudraksha is real?",
+            "answer": "<p> A real Rudraksha has clear lines (mukhis) and feels natural when touched. Always buy from a trusted seller with a certificate like <a href=\"https://astrotalk.store/\"><span style=\"text-decoration:underline\">astrotalk.store</span></a>. </p>"
+          }
+        },
+        "faq_6fbppq": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I wear Rudraksha every day?",
+            "answer": "<p>Yes, you can wear Rudraksha daily. Just avoid using hot water or strong soaps on it.<br/><br/></p>"
+          }
+        },
+        "faq_HXCBBf": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the benefits of wearing Rudraksha?",
+            "answer": "<p>It helps reduce stress, brings peace, improves focus, and protects from negative energy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_bncGLc",
+        "faq_RkxE9B",
+        "faq_Ta3bGw",
+        "faq_6fbppq",
+        "faq_HXCBBf"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "FAQ",
+        "desktop_columns": "4",
+        "background_color": "#ffffff",
+        "panel_color": "#faf5f2"
+      }
+    },
+    "faq_eKKMqr": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_jcUmpQ": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "What materials are Reet idols made from?",
+            "row_content": "<p>Reet idols are handcrafted using high-quality resin or brass. Resin versions are lightweight and detailed; brass ones are heavier, durable, and traditional.</p>"
+          }
+        },
+        "frequently_asked_question_nKbmtn": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How do I know which material suits my home temple?",
+            "row_content": "<p>If you prefer lightweight, easy-to-clean idols, choose resin. For long-lasting durability, shine, and traditional appeal, opt for brass.<br/><br/></p>"
+          }
+        },
+        "frequently_asked_question_7gazAc": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Are Reet idols blessed and ready for worship?",
+            "row_content": "<p>Yes, all Reet idols are authentic, crafted by expert artisans, and blessed before shipping—ensuring they carry divine energy.</p>"
+          }
+        },
+        "frequently_asked_question_jwkAFL": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "What’s the delivery and return policy for Reet idols?",
+            "row_content": "<p>Yes, resin murtis are durable, don’t break easily, and keep their shine for years.</p>"
+          }
+        },
+        "frequently_asked_question_EcAKeG": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How do I care for my Reet idol?",
+            "row_content": "<p>Simply wipe with a soft cloth to clean. Avoid harsh cleaners to preserve the finish. Resin idols are especially easy to maintain.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_jcUmpQ",
+        "frequently_asked_question_nKbmtn",
+        "frequently_asked_question_7gazAc",
+        "frequently_asked_question_jwkAFL",
+        "frequently_asked_question_EcAKeG"
+      ],
+      "settings": {
+        "heading": "FAQs",
+        "class": "",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "bottom",
+        "button_link": "shopify://blogs/idols",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#ffffff",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "testimonials_k6gyHE": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_TkWY44": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p><em>\"Murti bahut hi sundar aur shant lagti hai. Ghar ka vibe change ho gaya. Thank you AstroTalk for such a divine piece.\"</em><br/><br/></p>",
+            "author_image": "shopify://shop_images/portrait-handsome-indian-man-wearing-blue-jacket-looking-camera.webp",
+            "author": "Sushant Sharma",
+            "author_note": "<p>Delhi</p>"
+          }
+        },
+        "testimonial_DbcEx7": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p><em>\"Pooja room ke liye AstroTalk se murti li thi. Bilkul blessed feel hota hai. Family ko bhi bahut pasand aayi.\"</em><br/></p>",
+            "author_image": "shopify://shop_images/woman-with-white-shirt-that-says-no.webp",
+            "author": "Savita Jha",
+            "author_note": "<p>Bengaluru</p>"
+          }
+        },
+        "testimonial_afyy4J": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p><em>\"Murti ki finishing perfect hai, photo se bhi zyada sundar lag rahi hai. Prayer ka connection aur strong ho gaya. Dhanyavaad AstroTalk!\"</em><br/><br/></p>",
+            "author_image": "shopify://shop_images/portrait-professor-work-educational-system.webp",
+            "author": "Vikram Khandelwal",
+            "author_note": "<p>Jaipur</p>"
+          }
+        },
+        "testimonial_PwBdRX": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "",
+            "text": "<p><em>\"Delivery time pe ho gayi aur packing bhi safe thi. Positive energy feel ho rahi hai. AstroTalk se lena best decision tha.\"</em></p>",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-06-03_at_6.37.08_PM_d8969d3f-185d-4b53-9519-9faf0fd68fc0.jpg",
+            "author": "Neetu Singh",
+            "author_note": "<p>Delhi</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_TkWY44",
+        "testimonial_DbcEx7",
+        "testimonial_afyy4J",
+        "testimonial_PwBdRX"
+      ],
+      "settings": {
+        "heading": "Testimonials",
+        "class": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "multiple",
+        "show_arrow": true,
+        "show_pagination": true,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_author_image": true,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 200,
+        "background_color_light": "rgba(0,0,0,0)",
+        "item_background_color_light": "rgba(0,0,0,0)",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "rgba(0,0,0,0)",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 0,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "featured_blog_xD3Vfk": {
+      "type": "featured-blog",
+      "settings": {
+        "class": "",
+        "heading": "Our Blogs",
+        "heading_size": 130,
+        "heading_tag": "h2",
+        "subheading": "",
+        "heading_alignment": "center",
+        "blog": "idols",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "view_all_position": "bottom",
+        "title_size": 110,
+        "content_alignment": "center",
+        "show_image": true,
+        "image_ratio": "auto",
+        "item_secondary_background": false,
+        "show_author": false,
+        "show_name": false,
+        "show_date": false,
+        "show_excerpt": false,
+        "show_metafield": true,
+        "show_tag": false,
+        "show_comment_counts": false,
+        "show_read_more": true,
+        "button_read_more_label": "READ MORE",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": false,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "full_width": false,
+        "spacing": 28,
+        "show_section_divider": false,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "columns_mobile": "1",
+        "spacing_mobile": 5,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_jdfDbr",
+    "scrolling_banner_g7jqFK",
+    "reet_collection_wwWRk4",
+    "reet_collection_tHkYyD",
+    "simple_collection_grid_VRPFJK",
+    "slideshow_TaQTHK",
+    "simple_collection_grid_LjdfdN",
+    "video_4pYpTk",
+    "rudraksha_consultaion_3ybPzf",
+    "text_icon_image_KKnpUJ",
+    "faq_rudraksha_pAPUNT",
+    "faq_eKKMqr",
+    "testimonials_k6gyHE",
+    "featured_blog_xD3Vfk"
+  ]
+}

@@ -1,0 +1,274 @@
+{% comment %}
+Gemstone Care Instruction with Desktop & Mobile Image 
+Desktop layout: Care Blocks Left + Image Right
+Mobile layout: Image Top + Care Blocks Below
+{% endcomment %}
+
+{% assign care_list = product.metafields.custom.gemstone_care_block.value %}
+{% assign care_images = product.metafields.custom.gem_care_block_images.value %}
+
+{% if care_list.size > 0 %}
+<section class="gemstone-care-section ">
+  <div class="gemstone-care-container">
+
+    <!-- LEFT (Care Cards) -->
+    <div class="care-left">
+      <h2 class="gemstone-care-title">Gemstone Care Instruction</h2>
+
+      <div class="gemstone-care-grid">
+        {% for block in care_list %}
+          <div class="gemstone-care-card">
+            {% if block.icon %}
+              <div class="care-icon">
+                <img src="{{ block.icon | image_url: width: 60 }}" alt="{{ block.title }}">
+              </div>
+            {% endif %}
+            <h3 class="care-title">{{ block.title }}</h3>
+            <p class="care-desc">{{ block.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- RIGHT (Desktop Image) -->
+    {% if care_images.desktop %}
+    <div class="care-right desktop-img">
+      <img src="{{ care_images.desktop | image_url: width: 800 }}" alt="Gemstone Care Image">
+    </div>
+    {% endif %}
+
+    <!-- MOBILE Image -->
+    {% if care_images.mobile %}
+    <div class="care-right mobile-img">
+      <img src="{{ care_images.mobile | image_url: width: 600 }}" alt="Gemstone Care Image">
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+{% comment %} .gemstone-care-section {
+  background: #FFF5E8;
+  border-radius: 16px;
+  padding: 50px 20px;
+  margin: 40px 0;
+} {% endcomment %}
+.gemstone-care-container .care-left {
+    width: 50%;
+        padding: 50px;
+}
+.gemstone-care-container {
+    max-width: 1200px;
+    background: #FFF3E3;
+    border-radius: 15px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+    flex-wrap: nowrap;
+}
+.care-right.desktop-img {
+    width: 50%;
+}
+.gemstone-care-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #966C18;
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: left;
+}
+.gemstone-care-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2B2B2B;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.gemstone-care-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 24px;
+}
+
+
+.care-icon img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 6px;
+}
+p.care-desc {
+    text-align: center;
+}
+.care-title {
+    color: #966C18;
+    font-size: 18px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.care-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.4;
+}
+
+.care-right img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* Hide mobile img on desktop */
+.mobile-img { display: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .care-title {
+    font-size: 16px;
+  }
+    .gemstone-care-container {
+        flex-direction: column;
+        text-align: center;
+        border-radius: 0;
+        border: solid #f6f6f6;
+        border-width: 8px 0;
+    }
+
+  /* Show mobile image */
+  .desktop-img { display: none; }
+  .mobile-img {
+        display: block;
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+
+  .gemstone-care-grid {
+         display: flex;
+        grid-template-columns: 1fr;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px 6px;
+  }
+
+
+  .gemstone-care-title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .gemstone-care-container .care-left {
+    width: 100%;
+    padding: 25px 20px;
+}
+
+.gemstone-care-card {
+        text-align: center;
+        width: 100%;
+        max-width: 49%;
+        padding: 18px 10px;
+    }
+}
+</style>
+
+{% endif %}
+{% comment %} {% comment %}
+Section: Gemstone Care Instruction
+This section dynamically fetches metaobject list (gemstone_care_block)
+assigned to product metafield product.metafields.custom.gemstone_care_block
+{% endcomment %}
+
+<section class="gemstone-care-section hidden">
+  <div class="container">
+    <h2 class="gemstone-care-title">Gemstone Care Instruction</h2>
+
+    {% if product.metafields.custom.gemstone_care_block.value.size > 0 %}
+      <div class="gemstone-care-grid">
+        {% for block in product.metafields.custom.gemstone_care_block.value %}
+          <div class="gemstone-care-card">
+            {% if block.icon %}
+              <div class="care-icon">
+                <img src="{{ block.icon | image_url: width: 80 }}" alt="{{ block.title }}">
+              </div>
+            {% endif %}
+            <h3 class="care-title">{{ block.title }}</h3>
+            <p class="care-desc">{{ block.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No gemstone care instructions found.</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.gemstone-care-section {
+  background: #fff7ee;
+  padding: 40px 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.gemstone-care-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  color: #222;
+}
+
+.gemstone-care-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.gemstone-care-card {
+  background: #fff;
+  border: 1px solid #e3c99c;
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.gemstone-care-card:hover {
+  transform: translateY(-4px);
+}
+
+.care-icon img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.care-title {
+  color: #7a5d2e;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.care-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+</style>
+{% endcomment %}
+
+  {% schema %}
+  {
+    "name": "Gemstone Care Block",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Gemstone Care Block"
+      }
+    ]
+  }
+  {% endschema %}

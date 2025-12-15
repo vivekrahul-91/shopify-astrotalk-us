@@ -1,0 +1,294 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_fJPADp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jPjxD4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ring Size Guide",
+            "heading_size": 150,
+            "heading_tag": "h1"
+          }
+        },
+        "caption_wGjTMW": {
+          "type": "caption",
+          "settings": {
+            "caption": "RING SIZING CHART FOR MEASURING YOUR FINGER SIZE APPROPRIATELY",
+            "text_style": "uppercase",
+            "text_size": 120
+          }
+        },
+        "text_bVdRtk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. This is a chart that will be extremely helpful for you to determine the ring size that you need. You can either make use of a tape or a small piece of string to measure the area that will be occupied by the ring. When it becomes a complete circle, make a mark on such string. This will be helpful for you to compare with the chart that is mentioned below. For extra width, you can add another size to accommodate.<br/><br/></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jPjxD4",
+        "caption_wGjTMW",
+        "text_bVdRtk"
+      ],
+      "custom_css": [],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "text_column_with_image_x9ftkA": {
+      "type": "text-column-with-image",
+      "blocks": {
+        "column_XtjyBC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/step_1.webp",
+            "sub_title": "",
+            "title": "",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        },
+        "column_8Mn9pz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/step_2.webp",
+            "sub_title": "",
+            "title": "",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "column_XtjyBC",
+        "column_8Mn9pz"
+      ],
+      "name": "t:sections.text-column-image.presets.name",
+      "settings": {
+        "class": "",
+        "title": "",
+        "subheading": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "column",
+        "image_ratio": "75%",
+        "rounded_corner_image": false,
+        "column_content_alignment": "center",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": false,
+        "auto_play": false,
+        "change_bar_every": 5,
+        "column_layout_desktop": "lg:w-1/2",
+        "spacing_desktop": 20,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "column_layout_mobile": "w-full",
+        "spacing_mobile": 20,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "custom_liquid_AaxWmM": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"tables-div flex\">\n<table class=\"data-table\" style=\"border-collapse: collapse; float: left;\" border=\"1\">\n<thead>\n<tr><th>Ring Size (Indian)</th><th colspan=\"2\">Circumference</th></tr>\n<tr><th>&nbsp;</th><th>Inches</th><th>MM</th></tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>1.61</td>\n<td>41.01</td>\n</tr>\n<tr>\n<td>2</td>\n<td>1.64</td>\n<td>42.70</td>\n</tr>\n<tr>\n<td>3</td>\n<td>1.69</td>\n<td>42.90</td>\n</tr>\n<tr>\n<td>4</td>\n<td>1.72</td>\n<td>43.60</td>\n</tr>\n<tr>\n<td>5</td>\n<td>1.76</td>\n<td>44.80</td>\n</tr>\n<tr>\n<td>6</td>\n<td>1.81</td>\n<td>46.10</td>\n</tr>\n<tr>\n<td>7</td>\n<td>1.87</td>\n<td>47.40</td>\n</tr>\n<tr>\n<td>8</td>\n<td>1.89</td>\n<td>48.00</td>\n</tr>\n<tr>\n<td>9</td>\n<td>1.92</td>\n<td>48.70</td>\n</tr>\n<tr>\n<td>10</td>\n<td>1.97</td>\n<td>50.00</td>\n</tr>\n<tr>\n<td>11</td>\n<td>2.02</td>\n<td>51.20</td>\n</tr>\n<tr>\n<td>12</td>\n<td>2.04</td>\n<td>51.90</td>\n</tr>\n<tr>\n<td>13</td>\n<td>2.09</td>\n<td>53.10</td>\n</tr>\n<tr>\n<td>14</td>\n<td>2.14</td>\n<td>54.40</td>\n</tr>\n<tr>\n<td>15</td>\n<td>2.16</td>\n<td>55.10</td>\n</tr>\n</tbody>\n</table>\n<table class=\"data-table\" style=\"border-collapse: collapse; float: left;\" border=\"1\">\n<thead>\n<tr><th>Ring Size (Indian)</th><th colspan=\"2\">Circumference</th></tr>\n<tr><th>&nbsp;</th><th>Inches</th><th>MM</th></tr>\n</thead>\n<tbody>\n<tr>\n<td>16</td>\n<td>2.22</td>\n<td>56.30</td>\n</tr>\n<tr>\n<td>17</td>\n<td>2.24</td>\n<td>57.00</td>\n</tr>\n<tr>\n<td>18</td>\n<td>2.30</td>\n<td>58.30</td>\n</tr>\n<tr>\n<td>19</td>\n<td>2.32</td>\n<td>58.90</td>\n</tr>\n<tr>\n<td>20</td>\n<td>2.37</td>\n<td>60.20</td>\n</tr>\n<tr>\n<td>21</td>\n<td>2.39</td>\n<td>60.80</td>\n</tr>\n<tr>\n<td>22</td>\n<td>2.44</td>\n<td>62.10</td>\n</tr>\n<tr>\n<td>23</td>\n<td>2.47</td>\n<td>62.70</td>\n</tr>\n<tr>\n<td>24</td>\n<td>2.52</td>\n<td>64.00</td>\n</tr>\n<tr>\n<td>25</td>\n<td>2.54</td>\n<td>64.60</td>\n</tr>\n<tr>\n<td>26</td>\n<td>2.59</td>\n<td>65.90</td>\n</tr>\n<tr>\n<td>27</td>\n<td>2.65</td>\n<td>67.20</td>\n</tr>\n<tr>\n<td>28</td>\n<td>2.67</td>\n<td>67.80</td>\n</tr>\n<tr>\n<td>29</td>\n<td>2.72</td>\n<td>69.10</td>\n</tr>\n<tr>\n<td>30</td>\n<td>2.80</td>\n<td>71.00</td>\n</tr>\n</tbody>\n</table>\n</div>\n<style>\n.tables-div.flex {\n    justify-content: space-between;\n}\n\n.tables-div .data-table {\n    width: 49%;\n    border-left: 1px solid #ccc;\n    background: #fff;\n}\n\n.tables-div th {\n    border-bottom: 1px solid #d3cbb6;\n    padding: 5px 8px;\n    vertical-align: middle;\n    border-top: 1px solid #a8976d;\n    border-right: 1px solid #ccc;\n    text-align: justify;\n}\n\n.tables-div td {\n    border-bottom: 1px solid #d3cbb6;\n    border-right: 1px solid #ccc;\n    padding: 5px 8px;\n}\n@media screen and (max-width: 749px){\n    .tables-div.flex {\n    justify-content: space-between;\n    flex-direction: column;\n    gap: 20px;\n  }\n.tables-div .data-table {\n    width: 100%;\n}\n}\n</style>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_jqUV9w": {
+      "type": "rich-text",
+      "blocks": {
+        "text_MTQqLr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>2. Here is another chart that can also be considered in determining the appropriate ring size. It measures inside the diameter of such ring in millimeters. This is normally used for double checking your results from the usual paper method. Apart from this, you can also make use of the ring that you wear daily and cross check the same with below chart.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "text_MTQqLr"
+      ],
+      "custom_css": [],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "class": "",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "left",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "text_column_with_image_4K3HTh": {
+      "type": "text-column-with-image",
+      "blocks": {
+        "column_YTEpKi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/step1_second_section.webp",
+            "sub_title": "",
+            "title": "",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "column_YTEpKi"
+      ],
+      "name": "t:sections.text-column-image.presets.name",
+      "settings": {
+        "class": "",
+        "title": "",
+        "subheading": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "column",
+        "image_ratio": "75%",
+        "rounded_corner_image": false,
+        "column_content_alignment": "center",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": false,
+        "auto_play": false,
+        "change_bar_every": 5,
+        "column_layout_desktop": "lg:w-1/2",
+        "spacing_desktop": 20,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "column_layout_mobile": "w-full",
+        "spacing_mobile": 20,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "custom_liquid_wRw8aQ": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\" tables-div flex\">\n<table class=\"data-table\" style=\"border-collapse: collapse; float: left;\" border=\"1\">\n<thead>\n<tr><th>Ring Size (Indian)</th><th colspan=\"2\">Diameter</th></tr>\n<tr><th>&nbsp;</th><th>Inches</th><th>MM</th></tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>0.51</td>\n<td>13.1</td>\n</tr>\n<tr>\n<td>2</td>\n<td>0.52</td>\n<td>13.3</td>\n</tr>\n<tr>\n<td>3</td>\n<td>0.54</td>\n<td>13.7</td>\n</tr>\n<tr>\n<td>4</td>\n<td>0.55</td>\n<td>13.9</td>\n</tr>\n<tr>\n<td>5</td>\n<td>0.56</td>\n<td>14.3</td>\n</tr>\n<tr>\n<td>6</td>\n<td>0.58</td>\n<td>14.7</td>\n</tr>\n<tr>\n<td>7</td>\n<td>0.59</td>\n<td>15.1</td>\n</tr>\n<tr>\n<td>8</td>\n<td>0.60</td>\n<td>15.3</td>\n</tr>\n<tr>\n<td>9</td>\n<td>0.61</td>\n<td>15.5</td>\n</tr>\n<tr>\n<td>10</td>\n<td>0.63</td>\n<td>15.9</td>\n</tr>\n<tr>\n<td>11</td>\n<td>0.64</td>\n<td>16.3</td>\n</tr>\n<tr>\n<td>12</td>\n<td>0.65</td>\n<td>16.5</td>\n</tr>\n<tr>\n<td>13</td>\n<td>0.67</td>\n<td>16.9</td>\n</tr>\n<tr>\n<td>14</td>\n<td>0.68</td>\n<td>17.3</td>\n</tr>\n<tr>\n<td>15</td>\n<td>0.69</td>\n<td>17.5</td>\n</tr>\n</tbody>\n</table>\n<table class=\"data-table\" style=\"border-collapse: collapse; float: left;\" border=\"1\">\n<thead>\n<tr><th>Ring Size (Indian)</th><th colspan=\"2\">Diameter</th></tr>\n<tr><th>&nbsp;</th><th>Inches</th><th>MM</th></tr>\n</thead>\n<tbody>\n<tr>\n<td>16</td>\n<td>0.71</td>\n<td>17.9</td>\n</tr>\n<tr>\n<td>17</td>\n<td>0.71</td>\n<td>18.1</td>\n</tr>\n<tr>\n<td>18</td>\n<td>0.73</td>\n<td>18.5</td>\n</tr>\n<tr>\n<td>19</td>\n<td>0.74</td>\n<td>18.8</td>\n</tr>\n<tr>\n<td>20</td>\n<td>0.75</td>\n<td>19.2</td>\n</tr>\n<tr>\n<td>21</td>\n<td>0.76</td>\n<td>19.4</td>\n</tr>\n<tr>\n<td>22</td>\n<td>0.78</td>\n<td>19.8</td>\n</tr>\n<tr>\n<td>23</td>\n<td>0.79</td>\n<td>20.0</td>\n</tr>\n<tr>\n<td>24</td>\n<td>0.80</td>\n<td>20.4</td>\n</tr>\n<tr>\n<td>25</td>\n<td>0.81</td>\n<td>20.6</td>\n</tr>\n<tr>\n<td>26</td>\n<td>0.83</td>\n<td>21.0</td>\n</tr>\n<tr>\n<td>27</td>\n<td>0.84</td>\n<td>21.4</td>\n</tr>\n<tr>\n<td>28</td>\n<td>0.85</td>\n<td>21.6</td>\n</tr>\n<tr>\n<td>29</td>\n<td>0.87</td>\n<td>22.0</td>\n</tr>\n<tr>\n<td>30</td>\n<td>0.88</td>\n<td>22.3</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_fJPADp",
+    "text_column_with_image_x9ftkA",
+    "custom_liquid_AaxWmM",
+    "rich_text_jqUV9w",
+    "text_column_with_image_4K3HTh",
+    "custom_liquid_wRw8aQ"
+  ]
+}

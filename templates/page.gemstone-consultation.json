@@ -1,0 +1,172 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "track_order_new_h89PQj": {
+      "type": "track-order-new",
+      "settings": {}
+    },
+    "gemstone_consultation_Dkpytg": {
+      "type": "gemstone-consultation",
+      "name": "Gemstone Consultation",
+      "settings": {
+        "heading": "Free Rudraksha Consultation",
+        "subheading": "Rudraksha helps balance your energies and remove blockages caused by planetary influences. Whether it’s stress, health issues, lack of focus, financial struggles, or relationship hurdles – the right Rudraksha can bring peace, stability, and positivity. Know your ideal Rudraksha today with guidance from our top expert astrologers. 🔱✨",
+        "benefits_title": "🔑 Key Benefits of Rudraksha Consultation",
+        "benefit_1_title": "Personalized Guidance",
+        "benefit_1_desc": "Astrologer recommends the Rudraksha best suited for your planets & concerns.",
+        "benefit_2_title": "Problem-Specific Remedies",
+        "benefit_2_desc": "Be it health, wealth, career, marriage or peace of mind – you get the Rudraksha that directly targets your issue.",
+        "benefit_3_title": "Authenticity & Purity",
+        "benefit_3_desc": "Ensures you receive a genuine, energised Rudraksha, not a fake one.",
+        "benefit_4_title": "Correct Usage Guidance",
+        "benefit_4_desc": "Learn when, how and with which rituals to wear it for maximum results.",
+        "benefit_5_title": "Long-Term Benefits",
+        "benefit_5_desc": "Brings balance, positivity, protection, and spiritual growth in life.",
+        "benefit_6_title": "",
+        "benefit_6_desc": "",
+        "benefit_7_title": "",
+        "benefit_7_desc": "",
+        "button_label": "BOOK FREE CONSULTATION",
+        "google_script_url": "https://script.google.com/macros/s/AKfycbythI_MvxPAtQP54Qr4xlYR6OtGQStrnmOp_nfS6PACJntdqN8SmvqeqteW8XM35xg7SQ/exec",
+        "image": "shopify://shop_images/rajvir_bedi_midjourney_A_realistic_front-facing_scene_with_two__54dc9170-0668-48a2.webp"
+      }
+    },
+    "faq_etapfk": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_9FH9GF": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Q1. Who gives the consultation?",
+            "row_content": "<p>Our top expert astrologers with years of experience in Vedic Astrology guide you in choosing the correct rudraksha.</p>"
+          }
+        },
+        "frequently_asked_question_eAqeLy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Q2. How can Rudraksha help me?",
+            "row_content": "<p>Rudraksha helps by reducing stress, improving focus, attracting positivity, and balancing planetary effects. It supports health, wealth, relationships, and spiritual growth.</p>"
+          }
+        },
+        "frequently_asked_question_d9EzeP": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Q3. Can women wear Rudraksha?",
+            "row_content": "<p>Yes. Women can wear Rudraksha. There is no restriction – Rudraksha works equally for men and women, bringing peace, health, and positivity.<br/></p>"
+          }
+        },
+        "frequently_asked_question_LMQVUK": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Q4. Will the astrologer also guide how to wear the Rudraksha?",
+            "row_content": "<p>Yes. The astrologer will not only suggest the right Rudraksha for you but also guide you on how to wear it, the correct day, mantras, and rituals for maximum benefits.</p>"
+          }
+        },
+        "frequently_asked_question_zpTfPz": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Q5. How will I know which Rudraksha suits me?",
+            "row_content": "<p>Every mukhi (face/type) of Rudraksha has different benefits. Our astrologers check your kundli and recommend the one that will work best for you.</p>"
+          }
+        },
+        "frequently_asked_question_AHQTzU": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Q6. Are the Rudrakshas authentic and certified?",
+            "row_content": "<p>Yes, all Rudrakshas suggested and provided are 100% natural and lab-certified.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_9FH9GF",
+        "frequently_asked_question_eAqeLy",
+        "frequently_asked_question_d9EzeP",
+        "frequently_asked_question_LMQVUK",
+        "frequently_asked_question_zpTfPz",
+        "frequently_asked_question_AHQTzU"
+      ],
+      "custom_css": [
+        ".faq-wrapper {font-size: 14px;}"
+      ],
+      "name": "t:sections.question_and_answer.presets.name",
+      "settings": {
+        "heading": "FAQs",
+        "class": "",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": true,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "track_order_new_h89PQj",
+    "gemstone_consultation_Dkpytg",
+    "faq_etapfk"
+  ]
+}

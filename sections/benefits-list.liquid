@@ -1,0 +1,209 @@
+{% schema %}
+{
+  "name": "Product Benefits Slider",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    },{
+      "type": "text",
+      "id": "heading",
+      "default": "Type of Rudraksha",
+      "label": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "default": "Discover how each Rudraksha brings unique healing and spiritual benefits to your life.",
+      "label": "Subheading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Benefits Slider"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="rudraksha-slider-section" style="padding: 60px 0; background-color: #fdf7f2;">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+    <h2 class="  text-center mb-1"> {{ section.settings.heading }}</h2>
+    <p class="text-center mb-8 text-gray-600">{{ section.settings.text }}</p>
+
+     {% if section.settings.collection != blank %}
+      {% assign collection = collections[section.settings.collection] %}
+      {% if collection.products.size > 0 %}
+      <div class="slider-wrapper" style="position: relative;">
+        <!-- Slider -->
+        <div class="rudraksha-slider flex gap-6 overflow-x-auto scroll-smooth px-4" style="scrollbar-width: none;">
+        {% for product in collection.products  %}
+            <div class="rudraksha-card min-w-[280px] bg-white p-5 rounded-lg shadow-md flex-shrink-0 text-left">
+              {% if product.featured_image %}
+                <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}" class=" rounded-full mx-auto object-cover mb-4 border">
+              {% endif %}
+              <h3 class=" text-center mb-3">{{ product.title }}</h3>
+              {% assign benefits = product.metafields.custom.recommbenefits.value %}
+              <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
+                {% for benefit in benefits %}
+                  {% if benefit != blank %}
+                    <li>{{ benefit  }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+              <div class="view-prod-btn">
+                <a href="{{ product.url }}">View Product</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Arrow Buttons -->
+        <button class="prev-btn absolute left-0 top-1/2 transform -translate-y-1/2 bg-white border rounded-full w-10 h-10 shadow-md z-10">&#10094;</button>
+        <button class="next-btn absolute right-0 top-1/2 transform -translate-y-1/2 bg-white border rounded-full w-10 h-10 shadow-md z-10">&#10095;</button>
+      </div>
+    {% else %}
+      <p class="text-center">No products found in the selected collection.</p>
+    {% endif %}
+        {% endif %}
+  </div>
+</div>
+
+<style>
+  .rudraksha-slider::-webkit-scrollbar {
+    display: none;
+  }
+  .rudraksha-slider {
+    max-width: 1020px;
+    margin: auto;
+    gap: 40px;
+        padding: 10px 0;
+}
+.rudraksha-card img {
+    width: 40%;
+    height: auto;
+    border: 2px solid #9F4723;
+}
+.rudraksha-card {
+  position: relative;
+    width: 100%;
+    max-width: calc(33.3% - 30px);
+}
+.rudraksha-slider-section p {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 12px;
+}
+.temp-rudraksha-recommender .rudraksha-slider-section {
+    padding: 30px !important;
+}
+.rudraksha-card h3 {
+    font-size: 16px;
+  letter-spacing: 1;
+}
+  .rudraksha-slider-section h2{
+    font-size : 1.89rem;
+  }
+ .rudraksha-slider-section button.prev-btn,.rudraksha-slider-section  .next-btn{
+    background: #873e20;
+    color: #fff;
+    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    font-weight: 100;
+}
+  .rudraksha-slider-section {
+    background-image: url(https://cdn.shopify.com/s/files/1/0878/4907/4985/files/Slice_5.png?v=1749707769);
+    background-size: cover;
+    background-position: top;
+}
+  .rudraksha-card li {
+    list-style: none;
+    text-align: justify;
+}
+ .temp-gemstone-calculator .rudraksha-slider-section {
+    background: #FFF9F1;
+    background-image: none;
+    padding: 20px !important;
+    background-size: cover;
+    background-position: top;
+}
+  .temp-gemstone-calculator .view-prod-btn{
+    display:none;
+  }
+  .view-prod-btn a {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    max-width: 90%;
+}
+
+
+.view-prod-btn a {
+    padding: 8px;
+    background: #873e20;
+    color: #fff;
+    border-radius: 10px;
+    /* margin: 0 18%; */
+    font-size: 16px;
+    line-height: 18px;
+}
+.view-prod-btn {
+    height: 43px;
+}
+ .temp-rudraksha-recommender .rudraksha-card img {
+    width: 100%;
+    border: 0;
+    height: auto;
+    border-radius: 10px !important;
+}
+  .temp-rudraksha-recommender .rudraksha-card h3{
+    display:none;
+  }
+  @media screen and (max-width:749px){
+    .rudraksha-card{
+    max-width: 100%;
+    }
+   .temp-rudraksha-recommender .rudraksha-card{
+        max-width: 96%;
+        padding: 15px;
+ }
+     .rudraksha-slider {
+    gap: 10px;
+}
+    .rudraksha-slider-section h2 {
+    font-size: 20px;
+}
+     .rudraksha-slider-section button.prev-btn,.rudraksha-slider-section  .next-btn{
+    width: 25px;
+    height: 25px;
+}
+    .temp-rudraksha-recommender .rudraksha-slider-section {
+    padding: 30px 0 !important;
+}
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.rudraksha-slider');
+    const prev = document.querySelector('.prev-btn');
+    const next = document.querySelector('.next-btn');
+
+    if (slider && prev && next) {
+      prev.addEventListener('click', () => {
+        slider.scrollBy({ left: -340, behavior: 'smooth' });
+      });
+      next.addEventListener('click', () => {
+        slider.scrollBy({ left: 340, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
+
+
+
+

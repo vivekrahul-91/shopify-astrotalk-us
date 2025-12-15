@@ -1,0 +1,712 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "text_CQqapF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.subtitle.value }}</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": ""
+          }
+        },
+        "judge_me_reviews_preview_badge_AVXcCM": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "trust_badge_pGhQia": {
+          "type": "trust_badge",
+          "settings": {
+            "show_meta_trust_badge": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 110
+          }
+        },
+        "continuous_timer_q7NrTb": {
+          "type": "continuous_timer",
+          "settings": {
+            "title": "Offer ends in",
+            "bold-title": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "inventory_urgency_U7xF3J": {
+          "type": "inventory_urgency",
+          "settings": {
+            "inventory_urgency_enabled": true,
+            "urgency_min_stock": 23,
+            "urgency_max_stock": 70,
+            "urgency_decrease_rate": 2
+          }
+        },
+        "delivery_check_WCcMcE": {
+          "type": "delivery_check",
+          "settings": {
+            "enable_delivery_check": true
+          }
+        },
+        "trust_badge_gQUebQ": {
+          "type": "trust_badge",
+          "settings": {
+            "show_meta_trust_badge": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false,
+            "pickup_availability": false,
+            "hide_when_pre_order": false,
+            "preorder_button_label": "Pre-order",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "box_type": "square",
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "#f0df20",
+            "button_text_light": "#131313",
+            "button_hover_light": "#f0df20",
+            "button_text_hover_light": "#131313",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "variant_picker_fL9RjK": {
+          "type": "variant_picker",
+          "settings": {
+            "color_option_content": "<p><strong>Variant: </strong></p>",
+            "picker_type": "button",
+            "show_variant_option": true,
+            "enable_color_swatches": false,
+            "swatch_size": "small",
+            "ringsize_list": "Free/Adjustable Ring,1,2,3,45,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30"
+          }
+        },
+        "description_gRwQjV": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "make_content_center": false,
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more"
+          }
+        },
+        "quinn_shoppable_videos_app_cards_block_cVgdEC": {
+          "type": "shopify://apps/quinn-shoppable-videos/blocks/app-cards-block/150d2781-732b-4020-a9fb-1368e974e6bb",
+          "settings": {
+            "layer_number": 1,
+            "card_margins_desktop": "0",
+            "card_margins_mobile": "0",
+            "custom_metaobject_handle": "null",
+            "heading": "<h2>Loved by 15 lakh+ customers</h2>",
+            "heading_alignment": "center",
+            "heading_font_size_desktop": "18px",
+            "heading_letter_spacing_desktop": "normal",
+            "heading_font_size_mobile": "18px",
+            "heading_letter_spacing_mobile": "normal",
+            "heading_line_height_desktop": "1.2",
+            "heading_line_height_mobile": "1.2",
+            "heading_font_weight_desktop": "500",
+            "heading_font_weight_mobile": "500",
+            "heading_font": "inter_n5",
+            "heading_color": "#000000",
+            "heading_background_color": "#ffffff",
+            "heading_padding": "0px",
+            "heading_margin": "0px",
+            "subheading": "",
+            "subheading_alignment": "center",
+            "subheading_font": "sans_serif_n4",
+            "subheading_color": "#000000",
+            "subheading_background_color": "#ffffff",
+            "subheading_padding": "0px",
+            "subheading_margin": "0px"
+          }
+        },
+        "benefits_block_U7XhAB": {
+          "type": "benefits-block",
+          "disabled": true,
+          "settings": {}
+        },
+        "collapsible_tab_f6c6VD": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Benefits",
+            "tab_content": "<p>{{ product.metafields.custom.benefits | metafield_tag }}</p>",
+            "open_by_default": true
+          }
+        },
+        "collapsible_tab_mHBjAk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How to wear?",
+            "tab_content": "<p>{{ product.metafields.custom.how_to_wear_ | metafield_tag }}</p>",
+            "open_by_default": true
+          }
+        },
+        "collapsible_tab_wCPCdk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Style tip",
+            "tab_content": "<p>{{ product.metafields.custom.style_tip | metafield_tag }}</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible_tab_XAKzrt": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Best day to wear",
+            "tab_content": "<p>{{ product.metafields.custom.best_day_to_wear | metafield_tag }}</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible_tab_itynzq": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Packaging",
+            "tab_content": "<p>Presented in an sturdy black kappa box with foam, designed especially for safekeeping and gifting.</p>",
+            "open_by_default": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Returns + Exchanges",
+            "tab_content": "<p> We have a 7-day return policy. We’ll process returns once we have the needed details and reasons. Make sure the product is in its original condition to ensure an easy return. </p>",
+            "open_by_default": false
+          }
+        },
+        "trust_badge_tQ9m8i": {
+          "type": "trust_badge",
+          "settings": {
+            "badge": "shopify://shop_images/Figma_Frame_1.webp",
+            "show_meta_trust_badge": false
+          }
+        },
+        "why_astrotalk_DHVUJw": {
+          "type": "why-astrotalk",
+          "disabled": true,
+          "settings": {}
+        },
+        "html_DpfKpP": {
+          "type": "html",
+          "settings": {
+            "custom_html": "<a class=\"Diwali-Banner\" href=\"https://astrotalk.store/pages/winter-sale\" style=\" padding-bottom : 20px\"><img src=\"//cdn.shopify.com/s/files/1/0878/4907/4985/files/winter-sale-pdp-banner.webp?v=1764572012\" alt=\"Diwali sale\"> </a>"
+          }
+        },
+        "html_dcqQ8b": {
+          "type": "html",
+          "settings": {
+            "custom_html": "<div id=\"ewck-bogo-block\" style=\"padding-top : 20px; padding-bottom : 10px\"></div>"
+          }
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": false,
+            "button_light": "#f0df20",
+            "button_text_light": "#131313",
+            "button_hover_light": "#f0df20",
+            "button_text_hover_light": "#131313",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "badges",
+        "text_CQqapF",
+        "judge_me_reviews_preview_badge_AVXcCM",
+        "trust_badge_pGhQia",
+        "price",
+        "continuous_timer_q7NrTb",
+        "quantity_selector",
+        "inventory_urgency_U7xF3J",
+        "delivery_check_WCcMcE",
+        "trust_badge_gQUebQ",
+        "buy_buttons",
+        "variant_picker_fL9RjK",
+        "description_gRwQjV",
+        "quinn_shoppable_videos_app_cards_block_cVgdEC",
+        "benefits_block_U7XhAB",
+        "collapsible_tab_f6c6VD",
+        "collapsible_tab_mHBjAk",
+        "collapsible_tab_wCPCdk",
+        "collapsible_tab_XAKzrt",
+        "collapsible_tab_itynzq",
+        "collapsible-row-0",
+        "trust_badge_tQ9m8i",
+        "why_astrotalk_DHVUJw",
+        "html_DpfKpP",
+        "html_dcqQ8b",
+        "sticky-atc"
+      ],
+      "custom_css": [
+        ".product-variant-option_main {width: 100%;}"
+      ],
+      "settings": {
+        "enable_sticky_image": true,
+        "show_product_name": true,
+        "title_size": 120,
+        "heading_tag": "h1",
+        "show_vendor": false,
+        "link_vendor": false,
+        "make_content_center": false,
+        "desktop_layout": "left",
+        "desktop_media_layout": "thumbnail_slider",
+        "show_arrow_button": true,
+        "mobile_media_size": "75%",
+        "show_thumnail_mobile": true,
+        "image_ratio": "square",
+        "thumbnail_position": "horizontal",
+        "enable_image_zoom": false,
+        "enable_video_autoplay": true,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": false,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "enable_microdata": false,
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": false,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#ffffff",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "full_width": false,
+        "spacing_col": "small",
+        "padding_top": 60,
+        "padding_bottom": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "aplus_rQdPJc": {
+      "type": "aplus",
+      "disabled": true,
+      "name": "Aplus",
+      "settings": {}
+    },
+    "175220539625a30c84": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_comparison_4nVHt9": {
+      "type": "image-comparison",
+      "disabled": true,
+      "settings": {
+        "heading": "Why our products?",
+        "heading_base_size": 120,
+        "heading_tag": "h2",
+        "layout_comparison": "horizontal",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "image_corner_radius": 12,
+        "image": "shopify://shop_images/money_magnet_slide_1_1920x1080_9ba9b396-9a53-4b76-ae31-8fe4faa69f0c.jpg",
+        "image_mobile": "shopify://shop_images/money_magnet_slide_1_1920x1080_9ba9b396-9a53-4b76-ae31-8fe4faa69f0c.jpg",
+        "heading_before_image": "",
+        "heading_base_size_before_image": 100,
+        "heading_before_image_position": "center",
+        "image_after": "shopify://shop_images/money_magnet_slide_2_1920x1080_1.jpg",
+        "image_mobile_after": "shopify://shop_images/money_magnet_slide_2_1920x1080_1.jpg",
+        "heading_after_image": "",
+        "heading_base_size_after_image": 100,
+        "heading_after_image_position": "center",
+        "default_scroll_position": 50,
+        "text_position": "center",
+        "text_alignment": "start",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "text_background_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "#000000",
+        "background_color_dark": "#ffffff",
+        "text_background_dark": "rgba(0,0,0,0)",
+        "image_alignment": "md:flex-row",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "top_padding": 20,
+        "bottom_padding": 20,
+        "image_alignment_mobile": "flex-col",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 32
+      }
+    },
+    "17234523003b158916": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_wmMxnV": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_wmMxnV"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "product_specifications_pwqMyD": {
+      "type": "product-specifications",
+      "blocks": {
+        "specs_BTKzA3": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Material",
+            "row_content": "<p>{{ product.metafields.custom.material.value }}</p>"
+          }
+        },
+        "specs_8bEamW": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Bead Size",
+            "row_content": "<p>7-8 mm</p>"
+          }
+        },
+        "specs_xTbkcN": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Tarnish resistance",
+            "row_content": "<p>Anti-tarnish</p>"
+          }
+        },
+        "specs_A4jAU8": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Colour",
+            "row_content": "<p>{{ product.metafields.custom.colour.value }}</p>"
+          }
+        },
+        "specs_VtkpgB": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Size",
+            "row_content": "<p>Free size</p>"
+          }
+        },
+        "specs_Ezyi7g": {
+          "type": "specs",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Water Resistance",
+            "row_content": "<p>Anti-splash</p>"
+          }
+        }
+      },
+      "block_order": [
+        "specs_BTKzA3",
+        "specs_8bEamW",
+        "specs_xTbkcN",
+        "specs_A4jAU8",
+        "specs_VtkpgB",
+        "specs_Ezyi7g"
+      ],
+      "settings": {
+        "heading": "Specifications",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "",
+        "image_alignment": "left",
+        "hide_empty_rows": true,
+        "text_empty_fields": "-",
+        "row_shown_by_default": 6,
+        "view_more_button": "",
+        "view_less_button": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "table_color": "rgba(0,0,0,0)",
+        "table_text": "rgba(0,0,0,0)",
+        "line_border": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "table_color_dark": "rgba(0,0,0,0)",
+        "table_text_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "columns_desktop": "2",
+        "desktop_height": "400px",
+        "show_section_divider": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "faq_jkMBM6": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_J876L8": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "What are its benefits?",
+            "row_content": "<p>{{ product.metafields.custom.benefits | metafield_tag }}</p>"
+          }
+        },
+        "frequently_asked_question_yRVTdy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How natural and authentic is this gemstone?",
+            "row_content": "<p>All our stones are 100% natural and authentic. The healing stones have been sourced from top international mines from across the globe and certified by various labs.  </p>"
+          }
+        },
+        "frequently_asked_question_AhCcW9": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "What is the return policy and estimated delivery duration?",
+            "row_content": "<p>We offer a hassle-free 7-day return policy. Additionally, you can expect delivery within 10 to 14 days.  </p>"
+          }
+        },
+        "frequently_asked_question_Fj4kW9": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "How is this energized and how can i wear it?",
+            "row_content": "<p><strong>How can crystals heal-</strong> All healing crystals correspond to different planets in our solar system, which is why each crystal vibrates at its unique frequency. These healing stones offer more than mere aesthetic value. At the right frequency the crystals directly affect the 7 chakras of the human body.  <br/><br/><br/><strong>What is energisation-</strong> When properly energised, the crystals vibrate at frequencies that align with the various chakras in our body. This process of ensuring the alignment of frequencies, known as the energization of a healing stone, enhances their therapeutic and psychic benefits. </p><p><br/><strong>How we help-</strong> At Astrotalk, we ensure that all our healing stones are sourced and energised by trusted experts and astrologers to guarantee their authenticity. Before delivery, all our healing stones are energised with pure intentions and energy by our esteemed astrologers, making them highly effective for our customers. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_J876L8",
+        "frequently_asked_question_yRVTdy",
+        "frequently_asked_question_AhCcW9",
+        "frequently_asked_question_Fj4kW9"
+      ],
+      "settings": {
+        "heading": "FAQs",
+        "class": "",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_size": 120,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 4,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": false,
+        "show_quickview": false,
+        "enable_carousel_desktop": true,
+        "enable_swiper_mobile": true,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 4,
+        "padding_top": 0,
+        "padding_bottom": 56,
+        "columns_mobile": "2",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 20,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "featured_collection_4h68yk": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_z4VYb7": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals",
+            "show_description": true,
+            "description": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "show_vendor": false,
+            "show_rating": false,
+            "show_quickview": true,
+            "show_promotion": false,
+            "promotion_position": "left",
+            "card_link": "",
+            "open_new_window": false,
+            "enable_text_overlay": false,
+            "overlay_opacity": 0,
+            "image_ratio": "100",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "product_card": "",
+            "heading": "Featured collection",
+            "heading_size": 70,
+            "content": "<p>10% OFF</p>",
+            "text_size": 100,
+            "content_alignment": "center",
+            "content_position": "bottom",
+            "button_label": "See more",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary",
+            "background_color": "rgba(0,0,0,0)",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "collection_z4VYb7"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".button {display: none;}"
+      ],
+      "settings": {
+        "title": "Combination Sets",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "subheading": "",
+        "text": "",
+        "show_view_all": true,
+        "view_all_position": "top",
+        "title_size": 120,
+        "title_style": "none",
+        "enable_desktop_slider": true,
+        "slider_style": "horizontal",
+        "swiper_on_mobile": true,
+        "auto_play": true,
+        "change_slides_speed": 3,
+        "columns_desktop": 4,
+        "rows_desktop": 1,
+        "spacing": 28,
+        "full_width": true,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "eventname": "Combination_set_click",
+        "columns_mobile": "2",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "specs_XFtBWa": {
+      "type": "specs",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "aplus_rQdPJc",
+    "175220539625a30c84",
+    "image_comparison_4nVHt9",
+    "17234523003b158916",
+    "product_specifications_pwqMyD",
+    "faq_jkMBM6",
+    "product-recommendations",
+    "featured_collection_4h68yk",
+    "specs_XFtBWa"
+  ]
+}
