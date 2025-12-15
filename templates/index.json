@@ -767,7 +767,7 @@
           "type": "button",
           "settings": {
             "button_label": "Buy Now",
-            "button_link": "https://astrotalk.store/products/1-14-mukhi-siddh-rudraksha-mala",
+            "button_link": "shopify://products/1-14-mukhi-siddh-rudraksha-mala",
             "open_new_window": false,
             "show_button_style": "primary",
             "button_light": "rgba(0,0,0,0)",
@@ -1043,7 +1043,7 @@
         "media_XiY7cn": {
           "type": "media",
           "settings": {
-            "video": "",
+            "video": "shopify://files/videos/2 steps to energize-4.mp4",
             "show_sound_control": false,
             "video_url": "",
             "video_alt_text": "",
@@ -1059,7 +1059,6 @@
         "media_HbXB9G": {
           "type": "media",
           "settings": {
-            "video": "",
             "show_sound_control": false,
             "video_url": "",
             "video_alt_text": "",
@@ -1091,7 +1090,6 @@
         "0ddcf36d-da52-4624-b5d2-c52b3640166d": {
           "type": "media",
           "settings": {
-            "video": "",
             "show_sound_control": true,
             "video_url": "",
             "video_alt_text": "",
@@ -1143,42 +1141,6 @@
     },
     "174350571503a0e86b": {
       "type": "apps",
-      "blocks": {
-        "quinn_shoppable_videos_app_cards_block_xP7MGD": {
-          "type": "shopify://apps/quinn-shoppable-videos/blocks/app-cards-block/150d2781-732b-4020-a9fb-1368e974e6bb",
-          "settings": {
-            "layer_number": 1,
-            "card_margins_desktop": "0",
-            "card_margins_mobile": "0",
-            "custom_metaobject_handle": "null",
-            "heading": "<p>What our customers say</p>",
-            "heading_alignment": "center",
-            "heading_font_size_desktop": "16px",
-            "heading_letter_spacing_desktop": "normal",
-            "heading_font_size_mobile": "16px",
-            "heading_letter_spacing_mobile": "normal",
-            "heading_line_height_desktop": "1.2",
-            "heading_line_height_mobile": "1.2",
-            "heading_font_weight_desktop": "400",
-            "heading_font_weight_mobile": "400",
-            "heading_font": "sans_serif_n4",
-            "heading_color": "#000000",
-            "heading_background_color": "#ffffff",
-            "heading_padding": "0px",
-            "heading_margin": "0px",
-            "subheading": "",
-            "subheading_alignment": "center",
-            "subheading_font": "sans_serif_n4",
-            "subheading_color": "#000000",
-            "subheading_background_color": "#ffffff",
-            "subheading_padding": "0px",
-            "subheading_margin": "0px"
-          }
-        }
-      },
-      "block_order": [
-        "quinn_shoppable_videos_app_cards_block_xP7MGD"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -1205,7 +1167,6 @@
             "custom_icon": "",
             "title": "",
             "text": "<p>I got the rose quartz pendant and bracelet set from a friend as a gift and started to wear it not really expecting anything. Wore them solely because they look pretty and go with every outfit, but I actually started to feel more positive and calm after a few days of wearing them.<br/><br/>Have ordered another pair for my mother and sister after noticing the changes in myself.<br/><br/>Great product!</p>",
-            "author_image": "shopify://shop_images/IMG_8750.heic",
             "author": "Archita",
             "author_note": ""
           }
@@ -1217,7 +1178,6 @@
             "custom_icon": "",
             "title": "",
             "text": "<p>Go for this without any hesitation!! I started following crystal healing after instagram recommended a few reels to me. <br/>I wasn’t a big believer lol, I am still learning infact...but I was going through a really weird phase and saw this girl’s reel who said wearing amethyst helps with sleep. Searched around and bought their purple amethyst bracelet. It has worked for me like a charm. <br/>Will try out the crystals too.</p>",
-            "author_image": "shopify://shop_images/IMG_0256.heic",
             "author": "Arshita",
             "author_note": ""
           }
@@ -1229,7 +1189,6 @@
             "custom_icon": "",
             "title": "",
             "text": "<p>Got the evil eye bracelet for my mother, she loves it! Her health has also been better since she started to wear this regularly.</p>",
-            "author_image": "shopify://shop_images/IMG_7072_ad253b9c-359f-4840-9b4a-9e50dfe1424a.heic",
             "author": "Aarti",
             "author_note": ""
           }
@@ -1241,7 +1200,6 @@
             "custom_icon": "",
             "title": "",
             "text": "<p>Ordered the wrong bracelet accidentally, the team was nice and supportive and helped replace the order with the new one within 7 days! Such a smooth experience, really happy with my tiger eye bracelet.</p>",
-            "author_image": "shopify://shop_images/IMG_0263.heic",
             "author": "Maanya",
             "author_note": ""
           }
