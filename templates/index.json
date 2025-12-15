@@ -767,7 +767,7 @@
           "type": "button",
           "settings": {
             "button_label": "Buy Now",
-            "button_link": "https://astrotalk.store/products/1-14-mukhi-siddh-rudraksha-mala",
+            "button_link": "shopify://products/1-14-mukhi-siddh-rudraksha-mala",
             "open_new_window": false,
             "show_button_style": "primary",
             "button_light": "rgba(0,0,0,0)",
