@@ -830,12 +830,12 @@ You can learn more about this (and learn how to cleanly revert these changes) at
                             
                          {% if template contains 'product' %}
                                <div id="x-payment-button-{{ section.id }}" class="uppercase payment-button{% if settings.buttons_animation != 'underline' and settings.buttons_animation != 'sliced' %} button-animation{% else %} button-default{% endif %}{% if can_show_preorder == true and block.settings.preorder_show_dynamic_button == false %} hidden{% endif %}" x-intersect.once.margin.200px="$store.xShopifyPaymentBtn.load($el)">
-                                  <!-- {{ form | payment_button }} -->
+                                  {{ form | payment_button }}
                                 </div>
                             {% else %}
                               <template x-if="show">
                                 <div id="x-payment-button-{{ section.id }}" class="uppercase payment-button{% if settings.buttons_animation != 'underline' and settings.buttons_animation != 'sliced' %} button-animation{% else %} button-default{% endif %}{% if can_show_preorder == true and block.settings.preorder_show_dynamic_button == false %} hidden{% endif %}" x-intersect.once.margin.200px="$store.xShopifyPaymentBtn.load($el)">
-                                  <!-- {{ form | payment_button }} -->
+                                  {{ form | payment_button }}
                                 </div>
                               </template>
                             {% endif %}
